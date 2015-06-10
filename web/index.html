@@ -37,7 +37,6 @@
 <body id="page-top">
 
 <header id="bg_test">
-	<!-- <header style="background-image: url(../img/1900x1267-foule.jpg);" id="bg_test"> -->
         <div class="header-content">
 	<div class="overlay">
             <div class="header-content-inner">
@@ -50,7 +49,6 @@
         </div>
     </header>
 
-<!--
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
@@ -63,6 +61,7 @@
             </div>
         </div>
     </section>
+<!--
     <section id="services">
         <div class="container">
             <div class="row">
@@ -268,6 +267,10 @@ var colors={
 	orange:"#ee4b28",
 	blue:"#286090"
 };
+var themes={
+	A:{bg:"elysee",titre:"bleus",btn_text:"marcel",btn_color:"blue"},
+	B:{bg:"elyseebis",titre:"vache",btn_text:"guingamp",btn_color:"orange"}
+}
 
 function getUrlParameter(sParam)
 {
@@ -283,14 +286,21 @@ function getUrlParameter(sParam)
 	}
 }
 
+var theme=getUrlParameter("theme");
 var bg=getUrlParameter("bg");
 var titre=getUrlParameter("titre");
 var btn_color=getUrlParameter("btn_color");
 var btn_text=getUrlParameter("btn_text");
-$("#bg_test").attr("style","background-image: url(../img/"+backgrounds[bg]+");");
-$("#title_test").html(titres[titre]);
-$("#btn_test").attr("style","background-color: "+colors[btn_color]+";");
-$("#btn_test").html(btn_textes[btn_text]);
+if (theme) {
+	bg=themes[theme]["bg"];
+	titre=themes[theme]["titre"];
+	btn_color=themes[theme]["btn_color"];
+	btn_text=themes[theme]["btn_text"];
+}
+if (bg) { $("#bg_test").attr("style","background-image: url(../img/"+backgrounds[bg]+");"); }
+if (titre) { $("#title_test").html(titres[titre]); }
+if (btn_color) { $("#btn_test").attr("style","background-color: "+colors[btn_color]+";");}
+if (btn_text) { $("#btn_test").html(btn_textes[btn_text]); }
 </script>
 </body>
 </html>
