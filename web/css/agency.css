@@ -230,6 +230,16 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
+.lettre {
+	max-width: 700px;
+	background-color: #9ba7ff;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: justify;
+	border: 1px solid black;
+	border-radius: 1%;
+}
+
 @media(min-width:768px) {
     .navbar-default {
         padding: 25px 0;
@@ -263,9 +273,10 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #444;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    /* background-image: url(../img/header-bg.jpg); */
+    background-color: #fff68f;
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -298,8 +309,8 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px;
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
 
     header .intro-text .intro-lead-in {
