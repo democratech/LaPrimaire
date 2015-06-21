@@ -230,13 +230,50 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
-.lettre {
-	max-width: 700px;
-	background-color: #9ba7ff;
-	margin: 0 auto;
+#joinus {
+	background-color: white;
+	margin: 20px auto 20px auto;
 	padding: 20px;
 	text-align: justify;
-	border: 1px solid black;
+	border: 1px solid #AAA;
+	border-radius: 1%;
+}
+
+
+#clock_wrapper {
+	text-align: center;
+}
+#clock {
+	background-color: white;
+	width: auto;
+	display:inline-block;
+	margin: 20px auto;
+	padding: 0px;
+	border: 0px solid #AAA;
+	border-radius: 1%;
+}
+
+@media(max-width:768px) {
+	#clock .flip-clock-wrapper {
+		font-size: 22px;
+	}
+	#clock_wrapper {
+		zoom: 0.6;
+		-moz-transform: scale(0.6)
+	}
+	#joinus {
+		margin-top:20px;
+	}
+}
+
+
+.lettre {
+	/*max-width: 800px;*/
+	background-color: white;
+	margin: 20px auto 20px auto;
+	padding: 20px;
+	text-align: justify;
+	border: 1px solid #AAA;
 	border-radius: 1%;
 }
 
@@ -275,8 +312,8 @@ header {
     text-align: center;
     color: #444;
     background-attachment: scroll;
-    /* background-image: url(../img/header-bg.jpg); */
-    background-color: #fff68f;
+    background-color: rgba(4,4,4,0.8);
+    background-image: url(../img/header-bg.jpg); 
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -286,7 +323,7 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
@@ -309,7 +346,7 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 100px;
+        padding-top: 50px;
         padding-bottom: 50px;
     }
 
@@ -332,7 +369,7 @@ header .intro-text .intro-heading {
 }
 
 section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 section h2.section-heading {
@@ -352,7 +389,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 50px 0;
     }
 }
 
@@ -662,68 +699,69 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#contact {
+section#sign {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    /* background-image: url(../img/map-image.png); */
+    background-color: pink;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-section#contact .section-heading {
+section#sign .section-heading {
     color: #fff;
 }
 
-section#contact .form-group {
+section#sign .form-group {
     margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
+section#sign .form-group input,
+section#sign .form-group textarea {
     padding: 20px;
 }
 
-section#contact .form-group input.form-control {
+section#sign .form-group input.form-control {
     height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+section#sign .form-group textarea.form-control {
     height: 236px;
 }
 
-section#contact .form-control:focus {
+section#sign .form-control:focus {
     border-color: #fed136;
     box-shadow: none;
 }
 
-section#contact::-webkit-input-placeholder {
+section#sign::-webkit-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-moz-placeholder {
+section#sign:-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact::-moz-placeholder {
+section#sign::-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-ms-input-placeholder {
+section#sign:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact .text-danger {
+section#sign .text-danger {
     color: #e74c3c;
 }
 
@@ -876,3 +914,4 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #fed136;
 }
+
