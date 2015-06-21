@@ -230,15 +230,25 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
-#joinus {
-	background-color: white;
+.joinus {
+	background-color: #fd125c;
+	color: white;
 	margin: 20px auto 20px auto;
 	padding: 20px;
 	text-align: justify;
 	border: 1px solid #AAA;
 	border-radius: 1%;
 }
+#lettre_sequence .joinus {
+	width:70%;
+	margin-top:-200px;
+	margin-bottom:-50px;
+}
 
+#lettre_sequence .lettre {
+	width: 95%;
+	padding-bottom:150px;
+}
 
 #clock_wrapper {
 	text-align: center;
@@ -261,16 +271,19 @@ fieldset[disabled] .btn-xl.active {
 		zoom: 0.6;
 		-moz-transform: scale(0.6)
 	}
-	#joinus {
+	.joinus {
 		margin-top:20px;
+	}
+	#lettre_sequence .joinus {
+		width:95%;
+		margin: 20px auto;
 	}
 }
 
 
 .lettre {
-	/*max-width: 800px;*/
 	background-color: white;
-	margin: 20px auto 20px auto;
+	margin: 20px auto;
 	padding: 20px;
 	text-align: justify;
 	border: 1px solid #AAA;
@@ -389,7 +402,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 50px 0;
+        padding: 50px 0px;
     }
 }
 
@@ -698,6 +711,66 @@ section h3.section-subheading {
 aside.clients img {
     margin: 50px auto;
 }
+
+#lettre_sequence .form-group {
+    margin-bottom: 20px;
+}
+
+#lettre_sequence .form-group input,
+#lettre_sequence .form-group textarea {
+    padding: 10px;
+}
+
+#lettre_sequence .form-group input.form-control {
+    height: auto;
+}
+
+#lettre_sequence .form-group textarea.form-control {
+    height: 80px;
+}
+
+#lettre_sequence .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+}
+
+#lettre_sequence::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_sequence:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_sequence::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_sequence:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_sequence .text-danger {
+    color: #e74c3c;
+}
+
+
+
+
+
+
 
 section#sign {
     background-color: #222;

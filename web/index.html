@@ -42,7 +42,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
+
+                        <div class="row" id="lettre_inline" style="display:none;">
                             <div class="col-md-9">
 				    <div class="lettre">
 					<h2>Pour de vraies elections democratiques en 2017</h2>
@@ -56,7 +57,7 @@
 				    </div>
                             </div>
                             <div class="col-md-3">
-				<div id="joinus">
+				<div class="joinus">
 					<h2>Rejoignez nous!</h2>
 					<div class="form-group">
 					    <input type="text" class="form-control" placeholder="Votre nom *" id="name" required data-validation-required-message="Merci d'entrer votre nom.">
@@ -70,8 +71,6 @@
 					    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
 					    <p class="help-block text-danger"></p>
 					</div>
-				    <!--</div>
-				    <div class="col-md-6">-->
 					<div class="form-group">
 					    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
 					    <p class="help-block text-danger"></p>
@@ -79,6 +78,50 @@
 					<button type="submit" class="btn btn-xl">Je signe</button>
 				</div>
                             </div>
+                        </div>
+
+
+                        <div class="row" id="lettre_sequence" style="display:visible;">
+				    <div class="lettre">
+					<h2>Pour de vraies elections democratiques en 2017</h2>
+					<p>Cher Nicolas, Cher François, Chère Marine etc...</p>
+					<p>En 2017, nous n'avons pas envie de voter pour vous.</p>
+					<p>Vous ne nous représentez plus. On vote pour vous depuis de nombreuses années mais il faut croire que vos promesses non tenues, votre langue de bois et vos jeux de pouvoir stérils ont eu raison de notre patience. Nous sommes aujourd'hui plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.</p>
+					<p>Le problème c'est que vous avez confisqué notre démocratie. Vous et vos partis politiques représentez moins de 1% de la population française et pourtant, c'est toujours vous qui désignez les candidats pour lesquels nous autres (les 99% restants!) devons voter. En tant que simples citoyens, nous n'avons aujourd'hui aucune chance de faire entendre notre voix et ce n'est pas normal.</p>
+					<p>On va changer cela. Pour redonner tout son sens à notre démocratie en 2017, nous allons utiliser internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes.</p>
+					<p>En 2017, pour le bien de notre pays, nous allons démocratiser les élections,<br/>Sans rancune et à très vite,</p>
+					<p>democratech</p>
+				    </div>
+				    <div class="joinus" class="col-lg-12">
+					<h2>Rejoignez nous!</h2>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+							    <input type="text" class="form-control" placeholder="Votre nom *" id="name" required data-validation-required-message="Merci d'entrer votre nom.">
+							    <p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group">
+							    <input type="email" class="form-control" placeholder="Votre email *" id="email" required data-validation-required-message="Merci d'entrer votre adresse email.">
+							    <p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group">
+							    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
+							    <p class="help-block text-danger"></p>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="form-group">
+							    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
+							    <p class="help-block text-danger"></p>
+							</div>
+							<button type="submit" class="btn btn-xl">Je signe</button>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-lg-12 text-center">
+							<div id="success"></div>
+						</div>
+					</div>
+				</div>
                         </div>
                     </form>
                 </div>
@@ -92,7 +135,7 @@
     <section id="counter">
         <div class="container">
             <div class="text-center">
-		<h2>Cette grand entreprise citoyenne demarre dans</h2>
+		<h2>Cette grande entreprise citoyenne demarre dans</h2>
             </div>
             <div id="clock_wrapper">
 		    <div id="clock">
@@ -679,14 +722,12 @@
     <script src="js/flipclock.min.js"></script>
 
 <script type="text/javascript">
-var temps = new Date(2015,9,1);
+var temps = new Date(2015,9,15);
 var now = new Date();
 var countdown = (temps.getTime()-now.getTime())/1000;
-console.log(countdown);
 var clock = new FlipClock($('.countdown'), countdown, { countdown: true, language: 'fr', clockFace: 'DailyCounter' });
-//var countdown = (temps-now)*1000;
-//clock.setTime(countdown);
 clock.start();
+//$('#lettre_inline').remove();
 
 </script>
 
