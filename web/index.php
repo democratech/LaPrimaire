@@ -59,7 +59,11 @@
 				<div class="joinus">
 					<h2>Rejoignez nous!</h2>
 					<div class="form-group">
-					    <input type="text" class="form-control" placeholder="Votre nom *" id="name" required data-validation-required-message="Merci d'entrer votre nom.">
+					    <input type="text" class="form-control" placeholder="Votre prenom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
+					    <p class="help-block text-danger"></p>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" placeholder="Votre nom de famille *" id="lastname" required data-validation-required-message="Merci d'entrer votre nom.">
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
@@ -67,7 +71,15 @@
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
+					    <input type="text" class="form-control" placeholder="Votre pays *" id="country" required data-validation-required-message="Merci d'entrer votre pays.">
+					    <p class="help-block text-danger"></p>
+					</div>
+					<div class="form-group">
 					    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
+					    <p class="help-block text-danger"></p>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" placeholder="Votre ville *" id="town" required data-validation-required-message="Merci d'entrer votre ville.">
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
@@ -96,7 +108,11 @@
 					<div class="row">
 						<div class="col-md-5">
 							<div class="form-group">
-							    <input type="text" class="form-control" placeholder="Votre nom *" id="name" required data-validation-required-message="Merci d'entrer votre nom.">
+							    <input type="text" class="form-control" placeholder="Votre prenom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
+							    <p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group">
+							    <input type="text" class="form-control" placeholder="Votre nom de famille *" id="lastname" required data-validation-required-message="Merci d'entrer votre nom.">
 							    <p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
@@ -104,11 +120,25 @@
 							    <p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
-							    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
+							    <input type="text" class="form-control" placeholder="Votre pays *" id="country" required data-validation-required-message="Merci d'entrer votre pays.">
 							    <p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="col-md-7">
+							<div class="row">
+							<div class="col-md-6">
+							<div class="form-group">
+							    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
+							    <p class="help-block text-danger"></p>
+							</div>
+							</div>
+							<div class="col-md-6">
+							<div class="form-group">
+							    <input type="text" class="form-control" placeholder="Votre ville *" id="town" required data-validation-required-message="Merci d'entrer votre ville.">
+							    <p class="help-block text-danger"></p>
+							</div>
+							</div>
+							</div>
 							<div class="form-group">
 							    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
 							    <p class="help-block text-danger"></p>
@@ -148,7 +178,7 @@
 	</div>
     </section>
 
-    <!-- Sign Section -->
+    <!-- 
     <section id="sign">
         <div class="container">
             <div class="row">
@@ -193,9 +223,6 @@
         </div>
     </section>
 
-
-
-    <!-- Services Section -->
     <section id="services">
         <div class="container">
             <div class="row">
@@ -233,7 +260,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -331,7 +357,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="row">
@@ -412,7 +437,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -476,7 +500,6 @@
         </div>
     </section>
 
-    <!-- Clients Aside -->
     <aside class="clients">
         <div class="container">
             <div class="row">
@@ -503,20 +526,20 @@
             </div>
         </div>
     </aside>
-    
+--> 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                    <span class="copyright">democratech 2015</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        <li><a href="http://twitter.com/democratech"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        <li><a href="http://facebook.com/democratech"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        <li><a href="http://linkedin.com/democratech"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
                 </div>
