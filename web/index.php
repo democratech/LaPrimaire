@@ -71,15 +71,7 @@
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" placeholder="Votre pays *" id="country" required data-validation-required-message="Merci d'entrer votre pays.">
-					    <p class="help-block text-danger"></p>
-					</div>
-					<div class="form-group">
-					    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
-					    <p class="help-block text-danger"></p>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" placeholder="Votre ville *" id="town" required data-validation-required-message="Merci d'entrer votre ville.">
+					    <input type="zip" class="form-control" placeholder="Votre code postal *" id="zip" required data-validation-required-message="Merci d'entrer votre code postal.">
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
@@ -120,25 +112,11 @@
 							    <p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
-							    <input type="text" class="form-control" placeholder="Votre pays *" id="country" required data-validation-required-message="Merci d'entrer votre pays.">
+							    <input type="zip" class="form-control" placeholder="Votre code postal *" id="zip" required data-validation-required-message="Merci d'entrer votre code postal.">
 							    <p class="help-block text-danger"></p>
 							</div>
 						</div>
 						<div class="col-md-7">
-							<div class="row">
-							<div class="col-md-6">
-							<div class="form-group">
-							    <input type="zip" class="form-control" placeholder="Votre code postal *" id="phone" required data-validation-required-message="Merci d'entrer votre code postal.">
-							    <p class="help-block text-danger"></p>
-							</div>
-							</div>
-							<div class="col-md-6">
-							<div class="form-group">
-							    <input type="text" class="form-control" placeholder="Votre ville *" id="town" required data-validation-required-message="Merci d'entrer votre ville.">
-							    <p class="help-block text-danger"></p>
-							</div>
-							</div>
-							</div>
 							<div class="form-group">
 							    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
 							    <p class="help-block text-danger"></p>

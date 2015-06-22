@@ -325,8 +325,8 @@ header {
     text-align: center;
     color: #444;
     background-attachment: scroll;
-    background-color: rgba(4,4,4,0.8);
-    background-image: url(../img/header-bg.jpg); 
+    background-color: rgba(89,192,240,0.8);
+    background-image: url(../img/header-bg.jpg); */
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -726,7 +726,7 @@ aside.clients img {
 }
 
 #lettre_sequence .form-group textarea.form-control {
-    height: 80px;
+    height: 141px;
 }
 
 #lettre_sequence .form-control:focus {
