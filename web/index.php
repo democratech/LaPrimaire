@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="démocratech - rassemblement citoyen en vue d'organiser une primaire ouverte pour les élections présidentielles de 2017.">
+    <meta name="description" content="Alors que 9 français sur 10 ne se reconnaissent plus dans les partis politiques, il n’est pas normal que les partis politiques traditionnels jouissent d’un monopole sur la désignation des candidats aux élections. Fort de ce constat, un groupe de citoyens propose aux français de changer cet état de fait en organisant une primaire ouverte dont l’objectif est d’élire de manière transparente, démocratique et représentative le candidat de tous les Français ainsi que son équipe gouvernementale.">
     <meta name="author" content="démocratech">
 
     <title>démocratech - démocratisons les élections</title>
