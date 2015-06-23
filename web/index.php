@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="démocratech - rassemblement citoyen en vue d'organiser une primaire ouverte pour les élections présidentielles de 2017.">
+    <meta name="author" content="démocratech">
 
     <title>démocratech - démocratisons les élections</title>
 
@@ -33,6 +33,16 @@
 </head>
 
 <body id="page-top" class="index">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=115809635110050";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 
     <!-- Header -->
     <header id="page-top">
@@ -97,6 +107,7 @@
 					    <p class="help-block text-danger"></p>
 					</div>
 					<button type="submit" class="btn btn-xl">J'approuve</button>
+					<p style="color:#bbb;font-size:11px;line-height:1em;"><br/>En cliquant, vous acceptez les <a href="https://www.change.org/fr/nous-conna%C3%AEtre/conditions-utilisation" target="_blank">Conditions d'utilisation</a> et la <a href="" target="_blank">politique de confidentialité</a> de Change.org.</b></p>
 					<div id="success"></div>
 				</div>
                             </div>
@@ -125,6 +136,16 @@
 			<div id="countdownbox"></div>
 		    </div>
             </div>
+		<div class="row" style="margin:30px auto 0px auto;min-height:30px;width:300px;">
+				    <div class="col-md-6" style="text-align:center;padding:5px;">
+<div class="fb-share-button" data-href="http://democratech.co" data-layout="button_count"></div>
+				    </div>
+				    <div class="col-md-6" style="text-align:center;padding:5px;">
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Ne laissons pas les partis politiques nous confisquer les élections : élisons nos candidats pour la présidentielle de 2017 !" data-via="democratech" data-hashtags="candidat2017">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				    </div>
+		</div>
+
 	</div>
     </section>
 
@@ -521,19 +542,18 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                            <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2>Merci pour votre soutien !</h2>
+                            <p class="item-intro text-muted">N'hésitez pas à partager cet appel le plus possible, ce n'est qu'en se mobilisant tous que nous parviendront à reprendre en main notre pays.</p>
+		<div class="row" style="margin:30px auto 0px auto;min-height:30px;width:300px;">
+				    <div class="col-md-6" style="text-align:center;padding:5px;">
+<div class="fb-share-button" data-href="http://democratech.co" data-layout="button_count"></div>
+				    </div>
+				    <div class="col-md-6" style="text-align:center;padding:5px;">
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Ne laissons pas les partis politiques nous confisquer les élections : élisons nos candidats pour la présidentielle de 2017 !" data-via="democratech" data-hashtags="candidat2017">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				    </div>
+		</div><br/>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Fermer</button>
                         </div>
                     </div>
                 </div>
@@ -554,12 +574,10 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <h2 style="color:#ff2323;">Ooops une erreur est survenue :/</h2>
+                            <p class="item-intro text-muted">Désolé, une erreur est survenue au moment d'enregistrer votre signature. N'hésitez pas à réessayer et si le probleme persiste, nous vous invitons à venir signer l'appel directement sur change.org : <a href="https://www.change.org/p/tous-les-candidats-%C3%A0-l-%C3%A9lection-pr%C3%A9sidentielle-de-2017-non-%C3%A0-la-confiscation-des-prochaines-%C3%A9lections-pr%C3%A9sidentielles-par-les-partis-politiques" target="_blank">accéder a l'appel directement sur change.org</a>. Merci d'avance pour votre comprehension et toutes nos excuses pour ce probleme technique !</p><br/>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Fermer</button>
+
                         </div>
                     </div>
                 </div>
