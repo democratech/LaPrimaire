@@ -557,7 +557,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>Merci pour votre soutien !</h2>
-                            <p class="item-intro text-muted">N'hésitez pas à partager cet appel le plus possible, ce n'est qu'en se mobilisant tous que nous parviendront à reprendre en main notre pays.</p>
+                            <p class="item-intro text-muted">N'hésitez pas à partager cet appel le plus possible, ce n'est qu'en se mobilisant tous que nous parviendrons à reprendre en main notre pays.</p>
 		<div class="row" style="margin:30px auto 0px auto;min-height:30px;width:300px;">
 				    <div class="col-md-6" style="text-align:center;padding:5px;">
 <div class="fb-share-button" data-href="http://democratech.co" data-layout="button_count"></div>
