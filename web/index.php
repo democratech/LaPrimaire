@@ -24,6 +24,15 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+<script>
+// ABTASTY
+(function (i, s, o, g, r, a, m) {
+i[r] = i[r] || [], i['abtiming'] = 1 * new Date();
+a = s.createElement(o),
+m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//try.abtasty.com/82f23a704e9c620652b736f681f363be.js', '_abtasty');
+</script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -107,7 +116,7 @@
 					    <p class="help-block text-danger"></p>
 					</div>
 					<center><button type="submit" class="btn btn-xl">J'approuve</button></center>
-					<p style="color:#bbb;font-size:11px;line-height:1em;"><br/>En cliquant, vous acceptez les <a href="https://www.change.org/fr/nous-conna%C3%AEtre/conditions-utilisation" target="_blank">Conditions d'utilisation</a> et la <a href="" target="_blank">politique de confidentialité</a> de Change.org.</b></p>
+					<p style="color:#bbb;font-size:11px;line-height:1em;"><br/>En cliquant, vous acceptez les <a href="https://www.change.org/fr/nous-conna%C3%AEtre/conditions-utilisation" target="_blank">Conditions d'utilisation</a> et la <a href="https://www.change.org/fr/nous-conna%C3%AEtre/confidentialit%C3%A9" target="_blank">politique de confidentialité</a> de Change.org.</b></p>
 					<div id="success"></div>
 				</div>
                             </div>
@@ -818,12 +827,6 @@ window.onload=function(){
   ga('create', 'UA-60977053-1', 'auto');
   ga('send', 'pageview');
 
-// ABTASTY
-(function (i, s, o, g, r, a, m) {
-i[r] = i[r] || [], i['abtiming'] = 1 * new Date();
-a = s.createElement(o),
-m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-})(window, document, 'script', '//try.abtasty.com/82f23a704e9c620652b736f681f363be.js', '_abtasty');
 </script>
 
 </body>
