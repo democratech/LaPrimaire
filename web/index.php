@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Alors que 9 français sur 10 ne se reconnaissent plus dans les partis politiques, il n’est pas normal que les partis politiques traditionnels jouissent d’un monopole sur la désignation des candidats aux élections. Fort de ce constat, un groupe de citoyens propose aux français de changer cet état de fait en organisant une primaire ouverte dont l’objectif est d’élire de manière transparente, démocratique et représentative le candidat de tous les Français ainsi que son équipe gouvernementale.">
+    <meta name="description" content="Rassemblement des citoyens déçus et lassés des politiques français et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire le candidats de tous les Français.">
     <meta name="author" content="des citoyens ordinaires">
 
     <title>démocratech - démocratisons les élections</title>
@@ -80,7 +80,8 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 
 <p class="punchy"><b>VOUS NOUS AVEZ VOLÉ NOTRE DÉMOCRATIE !</b></p>
 
-<p>Mais ce temps là est révolu. Aujourd'hui, nous sommes plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.<br/>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les les français.</p>
+<p>Mais ce temps là est révolu. Aujourd'hui, <b>nous sommes plus de 9 français sur 10 à ne plus vous faire confiance</b> pour gouverner notre beau pays.<p/>
+<p>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les les français.</p>
 
 <p class="punchy"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
 
