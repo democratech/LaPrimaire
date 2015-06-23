@@ -4,9 +4,27 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+@font-face {
+	font-family: "infini-bold";
+	src: url('../fonts/infini-gras.ttf');
+	url('../fonts/infini-gras.eot');
+}
+
+@font-face {
+	font-family: "infini-italic";
+	src: url('../fonts/infini-italique.ttf');
+	url('../fonts/infini-italique.eot');
+}
+
+@font-face {
+	font-family: "infini-romain";
+	src: url('../fonts/infini-romain.ttf');
+	url('../fonts/infini-romain.eot');
+}
+
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "infini-romain","Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .text-muted {
@@ -18,8 +36,8 @@ body {
 }
 
 p {
-    font-size: 14px;
-    line-height: 1.75;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 p.large {
@@ -51,9 +69,11 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /* text-transform: uppercase; */
+    font-family: "infini-bold",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #59c0f0;
     font-weight: 700;
+    font-size: 50px;
 }
 
 .img-centered {
@@ -118,12 +138,11 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-xl {
-    padding: 20px 40px;
+    padding: 10px 40px;
     border-color: #fed136;
-    border-radius: 3px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 18px;
+    width: 280px;
+    font-family: "infini-bold",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 36px;
     font-weight: 700;
     color: #fff;
     background-color: #fed136;
@@ -230,13 +249,17 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
+.joinus h2 {
+	font-size:36px;
+	text-align:center;
+}
 .joinus {
-	background-color: #fd125c;
-	color: white;
-	margin: 20px auto 20px auto;
-	padding: 20px;
+	background-color: white;
+	margin-right: 16px;
+	margin-top: 15px;
+	padding: 15px 30px;
 	text-align: justify;
-	border: 1px solid #AAA;
+	border: 1px solid #59c0f0;
 	border-radius: 1%;
 }
 #lettre_sequence .joinus {
@@ -280,14 +303,20 @@ fieldset[disabled] .btn-xl.active {
 	}
 }
 
+.title {
+	background-color: white;
+	margin: 20px auto 0px auto;
+	width: 95%;
+	text-align: center;
+	padding: 4px 12px 12px 12px;
+	border: 1px solid #59c0f0;
+	border-radius: 1%;
+}
 
 .lettre {
-	background-color: white;
-	margin: 20px auto;
-	padding: 20px;
+	margin: 10px auto;
+	padding: 15px;
 	text-align: justify;
-	border: 1px solid #AAA;
-	border-radius: 1%;
 }
 
 @media(min-width:768px) {
@@ -321,17 +350,18 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+#header_overlay {
+	background-color: rgba(89,192,240,0.95);
+}
+
 header {
     text-align: center;
-    color: #444;
-    background-attachment: scroll;
-    background-color: rgba(89,192,240,0.8);
-    background-image: url(../img/header-bg.jpg); */
-    background-position: center center;
-    background-repeat: none;
+    color: white;
+    background-image: url(../img/crowd-700x700.jpg);
+    background-repeat: repeat-x;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    background-size: cover;
+    background-size: 700px;
     -o-background-size: cover;
 }
 
@@ -748,13 +778,6 @@ aside.clients img {
     color: #bbb;
 }
 
-#lettre_sequence::-moz-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
 #lettre_sequence:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -766,7 +789,52 @@ aside.clients img {
     color: #e74c3c;
 }
 
+#lettre_inline .form-group {
+    margin-bottom: 15px;
+}
 
+#lettre_inline .form-group input,
+#lettre_inline .form-group textarea {
+    padding: 10px;
+}
+
+#lettre_inline .form-group input.form-control {
+    height: auto;
+}
+
+#lettre_inline .form-group textarea.form-control {
+    height: 100px;
+}
+
+#lettre_inline .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+}
+
+#lettre_inline::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_inline:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_inline:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+#lettre_inline .text-danger {
+    color: #e74c3c;
+}
 
 
 
@@ -810,28 +878,28 @@ section#sign::-webkit-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    color: #bbb;
+    color: #59c0f0;
 }
 
 section#sign:-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    color: #bbb;
+    color: #59c0f0;
 }
 
 section#sign::-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    color: #bbb;
+    color: #59c0f0;
 }
 
 section#sign:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    color: #bbb;
+    color: #59c0f0;
 }
 
 section#sign .text-danger {

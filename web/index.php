@@ -37,27 +37,47 @@
 
     <!-- Header -->
     <header id="page-top">
+	<div id="header_overlay">
         <div class="container">
+            <div class="row">
+		    <div class="title">
+			<h2>En 2017, la démocratie revient !</h2>
+		    </div>
+	    </div>
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
 <?php if (isset($_GET["inline"])) { ?>
                         <div class="row" id="lettre_inline">
-                            <div class="col-md-9">
+                            <div class="col-md-8">
 				    <div class="lettre">
-					<h2>Pour de vraies elections democratiques en 2017</h2>
-					<p>Cher Nicolas, Cher François, Chère Marine etc...</p>
-					<p>En 2017, nous n'avons pas envie de voter pour vous.</p>
-					<p>Vous ne nous représentez plus. On vote pour vous depuis de nombreuses années mais il faut croire que vos promesses non tenues, votre langue de bois et vos jeux de pouvoir stérils ont eu raison de notre patience. Nous sommes aujourd'hui plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.</p>
-					<p>Le problème c'est que vous avez confisqué notre démocratie. Vous et vos partis politiques représentez moins de 1% de la population française et pourtant, c'est toujours vous qui désignez les candidats pour lesquels nous autres (les 99% restants!) devons voter. En tant que simples citoyens, nous n'avons aujourd'hui aucune chance de faire entendre notre voix et ce n'est pas normal.</p>
-					<p>On va changer cela. Pour redonner tout son sens à notre démocratie en 2017, nous allons utiliser internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes.</p>
-					<p>En 2017, pour le bien de notre pays, nous allons démocratiser les élections,<br/>Sans rancune et à très vite,</p>
-					<p>democratech</p>
+<p>Cher François, cher Nicolas, chère Marine… et tous les autres candidats autoproclamés des partis politiques,</p>
+
+<p>Soyons clairs : <b>EN 2017, NOUS N'AVONS PAS ENVIE DE VOTER POUR VOUS.</b></p>
+
+<p>L'élection présidentielle n'est que dans 2 ans et pourtant, vous, candidats des partis politiques, n'avez déjà que cela en tête, attirés par cette élection comme des abeilles par un pot de miel.</p>
+
+<p>Vous pourriez mettre à profit les 2 années à venir pour réaliser des actes constructifs et positifs pour la France…. Mais non… Vous décidez, en comité restreint, du casting des élections. Un casting déjà établi, négocié entre vous, du réchauffé, les mêmes depuis des années seules vos ambitions personnelles vous guident. Vous êtes totalement déconnectés et ne nous représentez plus ! Vous êtes obsolètes. Vous nous avez volé notre démocratie !</p>
+
+<p><b>Mais CE TEMPS-LA EST RÉVOLU.</b></p>
+
+<p>Aujourd'hui, nous sommes plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.<br/>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les les français.</p>
+
+<p style="text-align:center;"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
+
+<p style="text-align:center;"><b>EN 2017, LA DEMOCRATIE REVIENT !</b></p>
+					<div class="row">
+					    <div class="col-md-4">
+					    </div>
+					    <div class="col-md-8">
+<div style="text-align:right;"><i>Nous, un groupe de citoyens ordinaires qui nous rassemblons pour mettre en commun nos compétences et redonner la parole aux Français.</i></div>
+					    </div>
+					</div>
 				    </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
 				<div class="joinus">
-					<h2>Rejoignez nous!</h2>
+					<div style="padding-bottom:20px;"><h2>Rejoignez nous !</h2></div>
 					<div class="form-group">
 					    <input type="text" class="form-control" placeholder="Votre prenom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
 					    <p class="help-block text-danger"></p>
@@ -78,7 +98,7 @@
 					    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
 					    <p class="help-block text-danger"></p>
 					</div>
-					<button type="submit" class="btn btn-xl">Je signe</button>
+					<button type="submit" class="btn btn-xl">J'approuve</button>
 				</div>
                             </div>
                         </div>
@@ -137,6 +157,7 @@
 
 
 
+        </div>
         </div>
     </header>
 
