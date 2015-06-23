@@ -50,7 +50,7 @@
         <div class="container">
             <div class="row">
 		    <div class="title">
-			<h2>En 2017, faisons revenir la démocratie !</h2>
+			<h2>En 2017, la démocratie revient !</h2>
 		    </div>
 	    </div>
             <div class="row">
@@ -73,7 +73,7 @@
 
 <p style="text-align:center;"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
 
-<p style="text-align:center;"><b>EN 2017, FAISONS REVENIR LA DEMOCRATIE !</b></p>
+<p style="text-align:center;"><b>EN 2017, LA DEMOCRATIE REVIENT !</b></p>
 					<div class="row">
 					    <div class="col-md-4">
 					    </div>
