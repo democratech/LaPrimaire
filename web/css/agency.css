@@ -138,9 +138,9 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-xl {
-    padding: 10px 40px;
+    padding: 10px 10px;
     border-color: #fed136;
-    width: 250px;
+    width: 230px;
     font-family: "infini-bold",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 36px;
     font-weight: 700;
@@ -250,7 +250,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .joinus h2 {
-	font-size:36px;
+	font-size:34px;
 	text-align:center;
 }
 .joinus {
