@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Alors que 9 français sur 10 ne se reconnaissent plus dans les partis politiques, il n’est pas normal que les partis politiques traditionnels jouissent d’un monopole sur la désignation des candidats aux élections. Fort de ce constat, un groupe de citoyens propose aux français de changer cet état de fait en organisant une primaire ouverte dont l’objectif est d’élire de manière transparente, démocratique et représentative le candidat de tous les Français ainsi que son équipe gouvernementale.">
-    <meta name="author" content="démocratech">
+    <meta name="author" content="des citoyens ordinaires">
 
     <title>démocratech - démocratisons les élections</title>
 
@@ -23,6 +23,8 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
 <script>
 // ABTASTY
@@ -68,25 +70,25 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                         <div class="row" id="lettre_inline">
                             <div class="col-md-8">
 				    <div class="lettre">
-<p>Cher François, cher Nicolas, chère Marine… et tous les autres candidats autoproclamés des partis politiques,</p>
+<p>Cher François, cher Nicolas, chère Marine… et tous les autres candidats autoproclamés des partis politiques, soyons clairs :</p>
 
-<p>Soyons clairs : <b>EN 2017, NOUS N'AVONS PAS ENVIE DE VOTER POUR VOUS.</b></p>
+<p class="punchy"><b>EN 2017, NOUS N'AVONS PAS ENVIE DE VOTER POUR VOUS.</b></p>
 
 <p>L'élection présidentielle n'est que dans 2 ans et pourtant, vous, candidats des partis politiques, n'avez déjà que cela en tête, attirés par cette élection comme des abeilles par un pot de miel.</p>
 
-<p>Vous pourriez mettre à profit les 2 années à venir pour réaliser des actes constructifs et positifs pour la France…. Mais non… Vous décidez, en comité restreint, du casting des élections. Un casting déjà établi, négocié entre vous, du réchauffé, les mêmes depuis des années seules vos ambitions personnelles vous guident. Vous êtes totalement déconnectés et ne nous représentez plus ! Vous êtes obsolètes. Vous nous avez volé notre démocratie !</p>
+<p>Vous pourriez mettre à profit les 2 années à venir pour réaliser des actes constructifs et positifs pour la France…. Mais non… <b>Vous décidez, en comité restreint, du casting des élections</b>. Un casting déjà établi, négocié entre vous, du réchauffé, les mêmes depuis des années. Seules vos ambitions personnelles vous guident. Vous êtes totalement déconnectés et ne nous représentez plus ! Vous êtes obsolètes.</p>
 
-<p><b>Mais CE TEMPS-LA EST RÉVOLU.</b></p>
+<p class="punchy"><b>VOUS NOUS AVEZ VOLÉ NOTRE DÉMOCRATIE !</b></p>
 
-<p>Aujourd'hui, nous sommes plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.<br/>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les les français.</p>
+<p>Mais ce temps là est révolu. Aujourd'hui, nous sommes plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.<br/>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les les français.</p>
 
-<p style="text-align:center;"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
+<p class="punchy"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
 
-<p style="text-align:center;"><b>EN 2017, LA DEMOCRATIE REVIENT !</b></p>
+<p class="punchy"><b>EN 2017, LA DEMOCRATIE REVIENT !</b></p>
 					<div class="row">
-					    <div class="col-md-4">
+					    <div class="col-md-3">
 					    </div>
-					    <div class="col-md-8">
+					    <div class="col-md-9">
 <div style="text-align:right;"><i>Nous, un groupe de citoyens ordinaires qui nous rassemblons pour mettre en commun nos compétences et redonner la parole aux Français.</i></div>
 					    </div>
 					</div>
@@ -527,7 +529,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="https://docs.google.com/document/d/1VPzc_2kL-lfYUFoZs14X8xkBkZFcyiyg5Urk4Y0jf6g/pub" target="_blank">Communiqué de presse</a>
+                        <li><a href="/docs/20150623_CP_Fondateur.pdf" target="_blank">Communiqué de presse</a>
                         </li>
                     </ul>
                 </div>
