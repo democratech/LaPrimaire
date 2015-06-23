@@ -83,7 +83,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 <p class="punchy"><b>VOUS NOUS AVEZ VOLÉ NOTRE DÉMOCRATIE !</b></p>
 
 <p>Mais ce temps là est révolu. Aujourd'hui, <b>nous sommes plus de 9 français sur 10 à ne plus vous faire confiance</b> pour gouverner notre beau pays.<p/>
-<p>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les les français.</p>
+<p>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les français.</p>
 
 <p class="punchy"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
 
