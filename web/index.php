@@ -79,7 +79,7 @@
 				<div class="joinus">
 					<div style="padding-bottom:20px;"><h2>Rejoignez nous !</h2></div>
 					<div class="form-group">
-					    <input type="text" class="form-control" placeholder="Votre prenom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
+					    <input type="text" class="form-control" placeholder="Votre prénom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
@@ -120,7 +120,7 @@
 					<div class="row">
 						<div class="col-md-5">
 							<div class="form-group">
-							    <input type="text" class="form-control" placeholder="Votre prenom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
+							    <input type="text" class="form-control" placeholder="Votre prénom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
 							    <p class="help-block text-danger"></p>
 							</div>
 							<div class="form-group">
@@ -164,14 +164,14 @@
     <section id="counter">
         <div class="container">
             <div class="text-center">
-		<h2>Cette grande entreprise citoyenne demarre dans</h2>
+		<h2>Notre grande entreprise citoyenne démarre dans...</h2>
             </div>
             <div id="clock_wrapper">
 		    <div id="clock">
 			    <!-- <div class="intro-lead-in">Pour de vraies elections democratiques en 2017</div> -->
 			    <!-- <div class="intro-heading">It's Nice To Meet You</div>-->
 			    <!-- <a href="#sign" class="page-scroll btn btn-xl">Je signe</a>-->
-			<div class="countdown"></div>
+			<div id="countdownbox"></div>
 		    </div>
             </div>
 	</div>
@@ -530,7 +530,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">democratech 2015</span>
+                    <span class="copyright">Page sous licence Affero GPL</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -544,9 +544,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="#">Communique de presse</a>
                         </li>
                     </ul>
                 </div>
@@ -744,11 +742,103 @@
     <script src="js/flipclock.min.js"></script>
 
 <script type="text/javascript">
-var temps = new Date(2015,9,15);
-var now = new Date();
-var countdown = (temps.getTime()-now.getTime())/1000;
-var clock = new FlipClock($('.countdown'), countdown, { countdown: true, language: 'fr', clockFace: 'DailyCounter' });
-clock.start();
+//###################################################################
+// Author: ricocheting.com
+// Version: v3.0
+// Date: 2014-09-05
+// Description: displays the amount of time until the "dateFuture" entered below.
+
+var CDown = function() {
+	this.state=0;// if initialized
+	this.counts=[];// array holding countdown date objects and id to print to {d:new Date(2013,11,18,18,54,36), id:"countbox1"}
+	this.interval=null;// setInterval object
+}
+
+CDown.prototype = {
+	init: function(){
+		this.state=1;
+		var self=this;
+		this.interval=window.setInterval(function(){self.tick();}, 1000);
+	},
+	add: function(date,id){
+		this.counts.push({d:date,id:id});
+		this.tick();
+		if(this.state==0) this.init();
+	},
+	expire: function(idxs){
+		for(var x in idxs) {
+			this.display(this.counts[idxs[x]], "Now!");
+			this.counts.splice(idxs[x], 1);
+		}
+	},
+	format: function(r){
+		var out="";
+		out += r.w +" "+((r.w==1)?"semaine":"semaines")+", ";
+		if(r.d != 0){out += r.d +" "+((r.d==1)?"jour":"jours")+", ";}
+		if(r.h != 0){out += r.h +" "+((r.h==1)?"heure":"heures")+", ";}
+		out += r.m +" "+((r.m==1)?"min":"min")+", ";
+		out += r.s +" "+((r.s==1)?"sec":"secs")+", ";
+
+		return out.substr(0,out.length-2);
+	},
+	math: function(work){
+		var	y=w=d=h=m=s=ms=0;
+
+		ms=(""+((work%1000)+1000)).substr(1,3);
+		work=Math.floor(work/1000);//kill the "milliseconds" so just secs
+
+		y=Math.floor(work/31536000);//years (no leapyear support)
+		w=Math.floor(work/604800);//weeks
+		work=work%604800;
+
+		d=Math.floor(work/86400);//days
+		work=work%86400;
+
+		h=Math.floor(work/3600);//hours
+		work=work%3600;
+
+		m=Math.floor(work/60);//minutes
+		work=work%60;
+
+		s=Math.floor(work);//seconds
+
+		return {y:y,w:w,d:d,h:h,m:m,s:s,ms:ms};
+	},
+	tick: function(){
+		var now=(new Date()).getTime(),
+			expired=[],cnt=0,amount=0;
+
+		if(this.counts)
+		for(var idx=0,n=this.counts.length; idx<n; ++idx){
+			cnt=this.counts[idx];
+			amount=cnt.d.getTime()-now;//calc milliseconds between dates
+
+			// if time is already past
+			if(amount<0){
+				expired.push(idx);
+			}
+			// date is still good
+			else{
+				this.display(cnt, this.format(this.math(amount)));
+			}
+		}
+
+		// deal with any expired
+		if(expired.length>0) this.expire(expired);
+
+		// if no active counts, stop updating
+		if(this.counts.length==0) window.clearTimeout(this.interval);
+		
+	},
+	display: function(cnt,msg){
+		document.getElementById(cnt.id).innerHTML=msg;
+	}
+};
+
+window.onload=function(){
+	var cdown = new CDown();
+	cdown.add(new Date(2015,9,15,14,0,0), "countdownbox");
+};
 </script>
 
 <script>

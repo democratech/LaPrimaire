@@ -53,14 +53,14 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: #59c0f0;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #fec503;
+    color: #59c0f0;
 }
 
 h1,
@@ -277,13 +277,10 @@ fieldset[disabled] .btn-xl.active {
 	text-align: center;
 }
 #clock {
-	background-color: white;
 	width: auto;
-	display:inline-block;
-	margin: 20px auto;
-	padding: 0px;
-	border: 0px solid #AAA;
-	border-radius: 1%;
+	margin: 10px auto;
+	color: #59c0f0;
+	font-size: 26px;
 }
 
 @media(max-width:768px) {
@@ -358,7 +355,7 @@ header {
     text-align: center;
     color: white;
     background-image: url(../img/crowd-700x700.jpg);
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: 700px;
@@ -413,6 +410,13 @@ header .intro-text .intro-heading {
 
 section {
     padding: 50px 0;
+}
+
+section#counter  {
+    padding:15px;
+}
+section#counter h2 {
+    font-size: 30px;
 }
 
 section h2.section-heading {
@@ -909,12 +913,14 @@ section#sign .text-danger {
 footer {
     padding: 25px 0;
     text-align: center;
+    color: #59c0f0;
+    font-size: 16px;
 }
 
 footer span.copyright {
     text-transform: uppercase;
     text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "infini-romain",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
 
@@ -922,7 +928,7 @@ footer ul.quicklinks {
     margin-bottom: 0;
     text-transform: uppercase;
     text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "infini-romain",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
 
