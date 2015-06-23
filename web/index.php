@@ -9,13 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Democratech - democratisons les elections</title>
+    <title>démocratech - démocratisons les élections</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/flipclock.css" rel="stylesheet">
     <link href="css/agency.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -41,13 +40,12 @@
         <div class="container">
             <div class="row">
 		    <div class="title">
-			<h2>En 2017, la démocratie revient !</h2>
+			<h2>En 2017, faisons revenir la démocratie !</h2>
 		    </div>
 	    </div>
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
-<?php if (isset($_GET["inline"])) { ?>
                         <div class="row" id="lettre_inline">
                             <div class="col-md-8">
 				    <div class="lettre">
@@ -65,7 +63,7 @@
 
 <p style="text-align:center;"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
 
-<p style="text-align:center;"><b>EN 2017, LA DEMOCRATIE REVIENT !</b></p>
+<p style="text-align:center;"><b>EN 2017, FAISONS REVENIR LA DEMOCRATIE !</b></p>
 					<div class="row">
 					    <div class="col-md-4">
 					    </div>
@@ -79,7 +77,7 @@
 				<div class="joinus">
 					<div style="padding-bottom:20px;"><h2>Rejoignez nous !</h2></div>
 					<div class="form-group">
-					    <input type="text" class="form-control" placeholder="Votre prénom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
+					    <input type="text" class="form-control" placeholder="Votre prénom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prénom.">
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
@@ -95,62 +93,15 @@
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
-					    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
+					    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message"></textarea>
 					    <p class="help-block text-danger"></p>
 					</div>
 					<button type="submit" class="btn btn-xl">J'approuve</button>
+					<div id="success"></div>
 				</div>
                             </div>
                         </div>
 
-<?php } else { ?>
-                        <div class="row" id="lettre_sequence">
-				    <div class="lettre">
-					<h2>Pour de vraies elections democratiques en 2017</h2>
-					<p>Cher Nicolas, Cher François, Chère Marine etc...</p>
-					<p>En 2017, nous n'avons pas envie de voter pour vous.</p>
-					<p>Vous ne nous représentez plus. On vote pour vous depuis de nombreuses années mais il faut croire que vos promesses non tenues, votre langue de bois et vos jeux de pouvoir stérils ont eu raison de notre patience. Nous sommes aujourd'hui plus de 9 français sur 10 à ne plus vous faire confiance pour gouverner notre beau pays.</p>
-					<p>Le problème c'est que vous avez confisqué notre démocratie. Vous et vos partis politiques représentez moins de 1% de la population française et pourtant, c'est toujours vous qui désignez les candidats pour lesquels nous autres (les 99% restants!) devons voter. En tant que simples citoyens, nous n'avons aujourd'hui aucune chance de faire entendre notre voix et ce n'est pas normal.</p>
-					<p>On va changer cela. Pour redonner tout son sens à notre démocratie en 2017, nous allons utiliser internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes.</p>
-					<p>En 2017, pour le bien de notre pays, nous allons démocratiser les élections,<br/>Sans rancune et à très vite,</p>
-					<p>democratech</p>
-				    </div>
-				    <div class="joinus" class="col-lg-12">
-					<h2>Rejoignez nous!</h2>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="form-group">
-							    <input type="text" class="form-control" placeholder="Votre prénom *" id="firstname" required data-validation-required-message="Merci d'entrer votre prenom.">
-							    <p class="help-block text-danger"></p>
-							</div>
-							<div class="form-group">
-							    <input type="text" class="form-control" placeholder="Votre nom de famille *" id="lastname" required data-validation-required-message="Merci d'entrer votre nom.">
-							    <p class="help-block text-danger"></p>
-							</div>
-							<div class="form-group">
-							    <input type="email" class="form-control" placeholder="Votre email *" id="email" required data-validation-required-message="Merci d'entrer votre adresse email.">
-							    <p class="help-block text-danger"></p>
-							</div>
-							<div class="form-group">
-							    <input type="zip" class="form-control" placeholder="Votre code postal *" id="zip" required data-validation-required-message="Merci d'entrer votre code postal.">
-							    <p class="help-block text-danger"></p>
-							</div>
-						</div>
-						<div class="col-md-7">
-							<div class="form-group">
-							    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message" data-validation-required-message="Entrez votre message (optionnel)"></textarea>
-							    <p class="help-block text-danger"></p>
-							</div>
-							<button type="submit" class="btn btn-xl">Je signe</button>
-						</div>
-						<div class="clearfix"></div>
-						<div class="col-lg-12 text-center">
-							<div id="success"></div>
-						</div>
-					</div>
-				</div>
-                        </div>
-<?php } ?>
                     </form>
                 </div>
             </div>
@@ -534,17 +485,19 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li><a href="http://twitter.com/democratech"><i class="fa fa-twitter"></i></a>
+                        <li><a target="_blank" href="http://twitter.com/democratech"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a href="http://facebook.com/democratech"><i class="fa fa-facebook"></i></a>
+                        <li><a target="_blank" href="http://facebook.com/candidatcitoyen2017"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li><a href="http://linkedin.com/democratech"><i class="fa fa-linkedin"></i></a>
+                        <!--<li><a target="_blank" href="http://linkedin.com/democratech"><i class="fa fa-linkedin"></i></a>
+                        </li>-->
+                        <li><a target="_blank" href="http://github.com/democratech"><i class="fa fa-github"></i></a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Communique de presse</a>
+                        <li><a href="https://docs.google.com/document/d/1VPzc_2kL-lfYUFoZs14X8xkBkZFcyiyg5Urk4Y0jf6g/pub" target="_blank">Communiqué de presse</a>
                         </li>
                     </ul>
                 </div>
@@ -739,7 +692,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
-    <script src="js/flipclock.min.js"></script>
 
 <script type="text/javascript">
 //###################################################################

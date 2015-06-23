@@ -30,20 +30,27 @@ $(function() {
                 cache: false,
                 success: function(e) {
 			console.log(e.result);
-                    // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-success')
-                        .append("<strong>Merci pour votre soutien. </strong>");
-                    $('#success > .alert-success')
-                        .append('</div>');
-
+		    if (e.result=="success") {
+			    // Success message
+			    $('#success').html("<div class='alert alert-success'>");
+			    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+				.append("</button>");
+			    $('#success > .alert-success')
+				.append("<strong>Merci pour votre soutien. </strong>");
+			    $('#success > .alert-success')
+				.append('</div>');
+		    } else if (e.result=="failure") {
+			    // Fail message
+			    $('#success').html("<div class='alert alert-danger'>");
+			    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+				.append("</button>");
+			    $('#success > .alert-danger').append("<strong>Desole " + firstname + ", il y a eu un probleme lors de la signature :( Merci de reessayer plus tard !");
+			    $('#success > .alert-danger').append('</div>');
+		    }
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
                 error: function(e) {
-			console.log(e.result);
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
