@@ -11,7 +11,7 @@
     <meta property="og:image" content="http://democratech.co/img/jeudepaume.jpg"/>
     <meta property="og:image:secure_url" content="https://upload.wikimedia.org/wikipedia/commons/8/87/Serment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg" />
     <meta name="twitter:image:src" content="http://democratech.co/img/jeudepaume.jpg">
-    <title>démocratech - démocratisons les élections</title>
+    <title>democratech, nos candidats citoyens pour 2017</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
