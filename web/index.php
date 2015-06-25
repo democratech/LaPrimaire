@@ -79,11 +79,11 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 
 <p>L'élection présidentielle n'est que dans 2 ans et pourtant, vous, candidats des partis politiques, n'avez déjà que cela en tête, attirés par cette élection comme des abeilles par un pot de miel.</p>
 
-<p>Vous pourriez mettre à profit les 2 années à venir pour réaliser des actes constructifs et positifs pour la France…. Mais non… <b>Vous décidez, en comité restreint, du casting des élections</b>. Un casting déjà établi, négocié entre vous, du réchauffé, les mêmes depuis des années. Seules vos ambitions personnelles vous guident. Vous êtes totalement déconnectés et ne nous représentez plus ! Vous êtes obsolètes.</p>
+<p><b>Vous décidez, en comité restreint, du casting des élections</b>. Un casting déjà établi, négocié entre vous, du réchauffé, les mêmes depuis des années. Seules vos ambitions personnelles vous guident. Vous êtes déconnectés et obsolètes. Vous ne nous représentez plus.</p>
 
 <p class="punchy"><b>VOUS NOUS AVEZ VOLÉ NOTRE DÉMOCRATIE !</b></p>
 
-<p>Mais ce temps là est révolu. Aujourd'hui, <b>nous sommes plus de 9 français sur 10 à ne plus vous faire confiance</b> pour gouverner notre beau pays.<p/>
+<p>Ce temps là est révolu. Aujourd'hui, <b>nous sommes plus de 9 français sur 10 à ne plus vous faire confiance</b> pour gouverner notre beau pays.<p/>
 <p>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les français.</p>
 
 <p class="punchy"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
@@ -182,7 +182,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                 <div class="col-sm-2">
                     <div class="team-member">
                         <img src="img/team/david.png" class="img-responsive img-circle" alt="">
-                        <h4><a href="https://facebook.com/david.guez.313" target="_blank">David</a></h4>
+                        <h4><a href="https://www.linkedin.com/in/oxeolyaavocatsdavidguez" target="_blank">David</a></h4>
                     </div>
                 </div>
                 <div class="col-sm-2">
