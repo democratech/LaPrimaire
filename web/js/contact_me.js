@@ -43,7 +43,7 @@ $(function() {
 			//	.append('</div>');
 		    } else if (e.result=="failure") {
 			    // Success message mais on affiche quand meme la popup de success
-			    $("#portfolioModal1").modal('show');
+			    $("#portfolioModal2").modal('show');
 			    // Analytics : apparaition popup confirmation
 			    ga('send', 'event', 'form', 'error', 'form_error');
 			    //$('#success').html("<div class='alert alert-danger'>");
