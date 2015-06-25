@@ -32,6 +32,10 @@ $(function() {
 		    if (e.result=="success") {
 			    // Success message
 			    $("#portfolioModal1").modal('show');
+
+                // Analytics : apparaition popup confirmation
+                ga('send', 'event', 'form', 'validation / ask to share', 'form_validated');
+                
 			    $('#contactForm').trigger("reset");
 			    //$('#success').html("<div class='alert alert-success'>");
 			    //$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -43,7 +47,11 @@ $(function() {
 		    } else if (e.result=="failure") {
 			    // Fail message
 			    $("#portfolioModal2").modal('show');
-			    //$('#success').html("<div class='alert alert-danger'>");
+			    
+                // Analytics : apparaition popup confirmation
+                ga('send', 'event', 'form', 'error', 'form_error');
+
+                //$('#success').html("<div class='alert alert-danger'>");
 			    //$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 				//.append("</button>");
 			    //$('#success > .alert-danger').append("<strong>Desole " + firstname + ", il y a eu un probleme lors de la signature :( Merci de reessayer plus tard !");
