@@ -156,7 +156,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 <div class="fb-share-button" data-href="http://democratech.co" data-layout="button_count"></div>
 				    </div>
 				    <div class="col-md-6" style="text-align:center;padding:5px;">
-<a href="https://twitter.com/share" class="twitter-share-button" data-text="Non à la confiscation les élections par les partis politiques : élisons nos candidats pour 2017 ! http://democratech.co" data-via="democratech" data-hashtags="candidat2017">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="Non à la confiscation des élections par les partis politiques : élisons nos candidats pour 2017 !" data-via="democratech" data-hashtags="candidat2017">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				    </div>
 		</div>
