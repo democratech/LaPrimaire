@@ -206,7 +206,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                 <div class="col-sm-2">
                     <div class="team-member">
                         <img src="img/team/aude.png" class="img-responsive img-circle" alt="">
-                        <h4><a href="https://facebook.com/aude.favre" target="_blank">Aude</a></h4>
+                        <h4><a href="https://twitter.com/eaudefavre" target="_blank">Aude</a></h4>
                     </div>
                 </div>
             <div class="row">
@@ -232,7 +232,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                 <div class="col-sm-2">
                     <div class="team-member">
                         <img src="img/team/jf.png" class="img-responsive img-circle" alt="">
-                        <h4><a href="https://fr.linkedin.com/in/jeanmarcnozeran" target="_blank">Jean-Francois</a></h4>
+                        <h4><a href="https://sites.google.com/site/jflaslierhomepage/" target="_blank">Jean-Francois</a></h4>
                     </div>
                 </div>
                 <div class="col-sm-2">
@@ -250,7 +250,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Des citoyens ordinaires, non affilies a aucun parti et qui ne sont candidats a rien... si ce n'est a aider a la reconstruction de la democratie de notre cher pays.</p>
+                    <p class="large text-muted">Des citoyens ordinaires, affili&eacute;s &agrave; aucun parti et qui ne sont candidats &agrave; rien... si ce n'est &agrave; aider &agrave; la r&eacute;novation de la d&eacute;mocratie de notre cher pays.</p>
                 </div>
             </div>
         </div>
