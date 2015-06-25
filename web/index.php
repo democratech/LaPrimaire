@@ -353,7 +353,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="js/contact_me.js?random=XYZ"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
