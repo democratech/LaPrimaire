@@ -11,7 +11,7 @@
     <meta property="og:image" content="http://democratech.co/img/jeudepaume.jpg"/>
     <meta property="og:image:secure_url" content="https://upload.wikimedia.org/wikipedia/commons/8/87/Serment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg" />
     <meta name="twitter:image:src" content="http://democratech.co/img/jeudepaume.jpg">
-    <title>démocratech - démocratisons les élections</title>
+    <title>democratech, nos candidats citoyens pour 2017</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,7 +121,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
 					    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message"></textarea>
 					    <p class="help-block text-danger"></p>
 					</div>
-					<center><button type="submit" class="btn btn-xl">J'approuve</button></center>
+					<center><button id="main_button" type="submit" class="btn btn-xl">J'approuve</button></center>
 					<p style="color:#bbb;font-size:11px;line-height:1em;"><br/>En cliquant, vous acceptez les <a href="https://www.change.org/fr/nous-conna%C3%AEtre/conditions-utilisation" target="_blank">Conditions d'utilisation</a> et la <a href="https://www.change.org/fr/nous-conna%C3%AEtre/confidentialit%C3%A9" target="_blank">politique de confidentialité</a> de Change.org.</b></p>
 					<div id="success"></div>
 				</div>
@@ -284,6 +284,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
         </div>
     </footer>
 
+    <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -297,7 +298,7 @@ m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBef
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>Merci pour votre soutien !</h2>
-                            <p class="item-intro text-muted">N'hésitez pas à partager cet appel le plus possible, ce n'est qu'en se mobilisant tous que nous parviendront à reprendre en main notre pays.</p>
+                            <p class="item-intro text-muted">N'hésitez pas à partager cet appel le plus possible, ce n'est qu'en se mobilisant tous que nous parviendrons à reprendre en main notre pays.</p>
 		<div class="row" style="margin:30px auto 0px auto;min-height:30px;width:300px;">
 				    <div class="col-md-6" style="text-align:center;padding:5px;">
 <div class="fb-share-button" data-href="http://democratech.co" data-layout="button_count"></div>
@@ -463,6 +464,12 @@ window.onload=function(){
 
   ga('create', 'UA-60977053-1', 'auto');
   ga('send', 'pageview');
+
+// Analytics : Form envoyé
+$('#main_button').on('click', function() {
+  ga('send', 'event', 'form', 'submitted', 'form_submitted');
+});
+
 
 </script>
 

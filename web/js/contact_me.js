@@ -32,7 +32,8 @@ $(function() {
 		    if (e.result=="success") {
 			    // Success message
 			    $("#portfolioModal1").modal('show');
-			    $('#contactForm').trigger("reset");
+			    // Analytics : apparaition popup confirmation
+			    ga('send', 'event', 'form', 'validation / ask to share', 'form_validated');
 			    //$('#success').html("<div class='alert alert-success'>");
 			    //$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 				//.append("</button>");
@@ -41,8 +42,10 @@ $(function() {
 			    //$('#success > .alert-success')
 			//	.append('</div>');
 		    } else if (e.result=="failure") {
-			    // Fail message
-			    $("#portfolioModal2").modal('show');
+			    // Success message mais on affiche quand meme la popup de success
+			    $("#portfolioModal1").modal('show');
+			    // Analytics : apparaition popup confirmation
+			    ga('send', 'event', 'form', 'error', 'form_error');
 			    //$('#success').html("<div class='alert alert-danger'>");
 			    //$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 				//.append("</button>");
@@ -50,6 +53,7 @@ $(function() {
 			    //$('#success > .alert-danger').append('</div>');
 		    }
                     //clear all fields
+		    $('#contactForm').trigger("reset");
                 },
                 error: function(e) {
                     // Fail message
