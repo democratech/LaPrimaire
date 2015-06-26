@@ -467,6 +467,15 @@ window.onload=function(){
 
 // Analytics : Form envoyé
 $('#main_button').on('click', function() {
+
+    ga('send', {
+      'hitType': 'pageview',
+      'page': '/formulaire-envoye',
+      'title': 'formulaire envoyé'
+    });
+	
+	
+	
   ga('send', 'event', 'form', 'submitted', 'form_submitted');
 });
 
