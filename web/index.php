@@ -470,8 +470,8 @@ $('#main_button').on('click', function() {
 
     ga('send', {
       'hitType': 'pageview',
-      'page': '/formulaire-envoye',
-      'title': 'formulaire envoyé'
+      'page': '/popup-confirmation',
+      'title': 'popup confirmation'
     });
 	
 	
