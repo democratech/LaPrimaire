@@ -4,6 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+/*
 @font-face {
 	font-family: "infini-bold";
 	src: url('../fonts/infini-gras.ttf');
@@ -21,11 +22,51 @@
 	src: url('../fonts/infini-romain.ttf');
 	url('../fonts/infini-romain.eot');
 }
+*/
 
 body {
     overflow-x: hidden;
     font-family: "Helvetica Condensed","Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+.sharing-buttons{
+	list-style: none;
+	text-decoration: none;
+	text-align: center;
+}
+
+.sharing-buttons li{
+	display: inline;
+}
+
+.sharing-buttons a{
+	border: 1px solid;
+	padding: 0.5em;
+	color: #fff;
+	text-decoration: none;
+}
+
+.sharing-buttons a:hover{
+	color: #eee;
+	text-decoration: none;
+}
+
+.fa{
+	padding: 0.5em;
+}
+
+.facebook{
+	background: #3B5998; 
+}
+
+.twitter{
+	background: #00ACED;
+}
+
+.google-plus{
+	background: #D14836
+}
+
 
 .text-muted {
     color: #777;
@@ -79,7 +120,7 @@ h4,
 h5,
 h6 {
     /* text-transform: uppercase; */
-    font-family: "Roboto Condensed","infini-bold",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto Condensed",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #59c0f0;
     font-weight: 700;
     font-size: 56px;
@@ -150,7 +191,7 @@ fieldset[disabled] .btn-primary.active {
     padding: 10px 10px;
     border-color: #fb9e0b;
     width: 230px;
-    font-family: "Roboto Condensed","infini-bold",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto Condensed",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: #fff;
@@ -293,6 +334,15 @@ fieldset[disabled] .btn-xl.active {
 	font-size: 26px;
 }
 
+.medium-item {
+	margin:0px auto;
+	width: 400px;
+	height: 358px;
+}
+.tweet-item {
+	margin: 0 auto;
+}
+
 @media(max-width:768px) {
 	#clock .flip-clock-wrapper {
 		font-size: 22px;
@@ -328,7 +378,7 @@ fieldset[disabled] .btn-xl.active {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 10px 0;
         border: 0;
         background-color: transparent;
         -webkit-transition: padding .3s;
@@ -358,7 +408,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 #header_overlay {
-	background-color: rgba(89,192,240,0.97);
+    background-color: rgba(89,192,240,0.97);
 }
 
 header {
@@ -741,7 +791,7 @@ section h3.section-subheading {
     margin: 0 auto;
     width: 100px;
     height: 100px;
-    border: 7px solid #fff;
+    border: 7px solid #eee;
 }
 
 .team-member h4 {
@@ -852,10 +902,6 @@ aside.clients img {
 #lettre_inline .text-danger {
     color: #e74c3c;
 }
-
-
-
-
 
 section#sign {
     background-color: #222;
