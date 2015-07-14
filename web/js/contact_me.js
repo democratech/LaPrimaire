@@ -1,9 +1,9 @@
 $(function() {
-
     $("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
+	    ga('send', 'event', 'signature', 'input_errors');
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
@@ -17,8 +17,9 @@ $(function() {
             if (firstname.indexOf(' ') >= 0) {
                 firstname = name.split(' ').slice(0, -1).join(' ');
             }
+	    ga('send', 'event', 'signature', 'signed');
             $.ajax({
-                url: "http://prelaunch.democratech.co/api/petition/sign",
+                url: "http://prelaunch.democratech.co/api/petition/signFA",
                 type: "POST",
                 data: {
                     firstname: firstname,
@@ -32,39 +33,20 @@ $(function() {
 		    if (e.result=="success") {
 			    // Success message
 			    $("#portfolioModal1").modal('show');
-			    // Analytics : apparaition popup confirmation
-			    ga('send', 'event', 'form', 'validation / ask to share', 'form_validated');
-			    //$('#success').html("<div class='alert alert-success'>");
-			    //$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-				//.append("</button>");
-			    //$('#success > .alert-success')
-				//.append("<strong>Merci pour votre soutien. </strong>");
-			    //$('#success > .alert-success')
-			//	.append('</div>');
+			    ga('send', 'event', 'signature', 'success');
 		    } else if (e.result=="failure") {
 			    // Success message mais on affiche quand meme la popup de success
 			    $("#portfolioModal1").modal('show');
-			    // Analytics : apparaition popup confirmation
-			    ga('send', 'event', 'form', 'error', 'form_error');
-			    //$('#success').html("<div class='alert alert-danger'>");
-			    //$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-				//.append("</button>");
-			    //$('#success > .alert-danger').append("<strong>Desole " + firstname + ", il y a eu un probleme lors de la signature :( Merci de reessayer plus tard !");
-			    //$('#success > .alert-danger').append('</div>');
+			    ga('send', 'event', 'signature', 'success');
+			    ga('send', 'exception', {'exDescription':'Change.org API error', 'exFatal':false});
 		    }
                     //clear all fields
 		    $('#contactForm').trigger("reset");
                 },
                 error: function(e) {
                     // Fail message
-		       $("#portfolioModal2").modal('show');
-                    /*$('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Desole " + firstname + ", il y a eu un probleme lors de la signature :( Merci de reessayer plus tard !");
-                    $('#success > .alert-danger').append('</div>');*/
-                    //clear all fields
-                    //$('#contactForm').trigger("reset");
+		    $("#portfolioModal2").modal('show');
+		    ga('send', 'event', 'signature', 'fail');
                 },
             })
         },
@@ -77,10 +59,4 @@ $(function() {
         e.preventDefault();
         $(this).tab("show");
     });
-});
-
-
-/*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-    $('#success').html('');
 });
