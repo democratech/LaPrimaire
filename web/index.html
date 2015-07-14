@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,6 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="canonical" href="http://democratech.co">
-    <!-- jQuery -->
     <!-- <script src="js/jquery.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,19 +51,40 @@
 				});
 			}
 		);
+		$(".facebook-follow").click(function (e) {
+			ga('send', 'social', 'facebook', 'follow',{'eventCategory':'facebook_action','eventAction':'follow','eventLabel':e.currentTarget.attributes["data-orig"].value});
+		});
+		$(".facebook-share").click(function (e) {
+			ga('send', 'social', 'facebook', 'share',{'eventCategory':'facebook_action','eventAction':'share','eventLabel':e.currentTarget.attributes["data-orig"].value});
+		});
+		$(".google-share").click(function (e) {
+			ga('send', 'social', 'google', 'share',{'eventCategory':'google_action','eventAction':'share','eventLabel':e.currentTarget.attributes["data-orig"].value});
+		});
 	});
-    </script>
+</script>
 </head>
 
-<body id="page-top" class="index">
+<body class="index">
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+window.fbAsyncInit=function() {
+	FB.init({
+			appId : '115809635110050',
+			xfbml : true,
+			version : 'v2.3'
+		});
+	FB.Event.subscribe('edge.create',function(targetUrl) {
+			ga('send', 'social', 'facebook', 'like',{'eventCategory':'facebook_action','eventAction':'like','eventLabel':targetUrl});
+	});
+};
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=115809635110050";
+  js.src = "//connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
     <!-- Header -->
     <header id="page-top">
@@ -91,7 +111,7 @@
 
 <p class="punchy"><b>EN 2017, NOUS REPRENONS EN MAIN NOTRE DÉMOCRATIE !</b></p>
 
-<p>Aujourd'hui, <b>nous sommes plus de 9 français sur 10 à ne plus vous faire confiance</b> pour gouverner notre beau pays.<p/>
+<p>Aujourd'hui, <b>nous sommes plus de 9 français sur 10 à ne plus vous faire confiance</b> pour gouverner notre beau pays.</p>
 <p>Nous, citoyens français, reprenons la main et allons redonner tout son sens à notre démocratie. Pour les élections de 2017, nous utiliserons internet et les réseaux sociaux pour élire de manière démocratique et représentative des candidats légitimes. Face à vous, candidats des partis, il y aura notre candidat, celui choisi démocratiquement par tous les français.</p>
 
 <p class="punchy"><b>ORGANISEZ VOS PRIMAIRES. NOUS ORGANISONS LA NÔTRE.</b></p>
@@ -122,15 +142,15 @@
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
-					    <input type="zip" class="form-control" placeholder="Votre code postal *" id="zip" required data-validation-required-message="Merci d'entrer votre code postal.">
+					    <input type="text" class="form-control" placeholder="Votre code postal *" id="zip" required data-validation-required-message="Merci d'entrer votre code postal.">
 					    <p class="help-block text-danger"></p>
 					</div>
 					<div class="form-group">
 					    <textarea class="form-control" placeholder="Votre message (optionnel)" id="message"></textarea>
 					    <p class="help-block text-danger"></p>
 					</div>
-					<center><button id="main_button" type="submit" class="btn btn-xl">J'approuve</button></center>
-					<p style="color:#bbb;font-size:11px;line-height:1em;"><br/>En cliquant, vous acceptez les <a href="https://www.change.org/fr/nous-conna%C3%AEtre/conditions-utilisation" target="_blank">Conditions d'utilisation</a> et la <a href="https://www.change.org/fr/nous-conna%C3%AEtre/confidentialit%C3%A9" target="_blank">politique de confidentialité</a> de Change.org.</b></p>
+					<p style="text-align:center;"><button id="main_button" type="submit" class="btn btn-xl">J'approuve</button></p>
+					<p style="color:#bbb;font-size:11px;line-height:1em;"><br/>En cliquant, vous acceptez les <a href="https://www.change.org/fr/nous-conna%C3%AEtre/conditions-utilisation" target="_blank">Conditions d'utilisation</a> et la <a href="https://www.change.org/fr/nous-conna%C3%AEtre/confidentialit%C3%A9" target="_blank">politique de confidentialité</a> de Change.org.</p>
 					<div id="success"></div>
 				</div>
                             </div>
@@ -158,10 +178,10 @@
             </div>
 		<div class="row" style="margin:30px auto 0px auto;min-height:30px;width:300px;">
 				    <div class="col-xs-6" style="text-align:center;padding:5px;">
-<div class="fb-share-button" data-href="http://democratech.co" data-layout="button_count"></div>
+<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-text="Élisons nos candidats aux élections présidentielles de 2017 !" data-via="democratech" data-hashtags="candidat2017">Tweet</a>
 				    </div>
 				    <div class="col-xs-6" style="text-align:center;padding:5px;">
-<a href="https://twitter.com/intent/tweet" action="share" class="twitter-share-button" data-text="Élisons nos candidats aux élections présidentielles de 2017 !" data-via="democratech" data-hashtags="candidat2017">Tweet</a>
+					<div class="fb-like" data-href="http://democratech.co" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 				    </div>
 		</div>
 	</div>
@@ -272,14 +292,14 @@
                 </div>
 	    </div>
 	    <div class="row">
-		    <h3 style="margin-bottom:40px;" class="section-subheading text-muted text-center">Pour ne rien rater des articles à venir, n'oubliez pas de suivre le projet sur <a href="https://www.facebook.com/candidatcitoyen2017" target="_blank">facebook</a> et <a href="https://twitter.com/intent/user?screen_name=democratech" action="follow" target="_blank">twitter</a> !</h3>
+		    <h3 style="margin-bottom:40px;" class="section-subheading text-muted text-center">Pour ne rien rater des articles à venir, n'oubliez pas de suivre le projet sur <a data-orig="text-link" class="facebook-follow" href="https://www.facebook.com/candidatcitoyen2017" target="_blank">facebook</a> et <a href="https://twitter.com/intent/user?screen_name=democratech" target="_blank">twitter</a> !</h3>
 		    <div class="sharing-buttons">
 			    <div class="col-sm-3"></div>
 			    <div style="min-height: 40px;" class="col-xs-12 col-sm-3">
-				    <a class="facebook" href="https://www.facebook.com/candidatcitoyen2017" target="_blank"><i class="fa fa-facebook-square"></i>Nous suivre sur Facebook</a>
+				    <a data-orig="button-link" class="facebook facebook-follow" href="https://www.facebook.com/candidatcitoyen2017" target="_blank"><i class="fa fa-facebook-square"></i>Nous suivre sur Facebook</a>
 			    </div>
 			    <div style="min-height: 40px;" class="col-xs-12 col-sm-3">
-				    <a class="twitter" action="follow" href="https://twitter.com/intent/user?screen_name=democratech" target="_blank"><i class="fa fa-twitter-square"></i>Nous suivre sur Twitter</a>
+				    <a class="twitter" href="https://twitter.com/intent/user?screen_name=democratech" target="_blank"><i class="fa fa-twitter-square"></i>Nous suivre sur Twitter</a>
 			    </div>
 			    <div class="col-sm-3"></div>
 		    </div>
@@ -360,13 +380,13 @@
 	    <div class="row">
 		    <div class="sharing-buttons" style="width:90%; margin:0 auto;">
 			    <div style="min-height: 40px;" class="col-xs-12 col-sm-4">
-				    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdemocratech.co" target="_blank"><i class="fa fa-facebook-square"></i>Partager sur Facebook</a>
+				    <a data-orig="bottom-share-button" class="facebook facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdemocratech.co" target="_blank"><i class="fa fa-facebook-square"></i>Partager sur Facebook</a>
 			    </div>
 			    <div style="min-height: 40px;" class="col-xs-12 col-sm-4">
-				    <a class="twitter" action="share" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fdemocratech.co&text=%C3%89lisons%20nos%20candidats%20aux%20%C3%A9lections%20pr%C3%A9sidentielles%20de%202017%20!&hashtags=candidat2017&via=democratech" target="_blank"><i class="fa fa-twitter-square"></i>Partager sur Twitter</a>
+				    <a class="twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fdemocratech.co&amp;text=%C3%89lisons%20nos%20candidats%20aux%20%C3%A9lections%20pr%C3%A9sidentielles%20de%202017%20!&amp;hashtags=candidat2017&amp;via=democratech" target="_blank"><i class="fa fa-twitter-square"></i>Partager sur Twitter</a>
 			    </div>
 			    <div style="min-height: 40px;" class="col-xs-12 col-sm-4">
-				    <a class="google-plus" href="https://plus.google.com/share?url=http%3A%2F%2Fdemocratech.co" target="_blank"><i class="fa fa-google-plus-square"></i>Partager sur Google+</a>
+				    <a data-orig="bottom-share-button" class="google-plus google-share" href="https://plus.google.com/share?url=http%3A%2F%2Fdemocratech.co" target="_blank"><i class="fa fa-google-plus-square"></i>Partager sur Google+</a>
 			    </div>
 		    </div>
 	    </div>
@@ -382,9 +402,9 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li><a target="_blank" action="follow" href="http://twitter.com/intent/user?screen_name=democratech"><i class="fa fa-twitter"></i></a>
+                        <li><a target="_blank" href="http://twitter.com/intent/user?screen_name=democratech"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a target="_blank" href="http://facebook.com/candidatcitoyen2017"><i class="fa fa-facebook"></i></a>
+                        <li><a class="facebook-follow" data-orig="bottom-icon" target="_blank" href="http://facebook.com/candidatcitoyen2017"><i class="fa fa-facebook"></i></a>
                         </li>
                         <!--<li><a target="_blank" href="http://linkedin.com/democratech"><i class="fa fa-linkedin"></i></a>
                         </li>-->
@@ -457,7 +477,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/classie.js"></script>
