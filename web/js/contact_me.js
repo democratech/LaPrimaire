@@ -19,7 +19,7 @@ $(function() {
             }
 	    ga('send', 'event', 'signature', 'signed');
             $.ajax({
-                url: "http://prelaunch.democratech.co/api/petition/signFA",
+                url: "http://prelaunch.democratech.co/api/petition/sign",
                 type: "POST",
                 data: {
                     firstname: firstname,
