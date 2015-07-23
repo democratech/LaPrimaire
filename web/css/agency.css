@@ -358,9 +358,12 @@ fieldset[disabled] .btn-xl.active {
 		width:95%;
 		margin: 20px auto;
 	}
+	#title h2 {
+		font-size: 50px;
+	}
 }
 
-.title {
+#title {
 	background-color: white;
 	margin: 20px auto 0px auto;
 	width: 95%;
