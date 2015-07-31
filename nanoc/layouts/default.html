@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= "#{@item[:description]}" if @item[:description] %>">
+    <meta name="author" content="<%= "#{@item[:author]}" if @item[:author] %>">
+    <meta property="og:image" content="http://democratech.co/assets/images/jeudepaume.jpg"/>
+    <meta property="og:image:secure_url" content="https://upload.wikimedia.org/wikipedia/commons/8/87/Serment_du_Jeu_de_Paume_-_Jacques-Louis_David.jpg" />
+    <meta name="twitter:image:src" content="http://democratech.co/assets/images/jeudepaume.jpg">
+    <meta name="twitter:widgets:csp" content="on">
+    <title><%= "#{@item[:title]}" if @item[:title] %></title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <% if @config[:debug] %>
+    <% for file in @config[:stylesheets] %>
+    <link rel="stylesheet" type="text/css" href="/assets/style/<%= File.basename(file,".*") %>.css">
+    <% end %>
+    <% else %><link rel="stylesheet" type="text/css" href="/assets/style/all.css"><% end %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="canonical" href="http://democratech.co">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="index">
+<div id="fb-root"></div>
+
+      <%= yield %>
+
+<% if @config[:debug] %>
+<% for file in @config[:scripts] %><script src="/assets/scripts/<%= file %>.js"></script>
+<% end %>
+<% else %>
+<script src="/assets/scripts/all.js"></script>
+<% end %>
+  </body>
+</html>
