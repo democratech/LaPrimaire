@@ -1,5 +1,6 @@
 ---
 title: Primaire 2017 - choisissons nos candidats citoyens pour les prochaines élections
+footer: true
 author: des citoyens ordinaires
 description: Rassemblement des citoyens déçus et lassés des politiques français et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire le candidats de tous les Français.
 ---
@@ -9,7 +10,7 @@ description: Rassemblement des citoyens déçus et lassés des politiques franç
 	<div id="header_overlay">
         <div class="container">
             <div class="row">
-		    <div id="title">
+		    <div class="title">
 			<h2>En 2017, la démocratie revient !</h2>
 		    </div>
 	    </div>
@@ -182,7 +183,7 @@ description: Rassemblement des citoyens déçus et lassés des politiques franç
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <div class="team-member">
-			<a href="http://democratech.co/contribuer.html"><img src="assets/images/team/vousf.png" class="img-responsive img-circle" alt=""></a>
+			    <%= link_to('<img src="assets/images/team/vousf.png" class="img-responsive img-circle" alt="">','contribuer',:target=>'blank') %>
                         <h4><a href="http://democratech.co/contribuer.html">Vous ?</a></h4>
                     </div>
                 </div>
@@ -311,35 +312,6 @@ description: Rassemblement des citoyens déçus et lassés des politiques franç
         </div>
     </section>
 
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Page sous licence Affero GPL</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a target="_blank" href="http://twitter.com/intent/user?screen_name=democratech"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a class="facebook-follow" data-orig="bottom-icon" target="_blank" href="http://facebook.com/candidatcitoyen2017"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <!--<li><a target="_blank" href="http://linkedin.com/democratech"><i class="fa fa-linkedin"></i></a>
-                        </li>-->
-                        <li><a target="_blank" href="http://github.com/democratech"><i class="fa fa-github"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="/docs/20150623_CP_Fondateur.pdf" target="_blank">Communiqué de presse</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -394,4 +366,11 @@ description: Rassemblement des citoyens déçus et lassés des politiques franç
             </div>
         </div>
     </div>
+
+<script type='text/javascript'>
+window.onload=function(){
+	var cdown = new CDown();
+	cdown.add(new Date(2015,9,15,14,0,0), "countdownbox");
+};
+</script>
 

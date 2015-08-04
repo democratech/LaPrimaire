@@ -1,5 +1,6 @@
 require 'nanoc/cachebuster'
 include Nanoc::Helpers::CacheBusting
+include Nanoc::Helpers::LinkTo
 
 def all_js(files)
 	js_arr = []

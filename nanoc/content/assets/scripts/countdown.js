@@ -81,9 +81,3 @@ CDown.prototype = {
 		document.getElementById(cnt.id).innerHTML=msg;
 	}
 };
-
-window.onload=function(){
-	var cdown = new CDown();
-	cdown.add(new Date(2015,9,15,14,0,0), "countdownbox");
-};
-
