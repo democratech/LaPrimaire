@@ -42,8 +42,8 @@ So far, democratech's website is being developed and mantained by
 
 ## License
 
-democratech website is released under the [GNU Affero GPL](https://github.com/democratech/website/blob/master/LICENSE)
-nanoc-skeleton is released under the [MIT license](https://github.com/alessandro1997/nanoc-skeleton/blob/master/LICENSE.txt).
-nanoc is released under a [Free Software license] (https://github.com/nanoc/nanoc/blob/master/LICENSE).
-bootstrap is released under the [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
+* democratech website is released under the [GNU Affero GPL](https://github.com/democratech/website/blob/master/LICENSE)
+* nanoc-skeleton is released under the [MIT license](https://github.com/alessandro1997/nanoc-skeleton/blob/master/LICENSE.txt).
+* nanoc is released under a [Free Software license] (https://github.com/nanoc/nanoc/blob/master/LICENSE).
+* bootstrap is released under the [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
