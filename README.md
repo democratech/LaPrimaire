@@ -37,7 +37,7 @@ You can now access your local copy of democratech's website at [http://localhost
 
 ## Authors
 
-So far, democratech's website is being developed and mantained by
+So far, democratech's website is being developed and maintained by
 * [Thibauld Favre](https://twitter.com/thibauld)
 * [Jean-Tristan Chanègue](https://www.linkedin.com/in/jeantristanchanegue)
 * Feel free to join us! 
