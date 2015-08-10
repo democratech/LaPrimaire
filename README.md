@@ -1,6 +1,6 @@
-# democratech website
+# Democratech Website
 
-This is the code of democratech's website.
+This is the code of [democratech's website](http://democratech.co).
 It is a static website created with the [Nanoc](http://nanoc.ws/), a ruby static site generator that has been chosen for its accessibility and ease of use and [nanoc-skeleton](https://github.com/alessandro1997/nanoc-skeleton) as a starter template to provide Bootstrap goodness.
 
 ## Usage
@@ -14,15 +14,18 @@ $ bundle install
 $ bundle exec guard
 ```
 
-This will compile your new shining nanoc site and start watching for changes.
+This will compile your new shining nanoc site and start watching for changes. If you don't want to use guard, you can alternatively run the following command to compile the project:
+```console
+$ bundle exec nanoc compile
+```
 
-To start a web server run:
+Now let's start a web server to access the website locally:
 
 ```console
 $ bundle exec nanoc view
 ```
 
-You can now access your local copy of democratech's website at [http://localhost:3000](http://localhost:3000)!
+You can now access your local copy of democratech's website at [http://localhost:3000](http://localhost:3000)
 
 ## Contributing
 
