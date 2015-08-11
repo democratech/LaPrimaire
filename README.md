@@ -35,6 +35,8 @@ You can now access your local copy of democratech's website at [http://localhost
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+For development purposes, don't forget to set ```debug: true``` in the nanoc.yaml file otherwise all JS and CSS assets are concatenated and minified.
+
 ## Authors
 
 So far, democratech's website is being developed and maintained by
