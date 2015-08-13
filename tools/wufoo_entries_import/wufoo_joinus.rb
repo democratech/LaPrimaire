@@ -1,12 +1,7 @@
 require 'csv'
 require 'uri'
 require 'net/http'
-
-WFURL="https://XXXX.wufoo.com"
-WFUSER='XXXXX'
-WFPASS='XXXXX'
-WFPARAMS="XXXX=%s&YYYY=%s&ZZZZ=%s"
-WFFORMURL="XXXXXX"
+require './keys.local.rb'
 
 def send_entry(data) 
 	uri = URI.parse(WFURL)
