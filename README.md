@@ -1,4 +1,5 @@
-# Democratech Website
+![democratech logo](http://democratech.co/static/logo-dark-trbg-260x40.png)
+# Website
 
 This is the code of [democratech's website](http://democratech.co).
 It is a static website created with the [Nanoc](http://nanoc.ws/), a ruby static site generator that has been chosen for its accessibility and ease of use and [nanoc-skeleton](https://github.com/alessandro1997/nanoc-skeleton) as a starter template to provide Bootstrap goodness.
