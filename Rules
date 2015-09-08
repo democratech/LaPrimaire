@@ -42,11 +42,16 @@ compile '*' do
   end
 end
 
+#passthrough '/static/*'
+route '/docs/*' do
+	item.identifier.chop
+end
+
+
 route '/assets/**/_*' do
   nil
 end
 
-#route %r{/(fonts|css)/} do
 route '/assets/style/font-awesome/*' do
 	# renaming. Ex: font-awesome_ttf.ttf -> font-awesome.ttf
 	item.identifier.sub(/_.+\/$/,'.') + item[:extension]

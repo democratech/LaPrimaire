@@ -48,6 +48,9 @@ prune:
 # there is only a single data source that reads data from the “content/” and
 # “layout/” directories in the site directory.
 data_sources:
+  - type: static
+    prefix: static
+    items_root: /docs/
   -
     # The type is the identifier of the data source. By default, this will be
     # `filesystem_unified`.
