@@ -42,7 +42,6 @@ compile '*' do
   end
 end
 
-#passthrough '/static/*'
 route '/docs/*' do
 	item.identifier.chop
 end
