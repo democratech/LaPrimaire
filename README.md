@@ -1,4 +1,4 @@
-![democratech logo](https://democratech.co/docs/democratech-logo-whitebg-260x64.png)
+![democratech logo](https://democratech.co/assets/images/democratech-logo-whitebg-260x64.png)
 # Website
 
 This is the code of [democratech's website](http://democratech.co).
