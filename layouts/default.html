@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= "#{@item[:description]}" if @item[:description] %>">
     <meta name="author" content="<%= "#{@item[:author]}" if @item[:author] %>">
-    <meta property="og:title" content="Choisissons nos candidats citoyens pour les prochaines élections"/>
-    <meta property="og:site_name" content="democratech"/>
-<!-- DO NOT CHANGE THE URL BELOW TO HTTPS OR IT WILL CAUSE THE FB BUTTON TO LOSE ALL LIKES -->
-    <meta property="og:url" content="http://democratech.co"/> 
-<!-- DO NOT CHANGE THE URL ABOVE TO HTTPS OR IT WILL CAUSE THE FB BUTTON TO LOSE ALL LIKES -->
+    <meta property="og:title" content="La Primaire Democratique Ouverte pour les elections de 2017 - LaPrimaire.org"/>
+    <meta property="og:site_name" content="LaPrimaire.org"/>
+    <meta property="og:url" content="https://laprimaire.org"/> 
     <meta property="fb:app_id" content="115809635110050"/>
     <meta property="og:type" content="article"/>
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:description" content="Rassemblement des citoyens déçus et lassés des politiques français et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire le candidats de tous les Français."/>
+    <meta property="og:description" content="LaPrimaire.org est une Primaire Democratique Ouverte organisee hors des partis politiques pour les elections de 2017. La Primaire vise a rassembler les citoyens déçus et lassés des politiques français et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire le candidats de tous les Français."/>
     <meta property="og:image" content="https://democratech.co/assets/images/crowd-image-800x480.jpg"/>
     <meta property="og:image:secure_url" content="https://democratech.co/assets/images/crowd-image-800x480.jpg"/>
     <meta name="twitter:image:src" content="https://democratech.co/assets/images/crowd-image-800x480.jpg">
@@ -26,10 +24,10 @@
     <link rel="stylesheet" type="text/css" href="/assets/style/<%= File.basename(file,".*") %>.css">
     <% end %>
     <% else %><link rel="stylesheet" type="text/css" href="/assets/style/all.css"><% end %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="canonical" href="https://democratech.co">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+    <link rel="canonical" href="https://laprimaire.org">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -37,6 +35,55 @@
 </head>
 <body class="index">
 <div id="fb-root"></div>
+      <% if @item[:navbar] %>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Changer la navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60px" width="212px"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Pourquoi</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Fonctionnement</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Participer</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Contribuer</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Aider</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Comptes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">A propos de nous</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <% end %>
 
       <%= yield %>
 
