@@ -175,10 +175,7 @@ fieldset[disabled] .btn-primary.active {
     color: #fff;
     background-color: #527bbd;
 }
-.btn-xl.blue {
-    border-color: #527bbd;
-    background-color: #527bbd;
-}
+
 .btn-xl.red {
     border-color: #d91d1c;
     background-color: #d91d1c;
@@ -227,6 +224,11 @@ fieldset[disabled] .btn-xl.active {
 .btn-xl .badge {
     color: #527bdd;
     background-color: #fff;
+}
+
+.title h2 {
+	font-size: 50px;
+	color: white;
 }
 
 .navbar-right {
@@ -357,24 +359,20 @@ fieldset[disabled] .btn-xl.active {
 		width:95%;
 		margin: 20px auto;
 	}
-	#title h2 {
-		font-size: 50px;
-	}
 }
 
 .title {
-	background-color: white;
-	margin: 20px auto 0px auto;
 	width: 95%;
 	text-align: center;
-	padding: 4px 12px 12px 12px;
-	border: 1px solid #59c0f0;
-	border-radius: 1%;
 }
 
+.lettre p {
+	font-size:16px;
+}
 .lettre {
 	margin: 10px auto;
 	padding: 15px;
+	width:80%;
 	text-align: justify;
 }
 
@@ -417,6 +415,7 @@ fieldset[disabled] .btn-xl.active {
     //background: rgba(82,123,189,.9); // blue
     //background: rgba(255,255,255,.9); // white
     background: rgba(217,29,28,.9); // red
+    padding-top:80px;
 }
 
 header {
@@ -447,7 +446,6 @@ header .intro-text .intro-lead-in {
 
 header .intro-text .intro-heading {
     margin-bottom: 25px;
-    //text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 50px;
     font-weight: 700;
@@ -456,7 +454,7 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 250px;
+        padding-top: 170px;
         padding-bottom: 250px;
     }
 
@@ -470,7 +468,6 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-heading {
         margin-bottom: 50px;
-        //text-transform: uppercase;
         font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 55px;
         font-weight: 700;

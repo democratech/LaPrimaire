@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60px" width="212px"></a>
+                <a class="navbar-brand page-scroll" href="/#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60px" width="212px"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,25 +57,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Pourquoi</a>
+			<%= link_to("Manifeste",'/manifeste',:class=>'page-scroll',:title=>'Notre manifeste') %>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Fonctionnement</a>
+			<%= link_to("Déroulement",'/processus',:class=>'page-scroll',:title=>'Le déroulement de La Primaire') %>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Participer</a>
+			<%= link_to("Transparence",'/transparence',:class=>'page-scroll',:title=>'Nos métriques, notre comptabilité...') %>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Contribuer</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Aider</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Comptes</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">A propos de nous</a>
+			<%= link_to("A propos",'/apropos',:class=>'page-scroll',:title=>'Nos métriques, notre comptabilité...') %>
                     </li>
                 </ul>
             </div>

@@ -8,14 +8,15 @@ description: LaPrimaire.org est une Primaire Democratique Ouverte organisee hors
     <!-- Header -->
     <header>
 	<div id="header_overlay">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">En 2017, soyez candidat !</div>
-                <div class="intro-heading">La Primaire Démocratique Ouverte</div>
-                <a href="#services" class="page-scroll btn btn-xl blue" title="Inscrivez vous pour participer à la primaire">Participer</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#services" class="page-scroll btn btn-xl blue" title="Aidez nous financièrement">Contribuer</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#services" class="page-scroll btn btn-xl blue" title="Soyez volontaires ">Aider</a>
-            </div>
+	<div class="container">
+	    <div class="intro-text">
+		<div class="intro-lead-in">En 2017, soyez candidat !</div>
+		<div class="intro-heading">La Primaire Démocratique Ouverte</div>
+		<%= link_to("S'inscrire",'inscription',:class=>'page-scroll btn btn-xl',:title=>'Inscrivez vous pour participer à La Primaire') %>&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= link_to("S'impliquer",'contribuer',:class=>'page-scroll btn btn-xl',:title=>'Aidez nous à faire de La Primaire un succès') %>&nbsp;&nbsp;&nbsp;&nbsp;
+		<%= link_to("Financer",'financer',:class=>'page-scroll btn btn-xl',:title=>'Soutenez La Primaire financièrement') %>
+	    </div>
+	</div>
         </div>
     </header>
 
