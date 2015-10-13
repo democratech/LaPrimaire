@@ -231,6 +231,11 @@ fieldset[disabled] .btn-xl.active {
 	color: white;
 }
 
+.navbar-toggle {
+    margin-top:13px;
+    margin-bottom:13px;
+}
+
 .navbar-right {
     margin-top:7px;
 }
@@ -311,7 +316,7 @@ fieldset[disabled] .btn-xl.active {
 	margin-bottom: 15px;
 	padding: 15px 30px;
 	text-align: justify;
-	border: 1px solid #59c0f0;
+	border: 4px solid #527bbd;
 	border-radius: 1%;
 }
 #lettre_sequence .joinus {
@@ -476,7 +481,7 @@ header .intro-text .intro-heading {
 }
 
 section {
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 section#counter  {
@@ -503,7 +508,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 50px 0px;
+        padding: 20px 0px;
     }
 }
 
