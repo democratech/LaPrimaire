@@ -332,7 +332,7 @@ fieldset[disabled] .btn-xl.active {
 	padding: 15px 30px;
 	text-align: justify;
 	border: 4px solid #527bbd;
-	border-radius: 1%;
+	//border-radius: 1%;
 }
 #lettre_sequence .joinus {
 	width:70%;
@@ -382,7 +382,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .title {
-	width: 95%;
+	width: 100%;
 	text-align: center;
 }
 
@@ -436,6 +436,9 @@ fieldset[disabled] .btn-xl.active {
     //background: rgba(255,255,255,.9); // white
     background: rgba(217,29,28,.9); // red
     padding-top:80px;
+}
+#header_overlay.blue {
+    background: rgba(82,123,189,.9); // blue
 }
 
 header {
