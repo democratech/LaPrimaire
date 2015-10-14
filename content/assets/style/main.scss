@@ -183,6 +183,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl {
     padding: 10px 10px;
     border-color: #527bbd;
+    border-radius: 0;
     width: 230px;
     font-family: "Roboto Condensed",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 36px;
@@ -332,7 +333,6 @@ fieldset[disabled] .btn-xl.active {
 	padding: 15px 30px;
 	text-align: justify;
 	border: 4px solid #527bbd;
-	//border-radius: 1%;
 }
 #lettre_sequence .joinus {
 	width:70%;
@@ -1135,12 +1135,14 @@ ul.social-buttons li a:active {
 
 ::-moz-selection {
     text-shadow: none;
-    background: #fed136;
+    background: #d91d1c;
+    color:white;
 }
 
 ::selection {
     text-shadow: none;
-    background: #fed136;
+    background: #d91d1c;
+    color:white;
 }
 
 img::selection {
