@@ -9,6 +9,7 @@ scripts:
   - contact_me
   - cbpAnimatedHeader
   - jqBootstrapValidation
+  - faq
 stylesheets:
   - main
 
