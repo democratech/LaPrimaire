@@ -103,6 +103,21 @@ h6 {
     font-weight: 700;
     font-size: 56px;
 }
+h3 {
+	font-size: 26px;
+	font-weight: 500;
+}
+h4 {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.faq h4 {
+	cursor: pointer;
+}
+.faq p {
+	font-size: 14px;
+}
 
 .img-centered {
     margin: 0 auto;
