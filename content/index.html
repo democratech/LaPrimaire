@@ -7,25 +7,25 @@ description: LaPrimaire.org est une Primaire Democratique Ouverte organisee hors
 ---
     <!-- Header -->
     <header>
-	<div id="header_overlay">
+	<div id="header_overlay" class="blue">
 	<div class="container">
 	    <div class="intro-text">
-		<div class="intro-lead-in">En 2017, soyez candidat !</div>
+		<div class="intro-lead-in">En 2017, tous candidats !</div>
 		<div class="intro-heading">La Primaire Démocratique Ouverte</div>
 		<div class="row" style="width:80%;margin:0 auto;">
 			<div class="col-xs-12 col-md-4">
 				<div style="margin:5px;">
-		<%= link_to("Participer",'participer',:class=>'page-scroll btn btn-xl',:title=>'Inscrivez vous pour participer à La Primaire') %>
+		<%= link_to("Participer",'/participer',:class=>'page-scroll btn btn-xl red',:title=>'Inscrivez vous pour participer à La Primaire') %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<div style="margin:5px;">
-		<%= link_to("S'impliquer",'contribuer',:class=>'page-scroll btn btn-xl',:title=>'Aidez nous à faire de La Primaire un succès') %>
+		<%= link_to("S'impliquer",'/contribuer',:class=>'page-scroll btn btn-xl red',:title=>'Aidez nous à faire de La Primaire un succès') %>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<div style="margin:5px;">
-		<%= link_to("Financer",'financer',:class=>'page-scroll btn btn-xl',:title=>'Soutenez La Primaire financièrement') %>
+				<a href="https://www.helloasso.com/associations/democratech/collectes/la-primaire" class="page-scroll btn btn-xl red" title="Pour donner toutes ses chances de succès à La Primaire">Financer</a>
 				</div>
 			</div>
 		</div>

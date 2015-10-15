@@ -191,7 +191,12 @@ fieldset[disabled] .btn-primary.active {
     color: #fff;
     background-color: #527bbd;
 }
-
+.btn-xl.yellow {
+    //border-color: #fed136;
+    //background-color: #fed136;
+    border-color: #fec503;
+    background-color: #fec503;;
+}
 .btn-xl.red {
     border-color: #d91d1c;
     background-color: #d91d1c;
@@ -207,9 +212,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #527bbd;
+    border-color: #fec503;//#fed136;//#527bbd;
     color: #fff;
-    background-color: #3f68ac;
+    background-color: #fec503;//#fed136;//#3f68ac;
 }
 
 .btn-xl:active,
