@@ -1,0 +1,45 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Changer la navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60" width="212" alt="logo LaPrimaire.org"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+		    <li<% if @item[:manifeste] %> class="active"<% end %>>
+			<%= link_to("Manifeste",'/manifeste',:title=>'Notre manifeste') %>
+                    </li>
+                    <li<% if @item[:processus] %> class="active"<% end %>>
+			<%= link_to("Déroulement",'/processus',:title=>'Le déroulement de La Primaire') %>
+                    </li>
+                    <li<% if @item[:transparence] %> class="active"<% end %>>
+			<%= link_to("Transparence",'/transparence',:title=>'Nos métriques, notre comptabilité...') %>
+                    </li>
+                    <li<% if @item[:faq] %> class="active"<% end %>>
+			<%= link_to("FAQ",'/faq',:title=>'Les réponses à toutes vos questions...') %>
+                    </li>
+                    <li<% if @item[:apropos] %> class="active"<% end %>>
+			<%= link_to("A propos",'/apropos',:title=>'Nos métriques, notre comptabilité...') %>
+                    </li>
+                    <li<% if @item[:presse] %> class="active"<% end %>>
+			<%= link_to("Presse",'/presse',:title=>'Nos communiqués de presse, logos, photos, vidéos etc...') %>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+

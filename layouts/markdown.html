@@ -1,83 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= "#{@item[:description]}" if @item[:description] %>">
-    <meta name="author" content="<%= "#{@item[:author]}" if @item[:author] %>">
-    <meta property="og:title" content="La Primaire Democratique Ouverte pour les elections de 2017 - LaPrimaire.org"/>
-    <meta property="og:site_name" content="LaPrimaire.org"/>
-    <meta property="og:url" content="https://laprimaire.org"/> 
-    <meta property="fb:app_id" content="115809635110050"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:description" content="LaPrimaire.org est une Primaire Democratique Ouverte organisee hors des partis politiques pour les elections de 2017. La Primaire vise a rassembler les citoyens déçus et lassés des politiques français et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire le candidats de tous les Français."/>
-    <meta property="og:image" content="https://democratech.co/assets/images/crowd-image-800x480.jpg"/>
-    <meta property="og:image:secure_url" content="https://democratech.co/assets/images/crowd-image-800x480.jpg"/>
-    <meta name="twitter:image:src" content="https://democratech.co/assets/images/crowd-image-800x480.jpg">
-    <meta name="twitter:widgets:csp" content="on">
-    <title><%= "#{@item[:title]}" if @item[:title] %></title>
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
-    <% if @config[:debug] %>
-    <% for file in @config[:stylesheets] %>
-    <link rel="stylesheet" type="text/css" href="/assets/style/<%= File.basename(file,".*") %>.css">
-    <% end %>
-    <% else %><link rel="stylesheet" type="text/css" href="/assets/style/all.css"><% end %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="canonical" href="https://laprimaire.org">
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+      <%= render "head" %>
 </head>
 <body class="index">
 <div id="fb-root"></div>
       <% if @item[:navbar] %>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Changer la navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="/#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60px" width="212px"></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-			<%= link_to("Manifeste",'/manifeste',:class=>'page-scroll',:title=>'Notre manifeste') %>
-                    </li>
-                    <li>
-			<%= link_to("Déroulement",'/processus',:class=>'page-scroll',:title=>'Le déroulement de La Primaire') %>
-                    </li>
-                    <li>
-			<%= link_to("Transparence",'/transparence',:class=>'page-scroll',:title=>'Nos métriques, notre comptabilité...') %>
-                    </li>
-                    <li>
-			<%= link_to("FAQ",'/faq',:class=>'page-scroll',:title=>'Les réponses à toutes vos questions...') %>
-                    </li>
-                    <li>
-			<%= link_to("A propos",'/apropos',:class=>'page-scroll',:title=>'Nos métriques, notre comptabilité...') %>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <% end %>
+	      <%= render "navbar" %>
+      <% end %>
     <header id="page-top">
 	<div id="header_overlay" class="blue">
         <div class="container">
@@ -96,9 +26,7 @@
 				    <div class="row" id="lettre_inline">
 					    <div class="col-md-12">
 						    <div class="lettre">
-
       <%= yield %>
-
 						    </div>
 					    </div>
 				    </div>
@@ -108,49 +36,7 @@
     </section>
 
       <% if @item[:footer] %>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="/docs/20150831-statuts-democratech.odt" target="_blank">Statuts</a>
-                        </li>
-                        <li><a href="/docs/20151015-reglement-interieur-democratech.odt" target="_blank">Règlement Intérieur</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a target="_blank" href="https://twitter.com/intent/user?screen_name=democratech"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a class="facebook-follow" data-orig="bottom-icon" target="_blank" href="https://facebook.com/candidatcitoyen2017"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://linkedin.com/company/democratech"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://github.com/democratech"><i class="fa fa-github"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="/legal">Notice légale</a>
-                        </li>
-                        <!--<li><a href="/contact">Contact</a>
-                        </li>-->
-                        <li><a href="/blog">Blog</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <% end %>
-
-<% if @config[:debug] %>
-<% for file in @config[:scripts] %><script src="/assets/scripts/<%= file %>.js"></script>
-<% end %>
-<% else %>
-<script src="/assets/scripts/all.js"></script>
-<% end %>
+	      <%= render "footer" %>
+      <% end %>
   </body>
 </html>
