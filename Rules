@@ -26,6 +26,10 @@ compile '*' do
   elsif item[:extension] == 'js'
     filter :erb
     filter :uglify_js if File.basename(item[:content_filename], ".*") == 'all'
+  elsif item[:extension] == 'md'
+    filter :kramdown
+    layout 'markdown'
+    filter :cache_buster, :strategy => :html
   elsif item[:extension] == 'scss'
     filter :erb
     filter :sass, Compass.sass_engine_options

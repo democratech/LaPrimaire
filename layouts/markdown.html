@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="/#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60" width="212" alt="logo LaPrimaire.org"></a>
+                <a class="navbar-brand page-scroll" href="/#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60px" width="212px"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,23 +56,20 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-		    <li<% if @item[:manifeste] %> class="active"<% end %>>
-			<%= link_to("Manifeste",'/manifeste',:title=>'Notre manifeste') %>
+                    <li>
+			<%= link_to("Manifeste",'/manifeste',:class=>'page-scroll',:title=>'Notre manifeste') %>
                     </li>
-                    <li<% if @item[:processus] %> class="active"<% end %>>
-			<%= link_to("Déroulement",'/processus',:title=>'Le déroulement de La Primaire') %>
+                    <li>
+			<%= link_to("Déroulement",'/processus',:class=>'page-scroll',:title=>'Le déroulement de La Primaire') %>
                     </li>
-                    <li<% if @item[:transparence] %> class="active"<% end %>>
-			<%= link_to("Transparence",'/transparence',:title=>'Nos métriques, notre comptabilité...') %>
+                    <li>
+			<%= link_to("Transparence",'/transparence',:class=>'page-scroll',:title=>'Nos métriques, notre comptabilité...') %>
                     </li>
-                    <li<% if @item[:faq] %> class="active"<% end %>>
-			<%= link_to("FAQ",'/faq',:title=>'Les réponses à toutes vos questions...') %>
+                    <li>
+			<%= link_to("FAQ",'/faq',:class=>'page-scroll',:title=>'Les réponses à toutes vos questions...') %>
                     </li>
-                    <li<% if @item[:apropos] %> class="active"<% end %>>
-			<%= link_to("A propos",'/apropos',:title=>'Nos métriques, notre comptabilité...') %>
-                    </li>
-                    <li<% if @item[:presse] %> class="active"<% end %>>
-			<%= link_to("Presse",'/presse',:title=>'Nos communiqués de presse, logos, photos, vidéos etc...') %>
+                    <li>
+			<%= link_to("A propos",'/apropos',:class=>'page-scroll',:title=>'Nos métriques, notre comptabilité...') %>
                     </li>
                 </ul>
             </div>
@@ -81,14 +78,40 @@
         <!-- /.container-fluid -->
     </nav>
     <% end %>
+    <header id="page-top">
+	<div id="header_overlay" class="blue">
+        <div class="container">
+            <div class="row">
+		    <div class="title">
+			    <h2><%= @item[:page_title] %></h2>
+		    </div>
+	    </div>
+        </div>
+    </header>
+
+    <section>
+	    <div class="container">
+		    <div class="row">
+			    <div class="col-lg-12">
+				    <div class="row" id="lettre_inline">
+					    <div class="col-md-12">
+						    <div class="lettre">
 
       <%= yield %>
+
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </section>
 
       <% if @item[:footer] %>
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li><a href="/docs/20150831-statuts-democratech.odt" target="_blank">Statuts</a>
                         </li>
@@ -96,33 +119,25 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a target="_blank" href="https://twitter.com/intent/user?screen_name=democratech"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a class="facebook-follow" data-orig="bottom-icon" target="_blank" href="https://facebook.com/LaPrimaire/"><i class="fa fa-facebook"></i></a>
+                        <li><a class="facebook-follow" data-orig="bottom-icon" target="_blank" href="https://facebook.com/candidatcitoyen2017"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li><a target="_blank" href="https://linkedin.com/company/democratech"><i class="fa fa-linkedin"></i></a>
                         </li>
                         <li><a target="_blank" href="https://github.com/democratech"><i class="fa fa-github"></i></a>
                         </li>
-                        <li><a target="_blank" href="https://instagram.com/laprimaire/"><i class="fa fa-instagram"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://flickr.com/photos/laprimaire/"><i class="fa fa-flickr"></i></a>
-                        </li>
-                        <li><a target="_blank" href="http://laprimaire.tumblr.com"><i class="fa fa-tumblr"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://plus.google.com/communities/107477166961681845852"><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://medium.com/@democratech"><i class="fa fa-medium"></i></a>
-                        </li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li><a href="/legal">Notice légale</a>
                         </li>
-                        <li><a href="/contact">Contact</a>
+                        <!--<li><a href="/contact">Contact</a>
+                        </li>-->
+                        <li><a href="/blog">Blog</a>
                         </li>
                     </ul>
                 </div>

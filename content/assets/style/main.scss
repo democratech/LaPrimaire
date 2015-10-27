@@ -7,6 +7,32 @@ body {
     font-family: "Helvetica Condensed","Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.press-item {
+	width:90%;
+	margin-bottom: 15px;
+}
+.press-item blockquote .social {
+	margin: 12px 0 0 44px;
+	float: left;
+}
+.press-item blockquote .quote a {
+	color: #5e5e5e;
+}
+.press-item blockquote .quote {
+	font-style:italic;
+	font-size: 120%;
+	letter-spacing:0.01em;
+	height:60px;
+}
+.press-item blockquote {
+	padding: 20px 70px 15px 20px;
+	height: 135px;
+	margin: 0px;
+	border: none;
+	background: #eee url("/assets/images/double-quotes.png") no-repeat top left;
+	border-radius: 5px;
+}
+
 .sharing-buttons{
 	list-style: none;
 	text-decoration: none;
@@ -81,14 +107,14 @@ a.active {
 }
 
 a {
-    color: #527bbd;
+    color: #527bdd;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #527bbd;
+    color: #527bdd;
 }
 
 h1,
@@ -264,16 +290,13 @@ fieldset[disabled] .btn-xl.active {
     margin-top:13px;
     margin-bottom:13px;
 }
-
 .navbar-right {
     margin-top:7px;
 }
-
 .navbar-default {
     border-color: transparent;
     background-color: white;
 }
-
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
     color: #5e5e5e;
@@ -281,32 +304,26 @@ fieldset[disabled] .btn-xl.active {
     margin-left:0px;
     height:60px;
 }
-
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
     color: #5e5e5e;
 }
-
 .navbar-default .navbar-collapse {
     border-color: rgba(255,255,255,.02);
 }
-
 .navbar-default .navbar-toggle {
     border-color: #527bdd;
     background-color: #527bdd;
 }
-
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
-
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
     background-color: #527bdd;
 }
-
 .navbar-default .nav li a {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -314,26 +331,22 @@ fieldset[disabled] .btn-xl.active {
     color: #5e5e5e;
     letter-spacing: 1px;
 }
-
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
     color: white;
     background-color: #527bdd;
 }
-
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #527bbd;
+    background-color: #527bdd;
 }
-
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #527bbd;
+    background-color: #527bdd;
 }
-
 .joinus h2 {
 	font-size:32px;
 	text-align:center;
@@ -428,7 +441,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default .navbar-nav>.active>a {
-        border-radius: 3px;
+        border-radius: 0px;
     }
 
     .navbar-default.navbar-shrink {
@@ -525,7 +538,7 @@ section#counter h2 {
 section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 section h3.section-subheading {
@@ -824,28 +837,59 @@ section h3.section-subheading {
         padding: 0 100px 20px 20px;
     }
 }
-
 .team-member {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     text-align: center;
 }
-
-.team-member img {
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    border: 7px solid #eee;
+.team-member p {
+    margin-top: 0;
 }
-
 .team-member h4 {
     font-size: 18px;
     margin-top: 25px;
     margin-bottom: 0;
     text-transform: none;
 }
+.team-member img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 7px solid #eee;
+}
+.team-member.desc {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.team-member.desc h4 {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.team-member.desc p {
+    font-size: 12px;
+    text-align:justify;
+    color:#444;
+}
 
-.team-member p {
-    margin-top: 0;
+.team-member.core {
+    margin-bottom: 20px;
+}
+.team-member.core img {
+    width: 150px;
+    height: 150px;
+}
+.team-member ul.social-buttons li a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    outline: 0;
+    color: #fff;
+    background-color: #d91d1c;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
 }
 
 aside.clients img {
@@ -1051,7 +1095,7 @@ ul.social-buttons li a {
     line-height: 40px;
     outline: 0;
     color: #fff;
-    background-color: #222;
+    background-color: #d91d1c;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
