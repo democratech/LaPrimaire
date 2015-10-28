@@ -21,11 +21,16 @@
 
     <section>
 	    <div class="container">
+		    <% if @item[:edit_url] %>
+		    <div class="row">
+			    <div class="alert alert-info" role="alert">Vous avez des modifications à suggérer ? Ce document est éditable de manière collaborative, proposez nous vos suggestions <a href="<%= @item[:edit_url] %>" target="_blank">directement sur github</a>.</div>
+		    </div>
+		    <% end %>
 		    <div class="row">
 			    <div class="col-lg-12">
 				    <div class="row" id="lettre_inline">
 					    <div class="col-md-12">
-						    <div class="lettre">
+						    <div class="markdown">
       <%= yield %>
 						    </div>
 					    </div>

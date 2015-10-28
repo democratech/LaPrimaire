@@ -3,11 +3,10 @@ title: Déroulement et Calendrier de La Primaire
 page_title: Déroulement
 footer: true
 navbar: true
+edit_url: https://github.com/democratech/LaPrimaire/blob/master/content/deroulement.md
 author: des citoyens ordinaires
 description: Si vous faites partie des citoyens déçus et lassés des politiques français et que vous souhaitez nous donner un coup de main pour redonner du sens aux élections, remplissez ce formulaire pour nous aider à organiser LA Primaire démocratique et ouverte en vue des élections de 2017.
 ---
-
-Ce document n'est pas encore finalisé et doit être considéré comme un document de travail. Une version collaborative de ce document sera mise en ligne très prochainement pour permettre à ceux qui le souhaitent de contribuer à sa finalisation.
 
 ### Décembre 2015 - Janvier 2016
 

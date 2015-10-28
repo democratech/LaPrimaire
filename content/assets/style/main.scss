@@ -5,7 +5,7 @@
 body {
     overflow-x: hidden;
     font-family: "Helvetica Condensed","Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding-bottom:140px;
+    padding-bottom:180px;
 }
 
 #fundraising_objectif {
@@ -183,7 +183,13 @@ h5 {
 .faq p {
 	font-size: 14px;
 }
-
+.markdown h3 {
+	font-size: 22px;
+}
+.markdown p {
+	font-size: 14px;
+	padding-left:30px;
+}
 .img-centered {
     margin: 0 auto;
 }
@@ -327,7 +333,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: white;
-    border-bottom: 1px solid #d91d1c; //test
+    cursor: pointer;
 }
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
@@ -335,7 +341,6 @@ fieldset[disabled] .btn-xl.active {
     padding: 0px;
     margin-left:0px;
     height:60px;
-    border-bottom: 1px solid #d91d1c; //test
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
@@ -456,8 +461,7 @@ fieldset[disabled] .btn-xl.active {
 @media(min-width:768px) {
     .navbar-default {
         padding: 10px 0;
-	border-bottom: 1px solid #d91d1c; //test
-        //background-color: transparent;
+	border-bottom: 1px solid #d91d1c;
         background-color: white;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
