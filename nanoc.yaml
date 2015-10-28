@@ -9,9 +9,12 @@ scripts:
   - contact_me
   - cbpAnimatedHeader
   - jqBootstrapValidation
-  - faq
+  - bootstrap-submenu
+  - goalProgress
+  - laprimaire
 stylesheets:
   - main
+  - bootstrap-submenu
 
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file

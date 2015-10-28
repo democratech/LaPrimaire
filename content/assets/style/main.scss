@@ -5,6 +5,37 @@
 body {
     overflow-x: hidden;
     font-family: "Helvetica Condensed","Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-bottom:140px;
+}
+
+#fundraising_objectif {
+	padding:0px;
+	color:white;
+	font-size:18px;
+	text-align:right;
+}
+.goalProgress {
+	/*background: #527bdd;*/
+	background: white;
+}
+div.progressBar {
+	/*background: #d91d1c;*/
+	background: #56d840;
+	overflow:visible;
+	height:62px;
+	color: white;
+	text-align:left;
+	font-size: 29px;
+	letter-spacing: -1px;
+	font-weight: 700;
+	padding: 11px;
+	display: block;
+	width: 20px;
+	/*border-radius: 0px 30px 30px 0px;*/
+}
+span.goalAmount {
+	display: none;
+	text-indent: -9999px;
 }
 
 .press-item {
@@ -296,6 +327,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: white;
+    border-bottom: 1px solid #d91d1c; //test
 }
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
@@ -303,6 +335,7 @@ fieldset[disabled] .btn-xl.active {
     padding: 0px;
     margin-left:0px;
     height:60px;
+    border-bottom: 1px solid #d91d1c; //test
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
@@ -354,11 +387,10 @@ fieldset[disabled] .btn-xl.active {
 .joinus {
 	background-color: white;
 	margin-right: 16px;
-	margin-top: 15px;
 	margin-bottom: 15px;
-	padding: 15px 30px;
+	padding: 5px 20px;
 	text-align: justify;
-	border: 4px solid #527bbd;
+	border: 4px solid #527bdd;
 }
 #lettre_sequence .joinus {
 	width:70%;
@@ -413,19 +445,18 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .lettre p {
-	font-size:16px;
+	font-size:18px;
 }
 .lettre {
-	margin: 10px auto;
-	padding: 15px;
-	width:80%;
+	margin: 0px auto;
+	padding: 0px 15px;
 	text-align: justify;
 }
 
 @media(min-width:768px) {
     .navbar-default {
         padding: 10px 0;
-        border: 0;
+	border-bottom: 1px solid #d91d1c; //test
         //background-color: transparent;
         background-color: white;
         -webkit-transition: padding .3s;
@@ -463,14 +494,16 @@ fieldset[disabled] .btn-xl.active {
     background: rgba(217,29,28,.9); // red
     padding-top:80px;
 }
+#header_overlay.white {
+    background: rgba(255,255,255,.95); // white
+}
 #header_overlay.blue {
-    background: rgba(82,123,189,.9); // blue
+    background: rgba(82,123,221,.9); // blue
 }
 
 header {
     text-align: center;
-    //color: #5e5e5e;
-    color: white;
+    color: #5e5e5e;
     background-image: url(/assets/images/crowd-700x700.jpg);
     //background-color: white;
     background-repeat: repeat;
@@ -483,6 +516,15 @@ header {
 header .intro-text {
     padding-top: 50px;
     padding-bottom: 25px;
+}
+
+#navbar-home {
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+    color:#5e5e5e;
+    padding: 17px;
 }
 
 header .intro-text .intro-lead-in {
@@ -503,12 +545,12 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 170px;
-        padding-bottom: 250px;
+        padding-top: 30px;
+        padding-bottom: 20px;
     }
 
     header .intro-text .intro-lead-in {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 40px;
         font-style: italic;
@@ -516,7 +558,7 @@ header .intro-text .intro-heading {
     }
 
     header .intro-text .intro-heading {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 55px;
         font-weight: 700;
@@ -542,7 +584,7 @@ section h2.section-heading {
 }
 
 section h3.section-subheading {
-    margin-bottom: 75px;
+    margin-bottom: 30px;
     text-transform: none;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -1057,7 +1099,11 @@ section#sign .text-danger {
 }
 
 footer {
-    padding: 25px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #527bdd;
+    padding: 15px 0;
     text-align: center;
     color: #59c0f0;
     font-size: 16px;

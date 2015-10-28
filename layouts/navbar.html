@@ -2,14 +2,14 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Changer la navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="/#page-top"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60" width="212" alt="logo LaPrimaire.org"></a>
+		<a class="navbar-brand" href="/"><img src="/assets/images/logos/laprimaire-212x60.jpg" height="60" width="212" alt="logo LaPrimaire.org"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,21 +21,43 @@
 		    <li<% if @item[:manifeste] %> class="active"<% end %>>
 			<%= link_to("Manifeste",'/manifeste',:title=>'Notre manifeste') %>
                     </li>
-                    <li<% if @item[:processus] %> class="active"<% end %>>
-			<%= link_to("Déroulement",'/processus',:title=>'Le déroulement de La Primaire') %>
-                    </li>
-                    <li<% if @item[:transparence] %> class="active"<% end %>>
-			<%= link_to("Transparence",'/transparence',:title=>'Nos métriques, notre comptabilité...') %>
-                    </li>
-                    <li<% if @item[:faq] %> class="active"<% end %>>
-			<%= link_to("FAQ",'/faq',:title=>'Les réponses à toutes vos questions...') %>
-                    </li>
-                    <li<% if @item[:apropos] %> class="active"<% end %>>
-			<%= link_to("A propos",'/apropos',:title=>'Nos métriques, notre comptabilité...') %>
-                    </li>
-                    <li<% if @item[:presse] %> class="active"<% end %>>
-			<%= link_to("Presse",'/presse',:title=>'Nos communiqués de presse, logos, photos, vidéos etc...') %>
-                    </li>
+		    <li class="dropdown">
+			<a tabindex="0" data-toggle="dropdown">
+				La Primaire<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a tabindex="0" href="/actus">Actualités</a></li>
+				<li><a tabindex="0" href="/participer">Participer</a></li>
+				<li><a tabindex="0" href="/contribuer">S'impliquer</a></li>
+				<li><a tabindex="0" href="https://www.helloasso.com/associations/democratech/collectes/la-primaire">Contribuer</a></li>
+				<!--<li class="divider"></li>-->
+				<li><a tabindex="0" href="/processus">Déroulement</a></li>
+				<!--<li><a tabindex="0">Calendrier</a></li>-->
+			</ul>
+		    </li>
+		    <li class="dropdown">
+			<a tabindex="0" data-toggle="dropdown">
+				L'association<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<!--<li><a tabindex="0">Adhérer</a></li>-->
+				<li><a tabindex="0" href="/democratech">democratech</a></li>
+				<li><a tabindex="0" href="/equipe">L'équipe</a></li>
+				<li><a tabindex="0" href="/transparence">Transparence</a></li>
+				<li><a tabindex="0" href="/docs/20150831-statuts-democratech.odt">Statuts</a></li>
+				<li><a tabindex="0" href="/docs/20151015-reglement-interieur-democratech.odt">Règlement Intérieur</a></li>
+			</ul>
+		    </li>
+		    <li class="dropdown">
+			<a tabindex="0" data-toggle="dropdown">
+				A propos<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a tabindex="0" href="/faq">FAQ</a></li>
+				<li><a tabindex="0" href="/presse">Presse</a></li>
+				<li><a tabindex="0" href="/contact">Contact</a></li>
+			</ul>
+		    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
