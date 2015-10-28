@@ -43,7 +43,6 @@ $(document).ready(function(){
 	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
 	amount=readCookie('amount_raised');
 	supporteurs=readCookie('nb_supporters');
-	amount==null;
 	if (amount==null) {
 		$.get("https://api.helloasso.com/democratech", function( data ){
 			amount=data['funding'];
