@@ -27,5 +27,8 @@ $(document).ready(function() {
 	$(".google-share").click(function (e) {
 		ga('send', 'social', 'google', 'share',{'eventCategory':'google_action','eventAction':'share','eventLabel':e.currentTarget.attributes["data-orig"].value});
 	});
+	$(".donate-link").click(function (e) {
+		ga('send', 'event', 'fundraising', 'donate-link','fundraising-campaign-1');
+	});
 });
 
