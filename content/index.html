@@ -43,11 +43,15 @@ description: LaPrimaire.org est une Primaire Démocratique Ouverte organisée ho
 						Fill out my <a href="https://democratech.wufoo.com/forms/m4zeh7t16z7142">online form</a>.
 					</div>
 					<script type="text/javascript">var m4zeh7t16z7142;(function(d, t) {
+function getURLParameter(name) {
+	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||""
+}
 var s = d.createElement(t), options = {
 'userName':'democratech',
 'formHash':'m4zeh7t16z7142',
 'autoResize':true,
 'height':'515',
+'defaultValues':'field132='+getURLParameter('cmp'),
 'async':true,
 'host':'wufoo.com',
 'header':'hide',
