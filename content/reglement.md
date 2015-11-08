@@ -3,6 +3,8 @@ title: Règlement intérieur de democratech
 page_title: Règlement Intérieur
 footer: true
 navbar: true
+association: true
+header_color: red
 edit_url: https://github.com/democratech/LaPrimaire/blob/master/content/reglement.md
 author: des citoyens ordinaires
 description: Le règlement intérieur de democratech, une association loi 1901 dont l'objet est de favoriser, tant au niveau local que national, la participation et l'implication du plus grand nombre à la vie citoyenne et civique française.

@@ -262,17 +262,20 @@ fieldset[disabled] .btn-primary.active {
     color: #fff;
     background-color: #527bbd;
 }
-.btn-xl.yellow {
-    //border-color: #fed136;
-    //background-color: #fed136;
+.btn.yellow {
     border-color: #fec503;
     background-color: #fec503;;
 }
-.btn-xl.red {
+.btn.blue {
+    border-color: #527bdd;
+    background-color: #527bdd;
+    color:white;
+}
+.btn.red {
     border-color: #d91d1c;
     background-color: #d91d1c;
 }
-.btn-xl.white {
+.btn.white {
     border-color: #9e9e9e;
     background-color: white;
     color: #5e5e5e;

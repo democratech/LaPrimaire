@@ -5,14 +5,10 @@
 </head>
 <body class="index">
 <div id="fb-root"></div>
-      <% if @item[:navbar] %>
-	      <%= render "navbar" %>
-      <% end %>
+      <%= render "navbar" %>
 
       <%= yield %>
 
-      <% if @item[:footer] %>
-	      <%= render "footer" %>
-      <% end %>
+      <%= render "footer" %>
   </body>
 </html>

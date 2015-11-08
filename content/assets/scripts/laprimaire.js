@@ -44,9 +44,9 @@ $(document).ready(function(){
 	amount=readCookie('amount_raised');
 	supporteurs=readCookie('nb_supporters');
 	if (amount==null) {
-		$.get("https://api.helloasso.com/democratech", function( data ){
-			amount=data['funding'];
-			supporteurs=data['supporters'];
+		$.get("http://localhost:9292/api/v1/stripe/total", function( data ){
+			amount=data['total'];
+			supporteurs=data['nb_donateurs'];
 			createCookie('amount_raised',amount);
 			createCookie('nb_supporters',supporteurs);
 

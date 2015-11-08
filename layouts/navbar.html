@@ -13,12 +13,8 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+      <% if @item[:navbar] %>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!--<ul class="nav navbar-nav hidden-xs hidden-sm hidden-md" style="padding: 21px 0px 0px 90px;">
-			<li><a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-text="En 2017, tous candidats !" data-via="democratech" data-hashtags="LaPrimaire" data-url="https://laprimaire.org"></a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-			<li><div class="fb-like" data-href="https://laprimaire.org" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
-
-		</ul>-->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -26,14 +22,17 @@
 		    <li<% if @item[:manifeste] %> class="active"<% end %>>
 			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
                     </li>
-		    <li class="dropdown">
+		    <li<% if @item[:calendrier] %> class="active"<% end %>>
+		    	<a href="/calendrier/">Calendrier</a>
+                    </li>
+		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
 				La Primaire<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu">
 				<li><a tabindex="0" href="/participer/">Participer</a></li>
 				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
-				<li><a tabindex="0" target="_blank" href="https://www.helloasso.com/associations/democratech/collectes/la-primaire">Contribuer</a></li>
+				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
 				<li class="divider"></li>
 				<li><a tabindex="0" href="/actus/">Actualités</a></li>
 				<li><a tabindex="0" href="/deroulement/">Déroulement</a></li>
@@ -41,32 +40,27 @@
 				<!--<li><a tabindex="0">Calendrier</a></li>-->
 			</ul>
 		    </li>
-		    <li class="dropdown">
+		    <li class="dropdown<% if @item[:association] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
 				L'association<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu">
 				<!--<li><a tabindex="0">Adhérer</a></li>-->
 				<!--<li><a tabindex="0" href="/democratech">democratech</a></li>-->
-				<li><a tabindex="0" href="/equipe/">L'équipe</a></li>
 				<li><a tabindex="0" href="/transparence/">Transparence</a></li>
+				<li><a tabindex="0" href="/equipe/">L'équipe</a></li>
+				<li><a tabindex="0" href="/contact/">Nous contacter</a></li>
+				<li class="divider"></li>
 				<li><a tabindex="0" href="/statuts/">Statuts</a></li>
 				<li><a tabindex="0" href="/reglement/">Règlement Intérieur</a></li>
 			</ul>
 		    </li>
-<!--		    <li class="dropdown">
-			<a tabindex="0" data-toggle="dropdown">
-				A propos<span class="caret"></span>
-			</a>
-			<ul class="dropdown-menu">
-				<li><a tabindex="0" href="/faq">FAQ</a></li>
-				<li><a tabindex="0" href="/presse">Presse</a></li>
-				<li><a tabindex="0" href="/contact">Contact</a></li>
-			</ul>
-		    </li>
--->
+		    <li<% if @item[:presse] %> class="active"<% end %>>
+		    	<a href="/presse/">Presse</a>
+                    </li>
                 </ul>
             </div>
+      <% end %>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->

@@ -1,7 +1,18 @@
-    <footer>
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<iframe src="https://donorbox.org/embed/laprimaire-org" height="685px" width="100%" style="" seamless="seamless" name="donorbox" frameborder="0" scrolling="yes"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if @item[:footer] %>
+<footer>
         <div class="container">
             <div class="row" style="margin-bottom:10px;">
-		    <span style="font-size:20px;color:white;text-align:center;font-weight:bold;font-variant:small-caps;">Notre objectif : 100.000€ pour que La Primaire puisse avoir lieu !</span>
+		    <span style="font-size:20px;color:white;text-align:center;font-weight:bold;font-variant:small-caps;">La Primaire est 100% gratuite et son organisation ne repose que sur vos dons</span>
  	    </div>
             <div class="row pledge">
 		<div class="col-md-2 hidden-xs hidden-sm">
@@ -13,12 +24,14 @@
 		</div>
 		<div class="col-md-3 col-xs-12">
 			<div>
-				<a style="font-size:29px;font-variant:small-caps;" target="_blank" href="https://www.helloasso.com/associations/democratech/collectes/la-primaire" class="btn btn-xl red donate-link" title="Pour donner toutes ses chances de succès à La Primaire">Je contribue</a>
+				<!--<a style="font-size:29px;font-variant:small-caps;" target="_blank" data-toggle="modal" data-target="#myModalHorizontal" class="btn btn-xl red donate-link" title="Pour donner toutes ses chances de succès à La Primaire">Je contribue</a>-->
+				<a style="font-size:29px;font-variant:small-caps;" href="/financer/" target="_blank" class="btn btn-xl red donate-link" title="Pour donner toutes ses chances de succès à La Primaire">Je contribue</a>
 			</div>
 		</div>
             </div>
         </div>
     </footer>
+<% end %>
 
 <% if @config[:debug] %>
 <% for file in @config[:scripts] %><script src="/assets/scripts/<%= file %>.js"></script>
