@@ -13,15 +13,15 @@ description: Si vous faites partie des citoyens déçus et lassés des politique
 
 Phase de béta-test de l'application.
 
-### 1er février 2016 : Ouverture de la Primaire Démocratique Ouverte
+### 1er février 2016 : Ouverture de la Primaire Ouverte
 
 L'application "LaPrimaire.org" sera disponible au téléchargement en versions IOS et Android (l'"Application").
 
-L'Application sera nécessaire pour participer à la Primaire Démocratique Ouverte.
+L'Application sera nécessaire pour participer à la Primaire Ouverte.
 
 ### Février-Avril 2016 : Identification des candidats potentiels
 
-A compter de l'ouverture de Primaire Démocratique Ouverte, tout citoyen remplissant les [conditions légales requises](/faq/) pourra, à sa convenance :
+A compter de l'ouverture de Primaire Ouverte, tout citoyen remplissant les [conditions légales requises](/faq/) pourra, à sa convenance :
 
 - s'inscrire pour suivre et participer ;
 - se porter candidat (la "Candidature Spontanée") ;
@@ -32,7 +32,7 @@ Dans le cas du Plébiscite, il est possible de désigner :
 - soit un citoyen s'étant déjà déclaré candidat ;
 - soit un citoyen ne s'étant pas déclaré candidat, mais en lequel vous avez confiance et que vous jugez potentiellement compétent pour s'impliquer dans la vie politique, voire de devenir le prochain Président de la République.
 
-Au cours de cette période, les citoyens qui souhaitent être candidats à la Primaire Démocratique Ouverte devront recueillir, par leurs propres moyens, un minimum de 500 soutiens (le "Seuil de Qualification").
+Au cours de cette période, les citoyens qui souhaitent être candidats à la Primaire Ouverte devront recueillir, par leurs propres moyens, un minimum de 500 soutiens (le "Seuil de Qualification").
 
 Un soutien se matérialise par :
 
@@ -41,7 +41,7 @@ Un soutien se matérialise par :
 
 Nous avons choisi de fixer le Seuil de Qualification à 500 soutiens pour les raisons suivantes :
 
-- symboliquement, par référence aux signatures devant être obtenues par un candidat à l'élection présidentielle à fins de validation de sa candidature ;
+- symboliquement, par référence aux parrainages devant être obtenus par un candidat à l'élection présidentielle à fins de validation de sa candidature ;
 - 500 est un nombre, a priori, suffisamment élevé pour limiter les candidatures fantaisistes ou non-engageante : si un candidat n'arrive pas à fédérer au moins 500 personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
 - 500 est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir participer à la Primaire Démocratique Ouverte.
 
@@ -49,9 +49,9 @@ Au cours de cette phase d'identification des candidats, democratech mettra à le
 
 Les candidats assureront, seuls et par leurs propres moyens, leur campagne tendant à atteindre le Seuil de Qualification.
 
-Dès que le Seuil de Qualification sera atteint, tout citoyen concerné sera automatiquement présélectionné pour participer, en qualité de candidat, à la Primaire Démocratique Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
+Dès que le Seuil de Qualification sera atteint, tout citoyen concerné sera automatiquement présélectionné pour participer, en qualité de candidat, à la Primaire Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
 
-### 1er mai 2016 : Publication de la liste provisoire des candidats présélectionnés pour participer à la Primaire Démocratique Ouverte
+### 1er mai 2016 : Publication de la liste provisoire des candidats présélectionnés pour participer à la Primaire Ouverte
 
 Il s'agit des citoyens :
 
@@ -60,15 +60,15 @@ Il s'agit des citoyens :
 
 et ayant atteint le Seuil de Qualification.
 
-### Mai 2016 : Rencontre entre les candidats présélectionnés et de confirmation de leur participation à la Primaire Démocratique Ouverte
+### Mai 2016 : Rencontre entre les candidats présélectionnés et de confirmation de leur participation à la Primaire Ouverte
 
 democratech permettra à chaque candidat présélectionné d'échanger, s'il le souhaite, avec les autres candidats présélectionnés, voire de se rencontrer, notamment pour échanger sur leurs visions, programmes etc. respectifs, et envisager, le cas échéant, d'éventuelles synergies.
 
-A l'issue de cette phase de dialogue, chaque candidat devra confirmer, auprès des organisateurs de la Primaire Démocratique Ouverte, son souhait de maintenir ou non sa candidature, notamment s'il souhaite se rallier à un autre candidat.
+A l'issue de cette phase de dialogue, chaque candidat devra confirmer, auprès des organisateurs de la Primaire Ouverte, son souhait de maintenir ou non sa candidature, notamment s'il souhaite se rallier à un autre candidat.
 
-Par ailleurs, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Démocratique Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, tout candidat concerné sera contacté par democratech et devra faire part de sa décision, à savoir accepter de participer à la Primaire Démocratique Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
+Par ailleurs, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, tout candidat concerné sera contacté par democratech et devra faire part de sa décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
 
-### 1er juin 2016 : Publication de la liste définitive des candidats participant à la Primaire Démocratique Ouverte
+### 1er juin 2016 : Publication de la liste définitive des candidats participant à la Primaire Ouverte
 
 Il s'agit des citoyens :
 
@@ -78,7 +78,7 @@ Il s'agit des citoyens :
 et ayant :
 
 - atteint le Seuil de Qualification ;
-- confirmé leur participation à la Primaire Démocratique Ouverte
+- confirmé leur participation à la Primaire Ouverte
 
 ### Juin-Septembre 2016 : Ajustement collaboratif des programmes des candidats
 
@@ -95,35 +95,35 @@ Dans ce cadre, chaque candidat pourra échanger avec ses soutiens, lesquels pour
 
 ### Second semestre 2016
 
-#### Premier tour de la Primaire Démocratique Ouverte
+#### Sélection des candidats
 
-##### Processus de vote
+##### Processus
 
-L'objectif de democratech, dans le cadre de l'organisation de la Primaire Démocratique Ouverte, et plus particulièrement de la phase de vote, est :
+L'un des objectifs de democratech, dans le cadre de l'organisation de la Primaire Ouverte, est :
 
 - de garantir strictement à chaque candidat la même exposition ;
 - d'éviter les manipulations (appel massif au vote, incitation financière...).
 
-Compte tenu de cet objectif, nous avons souhaité mettre en place un système de distribution aléatoire des candidats. Concrètement, tous les candidats sélectionnés pour participer à la Primaire Démocratique Ouverte seront distribués aléatoirement auprès de l'ensemble des citoyens inscrits et participant.
+Compte tenu de cet objectif, nous avons souhaité mettre en place un système de distribution aléatoire des candidats. Concrètement, tous les candidats qualifiés pour participer à la Primaire Ouverte seront distribués aléatoirement auprès de l'ensemble des citoyens inscrits et participant.
 
-Le processus garantira qu'il aura été possible de voter (ou non) un nombre strictement équivalent de fois pour chaque candidat. Le nombre de participants à La Primaire Démocratique Ouverte étant encore indéterminé à ce jour, le nombre de distribution à définir et sera bien entendu précisé en amont.
+Le processus garantira qu'il aura été possible de voter (ou non) un nombre strictement équivalent de fois pour chaque candidat. Le nombre de participants à La Primaire Ouverte étant encore indéterminé à ce jour, le nombre de distribution à définir et sera bien entendu précisé en amont.
 
 ##### Résultats
 
-democratech, en sa qualité d'organisateur de la Primaire Démocratique Ouverte, a un devoir de neutralité et entend proposer une primaire réellement démocratique et représentative de toutes les tendances.
+democratech, en sa qualité d'organisateur de la Primaire Ouverte, a un devoir de neutralité et entend proposer une primaire réellement démocratique et représentative de toutes les tendances.
 
-Nous avons donc souhaité que l'issue du 1er tour :
+Nous avons donc souhaité que l'issue de cette phase de sélection :
 
 - reflète une diversité de choix, puisque cette primaire est celle de tous les français ; et
 - demeure néanmoins sélective, puisqu'il s'agit d'un processus électif.
 
-Seront ainsi qualifiés pour le second tour de la Primaire Démocratique Ouverte, tous les candidat ayant obtenu individuellement au moins 10% du total des votes. Si aucun ou un seul des candidats ne devait atteindre ce seuil de 10%, seuls les 2 premiers seront qualifiés.
+Seront ainsi qsléectionnés pour la Primaire Ouverte, tous les candidats ayant obtenu individuellement au moins 10% du total des votes. Si aucun ou un seul des candidats ne devait atteindre ce seuil de 10%, seuls les 2 premiers seront sélectionnés.
 
-#### Second tour de la Primaire Démocratique Ouverte
+#### Choix du candidat de la Primaire Ouverte
 
 ##### Interaction candidats / citoyens
 
-democratech organisera plusieurs débats entre les candidats qualifiés pour le second tour.
+democratech organisera plusieurs débats entre les candidats sélectionnés, en définitive, pour le vote.
 
 Au cours de cette période, democratech entend également permettre à tous les citoyens de s'impliquer et proposera des outils issus de l'intelligence collective et favorisant la démocratie participative.
 
@@ -133,13 +133,13 @@ Les questions posées aux candidats seront donc celles des citoyens et celles de
 
 ##### Processus de vote
 
-Le vainqueur du second tour sera celui qui aura obtenu la majorité relative des votes.
+Le vainqueur sera celui qui aura obtenu la majorité relative des votes.
 
 #### Election présidentielle
 
-democratech accompagnera et assistera le candidat vainqueur de la Primaire Démocratique Ouverte dans le cadre de sa campagne à l'élection présidentielle, notamment :
+democratech accompagnera et assistera le candidat vainqueur de la Primaire Ouverte dans le cadre de sa campagne à l'élection présidentielle, notamment :
 
-- recueillir les 500 signatures nécessaires à la validation de sa candidature à l'élection présidentielle ;
+- recueillir les 500 parrainages nécessaires à la validation de sa candidature à l'élection présidentielle ;
 - création de son parti politique (association Loi 1901 et association Loi 1901 de financement) ;
 - campagne de financement.
 
