@@ -42,16 +42,16 @@ Un soutien se matérialise par :
 Nous avons choisi de fixer le Seuil de Qualification à 500 soutiens pour les raisons suivantes :
 
 - symboliquement, par référence aux parrainages devant être obtenus par un candidat à l'élection présidentielle à fins de validation de sa candidature ;
-- 500 est un nombre, a priori, suffisamment élevé pour limiter les candidatures fantaisistes ou non-engageante : si un candidat n'arrive pas à fédérer au moins 500 personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
-- 500 est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir participer à la Primaire Démocratique Ouverte.
+- 500 est un nombre, a priori, suffisamment élevé pour limiter les candidatures fantaisistes ou non-engageantes : si un candidat n'arrive pas à fédérer au moins 500 personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
+- 500 est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir participer à la Primaire Ouverte.
 
 Au cours de cette phase d'identification des candidats, democratech mettra à leur disposition un espace personnel dédié, dont le contenu sera à leur charge exclusive, et soumis au respect de la Charte (non encore finalisée à ce jour).
 
 Les candidats assureront, seuls et par leurs propres moyens, leur campagne tendant à atteindre le Seuil de Qualification.
 
-Dès que le Seuil de Qualification sera atteint, tout citoyen concerné sera automatiquement présélectionné pour participer, en qualité de candidat, à la Primaire Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
+Dès que le Seuil de Qualification sera atteint, tout citoyen concerné sera automatiquement pré-qualifié pour participer, en qualité de candidat, à la Primaire Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
 
-### 1er mai 2016 : Publication de la liste provisoire des candidats présélectionnés pour participer à la Primaire Ouverte
+### 1er mai 2016 : Publication de la liste provisoire des candidats pré-qualifiés pour participer à la Primaire Ouverte
 
 Il s'agit des citoyens :
 
@@ -60,15 +60,15 @@ Il s'agit des citoyens :
 
 et ayant atteint le Seuil de Qualification.
 
-### Mai 2016 : Rencontre entre les candidats présélectionnés et de confirmation de leur participation à la Primaire Ouverte
+### Mai 2016 : Rencontre entre les candidats pré-qualifiés et confirmation de leur participation à la Primaire Ouverte
 
-democratech permettra à chaque candidat présélectionné d'échanger, s'il le souhaite, avec les autres candidats présélectionnés, voire de se rencontrer, notamment pour échanger sur leurs visions, programmes etc. respectifs, et envisager, le cas échéant, d'éventuelles synergies.
+democratech permettra à chaque candidat pré-qualifié d'échanger, s'il le souhaite, avec les autres candidats pré-qualifiés, voire de se rencontrer, notamment pour échanger sur leurs visions, programmes etc. respectifs, et envisager, le cas échéant, d'éventuelles synergies.
 
 A l'issue de cette phase de dialogue, chaque candidat devra confirmer, auprès des organisateurs de la Primaire Ouverte, son souhait de maintenir ou non sa candidature, notamment s'il souhaite se rallier à un autre candidat.
 
 Par ailleurs, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, tout candidat concerné sera contacté par democratech et devra faire part de sa décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
 
-### 1er juin 2016 : Publication de la liste définitive des candidats participant à la Primaire Ouverte
+### 1er juin 2016 : Publication de la liste définitive des candidats qualifiés à l'effet de participer à la Primaire Ouverte
 
 Il s'agit des citoyens :
 
@@ -78,7 +78,7 @@ Il s'agit des citoyens :
 et ayant :
 
 - atteint le Seuil de Qualification ;
-- confirmé leur participation à la Primaire Ouverte
+- confirmé leur participation à la Primaire Ouverte.
 
 ### Juin-Septembre 2016 : Ajustement collaboratif des programmes des candidats
 
@@ -117,7 +117,7 @@ Nous avons donc souhaité que l'issue de cette phase de sélection :
 - reflète une diversité de choix, puisque cette primaire est celle de tous les français ; et
 - demeure néanmoins sélective, puisqu'il s'agit d'un processus électif.
 
-Seront ainsi qsléectionnés pour la Primaire Ouverte, tous les candidats ayant obtenu individuellement au moins 10% du total des votes. Si aucun ou un seul des candidats ne devait atteindre ce seuil de 10%, seuls les 2 premiers seront sélectionnés.
+Seront ainsi sélectionnés pour la Primaire Ouverte, tous les candidats ayant obtenu individuellement au moins 10% du total des votes. Si aucun ou un seul des candidats ne devait atteindre ce seuil de 10%, seuls les deux premiers seront sélectionnés.
 
 #### Choix du candidat de la Primaire Ouverte
 
@@ -127,7 +127,7 @@ democratech organisera plusieurs débats entre les candidats sélectionnés, en 
 
 Au cours de cette période, democratech entend également permettre à tous les citoyens de s'impliquer et proposera des outils issus de l'intelligence collective et favorisant la démocratie participative.
 
-Ici, tous les citoyens pourront interroger tous les candidats. Concrètement, les questions seront traitées par un outil d'intelligence collective permettant d'agréger les questions, de les affiner et de faire ressortir les sujets les plus abordés. Cette étape est encore en cours de finalisation et réfléchissons à apporter la meilleure valeur ajoutée participative.
+Ici, tous les citoyens pourront interroger tous les candidats. Concrètement, les questions seront traitées par un outil d'intelligence collective permettant d'agréger les questions, de les affiner et de faire ressortir les sujets les plus abordés. Cette étape est encore en cours de finalisation et nous réfléchissons à apporter la meilleure valeur ajoutée participative.
 
 Les questions posées aux candidats seront donc celles des citoyens et celles de journalistes.
 
