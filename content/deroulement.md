@@ -15,7 +15,7 @@ Phase de béta-test de l'application.
 
 ### 1er février 2016 : Ouverture de la Primaire Ouverte
 
-L'application "LaPrimaire.org" sera disponible au téléchargement en versions IOS et Android (l'"Application").
+L'application "LaPrimaire.org" sera disponible au téléchargement en versions iOS et Android (l'"Application").
 
 L'Application sera nécessaire pour participer à la Primaire Ouverte.
 
@@ -106,7 +106,7 @@ L'un des objectifs de democratech, dans le cadre de l'organisation de la Primair
 
 Compte tenu de cet objectif, nous avons souhaité mettre en place un système de distribution aléatoire des candidats. Concrètement, tous les candidats qualifiés pour participer à la Primaire Ouverte seront distribués aléatoirement auprès de l'ensemble des citoyens inscrits et participant.
 
-Le processus garantira qu'il aura été possible de voter (ou non) un nombre strictement équivalent de fois pour chaque candidat. Le nombre de participants à La Primaire Ouverte étant encore indéterminé à ce jour, le nombre de distribution à définir et sera bien entendu précisé en amont.
+Le processus garantira qu'il aura été possible de voter (ou non) un nombre strictement équivalent de fois pour chaque candidat. Le nombre de participants à La Primaire Ouverte étant encore indéterminé à ce jour, le nombre de distribution reste à définir et sera bien entendu précisé en amont.
 
 ##### Résultats
 
