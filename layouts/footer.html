@@ -7,9 +7,9 @@
 	</div>
 </div>
 
-<% if @item[:footer] %>
+<% if @item[:footer] and not @config[:debug] %>
 <footer>
-        <div class="container">
+        <div class="container hidden-xs">
             <div class="row" style="margin-bottom:10px;">
 		    <span style="font-size:20px;color:white;text-align:center;font-weight:bold;font-variant:small-caps;">La Primaire est 100% gratuite et son organisation ne repose que sur vos dons</span>
  	    </div>

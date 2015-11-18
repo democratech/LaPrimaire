@@ -1,10 +1,10 @@
-debug: false
+debug: true
 scripts:
   - jquery
   - bootstrap
   - countdown
-  - fb_ga_tw
-  - ga_events
+#  - fb_ga_tw
+#  - ga_events
   - classie
   - contact_me
   - cbpAnimatedHeader
