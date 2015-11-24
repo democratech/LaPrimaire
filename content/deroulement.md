@@ -30,7 +30,7 @@ A compter de l'ouverture de Primaire Ouverte, tout citoyen remplissant les [cond
 Dans le cas du Plébiscite, il est possible de désigner :
 
 - soit un citoyen s'étant déjà déclaré candidat ;
-- soit un citoyen ne s'étant pas déclaré candidat, mais en lequel vous avez confiance et que vous jugez potentiellement compétent pour s'impliquer dans la vie politique, voire de devenir le prochain Président de la République.
+- soit un citoyen ne s'étant pas déclaré candidat, mais en lequel vous avez confiance et que vous jugez potentiellement compétent pour s'impliquer dans la vie politique, voire de devenir le/la prochain(e) Président(e) de la République.
 
 Au cours de cette période, les citoyens qui souhaitent être candidats à la Primaire Ouverte devront recueillir, par leurs propres moyens, un minimum de 500 soutiens (le "Seuil de Qualification").
 
