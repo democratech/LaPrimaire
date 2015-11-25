@@ -6,92 +6,97 @@ navbar: true
 deroulement: true
 edit_url: https://github.com/democratech/LaPrimaire/blob/master/content/deroulement.md
 author: des citoyens ordinaires
-description: Si vous faites partie des citoyens déçus et lassés des politiques français et que vous souhaitez nous donner un coup de main pour redonner du sens aux élections, remplissez ce formulaire pour nous aider à organiser LA Primaire démocratique et ouverte en vue des élections de 2017.
+description: Si vous faites partie des citoyens déçus et lassés des politiques français et que vous souhaitez contibuer à redonner du sens aux élections, remplissez ce formulaire pour nous aider à organiser LA Primaire démocratique et ouverte en vue des élections de 2017.
 ---
+
+A titre préliminaire, nous précisons qu'en qualité d'organisateurs de la Primaire Ouverte nous nous réservons la possibilité d'adapter la durée des phases ci-après décrites afin d'optimiser l'efficacité de la Primaire Ouverte. Tout modification éventuelle sera décidée et annoncée suffisamment à l'avance pour que tout un chacun puisse en prendre connaissance et en tenir compte.
+
 
 ### Décembre 2015 - Janvier 2016
 
 Phase de béta-test de l'application.
 
+Publication de la Charte du candidat, définissant les principes et valeurs à respecter par tout candidat à la Primaire Ouverte.
+
+
 ### 1er février 2016 : Ouverture de la Primaire Ouverte
 
-L'application "LaPrimaire.org" sera disponible au téléchargement en versions iOS et Android (l'"Application").
+L'application "LaPrimaire.org" sera accessible depuis un smartphone (iOS et Android) et un ordinateur (PC et Mac) (l'"Application").
 
 L'Application sera nécessaire pour participer à la Primaire Ouverte.
 
-### Février-Avril 2016 : Identification des candidats potentiels
+Tout citoyen souhaitant participer à la Primaire Ouverte devra s'authentifier au sein de l'Application en renseignant les infomations et en communiquant les documents suivants :
+- nom, prenom ;
+- code postal ;
+- numéro de téléphone mobile ;
+- adresse e-mail personnelle ;
+- une pièce d'identité en cours de validité.
+
+Un code d'identification unique sera adressé à chaque utilisateur enregistré.
+
+
+### Février-Juin 2016 : Identification des candidats potentiels
 
 A compter de l'ouverture de Primaire Ouverte, tout citoyen remplissant les [conditions légales requises](/faq/) pourra, à sa convenance :
-
 - s'inscrire pour suivre et participer ;
 - se porter candidat (la "Candidature Spontanée") ;
-- proposer un candidat (le "Plébiscite").
+- proposer un candidat, dans la limite de cinq (5) propositions (le "Plébiscite").
 
 Dans le cas du Plébiscite, il est possible de désigner :
-
 - soit un citoyen s'étant déjà déclaré candidat ;
-- soit un citoyen ne s'étant pas déclaré candidat, mais en lequel vous avez confiance et que vous jugez potentiellement compétent pour s'impliquer dans la vie politique, voire de devenir le/la prochain(e) Président(e) de la République.
+- soit un citoyen, ne s'étant pas déclaré candidat, mais en lequel vous avez confiance et que vous jugez potentiellement compétent pour s'impliquer dans la vie politique de notre pays, voire de devenir le/la prochain(e) Président(e) de la République.
 
-Au cours de cette période, les citoyens qui souhaitent être candidats à la Primaire Ouverte devront recueillir, par leurs propres moyens, un minimum de 500 soutiens (le "Seuil de Qualification").
+Au cours de cette période d'identification, tout candidat potentiel devra recueillir, pour etre sélectionné, un minimum de cinq cents (500) soutiens (le "Seuil de Qualification").
 
 Un soutien se matérialise par :
-
 - une personne ayant téléchargé et installé l'Application ; et
-- ayant désigné le citoyen concerné comme candidat au sein de l'Application.
+- ayant désigné le citoyen concerné comme candidat à la Primaire Ouverte au sein de l'Application.
 
-Nous avons choisi de fixer le Seuil de Qualification à 500 soutiens pour les raisons suivantes :
-
+Nous avons choisi de fixer le Seuil de Qualification à cinq cents (500) soutiens pour les raisons suivantes :
 - symboliquement, par référence aux parrainages devant être obtenus par un candidat à l'élection présidentielle à fins de validation de sa candidature ;
-- 500 est un nombre, a priori, suffisamment élevé pour limiter les candidatures fantaisistes ou non-engageantes : si un candidat n'arrive pas à fédérer au moins 500 personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
-- 500 est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir participer à la Primaire Ouverte.
+- cinq cents (500) est un nombre, a priori, suffisamment élevé pour limiter les candidatures fantaisistes ou non-engageantes : si un candidat n'arrive pas à fédérer au moins cinq cents (500) personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
+- cinq cents (500) est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir participer à la Primaire Ouverte.
 
-Au cours de cette phase d'identification des candidats, democratech mettra à leur disposition un espace personnel dédié, dont le contenu sera à leur charge exclusive, et soumis au respect de la Charte (non encore finalisée à ce jour).
+Au cours de cette période d'identification, il sera mis à la disposition de chaque candidat un espace personnel dédié dont le contenu respectera un format pré-défini et identique pour tous (la "Présentation"). La Présentation comprendra notamment des liens html dirigeant vers les réseaux sociaux et/ou site web personnels des candidats, dont le contenu sera à leur charge exclusive et soumis au respect de la Charte. Il sera égalemet crée une Présentation pour tous les candidats objet d'un Plébiscite.
 
 Les candidats assureront, seuls et par leurs propres moyens, leur campagne tendant à atteindre le Seuil de Qualification.
 
-Dès que le Seuil de Qualification sera atteint, tout citoyen concerné sera automatiquement pré-qualifié pour participer, en qualité de candidat, à la Primaire Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
+Dès que le Seuil de Qualification sera atteint par un candidat, ce dernier sera automatiquement qualifié pour participer à la phase de sélection de la Primaire Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
+
+Les données concernant candidats seront mises à la disposition de t via une API dédiée.
+
 
 ### 1er mai 2016 : Publication de la liste provisoire des candidats pré-qualifiés pour participer à la Primaire Ouverte
 
 Il s'agit des citoyens :
-
 - ayant formulé une Candidature Spontanée ; ou
-- issu du Plébiscite ;
+- issus du Plébiscite ;
 
 et ayant atteint le Seuil de Qualification.
 
-### Mai 2016 : Rencontre entre les candidats pré-qualifiés et confirmation de leur participation à la Primaire Ouverte
+Au-delà des candidats ayant réalisé une Candidature Spontannée et ayant atteint le Seuil de Qualification, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens strictement égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, nous contacterons directement ces candidats potentiels, lesquels devront nous faire part, dans les trente (30) jours de notre demande, de leur décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
 
-democratech permettra à chaque candidat pré-qualifié d'échanger, s'il le souhaite, avec les autres candidats pré-qualifiés, voire de se rencontrer, notamment pour échanger sur leurs visions, programmes etc. respectifs, et envisager, le cas échéant, d'éventuelles synergies.
 
-A l'issue de cette phase de dialogue, chaque candidat devra confirmer, auprès des organisateurs de la Primaire Ouverte, son souhait de maintenir ou non sa candidature, notamment s'il souhaite se rallier à un autre candidat.
+### Juin-Septembre 2016 : 
 
-Par ailleurs, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, tout candidat concerné sera contacté par democratech et devra faire part de sa décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
+#### Rencontres entre les candidats pré-qualifiés et confirmation de leur participation à la Primaire Ouverte
 
-### 1er juin 2016 : Publication de la liste définitive des candidats qualifiés à l'effet de participer à la Primaire Ouverte
+Une fois l'ensemble des candidats pre-qualifiés connus, nous permettront à chacun d'entre eux d'échanger, s'il le souhaite, avec les autres candidats pré-qualifiés, de se rencontrer, notamment pour échanger sur leurs visions, programmes etc. respectifs, et envisager, le cas échéant, d'éventuelles synergies.
 
-Il s'agit des citoyens :
+#### Ajustement collaboratif des programmes des candidats
 
-- ayant formulé une Candidature Spontanée ; ou
-- issu du Plébiscite ;
+Nosu entendons également permettre à tous les citoyens de s'impliquer tout au long du processus et proposerons donc des outils issus de l'intelligence collective et favorisant la démocratie participative.
 
-et ayant :
-
-- atteint le Seuil de Qualification ;
-- confirmé leur participation à la Primaire Ouverte.
-
-### Juin-Septembre 2016 : Ajustement collaboratif des programmes des candidats
-
-democratech entend permettre à tous les citoyens de s'impliquer tout au long du processus et proposera des outils issus de l'intelligence collective et favorisant la démocratie participative.
-
-Au cours de cette période, chaque candidat qualifié devra mettre en ligne, dans l'espace qui lui sera mis à disposition, une présentation comprenant obligatoirement les éléments suivants :
-
+Au cours de cette période, chaque candidat pré-qualifié devra mettre en ligne, dans l'espace qui lui sera mis à disposition, une présentation comprenant obligatoirement les éléments suivants :
 - sa biographie ;
 - les actes significatifs déjà accomplis par lui ;
 - son programme (notamment sa vision, ses principales mesures...) ;
 - une vidéo dont le format sera précisé ultérieurement.
 
 Dans ce cadre, chaque candidat pourra échanger avec ses soutiens, lesquels pourront participer, commenter et contribuer la finalisation du programme du candidat concerné, en accord avec ce dernier.
+
+A l'issue de cette phase de de rencontres et d'échanges, chaque candidat devra nous confirmer son souhait de maintenir ou non sa candidature, notamment s'il souhaite se rallier à un autre candidat.
+
 
 ### Second semestre 2016
 
