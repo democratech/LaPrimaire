@@ -1,5 +1,5 @@
 ---
-title: Déroulement et Calendrier de La Primaire
+title: Déroulement et Calendrier de La Primaire Ouverte
 page_title: Déroulement
 footer: true
 navbar: true
@@ -9,33 +9,35 @@ author: des citoyens ordinaires
 description: Si vous faites partie des citoyens déçus et lassés des politiques français et que vous souhaitez contibuer à redonner du sens aux élections, remplissez ce formulaire pour nous aider à organiser LA Primaire démocratique et ouverte en vue des élections de 2017.
 ---
 
-A titre préliminaire, nous précisons qu'en qualité d'organisateurs de la Primaire Ouverte nous nous réservons la possibilité d'adapter la durée des phases ci-après décrites afin d'optimiser l'efficacité de la Primaire Ouverte. Tout modification éventuelle sera décidée et annoncée suffisamment à l'avance pour que tout un chacun puisse en prendre connaissance et en tenir compte.
+A titre préliminaire, nous souhaitons préciser, qu'en qualité d'organisateurs de la Primaire Ouverte, nous nous réservons la possibilité d'adapter le calendrier ci-après décrit afin d'optimiser l'efficacité et le déroulement de la Primaire Ouverte. Toute modification éventuelle sera, bien entendu, décidée et annoncée suffisamment en amont afin que tout un chacun puisse en prendre connaissance et en tenir compte.
 
 
 ### Décembre 2015 - Janvier 2016
 
-Phase de béta-test de l'application.
+Phase de béta-test.
 
-Publication de la Charte du candidat, définissant les principes et valeurs à respecter par tout candidat à la Primaire Ouverte.
+Publication de la Charte du candidat, définissant les principes et valeurs devant être respectés par tout citoyen français souhaitant participer à la Primaire Ouverte, en qualité de candidat (la "Charte"). Tout candidat qualifié pour participer à la Primaire Ouverte (voir ci-dessous) s'engage à signer la Charte et à nous la retourner dans les trente (30) jours de l'annonce de sa qualification. A défaut, sa participation ne pourra pas être définitivement validée, sans recours possible.
 
 
 ### 1er février 2016 : Ouverture de la Primaire Ouverte
 
+Une application dédiée sera nécessaire pour participer à la Primaire Ouverte.
+
 L'application "LaPrimaire.org" sera accessible depuis un smartphone (iOS et Android) et un ordinateur (PC et Mac) (l'"Application").
 
-L'Application sera nécessaire pour participer à la Primaire Ouverte.
-
-Tout citoyen souhaitant participer à la Primaire Ouverte devra s'authentifier au sein de l'Application en renseignant les infomations et en communiquant les documents suivants :
-- nom, prenom ;
+Toute personne souhaitant participer à la Primaire Ouverte devra s'authentifier au sein de l'Application en renseignant les infomations et en communiquant les documents suivants :
+- nom, prénom ;
 - code postal ;
 - numéro de téléphone mobile ;
 - adresse e-mail personnelle ;
 - une pièce d'identité en cours de validité.
 
-Un code d'identification unique sera adressé à chaque utilisateur enregistré.
+Un code d'identification unique sera communiqué à chaque utilisateur.
+
+Les données saisies feront l'objet d'un chiffrement immédiat afin d'assurer le plus strict anonymat à chaque participant. Le traitement des données ainsi collectées aura pour unique finalité l'organisation de la Primaire Ouverte.
 
 
-### Février-Juin 2016 : Identification des candidats potentiels
+### Février-Avril 2016 : Identification des candidats
 
 A compter de l'ouverture de Primaire Ouverte, tout citoyen remplissant les [conditions légales requises](/faq/) pourra, à sa convenance :
 - s'inscrire pour suivre et participer ;
@@ -46,27 +48,25 @@ Dans le cas du Plébiscite, il est possible de désigner :
 - soit un citoyen s'étant déjà déclaré candidat ;
 - soit un citoyen, ne s'étant pas déclaré candidat, mais en lequel vous avez confiance et que vous jugez potentiellement compétent pour s'impliquer dans la vie politique de notre pays, voire de devenir le/la prochain(e) Président(e) de la République.
 
-Au cours de cette période d'identification, tout candidat potentiel devra recueillir, pour etre sélectionné, un minimum de cinq cents (500) soutiens (le "Seuil de Qualification").
+Au cours de cette période d'identification, tout candidat potentiel (Canditature Spontanée et Plébiscite) devra recueillir, pour etre qualifié, un minimum de cinq cents (500) soutiens (le "Seuil de Qualification").
 
 Un soutien se matérialise par :
 - une personne ayant téléchargé et installé l'Application ; et
 - ayant désigné le citoyen concerné comme candidat à la Primaire Ouverte au sein de l'Application.
 
-Nous avons choisi de fixer le Seuil de Qualification à cinq cents (500) soutiens pour les raisons suivantes :
+Nous avons décidé de fixer le Seuil de Qualification à cinq cents (500) soutiens pour les raisons suivantes :
 - symboliquement, par référence aux parrainages devant être obtenus par un candidat à l'élection présidentielle à fins de validation de sa candidature ;
 - cinq cents (500) est un nombre, a priori, suffisamment élevé pour limiter les candidatures fantaisistes ou non-engageantes : si un candidat n'arrive pas à fédérer au moins cinq cents (500) personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
-- cinq cents (500) est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir participer à la Primaire Ouverte.
+- cinq cents (500) est un nombre, a priori, suffisamment bas pour permettre à tout citoyen suffisamment motivé de pouvoir prétendre à participer à la Primaire Ouverte.
 
-Au cours de cette période d'identification, il sera mis à la disposition de chaque candidat un espace personnel dédié dont le contenu respectera un format pré-défini et identique pour tous (la "Présentation"). La Présentation comprendra notamment des liens html dirigeant vers les réseaux sociaux et/ou site web personnels des candidats, dont le contenu sera à leur charge exclusive et soumis au respect de la Charte. Il sera égalemet crée une Présentation pour tous les candidats objet d'un Plébiscite.
+Afin de permettre à tous les candidats potentiels de matérialiser leur candidature, il sera mis à leur disposition, au sein de l'Application et/ou du Site Web, un espace personnel dédié dont le contenu respectera un format pré-défini et identique pour tous (la "Présentation"). La Présentation comprendra notamment des liens html dirigeant vers les réseaux sociaux et/ou le site web personnel du candidat, dont le contenu sera à leur charge exclusive et soumis au respect de la Charte (les "Espaces Prsonnels"). Une Présentation sera également créée pour tous les candidats objet d'un Plébiscite.
 
-Les candidats assureront, seuls et par leurs propres moyens, leur campagne tendant à atteindre le Seuil de Qualification.
+Sur le fondement de la Présentation et des Espaces Personnels, les candidats assureront, seuls et par leurs propres moyens, leur campagne tendant à faire connaître leur candidature à la Primaire Ouverte et ce afin d'atteindre le Seuil de Qualification. 
 
-Dès que le Seuil de Qualification sera atteint par un candidat, ce dernier sera automatiquement qualifié pour participer à la phase de sélection de la Primaire Ouverte. Bien entendu, les autres soutiens qu’il recevrait seront comptabilisés et communiqués.
-
-Les données concernant candidats seront mises à la disposition de t via une API dédiée.
+La Présentation indiquera, en temps réel, le nombre de soutiens obtenus par chaque candidat. Dès que le Seuil de Qualification aura été atteint par un candidat, ce dernier sera automatiquement qualifié pour participer à la phase de sélection de la Primaire Ouverte (voir ci-dessous). Bien entendu, les autres soutiens qu’il recevrait seront également comptabilisés et communiqués.
 
 
-### 1er mai 2016 : Publication de la liste provisoire des candidats pré-qualifiés pour participer à la Primaire Ouverte
+### 1er mai 2016 : Publication de la liste provisoire des candidats qualifiés pour participer à la Primaire Ouverte
 
 Il s'agit des citoyens :
 - ayant formulé une Candidature Spontanée ; ou
@@ -77,7 +77,7 @@ et ayant atteint le Seuil de Qualification.
 Au-delà des candidats ayant réalisé une Candidature Spontannée et ayant atteint le Seuil de Qualification, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens strictement égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, nous contacterons directement ces candidats potentiels, lesquels devront nous faire part, dans les trente (30) jours de notre demande, de leur décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
 
 
-### Juin-Septembre 2016 : 
+### Juin-Septembre 2016 : Préparation
 
 #### Rencontres entre les candidats pré-qualifiés et confirmation de leur participation à la Primaire Ouverte
 
