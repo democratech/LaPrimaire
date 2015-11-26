@@ -13,7 +13,7 @@ A titre préliminaire, nous souhaitons préciser, qu'en qualité d'organisateurs
 
 Par ailleurs, une application dédiée est nécessaire pour participer à la Primaire Ouverte. L'application "LaPrimaire.org" est accessible et utilisable depuis un smartphone (iOS et Android) et un ordinateur (PC et Mac) (l'"Application").
 
-Enfin, Toutes les informations relatives à la Primaire Ouverte sont disponibles sur le site web accessible à l'adresse https://laprimaire.org (le "Site Web").
+Enfin, toutes les informations relatives à la Primaire Ouverte sont disponibles sur le site web accessible à l'adresse https://laprimaire.org (le "Site Web").
 
 
 ### Décembre 2015 - Janvier 2016
@@ -43,7 +43,7 @@ Toute personne souhaitant participer à la Primaire Ouverte devra s'authentifier
 
 Un code d'identification unique sera communiqué à chaque utilisateur.
 
-Les données ci-dessus feront l'objet d'un chiffrement immédiat et automatique afin d'assurer le plus strict anonymat à chaque participant. Le traitement des données ainsi collectées aura pour unique finalité l'organisation de la Primaire Ouverte et ne seront pas utilisées à d'autrs fins que celle-ci.
+Les données ci-dessus feront l'objet d'un chiffrement immédiat et automatique afin d'assurer le plus strict anonymat à chaque participant. Le traitement des données ainsi collectées aura pour unique finalité l'organisation de la Primaire Ouverte et ne seront pas utilisées à d'autres fins que celle-ci.
 
 
 ### Février - Avril 2016 : Identification des candidats
@@ -68,7 +68,7 @@ Nous avons décidé de fixer le Seuil de Qualification à cinq cents (500) souti
 - cinq cents (500) est un nombre, a priori, relativement élevé pour limiter les candidatures fantaisistes ou non-engageantes : si un candidat n'arrive pas à fédérer au moins cinq cents (500) personnes, il est possible de douter de sa propension à en rassembler plusieurs millions ;
 - cinq cents (500) est un nombre, a priori, relativement bas pour permettre à tout citoyen suffisamment motivé de pouvoir prétendre à participer à la Primaire Ouverte.
 
-Afin de permettre à tous les candidats potentiels de matérialiser leur candidature à la Primaire Ouverte, il sera mis à leur disposition, au sein de l'Application et/ou du Site Web, un espace personnel dédié dont le contenu respectera un format pré-défini et strictement identique pour tous (la "Présentation"). La Présentation comprendra notamment des liens html dirigeant vers les réseaux sociaux et/ou le site web personnel du candidat, dont le contenu sera à leur charge exclusive et soumis au respect de la Charte (les "Espaces Personnels"). Une Présentation sera également créée pour tous les candidats objet d'un Plébiscite.
+Afin de permettre à tous les candidats potentiels de matérialiser leur candidature à la Primaire Ouverte, il sera mis à leur disposition, au sein de l'Application et/ou du Site Web, un espace personnel dédié dont le contenu respectera un format pré-défini et strictement identique pour tous (la "Présentation"). La Présentation comprendra notamment des liens html dirigeant vers les réseaux sociaux et/ou le site web personnels du candidat, dont le contenu sera à leur charge exclusive et soumis au respect de la Charte (les "Espaces Personnels"). Une Présentation sera également créée pour tous les candidats objet d'un Plébiscite.
 
 Sur le fondement de la Présentation et des Espaces Personnels, les candidats assureront, seuls et par leurs propres moyens, leur campagne tendant à faire connaître leur candidature à la Primaire Ouverte et ce afin d'atteindre le Seuil de Qualification. 
 
@@ -90,9 +90,9 @@ Au-delà des candidats ayant réalisé une Candidature Spontannée et ayant atte
 
 #### Rencontres entre les candidats qualifiés
 
-Nous organiserons et permettrons aux candidats qualifés d'échanger, s'ils le souhaitent, avec les autres candidats, favoriserons les rencontres, notamment afin de permettre aux candidats d'échanger sur leurs visions, programmes, principales mesures et objectifs etc. respectifs. 
+Nous organiserons des rencontres entre les candidats qualifés afin de leur permettre, s'ils le souhaitent, d'exposer et de partager leurs visions, programmes et principales mesures, objectifs... respectifs. 
 
-Cette période pourra également favoriser la recherche d'éventuelles de synergies entre les candidats à l'effet de constituer ou de compléter des équipes.
+Cette période pourra également favoriser la recherche d'éventuelles synergies entre les candidats à l'effet de constituer ou de compléter des équipes.
 
 #### Ajustement collaboratif des programmes
 
@@ -110,7 +110,7 @@ Il pourra également renvoyer vers du contenu externe.
 
 L'ensemble des ces élements sont soumis au respect de la Charte.
 
-Dans ce cadre de cette période, chaque candidat pourra échanger avec ses soutiens, lesquels pourront participer, commenter et contribuer à la finalisation du programme du candidat concerné, en accord avec ce dernier.
+Dans le cadre de cette période, chaque candidat pourra échanger avec ses soutiens, lesquels pourront participer, commenter et contribuer à la finalisation du programme du candidat concerné, en accord avec ce dernier.
 
 #### Rencontres entre les candidats et les citoyens
 
@@ -118,7 +118,7 @@ Nous organiserons également des tables rondes permettant aux candidats d'échan
 
 #### Publication de la liste des candidats qualifiés, de leurs équipes et programmes
 
-A l'issue de cette phase de rencontre et d'échange, chaque candidat devra nous confirmer, dans les huit (8) jours de notre demande son souhait de maintenir ou non sa candidature. Le défaut de réponse sera assimilé à un refus.
+A l'issue de cette phase de rencontre et d'échange, chaque candidat devra nous confirmer, dans les huit (8) jours de notre demande, son souhait de maintenir ou non sa candidature. Le défaut de réponse sera assimilé à un refus.
 
 
 ### Septembre 2016 : Sélection des candidats
@@ -151,9 +151,9 @@ Concrètement, les candidats qualifés seront répartis par lots de candidats de
 - la composition même du lot, i.e. l'identité des candidats composant un lot donné ;
 - l'ordre d'apparition des candidats au sein du lot.
 
-Nous assurerons à chaque candidature d'être soumise à la sélection des participants de la Primaire Ouverte un nombre strictement identique de fois. De leur côté, les citioyens participants à la Primaire Ouverte seront appelés à se prononcer un ou plusieurs lots, qui leur sera(ont) adresé(s) de manière totalement aléatoire.
+Nous assurerons à chaque candidature d'être soumise à la sélection des participants de la Primaire Ouverte un nombre de fois strictement identique. De leur côté, les citoyens participants à la Primaire Ouverte seront appelés à se prononcer sur un ou plusieurs lots de candidats, qui leur sera(ont) adresé(s) de manière totalement aléatoire.
 
-Le nombre de citoyens participants à La Primaire Ouverte et de candidats qualifés étant encore indéterminés à ce jour, les modalités de distribution aléotoire et seuils de sélection seront définitivement fixés et annoncés à l'issue de la période de qualification (voir ci-dessus). Les paramètres auourd'hui définis et à ajuster seront toutefois les suivants :
+Le nombre de citoyens participants à La Primaire Ouverte et de candidats qualifés étant encore indéterminés à ce jour, les modalités de distribution aléotoire et seuils de sélection seront définitivement fixés et annoncés à l'issue de la période de qualification (voir ci-dessus). Les paramètres aujourd'hui définis et devant être ajustés seront toutefois les suivants :
 - nombre de candidats composant un lot ;
 - mode de scrutin au sein du lot ;
 - seuil de qualification.
@@ -162,11 +162,11 @@ A ce jour, nous envisageons ce qui suit :
 
 - lots et mode de scrutin : chaque participant à la Primaire Ouverte sera appelé à se prononcer sur un lot aléatoire qui lui sera adressé. Il fera part de son choix au moyen de bulletins de vote qu'il pourra affecter librement. A titre d'exemple, si un lot devait contenir dix (10) candidats, le citoyen disposera de dix (10) bulletins de vote qu'il pourra affecter librement (10 sur un seul candidat ; répartir les bulletins entre plusieurs candidats : 6, 3, 1 ; n'attribuer aucun bulletin, matérialisant un vote blanc, etc.) ;
 
-- seul de sélection : l'objectif est de sélectionner plusieurs candidats représentatifs du choix des français. Par exmple, nous pourrions retenir tous les candidats représentant ensemble 70% du total des votes avec un minimum individuel de plus de 10%. Si aucun ou un seul des candidats ne devait atteindre ce seuil de 10%, seuls les deux premiers seraient sélectionnés.
+- seul de sélection : l'objectif est de sélectionner plusieurs candidats représentatifs du choix des français. Par exemple, nous pourrions retenir tous les candidats représentant ensemble 70% du total des votes avec un minimum individuel de plus de 10%. Si aucun ou un seul des candidats devait atteindre ce seuil de 10%, seuls les deux premiers seraient sélectionnés.
 
 ##### Publication des résultats
 
-A l'issue de cette phase de sélection, nous publierons la liste des candidats sélectionnés, lesquels devront nous confirmer, dans les huit (8) jours, leur souhait de maintenir ou non leur candidatucre. Le défaut de réponse sera assimilé à un refus.
+A l'issue de cette phase de sélection, nous publierons la liste des candidats sélectionnés, lesquels devront nous confirmer, dans les huit (8) jours, leur souhait de maintenir ou non leur candidature. Le défaut de réponse sera assimilé à un refus.
 
 
 #### Octobre - Décembre 2016
@@ -177,7 +177,7 @@ Au cours de cette période, nous permettrons à tous les citoyens de s'impliquer
 
 Tous les citoyens participants à la Primaire Ouverte pourront interroger tous les candidats. Concrètement, les questions seront traitées par un outil d'intelligence collective permettant d'agréger les questions, de les affiner et de faire ressortir les sujets les plus abordés. Cette étape est encore en cours de finalisation et nous réfléchissons à apporter la meilleure valeur ajoutée participative.
 
-##### Tables Rondes participatives
+##### Tables rondes participatives
 
 Nous entendons organiser plusieurs tables rondes entre les candidats sélectionnés, notamment dans chacune des capitales régionales, et dans le cadre desquelles les citoyens pourront interroger/échanger avec les candidats.
 
