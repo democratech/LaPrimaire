@@ -1,0 +1,67 @@
+---
+title: Organisation du meeting LaPrimaire.org à Toulouse
+description: Cette page liste la liste des tâches que nous devons faire en vue du meeting de Toulouse, n'hésitez pas à nous aider.
+ville: Toulouse
+primaire: true
+author: des citoyens ordinaires
+image: https://laprimaire.org/assets/images/comptes.png
+url: https://laprimaire.org/toulouse/
+footer: false
+navbar: true
+---
+
+<style>
+h4.card-title {
+	text-align:center;
+	font-weight: bold;
+	font-size: 24px;
+	color:#d91d1c;
+}
+div.card-body p {
+	font-size: 14px;
+}
+div.card-body {
+	height:70px;
+}
+div.lettre p {
+	font-size:14px;
+}
+h3 {
+	font-size: 20px;
+}
+</style>
+
+    <header id="page-top">
+	<div id="header_overlay" class="blue">
+        <div class="container">
+            <div class="row">
+		    <div class="title">
+			<h2>LaPrimaire.org à <%= @item[:ville] %></h2>
+		    </div>
+	    </div>
+        </div>
+    </header>
+
+    <section id="contribute_form">
+	    <div class="container">
+		    <div class="row">
+			<div class="col-lg-12 text-center">
+			    <h2 class="section-heading">Prochain meeting - mercredi 16 décembre</h2>
+			    <p style="font-size:16px; color:#777;font-style:italic;">Nous avons besoin de vous pour réussir cet évènement à <%= @item[:ville] %>. Vous trouverez sur cette page une liste de toutes les tâches à faire.<br/>Si vous pensez pouvoir nous aider, n'hésitez pas à nous dire comment avec le formulaire ci-dessous.</p><br/>
+			</div>
+		    </div>
+		    <div class="row" id="lettre_inline">
+			<div class="col-lg-7 col-md-12">
+				<div class="lettre" style="color:#5e5e5e;">
+					<h3>Liste des choses à faire</h3>
+				</div>
+			</div>
+			<div class="col-lg-5 col-md-12">
+				<div class="lettre" style="color:#5e5e5e;">
+					<h3>Vous souhaitez nous aider ?</h3>
+					<p>Prenez la responsabilité d'une tâche ! Présentez-vous en 2 mots et dites-nous de quelle tâche vous souhaitez vous occuper avec la formulaire suivant:</p>
+				</div>
+			</div>
+		    </div>
+	    </div><!--/container-->
+    </section>

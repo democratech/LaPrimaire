@@ -1,17 +1,8 @@
-<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-body">
-			</div>
-		</div>
-	</div>
-</div>
-
 <% if @item[:footer] and not @config[:debug] %>
-<footer>
-        <div class="container hidden-xs">
-            <div class="row" style="margin-bottom:10px;">
-		    <span style="font-size:20px;color:white;text-align:center;font-weight:bold;font-variant:small-caps;">La Primaire est 100% gratuite et son organisation ne repose que sur vos dons</span>
+<footer class="hidden-xs" style="padding: 0px;">
+        <div class="container">
+            <div class="row" style="margin-bottom:0px;">
+		    <span style="font-size:20px;color:white;text-align:center;font-weight:bold;font-variant:small-caps;">La Primaire est 100% gratuite et ne repose que sur vos dons</span>
  	    </div>
             <div class="row pledge">
 		<div class="col-md-2 hidden-xs hidden-sm">
@@ -23,7 +14,6 @@
 		</div>
 		<div class="col-md-3 col-xs-12">
 			<div>
-				<!--<a style="font-size:29px;font-variant:small-caps;" target="_blank" data-toggle="modal" data-target="#myModalHorizontal" class="btn btn-xl red donate-link" title="Pour donner toutes ses chances de succès à La Primaire">Je contribue</a>-->
 				<a style="font-size:29px;font-variant:small-caps;" href="/financer/" class="btn btn-xl red donate-link" title="Pour donner toutes ses chances de succès à La Primaire">Je contribue</a>
 			</div>
 		</div>
