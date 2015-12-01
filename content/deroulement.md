@@ -161,8 +161,8 @@ La phase de sélection est fondée sur une distribution entièrement aléatoire 
 Concrètement :
 
 - les candidats qualifés seront répartis par lots de candidats de manière totalement aléatoire, c'est à dire que chaque lot sera différent s'agissant, à la fois, de :
- * la composition même du lot, i.e. l'identité des candidats composant un lot donné ;
- * l'ordre d'apparition des candidats au sein du lot ;
+  * la composition même du lot, i.e. l'identité des candidats composant un lot donné ;
+  * l'ordre d'apparition des candidats au sein du lot ;
 
 - les lots de candidats seront distribués aléotoirement auprès des participants à la Primaire Ouverte, c'est à dire qu'un participant recevra un ou plusieurs lot(s), automatiquement, et qu'il ne pourra se prononcer que sur les candidats présentés au sein du(des) lot(s) reçu(s).
 
