@@ -22,6 +22,7 @@
     <meta name="twitter:description" content="<%= @item[:description].nil? ? "LaPrimaire.org organise une primaire hors partis politiques pour permettre aux français de choisir leurs candidats aux élections de 2017 de manière transparente et démocratique. LaPrimaire.org vise à rassembler les citoyens déçus et lassés des politiques et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire des candidats vraiment représentatifs.": "#{@item[:description]}" %>">
     <title><%= @item[:title].nil? ? "LaPrimaire.org - En 2017, tous candidats à l'élection présidentielle !":"#{@item[:title]}"  %></title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="alternate" hreflang="fr-fr" href="https://laprimaire.org" />
     <% if @config[:debug] %>
     <% for file in @config[:stylesheets] %>
     <link rel="stylesheet" type="text/css" href="/assets/style/<%= File.basename(file,".*") %>.css">
