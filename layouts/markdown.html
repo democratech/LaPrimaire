@@ -9,13 +9,14 @@
 	      <%= render "navbar" %>
       <% end %>
     <header id="page-top">
-	    <div id="header_overlay" class="<%= @item[:header_color].nil? ? "blue" : "#{@item[:header_color]}"%>">
+	<div id="header_overlay" class="<%= @item[:header_color].nil? ? "blue" : "#{@item[:header_color]}"%>">
         <div class="container">
             <div class="row">
 		    <div class="title">
 			    <h2><%= @item[:page_title] %></h2>
 		    </div>
 	    </div>
+        </div>
         </div>
     </header>
 
