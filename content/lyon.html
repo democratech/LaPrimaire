@@ -1,10 +1,10 @@
 ---
-title: Organisation du meeting LaPrimaire.org à Lyon
-description: Cette page liste la liste des tâches que nous devons faire en vue du meeting de Lyon, n'hésitez pas à nous aider.
+title: Organisation de la conférence-débat LaPrimaire.org à Lyon
+description: Cette page liste les tâches que nous devons réaliser en prévision de la conférence-débat de Lyon, n'hésitez pas à nous aider.
 ville: Lyon
 primaire: true
 author: des citoyens ordinaires
-image: https://laprimaire.org/assets/images/comptes.png
+image: https://laprimaire.org/assets/images/lyon.png
 url: https://laprimaire.org/lyon/
 footer: false
 navbar: true
@@ -40,26 +40,63 @@ h3 {
 		    </div>
 	    </div>
         </div>
+        </div>
     </header>
 
     <section id="contribute_form">
 	    <div class="container">
 		    <div class="row">
 			<div class="col-lg-12 text-center">
-			    <h2 class="section-heading">Prochain meeting - mardi 15 décembre</h2>
-			    <p style="font-size:16px; color:#777;font-style:italic;">Nous avons besoin de vous pour réussir cet évènement à <%= @item[:ville] %>. Vous trouverez sur cette page une liste de toutes les tâches à faire.<br/>Si vous pensez pouvoir nous aider, n'hésitez pas à nous dire comment avec le formulaire ci-dessous.</p><br/>
+				<h2 class="section-heading">Prochain événement - mardi 15 décembre 2015</h2>
+				<p style="font-size:16px; color:#777;font-style:italic;">Nous avons besoin de vous pour réussir cet événement à <%= @item[:ville] %>. Vous trouverez sur cette page une liste des tâches à réaliser.<br/>Si vous pensez pouvoir nous aider, n'hésitez pas à nous l'indiquer au moyen du formulaire ci-dessous.<br/>Si vous n'êtes pas encore inscrit, <a href="https://www.eventbrite.fr/e/billets-meeting-laprimaireorg-a-lyon-19550371688" target="_blank">inscrivez-vous dès maintenant</a>.</p><br/>
 			</div>
 		    </div>
-		    <div class="row" id="lettre_inline">
-			<div class="col-lg-7 col-md-12">
-				<div class="lettre" style="color:#5e5e5e;">
-					<h3>Liste des choses à faire</h3>
-				</div>
+		    <div class="row">
+			<div class="col-lg-6 col-md-12">
+					<h3>Liste des tâches à réaliser</h3>
+					<iframe style="width:100%;height:500px;" src="https://docs.google.com/spreadsheets/d/1pK7g6HlR-ZONMJWAhgyUY8geguA7b3hWHZL_SHrk9FA/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 			</div>
-			<div class="col-lg-5 col-md-12">
+			<div class="col-lg-6 col-md-12">
 				<div class="lettre" style="color:#5e5e5e;">
 					<h3>Vous souhaitez nous aider ?</h3>
-					<p>Prenez la responsabilité d'une tâche ! Présentez-vous en 2 mots et dites-nous de quelle tâche vous souhaitez vous occuper avec la formulaire suivant:</p>
+					<p>Avant tout, si vous ne l'avez pas encore fait, n'hésitez pas à partager la tenue de cette conférence-débat avec vos amis et proches en utilisant les boutons "prêts-à-cliquer" ci-dessous :)</p>
+					 <div class="row">
+						<div class="row" style="margin:0px auto 20px auto; width:300px;">
+						    <div class="col-xs-12 col-md-6" style="text-align:center;padding:5px;">
+							<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-text="Assistez au meeting de LaPrimaire.org à Lyon le mardi 15/12 prochain !" data-hashtags="LaPrimaireLyon" data-url="https://www.eventbrite.fr/e/billets-meeting-laprimaireorg-a-lyon-19550371688">Tweet</a>
+						    </div>
+						    <div class="col-xs-12 col-md-6" style="text-align:center;padding:5px;">
+							<div class="fb-share-button" data-href="https://www.eventbrite.fr/e/billets-meeting-laprimaireorg-a-lyon-19550371688" data-layout="button_count"></div>
+						    </div>
+						</div>
+					</div>
+
+					<p>Vous souhaitez nous aider pour l'une des tâches ci-contre ? Utilisez le formulaire ci-dessous pour vous présenter (rapidement) et dites-nous comment vous pouvez nous aider. Merci beaucoup !</p>
+<div id="wufoo-z195ty1m0k93atj">
+	Fill out my <a href="https://democratech.wufoo.com/forms/z195ty1m0k93atj">online form</a>.
+</div>
+<script type="text/javascript">
+function getURLParameter(name) {
+	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||""
+}
+var z195ty1m0k93atj;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'democratech',
+'formHash':'z195ty1m0k93atj',
+'autoResize':true,
+'height':'574',
+'defaultValues':'field4='+getURLParameter('from')+'&field1='+getURLParameter('first')+'&field2='+getURLParameter('last')+'&field9=Meeting%20%C3%A0%20Lyon%20%3A%20Je%20peux%20vous%20aider%20!&field11=meeting-lyon',
+'async':true,
+'host':'wufoo.com',
+'header':'hide',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { z195ty1m0k93atj = new WufooForm();z195ty1m0k93atj.initialize(options);z195ty1m0k93atj.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
+
 				</div>
 			</div>
 		    </div>
