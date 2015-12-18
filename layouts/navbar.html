@@ -25,14 +25,12 @@
 		    <li<% if @item[:deroulement] %> class="active"<% end %>>
 		    	<a href="/deroulement/">Déroulement</a>
                     </li>
-		    <li<% if @item[:participer] %> class="active"<% end %>>
-		    	<a href="/participer/">Participer</a>
-                    </li>
 		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
 				La Primaire<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu">
+		    		<li><a tabindex="0" href="/participer/">Participer</a></li>
 				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
 				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
 				<li class="divider"></li>
