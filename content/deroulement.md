@@ -91,7 +91,7 @@ Il s'agit des citoyens français :
 
 et ayant atteint le Seuil de Qualification.
 
-Au-delà des candidats ayant réalisé une Candidature Spontannée et ayant atteint le Seuil de Qualification, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens strictement égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, nous contacterons directement ces candidats potentiels, lesquels devront nous faire part, par écrit, dans les trente (30) jours de notre demande et au plus tard le 30 juin 2016, de leur décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
+Au-delà des candidats ayant réalisé une Candidature Spontanée et ayant atteint le Seuil de Qualification, il est probable qu'un (ou plusieurs) citoyen(s) non inscrit(s) à la Primaire Ouverte et/ou n'ayant pas formulé de Candidature Spontanée, ai(en)t recueilli un nombre de soutiens strictement égal ou supérieur au Seuil de Qualification, matérialisant ainsi un Plébiscite. Dans ce cas, nous contacterons directement ces candidats potentiels, lesquels devront nous faire part, par écrit, dans les trente (30) jours de notre demande et au plus tard le 30 juin 2016, de leur décision, à savoir accepter de participer à la Primaire Ouverte ou refuser d'y participer. Le défaut de réponse sera assimilé à un refus.
 
 
 ### Juin - Septembre 2016 : Période de préparation et d'échange
