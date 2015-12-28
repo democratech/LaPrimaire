@@ -24,10 +24,9 @@
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
     <link rel="alternate" hreflang="fr-fr" href="https://laprimaire.org" />
     <% if @config[:debug] %>
-    <% for file in @config[:stylesheets] %>
-    <link rel="stylesheet" type="text/css" href="/assets/style/<%= File.basename(file,".*") %>.css">
-    <% end %>
-    <% else %><link rel="stylesheet" type="text/css" href="/assets/style/all.css"><% end %>
+    <link rel="stylesheet" type="text/css" href="/assets/style/laprimaire.css">
+    <link rel="stylesheet" type="text/css" href="/assets/style/bootstrap-submenu.css">
+    <% else %><link rel="stylesheet" type="text/css" href="/assets/style/application.css"><% end %>
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
