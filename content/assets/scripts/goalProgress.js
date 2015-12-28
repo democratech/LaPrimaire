@@ -34,8 +34,8 @@
 				var milestoneNumberClass = (percentage > defaults.milestoneNumber) ? ' ' + defaults.milestoneClass : ''
 
 				// Generate the HTML
- 				// var progressBar = '<div class="progressBar">' + defaults.textBefore + currentAmountParsed + defaults.textAfter + '</div>';
- 				var progressBar = '<div class="progressBar">'+percentage_str+'% </div>';
+ 				var progressBar = '<div class="progressBar">' + defaults.textBefore + currentAmountParsed + defaults.textAfter + '</div>';
+ 				//var progressBar = '<div class="progressBar">'+percentage_str+'% </div>';
  				var progressBarWrapped = '<div class="goalProgress' + milestoneNumberClass + '">' + progressBar + '</div>';
 
 				// Append to the target

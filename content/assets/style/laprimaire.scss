@@ -7,62 +7,6 @@ body {
     font-family: "Helvetica Condensed","Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     padding-bottom:180px;
 }
-
-#fundraising_objectif {
-	padding:0px;
-	color:white;
-	font-size:18px;
-	text-align:right;
-}
-.goalProgress {
-	/*background: #527bdd;*/
-	background: white;
-}
-div.progressBar {
-	/*background: #d91d1c;*/
-	background: #56d840;
-	overflow:visible;
-	height:62px;
-	color: white;
-	text-align:left;
-	font-size: 29px;
-	letter-spacing: -1px;
-	font-weight: 700;
-	padding: 11px;
-	display: block;
-	width: 20px;
-	/*border-radius: 0px 30px 30px 0px;*/
-}
-span.goalAmount {
-	display: none;
-	text-indent: -9999px;
-}
-.press-item {
-	width:90%;
-	margin-bottom: 15px;
-}
-.press-item blockquote .social {
-	margin: 12px 0 0 44px;
-	float: left;
-}
-.press-item blockquote .quote a {
-	color: #5e5e5e;
-}
-.press-item blockquote .quote {
-	font-style:italic;
-	font-size: 120%;
-	letter-spacing:0.01em;
-	height:60px;
-}
-.press-item blockquote {
-	padding: 20px 70px 15px 20px;
-	height: 135px;
-	margin: 0px;
-	border: none;
-	background: #eee url("/assets/images/double-quotes.png") no-repeat top left;
-	border-radius: 5px;
-}
-
 .sharing-buttons{
 	list-style: none;
 	text-decoration: none;
@@ -438,9 +382,6 @@ fieldset[disabled] .btn-xl.active {
 		zoom: 0.6;
 		-moz-transform: scale(0.6)
 	}
-	.joinus {
-		margin-top:20px;
-	}
 	#lettre_sequence .joinus {
 		width:95%;
 		margin: 20px auto;
@@ -537,9 +478,9 @@ header .intro-text {
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
+    font-size: 30px;
     font-style: italic;
-    line-height: 22px;
+    line-height: 30px;
 }
 
 header .intro-text .intro-heading {

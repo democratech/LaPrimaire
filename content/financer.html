@@ -29,6 +29,34 @@ div.lettre p {
 h3 {
 	font-size: 20px;
 }
+#fundraising_objectif {
+	padding:0px;
+	color:white;
+	font-size:18px;
+	text-align:right;
+}
+.donateurs .goalProgress {
+	/*background: #527bdd;*/
+	background: white;
+}
+.donateurs div.progressBar {
+	/*background: #d91d1c;*/
+	background: #56d840;
+	overflow:visible;
+	height:62px;
+	color: white;
+	text-align:left;
+	font-size: 29px;
+	letter-spacing: -1px;
+	font-weight: 700;
+	padding: 11px;
+	display: block;
+	width: 20px;
+}
+span.goalAmount {
+	display: none;
+	text-indent: -9999px;
+}
 </style>
 
     <header id="page-top">
@@ -293,7 +321,7 @@ h3 {
 		</div>
 		<div class="col-sm-9 hidden-xs">
 			<div style="float:right;margin-bottom:10px;padding:10px;color:#527bdd;font-weight:normal;font-size:20px;" id="fundraising_timeleft">objectif : <span style="color:red;font-size:150%;">100.000</span> euros</div>
-			<div id="fundraising_bar"></div>
+			<div id="fundraising_bar" class="donateurs"></div>
 		</div>
             </div>
         </div>

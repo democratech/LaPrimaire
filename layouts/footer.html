@@ -9,20 +9,6 @@
 		    <a style="font-size:20px;font-variant:small-caps;" href="/financer/" class="btn btn-xl red donate-link" title="Je contribue">Je contribue</a>
 		</div>
  	    </div>
-<!--            <div class="row pledge">
-		<div class="col-md-2 hidden-xs hidden-sm">
-			<div style="padding:6px 0px 6px 0px;color:white;font-weight:bold;font-size:18px;text-align:right;font-variant:small-caps;" id="fundraising_figures"></div>
-		</div>
-		<div class="col-md-7 col-xs-12 hidden-xs hidden-sm">
-			<div style="float:right;margin-bottom:10px;padding:10px;color:#527bdd;font-weight:normal;font-size:20px;" id="fundraising_timeleft"><span style="color:red;font-size:150%;" id="nb_days_left"></span> jours restants</div>
-			<div id="fundraising_bar"></div>
-		</div>
-		<div class="col-md-3 col-xs-12">
-			<div>
-				<a style="font-size:29px;font-variant:small-caps;" href="/financer/" class="btn btn-xl red donate-link" title="Pour donner toutes ses chances de succès à La Primaire">Je contribue</a>
-			</div>
-		</div>
-            </div>-->
         </div>
     </footer>
 <% end %>
@@ -64,7 +50,6 @@ $(document).ready(function(){
 	/* Navbar submenu init */
 	$('[data-submenu]').submenupicker();
 });
-
 
 <% if @item.identifier.chop == '/faq' %>
 /* FAQ show/hide */
@@ -112,6 +97,42 @@ $(document).ready(function(){
 		});
 		$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" donateurs");
 		$('#nb_days_left').html(diffDays);
+	}
+});
+
+<% elsif @item.identifier == '/' %>
+/* Supporteurs bar */
+$(document).ready(function(){
+	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+	var now = new Date();
+	var firstDate = (new Date(2015,12,31)).getTime();
+	var secondDate= (new Date(now.getFullYear(),now.getMonth()+1,now.getDate())).getTime();
+	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
+	supporteurs=readCookie('nb_supporteurs');
+	if (supporteurs==null) {
+		$.get("https://democratech.co/api/v1/supporteurs/total", function( data ){
+			supporteurs=data['nb_supporteurs'];
+			var percentage = supporteurs / 1000;
+			var percentage_str = Math.round(percentage);
+			createCookie('nb_supporteurs',supporteurs);
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 100000,
+				currentAmount: supporteurs,
+				textBefore: '',
+				textAfter: ' citoyens inscrits'
+			});
+			$('#campaign_title').html(percentage_str+"% de l'objectif atteint !");
+		});
+	} else {
+		var percentage = supporteurs / 1000;
+		var percentage_str = Math.round(percentage);
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 100000,
+			currentAmount: supporteurs,
+			textBefore: '',
+			textAfter: ' citoyens inscrits'
+		});
+		$('#campaign_title').html(percentage_str+"% de l'objectif atteint !");
 	}
 });
 
