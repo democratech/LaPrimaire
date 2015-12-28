@@ -71,7 +71,7 @@ $(document).ready(function(){
 	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
 	amount=readCookie('amount_raised');
 	donateurs=readCookie('nb_donateurs');
-	if (amount==null) {
+	if (amount==null || donateurs==null) {
 		$.get("https://democratech.co/api/v1/stripe/total", function( data ){
 			amount=data['total'];
 			donateurs=data['nb_donateurs'];
