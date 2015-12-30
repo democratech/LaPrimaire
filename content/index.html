@@ -20,7 +20,7 @@ div.lettre p {
 }
 .supporteurs .goalProgress {
 	background: white;
-	width: 92%;
+	width: 98%;
 	margin: 0 auto;
 	height:35px;
 }
@@ -75,8 +75,13 @@ div.lettre p {
 					</div>
                             </div>
                             <div class="col-md-4">
-				<div style="height:85px;background-color:#527bdd;padding: 5px 0px;">
-					<div id="campaign_title" style="margin:5px 0px; font-weight:bold;font-size:20px;color:white;" alt="100.000"></div>
+				<div id="campaign_title" style="margin:5px 0px;font-weight:bold;font-size:20px;color:#d91d1c;" alt="100.000"></div>
+				<div style="background-color:#527bdd;padding: 6px 0px 2px 0px;">
+					<div style="margin:0px auto 6px auto;width:98%;padding:5px;background-color:white;" class="hidden-xs hidden-sm">
+						<div style="margin:0px auto;width:321px;height:175px;">
+							<canvas id="myChart" width="300" height="160"></canvas>
+						</div>
+					</div>
 					<div id="fundraising_bar" class="supporteurs"></div>
 				</div>
 				<div class="joinus">
@@ -277,8 +282,6 @@ var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s
         </div>
     </section>
 
-
-
     <section>
         <div class="container" style="margin-bottom: 50px;">
 	    <div class="row">
@@ -310,3 +313,4 @@ var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s
         </div>
     </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>

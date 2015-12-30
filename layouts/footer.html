@@ -136,6 +136,28 @@ $(document).ready(function(){
 	}
 });
 
+var data = {
+labels: ["juin", "juil","août","sept","oct","nov","dec"],
+	datasets: [
+	{
+label: "My First dataset",
+       fillColor: "rgba(82,123,221,0.5)",
+       strokeColor: "rgba(82,123,221,0.8)",
+       highlightFill: "rgba(82,123,221,0.75)",
+       highlightStroke: "rgba(82,123,221,1)",
+       data: [356, 694,818,1244,1893,2661,6840]
+	}
+	]
+};
+var options = {
+	responsive: true,
+        bezierCurve: true,
+	scaleShowVerticalLines: false,
+	animationSteps:10
+};
+var ctx = document.getElementById("myChart").getContext("2d");
+var myNewChart = new Chart(ctx).Line(data,options);
+
 <% end %>
 </script>
 
