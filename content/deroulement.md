@@ -182,7 +182,7 @@ A ce jour, nous envisageons ce qui suit :
 
 - lots et mode de scrutin : chaque participant à la Primaire Ouverte sera appelé à se prononcer sur un lot aléatoire qui lui sera adressé. Il fera part de son choix au moyen de bulletins de vote qu'il pourra affecter librement. A titre d'exemple, si un lot devait contenir dix (10) candidats, le citoyen pourrait disposer de dix (10) bulletins de vote qu'il pourrait affecter librement (10 sur un seul candidat ; répartir les bulletins entre plusieurs candidats : 6, 3, 1 ; n'attribuer aucun bulletin, matérialisant un vote blanc, etc.) ;
 
-- seul de sélection : l'objectif est de sélectionner plusieurs candidats représentatifs du choix des français. Par exemple, nous pourrions retenir tous les candidats représentant ensemble 70% du total des votes avec un minimum individuel de plus de 10%. Si aucun ou un seul des candidats devait atteindre ce seuil de 10%, seuls les deux premiers seraient sélectionnés.
+- seuil de sélection : l'objectif est de sélectionner plusieurs candidats représentatifs du choix des français. Par exemple, nous pourrions retenir tous les candidats représentant ensemble 70% du total des votes avec un minimum individuel de plus de 10%. Si aucun ou un seul des candidats devait atteindre ce seuil de 10%, seuls les deux premiers seraient sélectionnés.
 
 D'après nos itérations, entre trois (3) et cinq (5) candidats devraient émerger de la phase de sélection.
 
