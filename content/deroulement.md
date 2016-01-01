@@ -166,7 +166,7 @@ Concrètement :
 
 - les lots de candidats seront distribués aléotoirement auprès des participants à la Primaire Ouverte, c'est à dire qu'un participant recevra un ou plusieurs lot(s), automatiquement, et qu'il ne pourra se prononcer que sur les candidats présentés au sein du(des) lot(s) reçu(s).
 
-Du point de vue des candidats à la Primaire Ouverte, nous assurrons à chaque candidature d'être soumise à la sélection des participants de la Primaire Ouverte un nombre de fois strictement identique. Du point de vue des participants à la Primaire Ouverte, nous leur proposons de se prononcer sur un ou plusieurs lots de candidats, qui leur sera(ont) adresé(s) de manière totalement aléatoire.
+Du point de vue des candidats à la Primaire Ouverte, nous assurrons à chaque candidature d'être soumise à la sélection des participants de la Primaire Ouverte un nombre de fois strictement identique. Du point de vue des participants à la Primaire Ouverte, nous leur proposons de se prononcer sur un ou plusieurs lots de candidats, qui leur sera(ont) adressé(s) de manière totalement aléatoire.
 
 Seuls les candidats ayant recueilli un nombre de votes représentant un seuil minimal seront sélectionnés afin de participer à la Primaire Ouverte. 
 
@@ -205,7 +205,7 @@ Nous entendons organiser plusieurs tables rondes entre les candidats sélectionn
 
 ##### Processus de vote
 
-Le processus de vote final n'est pas encore définitement arrêté à ce jour. Il le sera au plus tard à l'ouverture de la Primaire Ouverte.
+Le processus de vote final n'est pas encore définitivement arrêté à ce jour. Il le sera au plus tard à l'ouverture de la Primaire Ouverte.
 
 A ce jour, nous avons arrêté 3 options :
 
