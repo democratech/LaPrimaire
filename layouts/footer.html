@@ -100,6 +100,127 @@ $(document).ready(function(){
 	}
 });
 
+<% elsif @item.identifier.chop == '/10000' %>
+</script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script>
+$(function() {
+	$( "#slider_jan" ).slider({
+		value:15000,
+		min: 10000,
+		max: 20000,
+		step: 1000,
+		slide: function( event, ui ) {
+			$( "#jan" ).val(ui.value );
+			$( "#jan_bis" ).text(ui.value );
+			updateChart();
+		}
+	});
+	var t=$( "#slider_jan" ).slider( "value" );
+	$( "#jan" ).val( $( "#slider_jan" ).slider( "value" ) );
+	$( "#jan_bis" ).text( $( "#slider_jan" ).slider( "value" ) );
+	var t=document.getElementById("jan").value;
+	$( "#slider_actifs" ).slider({
+		value:50,
+		min: 10,
+		max: 100,
+		step: 10,
+		slide: function( event, ui ) {
+			$( "#actifs" ).val(ui.value );
+			$( "#actifs_bis" ).text(ui.value+"%" );
+			updateChart();
+		}
+	});
+	$( "#actifs" ).val( $( "#slider_actifs" ).slider( "value" ) );
+	$( "#actifs_bis" ).text( $( "#slider_actifs" ).slider( "value" )+"%" );
+	$( "#slider_add" ).slider({
+		value:1,
+		min: 1,
+		max: 10,
+		step: 1,
+		slide: function( event, ui ) {
+			$( "#add" ).val(ui.value );
+			$( "#add_bis" ).text(ui.value );
+			updateChart();
+		}
+	});
+	$( "#add" ).val( $( "#slider_add" ).slider( "value" ) );
+	$( "#add_bis" ).text( $( "#slider_add" ).slider( "value" ) );
+	updateChart();
+});
+
+function updateChart(jan,add,log) {
+	var jan=parseInt(document.getElementById("jan").value);
+	var add=parseInt(document.getElementById("add").value);
+	var actifs=parseInt(document.getElementById("actifs").value)/100;
+	var log=false;
+
+	var data=[356, 694,818,1244,1893,2661,7048];
+	var labels=["juin", "juil","août","sept","oct","nov","dec"];
+	var avenir=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+	var all=["juin", "juil","août","septembre","octobre","novembre","décembre","janvier","février","mars","avril","mai","juin","juillet","août","septembre"];
+	var t=jan;
+	var i=0;
+	data.push(t);
+	labels.push(avenir[i]);
+	t=t+t*actifs*add;
+	var m1=null;
+	var m2=null;
+	var m3=null;
+	while (i<11) {
+		i+=1;
+		t=t+t*actifs*add;
+		if ((!m1 || !m2) && i<9) {
+			data.push(t);
+			labels.push(avenir[i]);
+		}
+		if (!m1 && t>100000) {
+			m1=avenir[i];
+			$("#m1").text(m1);
+		} else if (!m2 && t>500000) {
+			m2=avenir[i];
+			$("#m2").text(m2);
+			$("#m2_div").show();
+		} else if (!m3 && t>1000000) {
+			m3=avenir[i];
+			$("#m3").text(m3);
+			$("#m3_div").show();
+		}
+
+	}
+	if (!m2) {
+		$("#m2_div").hide();
+	}
+	if (!m3) {
+		$("#m3_div").hide();
+	}
+	var data = {
+	type: 'line',
+	      data: {
+	labels: all,
+		datasets: [
+		{
+	label: "Nb citoyens inscrits",
+	       backgroundColor: "rgba(82,123,221,0.5)",
+	       borderColor: "rgba(82,123,221,0.8)",
+	       pointBackgroundColor: "rgba(82,123,221,0.5)",
+	       pointBorderColor: "rgba(82,123,221,0.8)",
+	       pointHoverBackgroundColor: "rgba(82,123,221,0.75)",
+	       pointHoverBorderColor: "rgba(82,123,221,1)",
+	       data: data
+		}
+		]
+	}
+	};
+	Chart.defaults.scale.ticks.max=600000;
+	if (log==true) {
+		Chart.defaults.line.scales.yAxes[0].type='logarithmic';
+	}
+	var ctx = document.getElementById("myChart");
+	var myNewChart = new Chart(ctx,data);
+}
+
+
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
 $(document).ready(function(){

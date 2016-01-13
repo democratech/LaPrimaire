@@ -375,6 +375,9 @@ fieldset[disabled] .btn-xl.active {
 }
 
 @media(max-width:768px) {
+#header_overlay {
+	padding-top:60px;
+}
 	#clock .flip-clock-wrapper {
 		font-size: 22px;
 	}
@@ -440,7 +443,7 @@ fieldset[disabled] .btn-xl.active {
     //background: rgba(82,123,189,.9); // blue
     //background: rgba(255,255,255,.9); // white
     background: rgba(217,29,28,.9); // red
-    padding-top:80px;
+    padding-top:70px;
 }
 #header_overlay.white {
     background: rgba(255,255,255,.95); // white

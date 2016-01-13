@@ -1,0 +1,80 @@
+---
+title: Plus de 10.000 inscrits à LaPrimaire.org. Voici comment nous allons arriver à 100.000 !
+social_title: 10.000 inscrits LaPrimaire.org... voici comment nous allons arriver à 100.000 ! 
+footer: false
+navbar: true
+author: des citoyens ordinaires
+description: LaPrimaire.org vient de franchir la barre symbolique des 10.000 inscrits en ce 13 janvier 2016 ! A présent, nous devons arriver à l'objectif des 100.000 citoyens inscrits. Ce petit simulateur vous permet de simuler quand est-ce que nous atteindrons les 100.000... et le million ! :)
+---
+
+    <header id="page-top">
+	<div id="header_overlay" class="blue">
+        <div class="container">
+            <div class="row">
+		    <div class="title">
+			<h2 style="margin-top:10px;">En route pour 100.000 !</h2>
+		    </div>
+	    </div>
+        </div>
+        </div>
+    </header>
+
+    <section id="10000">
+	<div class="container">
+		<div class="row">
+			<div class="hidden-xs col-md-2">&nbsp;</div>
+			<div class="col-xs-12 col-md-6" style="padding-top:20px;">
+				<p>Si nous sommes 
+					<input type="text" id="jan" readonly style="border:0; color:#f6931f; font-weight:bold; width:55px;"> citoyens inscrits fin janvier et que 
+					<input type="text" id="actifs" readonly style="border:0; color:#f6931f; font-weight:bold; width:35px;">% d'entre nous invitent chaque mois
+					<input type="text" id="add" readonly style="border:0; color:#f6931f; font-weight:bold; width:15px;"> nouveau(x) citoyen(s) à s'inscrire, alors nous serons : 
+				</p>
+			</div>
+			<div class="col-xs-12 col-md-4" style="min-height:150px;">
+				<div class="row">
+					<div class="col-xs-12" style="text-align:left;">
+						<span style="font-size:30px;font-weight:bold;color:#527bdd;">100.000</span> en <span id="m1" style="font-size:26px;font-weight:bold;color:#527bdd;">mai</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12" style="text-align:left; display:none;" id="m2_div">
+						<span style="font-size:30px;font-weight:bold;color:#f6931f;">500.000</span> en <span id="m2" style="font-weight:bold;font-size:26px;color:#f6931f;">septembre</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12" style="text-align:left; display:none;" id="m3_div">
+						<span style="font-size:30px;font-weight:bold;color:#d91d1c;">1.000.000</span> en <span id="m3" style="font-weight:bold;font-size:26px;color:#d91d1c;">septembre</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+				<div class="hidden-xs col-sm-1">&nbsp;</div>
+				<div class="col-xs-12 col-sm-3" style="padding: 0 50px;">
+					<p style="font-size:14px;font-weight:normal;text-align:center;" id="jan_bis"></p>
+					<div id="slider_jan"></div>
+					<p style="font-size:14px;font-weight:normal;text-align:center;">citoyens inscrits à fin janvier</p>
+				</div>
+				<div class="col-xs-12 col-sm-4" style="padding: 0 75px;">
+					<p style="font-size:14px;font-weight:normal;text-align:center;" id="actifs_bis"></p>
+					<div id="slider_actifs"></div>
+					<p style="font-size:14px;font-weight:normal; text-align:center;">de citoyens qui en invitent d'autres</p>
+				</div>
+				<div class="col-xs-12 col-sm-3" style="padding: 0 50px;">
+					<p style="font-size:14px;font-weight:normal;text-align:center;" id="add_bis"></p>
+					<div id="slider_add"></div>
+					<p style="font-size:14px;font-weight:normal;text-align:center;">nouveau(x) citoyen(s) invités</p>
+				</div>
+				<div class="hidden-xs col-sm-1">&nbsp;</div>
+		</div>
+		<div class="row hidden-xs">
+			<div style="margin:0px auto;width:600px;height:600px;">
+				<canvas id="myChart" width="800" height="600"></canvas>
+			</div>
+		</div>
+	</div>
+   </section>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0-beta2/Chart.js"></script>
