@@ -1,5 +1,6 @@
 ---
 title: Statuts de democratech - Association loi 1901
+url: https://laprimaire.org/statuts/
 page_title: Statuts
 footer: true
 navbar: true

@@ -1,5 +1,6 @@
 ---
 title: Règlement intérieur de democratech
+url: https://laprimaire.org/reglement/
 page_title: Règlement Intérieur
 footer: true
 navbar: true
