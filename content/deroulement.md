@@ -1,5 +1,6 @@
 ---
 title: Déroulement et Calendrier de la Primaire Ouverte
+url: https://laprimaire.org/deroulement/
 page_title: Déroulement
 footer: true
 navbar: true
