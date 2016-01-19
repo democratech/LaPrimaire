@@ -17,14 +17,12 @@ def GetCandidates(n):
     random.shuffle(cdt)
     return cdt[:n]
     
-def RegVote():
-    """ vector dim Ncandidates with int random values between 0 and Nvoters"""
-    res = np.zeros(Ncandidates)
-    
-    for i in range(Nvoters):
-        vote = random.randint(0,Ncandidates-1)
-        res[vote] += 1
-    return res
+def ProbaCandidate():
+    """ associate to candidate(i) a proba to receive a vote"""
+    #res = [float(Ncandidates-i)/float(Ncandidates) for i in range(Ncandidates)] # triangular
+    sigma = 30.0
+    res = [exp(-float(i)**2/(2*sigma**2))/(sqrt(2*pi)*sigma) for i in range(Ncandidates)]
+    return np.array(res)   
    
 def FastVote(k):  
     res = np.zeros(Ncandidates)
@@ -33,45 +31,37 @@ def FastVote(k):
        candidates = GetCandidates(k)
 
        # vote for a candidate
-       distrib = rv_discrete(values=(candidates, ResRegVote[candidates]/Nvoters))
+       distrib = rv_discrete(values=(candidates, proba[candidates]))
        candidate = distrib.rvs() # draw a candidate following distribution of ResRegVote
        res[candidate] += 1 
     return res
     
-def GetError(rk1,rk2,N):
-    err = 0
-    for i in range(N):
-        idx = np.where(rk2 == rk1[i])[0][0]
-        err += 1 if idx > N else 0
+def GetError(rk,N):
+    idx = np.where(rk[:N] > N)[0]
+    err = len(idx)
     return err
     
     
 Ncandidates = 100
-Nfinal = 10 #number of kept candidates
-Nvoters = 100000
+Nfinal = 10 #number of remaining candidates
+Nvoters = 1000
 Ncpv = 10#range(1,50) # Number of candidates per voters
-Nsimu = 10 # Number of simulations
+Nsimu = 100 # Number of simulations
 
 res = np.zeros(Ncpv)
 for k in [Ncpv]:#range(Ncpv):
     print "Ncpv: %d" % k
     err = np.zeros(Nsimu)
     for j in range(Nsimu):
-        # regular vote
-        #print "regular vote"
-        ResRegVote = RegVote() 
-        RankRegVote = np.argsort(ResRegVote)#sort Ncandidates by decreasing number of votes
-        print RankRegVote[:Nfinal]
-        
+        proba = ProbaCandidate() 
+
         # fast vote
-        #print "fast vote"
         ResFastVote = FastVote(k)
-        RankFastVote = np.argsort(ResFastVote)
-        print RankFastVote[:Nfinal]
+        RankFastVote = np.argsort(ResFastVote) 
         
-        # compare votes
-        err[j] = GetError(RankRegVote, RankFastVote, Nfinal)
-        print err[j]
+        # compute err of this vote
+        err[j] = GetError(RankFastVote[-Nfinal:], Nfinal)
+        print "error: " + str(err[j])
     res[k] = sum(err)/Nsimu
     #print "mean error: %d" % res[k]
 
