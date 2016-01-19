@@ -44,9 +44,9 @@ def GetError(rk,N):
     
 Ncandidates = 100
 Nfinal = 10 #number of remaining candidates
-Nvoters = 1000
+Nvoters = 100000
 Ncpv = 10#range(1,50) # Number of candidates per voters
-Nsimu = 100 # Number of simulations
+Nsimu = 10 # Number of simulations
 
 res = np.zeros(Ncpv)
 for k in [Ncpv]:#range(Ncpv):
