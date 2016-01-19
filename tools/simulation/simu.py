@@ -3,12 +3,14 @@
 # simulate a vote in which all voters have access only to a certain number of candidates.
 
 import random
+import sys
 import numpy as np
 from math import *
 from scipy.stats import rv_discrete
-import matplotlib.pyplot as plt
+from timeit import default_timer as timer
+#import matplotlib.pyplot as plt
 
-
+start = timer()
 random.seed()
 
 def GetCandidates(n):
@@ -26,6 +28,8 @@ def ProbaCandidate():
    
 def FastVote(k):  
     res = np.zeros(Ncandidates)
+    sys.stdout.write("[")
+    len_bin = round(float(Nvoters)/50.0)
     for i in range(Nvoters):
        #select Ncpv candidates:
        candidates = GetCandidates(k)
@@ -34,6 +38,9 @@ def FastVote(k):
        distrib = rv_discrete(values=(candidates, proba[candidates]))
        candidate = distrib.rvs() # draw a candidate following distribution of ResRegVote
        res[candidate] += 1 
+       if i % len_bin == 0:
+           sys.stdout.write("=")
+    sys.stdout.write("]\n")
     return res
     
 def GetError(rk,N):
@@ -44,27 +51,27 @@ def GetError(rk,N):
     
 Ncandidates = 100
 Nfinal = 10 #number of remaining candidates
-Nvoters = 100000
+Nvoters = 100000   
 Ncpv = 10#range(1,50) # Number of candidates per voters
-Nsimu = 10 # Number of simulations
+Nsimu = 1000 # Number of simulations
 
 res = np.zeros(Ncpv)
-for k in [Ncpv]:#range(Ncpv):
-    print "Ncpv: %d" % k
-    err = np.zeros(Nsimu)
-    for j in range(Nsimu):
-        proba = ProbaCandidate() 
+err = np.zeros(Nsimu)
+for j in range(Nsimu):
+    sys.stdout.write( "\n\nSimulation %d/%d [%d %%]\n" % (j,Nsimu, float(j)/float(Nsimu-1)*100 ))
 
-        # fast vote
-        ResFastVote = FastVote(k)
-        RankFastVote = np.argsort(ResFastVote) 
-        
-        # compute err of this vote
-        err[j] = GetError(RankFastVote[-Nfinal:], Nfinal)
-        print "error: " + str(err[j])
-    res[k] = sum(err)/Nsimu
-    #print "mean error: %d" % res[k]
+    proba = ProbaCandidate() 
 
-# display results
-plt.plot(range(Ncpv), res)
-plt.show()
+    # fast vote
+    ResFastVote = FastVote(Ncpv)
+    RankFastVote = np.argsort(ResFastVote) 
+    
+    # compute err of this vote
+    err[j] = GetError(RankFastVote[-Nfinal:], Nfinal)
+    sys.stdout.write("error: %d " % err[j])
+    if j > 0:
+        sys.stdout.write(" - mean %f - std %f" % (np.mean(err[:j]),np.std(err[:j]) ))
+   
+sys.stdout.write("\n\n\n\n\nEnd of the simulation :) ")
+sys.stdout.write("\nIt took %d s... You should have used GPU instead of me!\n" % (timer()-start)) 
+    
