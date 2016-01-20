@@ -8,10 +8,20 @@ import numpy as np
 from math import *
 from scipy.stats import rv_discrete
 from timeit import default_timer as timer
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 start = timer()
 random.seed()
+    
+Ncandidates = 100
+Nfinal = 10 #number of remaining candidates
+Nvoters = 100000
+Ncpv = 10#range(1,50) # Number of candidates per voters
+Nsimu = 1 # Number of simulations
+Nproc = 14
+err = np.zeros(Nsimu)
+
+
 
 def GetCandidates(n):
     """ return a np.array for n different candidates"""
@@ -19,11 +29,11 @@ def GetCandidates(n):
     random.shuffle(cdt)
     return cdt[:n]
     
-def ProbaCandidate():
+def ProbaCandidate(N):
     """ associate to candidate(i) a proba to receive a vote"""
     #res = [float(Ncandidates-i)/float(Ncandidates) for i in range(Ncandidates)] # triangular
     sigma = 30.0
-    res = [exp(-float(i)**2/(2*sigma**2))/(sqrt(2*pi)*sigma) for i in range(Ncandidates)]
+    res = [exp(-float(i**2)/(2.0*sigma**2))/(sqrt(2*pi)*sigma) for i in range(N)]
     return np.array(res)   
    
 def FastVote(k):  
@@ -48,30 +58,30 @@ def GetError(rk,N):
     err = len(idx)
     return err
     
-    
-Ncandidates = 100
-Nfinal = 10 #number of remaining candidates
-Nvoters = 100000   
-Ncpv = 10#range(1,50) # Number of candidates per voters
-Nsimu = 1000 # Number of simulations
+   
 
-res = np.zeros(Ncpv)
-err = np.zeros(Nsimu)
+
+
 for j in range(Nsimu):
-    sys.stdout.write( "\n\nSimulation %d/%d [%d %%]\n" % (j,Nsimu, float(j)/float(Nsimu-1)*100 ))
+    sys.stdout.write( "\n\nSimulation %d/%d [%d %%]\n" % (j,Nsimu, float(j)/float(Nsimu)*100 ))
 
-    proba = ProbaCandidate() 
-
+    proba = ProbaCandidate(Ncandidates) 
+    
     # fast vote
     ResFastVote = FastVote(Ncpv)
     RankFastVote = np.argsort(ResFastVote) 
+    plt.figure()
+    plt.plot(ResFastVote/max(ResFastVote))
+    plt.plot(proba/max(proba))
+    plt.show()
     
     # compute err of this vote
     err[j] = GetError(RankFastVote[-Nfinal:], Nfinal)
     sys.stdout.write("error: %d " % err[j])
     if j > 0:
         sys.stdout.write(" - mean %f - std %f" % (np.mean(err[:j]),np.std(err[:j]) ))
-   
+    
+       
 sys.stdout.write("\n\n\n\n\nEnd of the simulation :) ")
 sys.stdout.write("\nIt took %d s... You should have used GPU instead of me!\n" % (timer()-start)) 
     
