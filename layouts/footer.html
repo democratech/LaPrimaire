@@ -119,9 +119,9 @@ $(document).ready(function(){
 <script>
 $(function() {
 	$( "#slider_jan" ).slider({
-		value:15000,
-		min: 10000,
-		max: 20000,
+		value:20000,
+		min: 16000,
+		max: 24000,
 		step: 1000,
 		slide: function( event, ui ) {
 			$( "#jan" ).val(ui.value );
@@ -168,22 +168,21 @@ function updateChart(jan,add,log) {
 	var actifs=parseInt(document.getElementById("actifs").value)/100;
 	var log=false;
 
-	var data=[356, 694,818,1244,1893,2661,7048];
-	var labels=["juin", "juil","août","sept","oct","nov","dec"];
-	var avenir=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
-	var all=["juin", "juil","août","septembre","octobre","novembre","décembre","janvier","février","mars","avril","mai","juin","juillet","août","septembre"];
+	var data=[356,694,818,1244,1893,2661,7048,13050];
+	var labels=["juin","juil","août","sept","oct","nov","dec","jan"];
+	var avenir=["février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+	var all=["juin", "juillet","août","septembre","octobre","novembre","décembre","janvier","février","mars","avril","mai","juin","juillet","août","septembre"];
 	var t=jan;
 	var i=0;
 	data.push(t);
 	labels.push(avenir[i]);
-	t=t+t*actifs*add;
 	var m1=null;
 	var m2=null;
 	var m3=null;
-	while (i<11) {
+	while (i<10) {
 		i+=1;
 		t=t+t*actifs*add;
-		if ((!m1 || !m2) && i<9) {
+		if ((!m1 || !m2) && i<8) {
 			data.push(t);
 			labels.push(avenir[i]);
 		}
@@ -210,22 +209,22 @@ function updateChart(jan,add,log) {
 	var data = {
 	type: 'line',
 	      data: {
-	labels: all,
-		datasets: [
-		{
-	label: "Nb citoyens inscrits",
-	       backgroundColor: "rgba(82,123,221,0.5)",
-	       borderColor: "rgba(82,123,221,0.8)",
-	       pointBackgroundColor: "rgba(82,123,221,0.5)",
-	       pointBorderColor: "rgba(82,123,221,0.8)",
-	       pointHoverBackgroundColor: "rgba(82,123,221,0.75)",
-	       pointHoverBorderColor: "rgba(82,123,221,1)",
-	       data: data
-		}
-		]
-	}
+		labels: all,
+		datasets: [{
+		       label: "Nb citoyens inscrits",
+		       backgroundColor: "rgba(82,123,221,0.5)",
+		       borderColor: "rgba(82,123,221,0.8)",
+		       pointBackgroundColor: "rgba(82,123,221,0.5)",
+		       pointBorderColor: "rgba(82,123,221,0.8)",
+		       pointHoverBackgroundColor: "rgba(82,123,221,0.75)",
+		       pointHoverBorderColor: "rgba(82,123,221,1)",
+		       data: data
+		}]
+	      }
 	};
 	Chart.defaults.scale.ticks.max=600000;
+	Chart.defaults.global.responsive=true;
+	Chart.defaults.global.events=[];
 	if (log==true) {
 		Chart.defaults.line.scales.yAxes[0].type='logarithmic';
 	}
