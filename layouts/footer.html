@@ -24,6 +24,19 @@
  	    </div>
         </div>
     </footer>
+<% elsif @item[:democratol] and not @config[:debug] %>
+<footer class="hidden-xs" style="padding: 0px;background-color:white;border-top: 1px solid red;">
+        <div class="container">
+		<div class="row" style="margin:0px auto; width:300px;">
+		    <div class="col-xs-12 col-md-6" style="text-align:center;padding:3px;margin-top:4px;">
+			<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-text="Découvrez le Democratol, LE remède contre la frustration électorale !" data-hashtags="démocratie" data-url="https://laprimaire.org/democratol/"></a>
+		    </div>
+		    <div class="col-xs-12 col-md-6" style="text-align:center;padding:5px;">
+			<div class="fb-share-button" data-href="https://laprimaire.org/democratol/" data-layout="button"></div>
+		    </div>
+		</div>
+        </div>
+    </footer>
 <% end %>
 
 <% if @config[:debug] %>
