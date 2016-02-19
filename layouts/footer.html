@@ -126,6 +126,10 @@ $(document).ready(function(){
 	}
 });
 
+<% elsif @item.identifier.chop == '/partager' %>
+</script>
+<script src="https://apis.google.com/js/platform.js"></script>
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
 <% elsif @item.identifier.chop == '/10000' %>
 </script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
