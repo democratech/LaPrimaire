@@ -31,12 +31,17 @@ description: Utilisez le formulaire suivant pour recevoir un email pré-rédigé
 				<div id="wufoo-z6a2ax005r0v6r">
 					Fill out my <a href="https://democratech.wufoo.com/forms/z6a2ax005r0v6r">online form</a>.
 				</div>
-				<script type="text/javascript">var z6a2ax005r0v6r;(function(d, t) {
+				<script type="text/javascript">
+function getURLParameter(name) {
+	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||""
+}
+var z6a2ax005r0v6r;(function(d, t) {
 var s = d.createElement(t), options = {
 'userName':'democratech',
 'formHash':'z6a2ax005r0v6r',
 'autoResize':true,
 'height':'259',
+'defaultValues':'field1='+getURLParameter('email'),
 'async':true,
 'host':'wufoo.com',
 'header':'hide',
