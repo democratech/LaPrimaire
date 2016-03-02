@@ -11,8 +11,8 @@ It is a static website created with the [Nanoc](http://nanoc.ws/), a ruby static
 Firing up a copy of democratech's website on your local computer is easy:
 
 ```console
-$ git clone git://github.com/democratech/website.git
-$ cd website
+$ git clone git://github.com/democratech/LaPrimaire.git
+$ cd LaPrimaire
 $ bundle install
 $ bundle exec guard
 ```
