@@ -98,7 +98,7 @@ $(document).ready(function(){
 	amount=readCookie('amount_raised');
 	donateurs=readCookie('nb_donateurs');
 	if (amount==null || donateurs==null) {
-		$.get("https://democratech.co/api/v1/stripe/total", function( data ){
+		$.get("https://api.democratech.co/v1/stripe/total", function( data ){
 			amount=data['total'];
 			donateurs=data['nb_donateurs'];
 			createCookie('amount_raised',amount);
@@ -260,7 +260,7 @@ $(document).ready(function(){
 	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
 	supporteurs=readCookie('nb_supporteurs');
 	if (supporteurs==null) {
-		$.get("https://democratech.co/api/v1/supporteurs/total", function( data ){
+		$.get("https://api.democratech.co/v1/supporteurs/total", function( data ){
 			supporteurs=data['nb_supporteurs'];
 			var percentage = supporteurs / 1000;
 			var percentage_str = Math.round(percentage);
