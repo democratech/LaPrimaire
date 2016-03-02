@@ -33,7 +33,7 @@ You can now access your local copy of democratech's website at [http://localhost
 
 ## Contributing
 
-1. [Fork it](http://github.com/democratech/website/fork)
+1. [Fork it](http://github.com/democratech/LaPrimaire/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -45,7 +45,6 @@ For development purposes, don't forget to set ```debug: true``` in the nanoc.yam
 
 So far, democratech's website is being developed and maintained by
 * [Thibauld Favre](https://twitter.com/thibauld)
-* [Jean-Tristan Chanègue](https://www.linkedin.com/in/jeantristanchanegue)
 * Feel free to join us! 
 
 ## Backers
