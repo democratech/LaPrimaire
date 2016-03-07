@@ -9,12 +9,18 @@ import os,sys
 import argparse
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--reset',  action='store_true', help='Reset all simulations')
+parser.add_argument('--nv',  type=int, help='Number of voters', default=100000)
+parser.add_argument('--nc',  type=int, help='Number of candidates', default=100)
+parser.add_argument('--ns',  type=int, help='Number of candidates in a subset', default=10)
+parser.add_argument('--ng',  type=int, help='Number of grades', default=7)
+args = parser.parse_args()
 
-
-Ncandidats = 100
-Nelecteurs = 100000
-Nlot = 10
-Nmentions = 7
+Ncandidats = args.nc
+Nelecteurs = args.nv
+Nlot = args.ns
+Nmentions = args.ng
 nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
 couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
 random.WichmannHill(random.seed())
@@ -23,9 +29,8 @@ resName = "results.%i.%i.txt"  % (Ncandidats, Nelecteurs)
 list_interpolated="terranova." + str(Ncandidats) + ".txt"
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--reset',  action='store_true', help='Reset all simulations')
-args = parser.parse_args()
+
+
 
 def normalize(v, ax=1):
      n = np.sum(v, axis=ax)
