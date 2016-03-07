@@ -41,7 +41,6 @@ def probaCandidates(N, inFile, outFile):
     param = np.zeros((Nmentions,2))
     param[:,0] = np.mean(inCandidates, axis=0)
     param[:,1] = np.std(inCandidates, axis=0)
-    print param
     if Nc > N:
         random.shuffle(inCandidates)
         outCandidates = inCandidates[:N,:]
@@ -76,17 +75,36 @@ def vote(lot, proba):
         votes[i] =  distrib.rvs() 
     return votes
     
+def argMedian(A):
+    s   = np.array([sum(A[:i+1]) for i in range(Nmentions)])
+    mid = float(s[Nmentions-1])/2
+    return np.argwhere(mid < s)[0][0]
+    
+def tieBreaking(A, B):
+    Ac = np.copy(A)
+    Bc = np.copy(B)
+    medA = argMedian(Ac)
+    medB = argMedian(Bc)
+    while medA == medB:
+        Ac[medA] -= 1
+        Bc[medB] -= 1
+        medA = argMedian(Ac)
+        medB = argMedian(Bc)
+    return -1 if (medA < medB) else 1
+    
+def jugementMajoritaire(results):
+    return sorted(range(len(results)), cmp=tieBreaking, key=results.__getitem__)
+
 
     
 # ------------------------------
 #  initialisation :
 
-results         = np.zeros((Ncandidats,Nmentions))
-
 
 if not os.path.isfile(resName) or args.reset:
     probaCandidates(Ncandidats,list_results, list_interpolated)
     probaCandidats  = loadProba(list_interpolated)
+    raw             = np.zeros((Ncandidats,Nmentions))
     occurence       = np.zeros(Ncandidats)
     lBin            = round(Nelecteurs/10.0)
     for i in range(Nelecteurs):
@@ -95,36 +113,51 @@ if not os.path.isfile(resName) or args.reset:
         lot     = subset(Ncandidats, Nlot, occurence)
         votes   = vote(lot, probaCandidats[lot,:])
         for i in range(Nlot):
-            results[lot[i],votes[i]] += 1
-    results = normalize(results)
-    np.savetxt(resName, results, delimiter = ",")
-else:
-    probaCandidats  = loadProba(list_interpolated)
-    results = np.genfromtxt(resName, delimiter = ",", dtype=float)
+            raw[lot[i],votes[i]] += 1
+    np.savetxt("raw."+resName, raw, delimiter = ",")
+    results = normalize(raw)
+    rk = jugementMajoritaire(raw)
+    np.savetxt("rk."+resName, rk, delimiter = ",")
+    rk_proba = jugementMajoritaire(np.trunc(probaCandidats*1000))
+    np.savetxt("rk."+list_interpolated, rk_proba, delimiter = ",")
     
+    
+    
+probaCandidats  = loadProba(list_interpolated)
+raw = np.genfromtxt("raw." + resName, delimiter = ",", dtype=float)
+rk = np.genfromtxt("rk." + resName, dtype=float).astype(int)
+rk_proba = np.genfromtxt("rk." + list_interpolated,  dtype=float).astype(int)
+results = normalize(raw)
+results = results[rk]
+probaCandidats = probaCandidats[rk]
 
+print "Classement a priori"
+print rk_proba
 
-# print "Probabilites des candidats:"
-# print probaCandidats
-# print "\n\n"
-print "Resultats de l'election"
-print results
+print "\nClassement a posteriori"
+print rk
+
+err5 = np.sum(rk[:5] != rk_proba[:5])
+errT = np.sum(rk != rk_proba)
+print "\nNombres d'erreurs de classement sur les 5 premiers: %i, sur les %i candidats: %i" % (err5, Ncandidats, errT)
 
 # ------------------------------
 # graph
 
-abs_res = range(0,3*Ncandidats,3)
-abs_prob = range(1,3*Ncandidats,3)
-width = 0.99
+abs_res = range(0,Ncandidats)
+abs_prob = np.arange(0,Ncandidats) + 0.46
+width = 0.45
 #plt.bar(abs_res, results[:,0], width, color=couleurs[0], label=nameMentions[0])
 for i in range(Nmentions):
     plt.bar(abs_res, results[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(results[:,:i],axis=1), edgecolor='white')
     plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(probaCandidats[:,:i],axis=1), edgecolor='white')
 
 plt.ylabel('Mentions')
+plt.xlabel('Candidats')
 plt.title('Jugement majoritaire avec %i candidats et %i electeurs' % (Ncandidats, Nelecteurs))
 #plt.xticks(ind + width/2., ('C1', 'G2', 'G3', 'G4', 'G5'))
 plt.yticks(np.arange(0, 1, 0.1))
+plt.xticks(np.arange(0, Ncandidats))
 plt.legend()
 
 plt.show()
