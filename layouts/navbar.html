@@ -1,0 +1,68 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Changer la navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+		<a class="navbar-brand" href="/"><img src="/assets/images/logos/laprimaire-185x60.jpg" width="185" height="60" alt="logo LaPrimaire.org"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+      <% if @item[:navbar] %>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+		    <li<% if @item[:manifeste] %> class="active"<% end %>>
+			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
+                    </li>
+		    <li<% if @item[:deroulement] %> class="active"<% end %>>
+		    	<a href="/deroulement/">Déroulement</a>
+                    </li>
+		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
+			<a tabindex="0" data-toggle="dropdown">
+				La Primaire<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+		    		<li><a tabindex="0" href="/participer/">Participer</a></li>
+				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
+				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
+				<li class="divider"></li>
+				<li><a tabindex="0" href="/carte/">Où sommes-nous ?</a></li>
+				<li class="divider"></li>
+				<li><a tabindex="0" href="/calendrier/">Evènements</a></li>
+				<li><a tabindex="0" href="/actus/">Blog</a></li>
+				<li><a tabindex="0" href="/presse/">Presse</a></li>
+				<li><a tabindex="0" href="/faq/">FAQ</a></li>
+				<!--<li><a tabindex="0">Calendrier</a></li>-->
+			</ul>
+		    </li>
+		    <li class="dropdown<% if @item[:association] %> active<% end %>">
+			<a tabindex="0" data-toggle="dropdown">
+				L'association<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<!--<li><a tabindex="0">Adhérer</a></li>-->
+				<!--<li><a tabindex="0" href="/democratech">democratech</a></li>-->
+				<li><a tabindex="0" href="/transparence/">Transparence</a></li>
+				<li><a tabindex="0" href="/equipe/">L'équipe</a></li>
+				<li><a tabindex="0" href="/contact/">Nous contacter</a></li>
+				<li class="divider"></li>
+				<li><a tabindex="0" href="/statuts/">Statuts</a></li>
+				<li><a tabindex="0" href="/reglement/">Règlement Intérieur</a></li>
+			</ul>
+		    </li>
+                </ul>
+            </div>
+      <% end %>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+

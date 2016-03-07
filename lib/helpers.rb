@@ -4,23 +4,44 @@
 require 'nanoc/cachebuster'
 include Nanoc::Helpers::CacheBusting
 include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Rendering
+include Nanoc3::Helpers::XMLSitemap
 
-def all_js(files)
-	js_arr = []
-	for file in files
-		item = @items.find{|i| i.identifier == "/assets/scripts/#{file}/"}
-		puts "File #{file} doesn't exist!" unless item
-		js_arr << item.compiled_content
+def create_robots_txt
+	if @site.config[:robots]
+		content = if @site.config[:robots][:default]
+				  <<-EOS
+User-agent: *
+Disallow: /candidat/
+EOS
+			  else
+				  [
+					  'User-Agent: *',
+					  @site.config[:robots][:disallow].map { |l| "Disallow: #{l}" },
+					  (@site.config[:robots][:allow] || []).map { |l| "Allow: #{l}" },
+					  "Sitemap: #{@site.config[:robots][:sitemap]}"
+				  ].flatten.compact.join("\n")
+				  end
+		@items << Nanoc3::Item.new(
+			content,
+			{ :extension => 'txt', :is_hidden => true },
+			'/robots/'
+		)
 	end
-	js_arr.join("\n")
 end
 
-def all_css(files)
-	css_arr = []
-	for file in files
-		item = @items.find{|i| i.identifier == "/assets/style/#{file}/"}
-		puts "File #{file} doesn't exist!" unless item
-		css_arr << item.compiled_content
+
+def create_sitemap
+	@items.each do |item|
+		if %w{png gif jpg jpeg coffee scss sass less css xml js txt}.include?(item[:extension]) ||
+			item.identifier =~ /404|500|htaccess/
+			item[:is_hidden] = true unless item.attributes.has_key?(:is_hidden)
+		end
 	end
-	css_arr.join("\n")
+	@items << Nanoc3::Item.new(
+		"<%= xml_sitemap %>",
+		{ :extension => 'xml', :is_hidden => true },
+		'/sitemap/'
+	)
 end
+

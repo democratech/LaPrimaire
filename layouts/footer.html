@@ -1,0 +1,317 @@
+<% if @item[:footer] and not @config[:debug] %>
+<footer class="hidden-xs" style="padding: 0px;">
+        <div class="container">
+            <div class="row" style="margin-bottom:0px;">
+		<div class="col-sm-12 col-md-9" style="text-align:center;padding-top:10px;">
+		    <span style="font-size:20px;color:white;font-weight:bold;font-variant:small-caps;">La Primaire est 100% gratuite et ne repose que sur vos dons : </span>
+		</div>
+		<div class="col-sm-12 col-md-3">
+		    <a style="font-size:20px;font-variant:small-caps;" href="/financer/" class="btn btn-xl red donate-link" title="Je contribue">Je contribue</a>
+		</div>
+ 	    </div>
+        </div>
+    </footer>
+<% elsif @item[:joinus] and not @config[:debug] %>
+<footer class="hidden-xs" style="padding: 0px;">
+        <div class="container">
+            <div class="row" style="margin-bottom:0px;">
+		<div class="col-sm-12 col-md-9" style="text-align:right;padding-top:10px;">
+		    <span style="font-size:20px;color:white;font-weight:bold;font-variant:small-caps;">Si vous aussi, en 2017, vous ne souhaitez pas voter par dépit : </span>
+		</div>
+		<div class="col-sm-12 col-md-3">
+		    <a style="font-size:20px;font-variant:small-caps;" href="/participer/" class="btn btn-xl red donate-link" title="Je contribue">Rejoignez-nous</a>
+		</div>
+ 	    </div>
+        </div>
+    </footer>
+<% elsif @item[:democratol] and not @config[:debug] %>
+<footer class="hidden-xs" style="padding: 0px;background-color:white;border-top: 1px solid red;">
+        <div class="container">
+		<div class="row" style="margin:0px auto; width:300px;">
+		    <div class="col-xs-12 col-md-6" style="text-align:center;padding:3px;margin-top:4px;">
+			<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-text="Découvrez le Democratol, LE remède contre la frustration électorale !" data-hashtags="démocratie" data-url="https://laprimaire.org/democratol/"></a>
+		    </div>
+		    <div class="col-xs-12 col-md-6" style="text-align:center;padding:5px;">
+			<div class="fb-share-button" data-href="https://laprimaire.org/democratol/" data-layout="button"></div>
+		    </div>
+		</div>
+        </div>
+    </footer>
+<% end %>
+
+<% if @config[:debug] %>
+<script src="/assets/scripts/jquery.js"></script>
+<script src="/assets/scripts/bootstrap.js"></script>
+<script src="/assets/scripts/fb_ga_tw.js"></script>
+<script src="/assets/scripts/ga_events.js"></script>
+<script src="/assets/scripts/bootstrap-submenu.js"></script>
+<script src="/assets/scripts/goalProgress.js"></script>
+<% else %>
+<script src="/assets/scripts/application.js"></script>
+<% end %>
+<script type="text/javascript">
+function createCookie(name,value) {
+	var date = new Date();
+	date.setTime(date.getTime()+(5*60*1000)); // 5 minutes
+	var expires = "; expires="+date.toGMTString();
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+$(document).ready(function(){
+	/* Navbar submenu init */
+	$('[data-submenu]').submenupicker();
+});
+
+<% if @item.identifier.chop == '/faq' %>
+/* FAQ show/hide */
+$(document).ready(function(){
+	$('.faq dd').hide(); // Hide all DDs inside .faqs
+	$('.faq h4').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}).click(function(){ // Add class "hover" on dt when hover
+		$(this).next().slideToggle('normal'); // Toggle dd when the respective dt is clicked
+	}); 
+});
+
+
+<% elsif @item.identifier.chop == '/financer' %>
+/* Crowdfunding bar */
+$(document).ready(function(){
+	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+	var now = new Date();
+	var firstDate = (new Date(2015,12,31)).getTime();
+	var secondDate= (new Date(now.getFullYear(),now.getMonth()+1,now.getDate())).getTime();
+	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
+	amount=readCookie('amount_raised');
+	donateurs=readCookie('nb_donateurs');
+	if (amount==null || donateurs==null) {
+		$.get("https://api.democratech.co/v1/stripe/total", function( data ){
+			amount=data['total'];
+			donateurs=data['nb_donateurs'];
+			createCookie('amount_raised',amount);
+			createCookie('nb_donateurs',donateurs);
+
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 100000,
+				currentAmount: amount,
+				textBefore: '',
+				textAfter: ' €'
+			});
+			$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" donateurs");
+			$('#nb_days_left').html(diffDays);
+
+		});
+	} else {
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 100000,
+			currentAmount: amount,
+			textBefore: '',
+			textAfter: ' €'
+		});
+		$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" donateurs");
+		$('#nb_days_left').html(diffDays);
+	}
+});
+
+<% elsif @item.identifier.chop == '/partager' %>
+</script>
+<script src="https://apis.google.com/js/platform.js"></script>
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
+<% elsif @item.identifier.chop == '/10000' %>
+</script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script>
+$(function() {
+	$( "#slider_jan" ).slider({
+		value:20000,
+		min: 16000,
+		max: 24000,
+		step: 1000,
+		slide: function( event, ui ) {
+			$( "#jan" ).val(ui.value );
+			$( "#jan_bis" ).text(ui.value );
+			updateChart();
+		}
+	});
+	var t=$( "#slider_jan" ).slider( "value" );
+	$( "#jan" ).val( $( "#slider_jan" ).slider( "value" ) );
+	$( "#jan_bis" ).text( $( "#slider_jan" ).slider( "value" ) );
+	var t=document.getElementById("jan").value;
+	$( "#slider_actifs" ).slider({
+		value:50,
+		min: 10,
+		max: 100,
+		step: 10,
+		slide: function( event, ui ) {
+			$( "#actifs" ).val(ui.value );
+			$( "#actifs_bis" ).text(ui.value+"%" );
+			updateChart();
+		}
+	});
+	$( "#actifs" ).val( $( "#slider_actifs" ).slider( "value" ) );
+	$( "#actifs_bis" ).text( $( "#slider_actifs" ).slider( "value" )+"%" );
+	$( "#slider_add" ).slider({
+		value:1,
+		min: 1,
+		max: 10,
+		step: 1,
+		slide: function( event, ui ) {
+			$( "#add" ).val(ui.value );
+			$( "#add_bis" ).text(ui.value );
+			updateChart();
+		}
+	});
+	$( "#add" ).val( $( "#slider_add" ).slider( "value" ) );
+	$( "#add_bis" ).text( $( "#slider_add" ).slider( "value" ) );
+	updateChart();
+});
+
+function updateChart(jan,add,log) {
+	var jan=parseInt(document.getElementById("jan").value);
+	var add=parseInt(document.getElementById("add").value);
+	var actifs=parseInt(document.getElementById("actifs").value)/100;
+	var log=false;
+
+	var data=[356,694,818,1244,1893,2661,7048,13050];
+	var labels=["juin","juil","août","sept","oct","nov","dec","jan"];
+	var avenir=["février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+	var all=["juin", "juillet","août","septembre","octobre","novembre","décembre","janvier","février","mars","avril","mai","juin","juillet","août","septembre"];
+	var t=jan;
+	var i=0;
+	data.push(t);
+	labels.push(avenir[i]);
+	var m1=null;
+	var m2=null;
+	var m3=null;
+	while (i<10) {
+		i+=1;
+		t=t+t*actifs*add;
+		if ((!m1 || !m2) && i<8) {
+			data.push(t);
+			labels.push(avenir[i]);
+		}
+		if (!m1 && t>100000) {
+			m1=avenir[i];
+			$("#m1").text(m1);
+		} else if (!m2 && t>500000) {
+			m2=avenir[i];
+			$("#m2").text(m2);
+			$("#m2_div").show();
+		} else if (!m3 && t>1000000) {
+			m3=avenir[i];
+			$("#m3").text(m3);
+			$("#m3_div").show();
+		}
+
+	}
+	if (!m2) {
+		$("#m2_div").hide();
+	}
+	if (!m3) {
+		$("#m3_div").hide();
+	}
+	var data = {
+	type: 'line',
+	      data: {
+		labels: all,
+		datasets: [{
+		       label: "Nb citoyens inscrits",
+		       backgroundColor: "rgba(82,123,221,0.5)",
+		       borderColor: "rgba(82,123,221,0.8)",
+		       pointBackgroundColor: "rgba(82,123,221,0.5)",
+		       pointBorderColor: "rgba(82,123,221,0.8)",
+		       pointHoverBackgroundColor: "rgba(82,123,221,0.75)",
+		       pointHoverBorderColor: "rgba(82,123,221,1)",
+		       data: data
+		}]
+	      }
+	};
+	Chart.defaults.scale.ticks.max=600000;
+	Chart.defaults.global.responsive=true;
+	Chart.defaults.global.events=[];
+	if (log==true) {
+		Chart.defaults.line.scales.yAxes[0].type='logarithmic';
+	}
+	var ctx = document.getElementById("myChart");
+	var myNewChart = new Chart(ctx,data);
+}
+
+
+<% elsif @item.identifier == '/' %>
+/* Supporteurs bar */
+$(document).ready(function(){
+	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+	var now = new Date();
+	var firstDate = (new Date(2015,12,31)).getTime();
+	var secondDate= (new Date(now.getFullYear(),now.getMonth()+1,now.getDate())).getTime();
+	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
+	supporteurs=readCookie('nb_supporteurs');
+	if (supporteurs==null) {
+		$.get("https://api.democratech.co/v1/supporteurs/total", function( data ){
+			supporteurs=data['nb_supporteurs'];
+			var percentage = supporteurs / 1000;
+			var percentage_str = Math.round(percentage);
+			createCookie('nb_supporteurs',supporteurs);
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 100,
+				currentAmount: percentage,
+				textBefore: '',
+				textAfter: " % de l'objectif de 100.000 citoyens atteint"
+			});
+			$('#campaign_title').html(supporteurs+" citoyens déjà inscrits !");
+		});
+	} else {
+		var percentage = supporteurs / 1000;
+		var percentage_str = Math.round(percentage);
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 100,
+			currentAmount: percentage,
+			textBefore: '',
+			textAfter: " % de l'objectif de 100.000 citoyens atteint"
+		});
+		$('#campaign_title').html(supporteurs+" citoyens déjà inscrits !");
+	}
+});
+
+var data = {
+labels: ["juin", "juil","août","sept","oct","nov","dec","jan","fev"],
+	datasets: [
+	{
+label: "My First dataset",
+       fillColor: "rgba(82,123,221,0.5)",
+       strokeColor: "rgba(82,123,221,0.8)",
+       highlightFill: "rgba(82,123,221,0.75)",
+       highlightStroke: "rgba(82,123,221,1)",
+       data: [356, 694,818,1244,1893,2661,7048,13050,19176]
+	}
+	]
+};
+var options = {
+	responsive: true,
+        bezierCurve: true,
+	scaleShowVerticalLines: false,
+	animationSteps:10,
+	scaleOverride: true,
+	scaleSteps: 4,
+	scaleStepWidth: 5000,
+	scaleStartValue: 0
+};
+var ctx = document.getElementById("myChart").getContext("2d");
+var myNewChart = new Chart(ctx).Line(data,options);
+
+<% end %>
+</script>
+

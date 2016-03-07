@@ -13,23 +13,46 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+preprocess do
+	create_robots_txt
+end
+
 unless defined? LOADED_DEFAULT_CONFIG
   LOADED_DEFAULT_CONFIG = true
   require 'compass'
   Compass.add_project_configuration 'config.rb'
 end
 
+compile '/robots' do
+end
+
+compile '/assets/style/laprimaire' do
+	filter :sass, Compass.sass_engine_options
+end
+
+compile '/assets/scripts/application' do
+	filter :concat
+	filter :uglify_js
+end
+
+compile '/assets/style/application' do
+	filter :concat
+	filter :rainpress
+end
+
+compile '/assets/(style|scripts)/*' do
+	nil unless @config[:debug]
+end
+
+compile '/sitemap' do
+	filter :erb
+end
+
 compile '*' do
-  if item[:extension] == 'css'
-    filter :erb
-    filter :rainpress if File.basename(item[:content_filename], ".*") == 'all'
-  elsif item[:extension] == 'js'
-    filter :erb
-    filter :uglify_js if File.basename(item[:content_filename], ".*") == 'all'
-  elsif item[:extension] == 'scss'
-    filter :erb
-    filter :sass, Compass.sass_engine_options
-    filter :rainpress if File.basename(item[:content_filename], ".*") == 'all'
+  if item[:extension] == 'md'
+    filter :kramdown
+    layout 'markdown'
+    filter :cache_buster, :strategy => :html
   elsif item[:extension] == 'html'
     filter :erb
     layout 'default'
@@ -42,46 +65,33 @@ compile '*' do
   end
 end
 
+route '/docs/*' do
+	item.identifier.chop
+end
+
 route '/assets/**/_*' do
   nil
 end
 
-#route %r{/(fonts|css)/} do
 route '/assets/style/font-awesome/*' do
 	# renaming. Ex: font-awesome_ttf.ttf -> font-awesome.ttf
 	item.identifier.sub(/_.+\/$/,'.') + item[:extension]
 end
 
-route '/assets/style/*' do
-	# if not debug mode, only let all.css through
-	unless @config[:debug] 
-		item.identifier.chop + fingerprint(item[:filename]) + '.css' if File.basename(item[:content_filename], ".*") == 'all'
-	else
-		item.identifier.chop + fingerprint(item[:filename]) + '.css'
-	end
+route 'sitemap' do
+	  item.identifier.chop + '.xml'
 end
-
-route '/assets/scripts/*' do
-	# if not debug mode, only let all.js through
-	unless @config[:debug]
-		item.identifier.chop + fingerprint(item[:filename]) + '.js' if File.basename(item[:content_filename], ".*") == 'all'
-	else
-		item.identifier.chop + fingerprint(item[:filename]) + '.js'
-	end
-end
-
 
 route '*' do
   if item[:extension] == 'css' || item[:extension] == 'scss'
-    # Write item with identifier /foo/ to /foo.css
-    item.identifier.chop + '.css'
+     item.identifier.chop + fingerprint(@item[:filename])+'.css'
   elsif item[:extension] == 'js'
-    item.identifier.chop + '.js'
+     item.identifier.chop + fingerprint(@item[:filename])+'.js'
   elsif item.binary?
-    # Write item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  elsif item[:extension] == 'txt' || item[:extension] == 'xml'
     item.identifier.chop + '.' + item[:extension]
   else
-    # Write item with identifier /foo/ to /foo/index.html
     item.identifier + 'index.html'
   end
 end

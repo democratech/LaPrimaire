@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Static site generator
 gem 'nanoc', '~> 3.7.5'
 gem 'adsf', '~> 1.2.0'
+gem 'kramdown'
 
 # SASS & cool stuff
 gem 'compass', '~> 1.0.3'
@@ -15,3 +16,4 @@ gem 'rb-readline', '~> 0.5.2'
 gem 'uglifier', '>= 1.0.3'
 gem 'rainpress'
 gem 'nanoc-cachebuster'
+

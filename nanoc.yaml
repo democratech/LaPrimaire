@@ -1,16 +1,4 @@
 debug: false
-scripts:
-  - jquery
-  - bootstrap
-  - countdown
-  - fb_ga_tw
-  - ga_events
-  - classie
-  - contact_me
-  - cbpAnimatedHeader
-  - jqBootstrapValidation
-stylesheets:
-  - main
 
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file
@@ -21,6 +9,10 @@ text_extensions: [ 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'htm', 'h
 # can be an absolute path starting with a slash, but it can also be path
 # relative to the site directory.
 output_dir: web
+base_url: https://laprimaire.org
+
+robots:
+   default: true
 
 # A list of index filenames, i.e. names of files that will be served by a web
 # server when a directory is requested. Usually, index files are named
@@ -48,6 +40,9 @@ prune:
 # there is only a single data source that reads data from the “content/” and
 # “layout/” directories in the site directory.
 data_sources:
+  - type: static
+    prefix: static
+    items_root: /docs/
   -
     # The type is the identifier of the data source. By default, this will be
     # `filesystem_unified`.
