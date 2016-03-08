@@ -2,7 +2,6 @@
 
 import numpy as np
 from scipy.stats import rv_discrete
-import matplotlib.pyplot as plt
 from math import *
 import random
 import os,sys
@@ -87,21 +86,25 @@ def jugementMajoritaire(results):
 # ------------------------------
 #  initialisation :
 
-def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output):
+def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     list_results= root  + "terranova.txt"
-    resName = root  + "results.%i.%i.txt"  % (Ncandidats, Nelecteurs) 
-    list_interpolated= root  + "terranova." + str(Ncandidats) + ".txt"
+    resName =  "results.%i.%i.txt"  % (Ncandidats, Nelecteurs) 
+    list_interpolated= "terranova." + str(Ncandidats) + ".txt"
     
     if not os.path.isfile(resName) or args.reset:
+        #sys.stdout.write('\n'*id)
         random.WichmannHill(random.seed())
-        probaCandidates(Ncandidats, list_results, list_interpolated)
-        probaCandidats  = loadProba(list_interpolated)
+        probaCandidates(Ncandidats, list_results, root  + list_interpolated)
+        probaCandidats  = loadProba(root  + list_interpolated)
         raw             = np.zeros((Ncandidats,Nmentions))
         occurence       = np.zeros(Ncandidats)
-        lBin            = round(Nelecteurs/10.0)
+        lBin            = round(Nelecteurs/100.0)
         for i in range(Nelecteurs):
             if(i % lBin == 0):
-                output.write("%d / 10" % round(float(i)/float(lBin)))
+                #sys.stdout.write('\r -- %i candidats, %i electeurs, %i PID -- %d / 10' %  \
+                #    (Ncandidats, Nelecteurs, os.getpid(), round(float(i)/float(lBin))))
+                sys.stdout.write("\r %i %%" % round(float(i)/float(lBin))) 
+                sys.stdout.flush()
             lot     = subset(Ncandidats, Nlot, occurence)
             votes   = vote(lot, probaCandidats[lot,:], Nlot)
             for i in range(Nlot):
@@ -115,7 +118,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output):
     
     
     
-    probaCandidats  = loadProba(list_interpolated)
+    probaCandidats  = loadProba(root  + list_interpolated)
     raw = np.genfromtxt(root  + "raw." + resName, delimiter = ",", dtype=float)
     rk = np.genfromtxt(root  + "rk." + resName, dtype=float).astype(int)
     rk_proba = np.genfromtxt(root  + "rk." + list_interpolated,  dtype=float).astype(int)
@@ -139,6 +142,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output):
 # graph
 
 def graph(Ncandidats,Nelecteurs, Nmentions):
+    import matplotlib.pyplot as plt
     abs_res = range(0,Ncandidats)
     abs_prob = np.arange(0,Ncandidats) + 0.46
     width = 0.45
