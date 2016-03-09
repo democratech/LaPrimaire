@@ -93,7 +93,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     
     if not os.path.isfile(resName) or args.reset:
         #sys.stdout.write('\n'*id)
-        random.WichmannHill(random.seed())
+        np.random.seed()
         probaCandidates(Ncandidats, list_results, root  + list_interpolated)
         probaCandidats  = loadProba(root  + list_interpolated)
         raw             = np.zeros((Ncandidats,Nmentions))
