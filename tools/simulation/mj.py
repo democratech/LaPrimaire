@@ -90,8 +90,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     list_results= root  + "terranova.txt"
     resName =  "results.%i.%i.txt"  % (Ncandidats, Nelecteurs) 
     list_interpolated= "terranova." + str(Ncandidats) + ".txt"
-    
-    if not os.path.isfile(resName) or args.reset:
+    if not os.path.isfile(root + "log.txt") or args.reset:
         #sys.stdout.write('\n'*id)
         np.random.seed()
         probaCandidates(Ncandidats, list_results, root  + list_interpolated)
@@ -141,15 +140,17 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
 # ------------------------------
 # graph
 
-def graph(Ncandidats,Nelecteurs, Nmentions):
+def graph(Ncandidats,Nelecteurs, Nmentions, results, proba):
     import matplotlib.pyplot as plt
+    nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
+    couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
     abs_res = range(0,Ncandidats)
     abs_prob = np.arange(0,Ncandidats) + 0.46
     width = 0.45
     #plt.bar(abs_res, results[:,0], width, color=couleurs[0], label=nameMentions[0])
     for i in range(Nmentions):
         plt.bar(abs_res, results[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(results[:,:i],axis=1), edgecolor='white')
-        plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(probaCandidats[:,:i],axis=1), edgecolor='white')
+        plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(proba[:,:i],axis=1), edgecolor='white')
 
     plt.ylabel('Mentions')
     plt.xlabel('Candidats')
@@ -180,8 +181,7 @@ if __name__ == '__main__':
     Nlot = args.ns
     Nmentions = args.ng
     root = args.root
-    nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
-    couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
+
 
     [results, probaCandidats] = simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, sys.stdout)
-    graph(Ncandidats,Nelecteurs, Nmentions)
+    graph(Ncandidats,Nelecteurs, Nmentions, results, probaCandidats)
