@@ -178,9 +178,9 @@ if __name__ == '__main__':
 
     Ncandidats = args.nc
     Nelecteurs = args.nv
-    Nlot = args.ns
-    Nmentions = args.ng
-    root = args.root
+    Nlot       = args.ns
+    Nmentions  = args.ng
+    root       = args.root
 
 
     [results, probaCandidats] = simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, sys.stdout)

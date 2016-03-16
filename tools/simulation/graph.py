@@ -34,28 +34,31 @@ def plotStd(res):
     plt.ylabel("Confiance")
     plt.show()  
     
-def candidates(Ncandidats, Nelecteurs, essai):
+def plotCandidates(Ncandidats, Nelecteurs, essai):
     """ plot distribution of the candidates"""
     folder = root  + "/C_%i.E_%i_%i/" % (Ncandidats, Nelecteurs, essai)
     fname = folder + "terranova." + str(Ncandidats) + ".txt"
     p = np.genfromtxt(fname, delimiter = ",", dtype=float)
     nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
     couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
-    abs_res = range(0,Ncandidats)
+    abs_prob = range(0,Ncandidats)
     width = 0.98
     #plt.bar(abs_res, results[:,0], width, color=couleurs[0], label=nameMentions[0])
     for i in range(Nmentions):
-        plt.bar(abs_res, results[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(results[:,:i],axis=1), edgecolor='white')
-        plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(proba[:,:i],axis=1), edgecolor='white')
-
+        plt.bar(abs_prob, p[:,i], width,color=couleurs[i], label=nameMentions[i], bottom=np.sum(p[:,:i],axis=1), edgecolor='white')
     plt.ylabel('Mentions')
     plt.xlabel('Candidats')
     plt.title('Jugement majoritaire avec %i candidats et %i electeurs' % (Ncandidats, Nelecteurs))
-    #plt.xticks(ind + width/2., ('C1', 'G2', 'G3', 'G4', 'G5'))
     plt.yticks(np.arange(0, 1, 0.1))
     plt.xticks(np.arange(0, Ncandidats))
     plt.legend()
-
+    for i in range(Nmentions):
+        plt.figure()
+        plt.bar(abs_prob, np.sort(p[:,i]), width,color=couleurs[i], edgecolor='white')
+        plt.ylabel(nameMentions[i])
+        plt.xlabel('Candidats')
+        plt.yticks(np.arange(0, 1, 0.1))
+        plt.xticks(np.arange(0, Ncandidats))
     plt.show()
    
 def plotMinElecteurs(threshold, candidats, electeurs):
@@ -67,25 +70,30 @@ def plotMinElecteurs(threshold, candidats, electeurs):
     plt.ylabel("Nombre min d'electeurs")
     plt.show()
 
+
  
-def  computeStdToZero(electeurs, candidats):
+def  computeStdToZero(Nc, electeurs):
+    Ne        = len(electeurs)
+    res       = np.zeros(Ne)
+    for i in range(Ne):
+        e = electeurs[i]
+        acc = 0.0
+        for t in range(Ntests):
+            acc += float(readData(Nc,e,t))
+        res[i] = sqrt(acc/(Ntests))       
+    return res
+    
+def computeAllStd(candidats, electeurs):
     Ne        = len(electeurs)
     Nc        = len(candidats)
     res       = np.zeros((Nc,Ne))
     for j in range(Nc):
         c = candidats[j]
-        for i in range(Ne):
-            e = electeurs[i]
-            acc = 0.0
-            for t in range(Ntests):
-                acc += float(readData(c,e,t))
-    #            print readData(c,e,t)
-            res[j,i] = sqrt(acc/(Ntests))       
-        plotStd(res[j])
+        res[j,:] = compteStdToZero(c, electeurs)
+        #plotStd(res[j])
     #print res
     np.savetxt("std_err.txt", res, delimiter = ",")   
-
-
+    
     # compute min Nelecteurs for each Ncandidats
     threshold = np.zeros(Nc, dtype=int)
     for i in range(Nc):
@@ -104,25 +112,33 @@ def  computeStdToZero(electeurs, candidats):
 # main 
     
 if __name__ == '__main__':
-        global root, Nmentions
+        #global root, Nmentions
         
         parser = argparse.ArgumentParser()
-        parser.add_argument('--nv',  type=int, help='Number of voters', default=110000)
-        parser.add_argument('--rv',  type=bool, help='Range for voters', default=True)
+        parser.add_argument('--nv',  type=int, help='Number of voters', default=90000)
+        parser.add_argument('--rv',  action='store_false', help='Range for voters')
         parser.add_argument('--nc',  type=int, help='Number of candidates', default=210)
-        parser.add_argument('--rc',  type=bool, help='Range for candidates', default=True)
+        parser.add_argument('--rc',  action='store_false', help='Range for candidates')
         parser.add_argument('--ng',  type=int, help='Number of grades', default=Nmentions)
         parser.add_argument('--root',  type=str, help='Root for paths', default=root)
+        parser.add_argument('--priori', action='store_true', help='Plot a priori distribution')
+        parser.add_argument('--std', type=int, help='Return std for a certain number of candidate', default=0)
         args = parser.parse_args()
         
         Ncandidats = args.nc
         Nelecteurs = args.nv
         Nmentions = args.ng
         root = args.root
+        std = args.std
         
-        electeurs = np.arange(80000,100000,10000) if args.rv else np.array([Nelecteurs])
-        candidats = np.arange(20,200,10) if args.rc else np.array([Ncandidats])
+        electeurs = np.arange(10000,Nelecteurs,10000) if args.rv else np.array([Nelecteurs])
+        candidats = np.arange(20,Ncandidats,10) if args.rc else np.array([Ncandidats])
             
-        
-        threshold = computeStdToZero(electeurs, candidats, Ntests)
-        plotMinElecteurs(threshold, candidats, electeurs)
+        if args.priori:
+            essai = 0
+            plotCandidates(Ncandidats, Nelecteurs, essai)
+        elif std:
+            print computeStdToZero(std, electeurs)
+        else:
+            threshold = computeStdToZero(candidats, electeurs)
+            plotMinElecteurs(threshold, candidats, electeurs)
