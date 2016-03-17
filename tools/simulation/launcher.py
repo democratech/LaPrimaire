@@ -30,11 +30,11 @@ if __name__ == '__main__':
     except OSError:
         pass
         
-    Nelecteurs = range(10000,100000,10000)
-    Ncandidats = range(20,200,10)
+    Nelecteurs = np.arange(50000,120000,20000)
+    Ncandidats = np.arange(20,200,20)
     Nlot       = 10
     Nmentions  = 7
-    Ntest      = 5 # chaque Nelecteurs est teste Ntest fois
+    Ntest      = 20 # chaque Nelecteurs est teste Ntest fois
     Nworkers   = Ntest*len(Nelecteurs)*len(Ncandidats)
     data       = "scripts/terranova.txt"
     args       = []
@@ -49,12 +49,13 @@ if __name__ == '__main__':
                 try:
                     os.mkdir(folder)
                     shutil.copy(data, folder)
-                    f = root + "log.txt"
+                    f = folder + "log.txt"
                     id = (i+1)*(j+1)*(t+1)
                     arg = [c,e,Nlot,Nmentions,folder,f,id]
                     args.append(arg)
                 except OSError:
                    pass
+                
                    
     pool       = multiprocessing.Pool()
     pool.map(worker, args)

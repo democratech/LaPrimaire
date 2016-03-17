@@ -102,7 +102,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
             if(i % lBin == 0):
                 #sys.stdout.write('\r -- %i candidats, %i electeurs, %i PID -- %d / 10' %  \
                 #    (Ncandidats, Nelecteurs, os.getpid(), round(float(i)/float(lBin))))
-                sys.stdout.write("\r %i %%" % round(float(i)/float(lBin))) 
+                sys.stdout.write("\r %i %%" % round(float(i)/float(lBin)))
                 sys.stdout.flush()
             lot     = subset(Ncandidats, Nlot, occurence)
             votes   = vote(lot, probaCandidats[lot,:], Nlot)
@@ -113,8 +113,8 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
         rk = jugementMajoritaire(raw)
         np.savetxt(root  + "rk."+resName, rk, delimiter = ",")
         rk_proba = jugementMajoritaire(np.trunc(probaCandidats*1000))
-        np.savetxt(root  + "rk."+list_interpolated, rk_proba, delimiter = ",")
-    
+   np.savetxt(root  + "rk."+list_interpolated, rk_proba, delimiter = ",")
+
     
     
     probaCandidats  = loadProba(root  + list_interpolated)
@@ -169,7 +169,7 @@ def graph(Ncandidats,Nelecteurs, Nmentions, results, proba):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--reset',  action='store_true', help='Reset all simulations')
-    parser.add_argument('--nv',  type=int, help='Number of voters', default=100000)
+    parser.add_argument('--nv',  type=int, help='Number of voters', default=120000)
     parser.add_argument('--nc',  type=int, help='Number of candidates', default=100)
     parser.add_argument('--ns',  type=int, help='Number of candidates in a subset', default=10)
     parser.add_argument('--ng',  type=int, help='Number of grades', default=7)

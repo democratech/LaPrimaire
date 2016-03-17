@@ -7,7 +7,7 @@ from math import sqrt
 import argparse
 #import mj
 
-Ntests    = 6
+Ntests    = 20
 Nmentions = 7
 root      = "data"
 
@@ -16,10 +16,13 @@ def readData(Ncandidats, Nelecteurs, essai):
     fname = folder + "log.txt"
     f = open(fname, "r")
     p = re.compile(ur'5 premiers: ([0-9]+),')
+    a = []
     for l in f.readlines():
         a = re.findall(p, l)
         if a != []:
             break
+    if a == []:
+        print "Unreadable data for C_%i.E_%i_%i" % (Ncandidats, Nelecteurs, essai)
     return a[0]
 
 def plotStd(res):
@@ -89,7 +92,7 @@ def computeAllStd(candidats, electeurs):
     res       = np.zeros((Nc,Ne))
     for j in range(Nc):
         c = candidats[j]
-        res[j,:] = compteStdToZero(c, electeurs)
+        res[j,:] = computeStdToZero(c, electeurs)
         #plotStd(res[j])
     #print res
     np.savetxt("std_err.txt", res, delimiter = ",")   
@@ -98,7 +101,7 @@ def computeAllStd(candidats, electeurs):
     threshold = np.zeros(Nc, dtype=int)
     for i in range(Nc):
         c = candidats[i]      
-        w = np.where(res[i] == 0)[0]
+        w = np.where(res[i] < 1)[0]
         if w.size != 0:
             threshold[i] = w[0]
         else:
@@ -115,9 +118,9 @@ if __name__ == '__main__':
         #global root, Nmentions
         
         parser = argparse.ArgumentParser()
-        parser.add_argument('--nv',  type=int, help='Number of voters', default=90000)
+        parser.add_argument('--nv',  type=int, help='Number of voters', default=120000)
         parser.add_argument('--rv',  action='store_false', help='Range for voters')
-        parser.add_argument('--nc',  type=int, help='Number of candidates', default=210)
+        parser.add_argument('--nc',  type=int, help='Number of candidates', default=180)
         parser.add_argument('--rc',  action='store_false', help='Range for candidates')
         parser.add_argument('--ng',  type=int, help='Number of grades', default=Nmentions)
         parser.add_argument('--root',  type=str, help='Root for paths', default=root)
@@ -131,8 +134,8 @@ if __name__ == '__main__':
         root = args.root
         std = args.std
         
-        electeurs = np.arange(10000,Nelecteurs,10000) if args.rv else np.array([Nelecteurs])
-        candidats = np.arange(20,Ncandidats,10) if args.rc else np.array([Ncandidats])
+        electeurs = np.arange(50000,Nelecteurs,20000) if args.rv else np.array([Nelecteurs])
+        candidats = np.arange(20,Ncandidats,20) if args.rc else np.array([Ncandidats])
             
         if args.priori:
             essai = 0
@@ -140,5 +143,5 @@ if __name__ == '__main__':
         elif std:
             print computeStdToZero(std, electeurs)
         else:
-            threshold = computeStdToZero(candidats, electeurs)
+            threshold = computeAllStd(candidats, electeurs)
             plotMinElecteurs(threshold, candidats, electeurs)
