@@ -14,6 +14,7 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'guard-nanoc', '~> 1.0.3'
 gem 'rb-readline', '~> 0.5.2'
 gem 'uglifier', '>= 1.0.3'
+gem 'builder'
 gem 'rainpress'
 gem 'nanoc-cachebuster'
 
