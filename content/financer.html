@@ -11,6 +11,13 @@ navbar: true
 ---
 
 <style>
+.thumbnail .caption { 
+  text-align: center 
+}
+.btn.btn-success {
+  background-color: #d91d1c;
+  color: white;
+}
 h4.card-title {
 	text-align:center;
 	font-weight: bold;
@@ -75,11 +82,46 @@ span.goalAmount {
 	    <div class="container">
 		    <div class="row" id="lettre_inline">
 			<div class="col-lg-7 col-md-12">
-				<div class="lettre" style="color:#5e5e5e;">
-					<h3></h3>
-				</div>
+
 				<div class="row">
+            <div class="lettre" style="color:#5e5e5e;">
+              <h3>Devenez membre de LaPrimaire.org</h3>
+            </div>
 				    <div class="col-sm-4">
+					    <div class="thumbnail">
+						    <div class="caption">
+							    <h4 class="card-title">5€</h4>
+							    <div class="card-body"><p>Je deviens membre</p></div>
+                  <button class="btn-success btn" OnClick="window.location='https://opencollective.com/laprimaire/donate/5/monthly'">5€ par mois</button>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-sm-4">
+					    <div class="thumbnail">
+						    <div class="caption">
+							    <h4 class="card-title">10€</h4>
+							    <div class="card-body"><p>Je deviens un super membre</p></div>
+                  <button class="btn btn-success" OnClick="window.location='https://opencollective.com/laprimaire/donate/10/monthly'">10€ par mois</button>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="col-sm-4">
+					    <div class="thumbnail">
+						    <div class="caption">
+							    <h4 class="card-title">20€</h4>
+							    <div class="card-body"><p>Je deviens un super super membre</p></div>
+                  <button class="btn btn-success" OnClick="window.location='https://opencollective.com/laprimaire/donate/20/monthly'">20€ par mois</button>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="clearfix visible-sm-block"></div>
+            
+            <div class="lettre" style="color:#5e5e5e;">
+              <h3>Ou faites un don</h3>
+            </div>
+            
+            
+ 				    <div class="col-sm-4">
 					    <div class="thumbnail">
 						    <form action="https://api.democratech.co/v1/stripe/donate" method="POST">
 						    <div class="caption">
