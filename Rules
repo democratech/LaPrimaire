@@ -13,10 +13,17 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+preprocess do
+	create_robots_txt
+end
+
 unless defined? LOADED_DEFAULT_CONFIG
   LOADED_DEFAULT_CONFIG = true
   require 'compass'
   Compass.add_project_configuration 'config.rb'
+end
+
+compile '/robots' do
 end
 
 compile '/assets/style/laprimaire' do
@@ -35,6 +42,10 @@ end
 
 compile '/assets/(style|scripts)/*' do
 	nil unless @config[:debug]
+end
+
+compile '/sitemap' do
+	filter :erb
 end
 
 compile '*' do
@@ -67,12 +78,18 @@ route '/assets/style/font-awesome/*' do
 	item.identifier.sub(/_.+\/$/,'.') + item[:extension]
 end
 
+route 'sitemap' do
+	  item.identifier.chop + '.xml'
+end
+
 route '*' do
   if item[:extension] == 'css' || item[:extension] == 'scss'
      item.identifier.chop + fingerprint(@item[:filename])+'.css'
   elsif item[:extension] == 'js'
      item.identifier.chop + fingerprint(@item[:filename])+'.js'
   elsif item.binary?
+    item.identifier.chop + '.' + item[:extension]
+  elsif item[:extension] == 'txt' || item[:extension] == 'xml'
     item.identifier.chop + '.' + item[:extension]
   else
     item.identifier + 'index.html'

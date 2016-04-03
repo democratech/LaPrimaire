@@ -1,0 +1,1 @@
+<%= xml_sitemap :items => @items.reject{ |i| ['jpg','png','mp3','svg','js','css','eot','woff2','woff','ttf','otf','jpeg','xml'].include? i[:extension] }  %>
