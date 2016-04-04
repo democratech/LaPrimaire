@@ -24,14 +24,19 @@ if __name__ == '__main__':
     print "Cette fois, c'est la bonne !"
     print (time.strftime("%H:%M:%S"))
     
-    #jobs       = []
-    Nelecteurs = range(10000,100000,10000)
-    Ncandidats = range(20,200,10)
+    root = "data/"
+    try:
+        os.mkdir(root)
+    except OSError:
+        pass
+        
+    Nelecteurs = np.arange(50000,120000,20000)
+    Ncandidats = np.arange(20,200,20)
     Nlot       = 10
     Nmentions  = 7
-    Ntest      = 5 # chaque Nelecteurs est teste Ntest fois
+    Ntest      = 20 # chaque Nelecteurs est teste Ntest fois
     Nworkers   = Ntest*len(Nelecteurs)*len(Ncandidats)
-    data       = "terranova.txt"
+    data       = "scripts/terranova.txt"
     args       = []
     for i in range(len(Ncandidats)):
         for j in range(len( Nelecteurs)):
@@ -39,20 +44,19 @@ if __name__ == '__main__':
                 
                 c = Ncandidats[i]
                 e = Nelecteurs[j]
-                root = "C_%i.E_%i_%i/" % (c,e,t)
-                shutil.rmtree(root, True)
-                os.mkdir(root)
-                shutil.copy(data, root)
-                f = root + "log.txt"
-                id = (i+1)*(j+1)*(t+1)
-                arg = [c,e,Nlot,Nmentions,root,f,id]
-                args.append(arg)
-
-                #p    = pool.apply_async(worker, args=(c,e,Nlot,Nmentions,root,f,))
-                # p    = multiprocessing.Process(target=worker, args=)
-                # jobs.append(p)
-                # p.start()
-    
+                folder = root + "C_%i.E_%i_%i/" % (c,e,t)
+                #shutil.rmtree(folder, True)
+                try:
+                    os.mkdir(folder)
+                    shutil.copy(data, folder)
+                    f = folder + "log.txt"
+                    id = (i+1)*(j+1)*(t+1)
+                    arg = [c,e,Nlot,Nmentions,folder,f,id]
+                    args.append(arg)
+                except OSError:
+                   pass
+                
+                   
     pool       = multiprocessing.Pool()
     pool.map(worker, args)
                 
