@@ -90,8 +90,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     list_results= root  + "terranova.txt"
     resName =  "results.%i.%i.txt"  % (Ncandidats, Nelecteurs) 
     list_interpolated= "terranova." + str(Ncandidats) + ".txt"
-    
-    if not os.path.isfile(resName) or args.reset:
+    if not os.path.isfile(root + "log.txt") or args.reset:
         #sys.stdout.write('\n'*id)
         np.random.seed()
         probaCandidates(Ncandidats, list_results, root  + list_interpolated)
@@ -103,7 +102,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
             if(i % lBin == 0):
                 #sys.stdout.write('\r -- %i candidats, %i electeurs, %i PID -- %d / 10' %  \
                 #    (Ncandidats, Nelecteurs, os.getpid(), round(float(i)/float(lBin))))
-                sys.stdout.write("\r %i %%" % round(float(i)/float(lBin))) 
+                sys.stdout.write("\r %i %%" % round(float(i)/float(lBin)))
                 sys.stdout.flush()
             lot     = subset(Ncandidats, Nlot, occurence)
             votes   = vote(lot, probaCandidats[lot,:], Nlot)
@@ -114,8 +113,8 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
         rk = jugementMajoritaire(raw)
         np.savetxt(root  + "rk."+resName, rk, delimiter = ",")
         rk_proba = jugementMajoritaire(np.trunc(probaCandidats*1000))
-        np.savetxt(root  + "rk."+list_interpolated, rk_proba, delimiter = ",")
-    
+   np.savetxt(root  + "rk."+list_interpolated, rk_proba, delimiter = ",")
+
     
     
     probaCandidats  = loadProba(root  + list_interpolated)
@@ -141,15 +140,17 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
 # ------------------------------
 # graph
 
-def graph(Ncandidats,Nelecteurs, Nmentions):
+def graph(Ncandidats,Nelecteurs, Nmentions, results, proba):
     import matplotlib.pyplot as plt
+    nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
+    couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
     abs_res = range(0,Ncandidats)
     abs_prob = np.arange(0,Ncandidats) + 0.46
     width = 0.45
     #plt.bar(abs_res, results[:,0], width, color=couleurs[0], label=nameMentions[0])
     for i in range(Nmentions):
         plt.bar(abs_res, results[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(results[:,:i],axis=1), edgecolor='white')
-        plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(probaCandidats[:,:i],axis=1), edgecolor='white')
+        plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(proba[:,:i],axis=1), edgecolor='white')
 
     plt.ylabel('Mentions')
     plt.xlabel('Candidats')
@@ -168,7 +169,7 @@ def graph(Ncandidats,Nelecteurs, Nmentions):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--reset',  action='store_true', help='Reset all simulations')
-    parser.add_argument('--nv',  type=int, help='Number of voters', default=100000)
+    parser.add_argument('--nv',  type=int, help='Number of voters', default=120000)
     parser.add_argument('--nc',  type=int, help='Number of candidates', default=100)
     parser.add_argument('--ns',  type=int, help='Number of candidates in a subset', default=10)
     parser.add_argument('--ng',  type=int, help='Number of grades', default=7)
@@ -177,11 +178,10 @@ if __name__ == '__main__':
 
     Ncandidats = args.nc
     Nelecteurs = args.nv
-    Nlot = args.ns
-    Nmentions = args.ng
-    root = args.root
-    nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
-    couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
+    Nlot       = args.ns
+    Nmentions  = args.ng
+    root       = args.root
+
 
     [results, probaCandidats] = simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, sys.stdout)
-    graph(Ncandidats,Nelecteurs, Nmentions)
+    graph(Ncandidats,Nelecteurs, Nmentions, results, probaCandidats)
