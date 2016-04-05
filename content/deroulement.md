@@ -97,7 +97,7 @@ Le processus de pré-sélection est entièrement neutre, égalitaire et non disc
 La pré-sélection est fondée sur une distribution entièrement aléatoire des candidat(e)s qualifié(e)s auprès de l'ensemble des participants à LaPrimaire.org.
 
 Concrètement :
-- les candidat(e)s qualifé'e)s seront réparti(e)s par lots de manière totalement aléatoire, c'est à dire que chaque lot sera différent s'agissant, à la fois, de :
+- les candidat(e)s qualifé(e)s seront réparti(e)s par lots de manière totalement aléatoire, c'est à dire que chaque lot sera différent s'agissant, à la fois, de :
   * la composition même du lot, i.e. l'identité des candidat(e)s composant un lot donné ;
   * l'ordre d'apparition des candidat(e)s au sein du lot ;
 - les lots de candidat(e)s seront distribués aléatoirement auprès des participants à LaPrimaire.org, c'est à dire qu'un participant recevra un ou plusieurs lot(s), automatiquement, et qu'il ne pourra se prononcer que sur les candidat(e)s présenté(e)s au sein du(des) lot(s) reçu(s).
