@@ -1,0 +1,56 @@
+\documentclass[conference]{IEEEtran}
+\newcommand*{\rootPath}{./}
+
+\input{\rootPath Annexes/Packages.tex}
+%\newcolumntype{C}[1]{>{\centering}m{#1}}
+%\newcolumntype{C}[1]{>{\centering\raggedright\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+ 
+\standalonetrue
+
+\title{Syst\`eme de vote sur la Primaire.org}
+ 
+\author{
+    \IEEEauthorblockN{Pierre-Louis Guhur, Thibauld Favre}
+}
+
+
+\begin{document}
+  
+  
+\maketitle
+
+
+\begin{abstract} %% max 150 words
+LaPrimaire.org organise une primaire pr\'esidentielle en France pour les \'elections de 2017. Elle rel\`eve le d\'efi de faire un vote d\'emocratique avec plus d'une centaine de candidats ! Pour des questions pratiques, chaque \'electeur ne peut pas \'etudier attentivement chacun des candidats. De plus, le syst\'eme de vote utilis\'e pour les pr\'esidentielles comporte plusieurs inconv\'enients qui faussent la repr\'esentativit\'e du vote. LaPrimaire.org a donc developp\'e un nouveau syst\'eme de vote, bas\'e sur le Jugement Majoritaire. 
+En se basant sur des simulations de vote, nous avons estim\'e le nombre minimum d'\'electeurs n\'ecessaires pour valider la repr\'esentativit\'e et l'\'equi-r\'epartie de  notre syst\'eme de vote. 
+\end{abstract}
+
+
+
+\input{\rootPath Parts/introduction}
+
+
+\input{\rootPath Parts/mj}
+
+\input{\rootPath Parts/laprimaire}
+
+
+\section{Conclusion}
+
+
+
+
+
+%%=============================================================================
+%%=============================================================================
+\ifstandalone
+	\bibliographystyle{IEEEtran}
+	\bibliography{\rootPath Annexes/biblio.bib}
+\fi
+%%=============================================================================
+%%=============================================================================
+
+\end{document}
