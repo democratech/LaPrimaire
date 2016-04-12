@@ -1,0 +1,69 @@
+\usepackage{url}
+
+% math and cs
+% \usepackage[]{algorithm2e}
+\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+  \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+  % \newenvironment{definition}[1][Definition]{\begin{trivlist}
+  % \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+  % \newenvironment{example}[1][Example]{\begin{trivlist}
+  % \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+  % \newenvironment{remark}[1][Remark]{\begin{trivlist}
+  % \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+% style
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{todonotes}
+\usepackage{standalone}
+\usepackage{import}
+\usepackage{url}
+%\Urlmuskip=0mu plus 1mu %bug url
+
+% graph
+\usepackage{graphicx}
+\usepackage[outdir=./]{epstopdf}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage{array}
+%\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+
+\DeclareCaptionLabelSeparator{periodspace}{.\quad}
+\captionsetup{font=footnotesize,labelsep=periodspace,singlelinecheck=false}
+\captionsetup[sub]{font=footnotesize,singlelinecheck=true}
+
+
+\usepackage[english,american]{babel}
+
+
+
+\usepackage[capitalise,nameinlink]{cleveref}
+%Nice formats for \cref
+\crefname{section}{Sect.}{Sect.}
+\Crefname{section}{Section}{Sections}
+\crefname{figure}{Fig.}{Fig.}
+\Crefname{figure}{Figure}{Figures}
+
+\usepackage{xspace}
+%\newcommand{\eg}{e.\,g.\xspace}
+%\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\eg}{e.\,g.,\ }
+\newcommand{\ie}{i.\,e.,\ }
+
+
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+
+%invert table
+\usepackage{collcell}
+\usepackage{datatool}
+\usepackage{environ}

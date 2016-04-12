@@ -10,7 +10,7 @@ import argparse
 
 
 
-
+logging = False
 
 
 def normalize(v, ax=1):
@@ -81,7 +81,11 @@ def tieBreaking(A, B):
 def jugementMajoritaire(results):
     return sorted(range(len(results)), cmp=tieBreaking, key=results.__getitem__)
 
-
+def log_subset(lot, flog):
+    t = ""
+    for i in range(len(lot)):
+        t += str(lot[i]) + ", "
+    flog.write(t + "\n")
     
 # ------------------------------
 #  initialisation :
@@ -90,8 +94,9 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     list_results= root  + "terranova.txt"
     resName =  "results.%i.%i.txt"  % (Ncandidats, Nelecteurs) 
     list_interpolated= "terranova." + str(Ncandidats) + ".txt"
+    log = root + "subsets.txt"
+    flog = open(log, "w")
     if not os.path.isfile(root + "log.txt") or args.reset:
-        #sys.stdout.write('\n'*id)
         np.random.seed()
         probaCandidates(Ncandidats, list_results, root  + list_interpolated)
         probaCandidats  = loadProba(root  + list_interpolated)
@@ -105,18 +110,19 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
                 sys.stdout.write("\r %i %%" % round(float(i)/float(lBin)))
                 sys.stdout.flush()
             lot     = subset(Ncandidats, Nlot, occurence)
+            if logging:
+                log_subset(lot, flog)
             votes   = vote(lot, probaCandidats[lot,:], Nlot)
             for i in range(Nlot):
                 raw[lot[i],votes[i]] += 1
         np.savetxt(root  + "raw."+resName, raw, delimiter = ",")
-        results = normalize(raw)
-        rk = jugementMajoritaire(raw)
+        results    = normalize(raw)
+        rk         = jugementMajoritaire(raw)
         np.savetxt(root  + "rk."+resName, rk, delimiter = ",")
-        rk_proba = jugementMajoritaire(np.trunc(probaCandidats*1000))
-   np.savetxt(root  + "rk."+list_interpolated, rk_proba, delimiter = ",")
+        rk_proba   = jugementMajoritaire(np.trunc(probaCandidats*1000))
+        np.savetxt(root  + "rk."+list_interpolated, rk_proba, delimiter = ",")
 
-    
-    
+    flog.close()
     probaCandidats  = loadProba(root  + list_interpolated)
     raw = np.genfromtxt(root  + "raw." + resName, delimiter = ",", dtype=float)
     rk = np.genfromtxt(root  + "rk." + resName, dtype=float).astype(int)
@@ -174,6 +180,8 @@ if __name__ == '__main__':
     parser.add_argument('--ns',  type=int, help='Number of candidates in a subset', default=10)
     parser.add_argument('--ng',  type=int, help='Number of grades', default=7)
     parser.add_argument('--root',  type=str, help='Root for paths', default="")
+    parser.add_argument('--log_subset',  action='store_true', help='Logging subsets')
+    
     args = parser.parse_args()
 
     Ncandidats = args.nc
@@ -181,7 +189,7 @@ if __name__ == '__main__':
     Nlot       = args.ns
     Nmentions  = args.ng
     root       = args.root
-
+    logging    = args.log_subset
 
     [results, probaCandidats] = simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, sys.stdout)
     graph(Ncandidats,Nelecteurs, Nmentions, results, probaCandidats)

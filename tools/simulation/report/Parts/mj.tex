@@ -1,0 +1,37 @@
+\documentclass[conference]{IEEEtran}
+\newcommand*{\rootPath}{../}
+\input{\rootPath Annexes/Packages.tex}
+
+\standalonetrue
+
+\begin{document}
+
+%%=============================================================================
+
+
+
+\section{Le jugement majoritaire}
+\label{sec:mj}
+
+Le jugement majoritaire (JM) a \'et\'e developp\'e par Balanski et Lakari \cite{mj} pour proposer une alternative au vote majoritaire. Nous pr\'esentons succinctement son fonctionnement, ses avantages et inconv\'enients. Pour plus de d\'etails, le lecteur a invite \`a lire les articles mis en r\'ef\'erence.
+
+
+\subsection{Fonctionnement}
+
+Le JM demande \'a chaque \'electeur de juger chaque candidat selon au moins 5 mentions: Tr\'es bien, Bien, Assez bien, Correct et D\'efavorable. Lorsque tous les jugements ont \'et\'e exprim\'es, la m\'edianne des jugements de chaque candidat est calcul\'ee. En partant du meilleur jugement (ou du pire, a verifier), la m\'edianne est la mention pour laquelle le nombre de mentions sup\'erieures est \'egal au nombre de mentions inf\'erieures. Par exemple, si un candidat A a les mentions: Tr\`es bien, Tr\`es bien, Assez bien, Correct et D\'efavorable, son r\'esultat sera Assez bien. 
+
+En cas d\'\'egalit\'e entre deux candidats A et B, une proc\'edure appel\'ee \emph{algorithme de tie-breaking} permet de trouver le gagnant entre les deux candidats. Cette proc\'edure consiste \`a retirer les mentions m\'ediannes de A et B jusqu\'`\a ce qu'elles diff\`erent. Par exemple, si le candidat B a les mentions: Tr\`es bien, Assez bien, Assez bien, Correct et D\'efavorable, alors A et B ont les m\^emes mentions m\'ediannes Assez bien. On retire alors momentan\'ement cette mention pour d'\'epartager A et B. A a alors les mentions: Tr\`es bien, Tr\`es bien, Correct et D\'efavorable. Sa mention m\'edianne est d\'esormais Tr\'es bien. En revanche, B a les mentions Tr\`es bien, Assez bien, Correct et D\'efavorable. Sa mention m\'edianne reste Assez bien. C'est pourquoi, B est class\'e derri\'ere A. Si B avait toujours la m\^eme mention que A, on aurait continu\'e la proc\'edure en retirant une nouvelle fois (et jusqu'\`a ce que A se d\'epartage de B) la mention m\'edianne.
+
+\subsection{Avantages}
+
+Cette mani\`ere de voter rassemble de nombreux avantages qui justifient l'utilisation de ce syst\`eme de vote par rapport au vote majoritaire.
+
+
+
+\subsection{Inconv\'enients}
+
+Comme tous les syst\`emes de vote, il comporte \'egalement plusieurs inconv\'enients que nous ne jugeons pas probl\'ematique pour la primaire.
+
+\end{document}
+
+
