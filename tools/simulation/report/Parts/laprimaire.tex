@@ -14,17 +14,32 @@
 \section{Notre syst\`eme de vote}
 \label{sec:laprimaire}
 
-Le syst\'eme de vote utilis\'e sur laPrimaire.org part du syst\`eme de vote du JM. Ce syst\`eme n'est cependant pas adapt\'e pour un grand nombre de candidats, puisque tous les \'electeurs ne peuvent pas passer autant de temps \'a juger chaque candidat par soucis de temps. Nous demandons aux \'electeurs de s'exprimer seulement sur un lot de candidats. 
-L'objectif de cette partie est de montrer que le r\'esultat de l'\'elections sont statistiquement fiables.
+Le syst\'eme de vote utilis\'e sur laPrimaire.org part du syst\`eme de vote du JM. Ce syst\`eme n'est pas adapt\'e pour un grand nombre de candidats, puisque tous les \'electeurs ne peuvent pas passer autant de temps \'a juger chaque candidat par soucis de temps.
 
 \subsection{Fonctionnement}
-L'\'election se d\'eroule en deux phases. Lors de la premi\'ere phase, les \'electeurs devront juger seulement un lot de 10 candidats, plut\^ot que de s'exprimer sur chaque candidat. 
-Les cinq candidats les mieux class\'es seront qualifi\'es, \`a la condition que la moiti\'e de leurs jugements ne soient pas D\'efavorable.
+L'\'election se d\'eroule en deux phases. Lors de la premi\'ere phase, les \'electeurs devront juger seulement un lot de 10 candidats, plut\^ot que de s'exprimer sur chaque candidat. Le nombre de 10 candidats correspond \'a la moyenne du nombre de candidats aux \'elections pr\'esidentielles depuis la r\'eforme du vote en 1962.
+
+A l'issue de ce scrutin, les cinq candidats les mieux class\'es seront qualifi\'es. Nous avons choisi le chiffre cinq pour repr\'esenter plus de tendances politiques que lors du second tour aux \'elections pr\'esidentielles. 
+
+Nous avons ajout\'e un quorum \'a la qualification: pour chaque candidat qualifi\'e, la moiti\'e de ses jugements ne doit pas \^etre D\'efavorable. Ce quorum sert \`a disqualifier les candidats trop clivants. Le seuil de $50\%$ a \'et\'e plac\'e haut pour d\'ecourager des strat\'egies de disqualifications. Par exemple si le seuil \'etait \`a $5\%$, les soutiens d'un candidat pourraient plus facilement s'unir pour disqualifier un autre candidat.
+
+Lors de la seconde phase, les \'electeurs pourront juger pour tous les candidats qualifi\'es \`a l'aide du jugement majoritaire.
 
 
-\subsection{Justifications}
+\subsection{Proc\'edure pour construire les lots}
 
-\subsection{Algorithme de construction des lots}
+Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont choisis \'a l'avance et les \'electeurs ne pourront pas choisir les candidats qu'ils jugeront lors du premier tour. Pour que cette phase ne soit pas truqu\'ee, trois conditions ont \'et'e s\'electionn\'ees :
+
+\begin{itemize}
+  \item Le nombre d'apparition de chaque candidat dans les lots est le m\^eme ;
+  \item Chaque candidat aura la m\^eme probabilit\'e de rencontrer tout autre candidat dans un lot ;
+  \item Un nombre minimum d'\'electeurs est n\'ecessaire pour valider le scrutin.
+\end{itemize}
+
+Ces conditions sont d'autant plus difficiles \`a respecter que le nombre d\'electeurs n'est pas connu \'a l'avance : les \'electeurs peuvent s'inscrire \`a l'\'election, mais finalement ne pas y participer. Ainsi, une construction au pr\'ealable des lots n'est pas possible: si une part significante des \'electeurs qui s'expriment sur un candidat ne sont pas pr\'esents lors de l'\'elections, alors ce candidat ne recevrait pas autant de jugements qu\'un autre.
+
+C'est pourquoi, la construction des lots se fait pendant le vote. Nous avons test\'e la proc\'edure suivante qui donne de bons r\'esultats:
+
 
 \subsection{Nombre minimum d'\'electeurs}
 \end{document}
