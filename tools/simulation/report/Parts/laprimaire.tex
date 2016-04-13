@@ -30,38 +30,57 @@ Lors de la seconde phase, les \'electeurs pourront juger pour tous les candidats
 
 Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont choisis \'a l'avance et les \'electeurs ne pourront pas choisir les candidats qu'ils jugeront lors du premier tour. Pour que cette phase ne soit pas truqu\'ee, trois conditions ont \'et\'e s\'electionn\'ees :
 
-\begin{itemize}
+\begin{enumerate}
   \item Le nombre d'apparition de chaque candidat dans les lots est le m\^eme ;
   \item Chaque candidat aura la m\^eme probabilit\'e de rencontrer tout autre candidat dans un lot ;
-  \item Un nombre minimum d'\'electeurs est n\'ecessaire pour valider le scrutin.
-\end{itemize}
+  \item Le classement est le m\^eme que si tous les \'electeurs jugent attentivement chaque candidat. 
+\end{enumerate}
 
 Ces conditions sont d'autant plus difficiles \`a respecter que le nombre d\'electeurs n'est pas connu \'a l'avance : les \'electeurs peuvent s'inscrire \`a l'\'election, mais finalement ne pas y participer. Ainsi, une construction au pr\'ealable des lots n'est pas possible: si une part significante des \'electeurs qui s'expriment sur un candidat ne sont pas pr\'esents lors de l'\'elections, alors ce candidat ne recevrait pas autant de jugements qu\'un autre.
 
 C'est pourquoi, la construction des lots se fait pendant le vote. Nous avons test\'e la proc\'edure suivante qui donne de bons r\'esultats:
-Pour chaque \'electeur, on :
-\begin{itemize}
+Pour chaque lot, la proc\'edure consiste \`a :
+\begin{enumerate}
   \item compter le nombre d'occurences $\#occ_i$ pour chaque candidat $i$ dans les lots pr\'ec\'edents ;
   \item construire un tableau qui attribut \`a candidat $i$ la valeur $1/\#occ_i$ si $\#occ_i \ne 0$ et $1$ sinon ;
   \item normaliser ce tableau en le divisant par la somme de chacune de ses cases ;
   \item ce tableau forme la probabilit\'e qu'\`a un candidat d'\^etre choisi dans le prochain lot.
-\end{itemize}
+\end{enumerate}
 
 \begin{figure*}[!ht]
   \centering
   \includegraphics[width=0.98\textwidth]{../\rootPath image/lot_Nc-100_Ne-100000_Nl-10.pdf}
   \caption{Avec 100000 \'electeurs et 100 candidats, chaque candidat apparait autant de fois que les autres candidats dans les lots}
-  \label{fig:scaling}
+  \label{fig:candidatsVSoccurence}
 \end{figure*}
+
+Sur la \cref{fig:candidatsVSoccurence}, le nombre d'apparition de chaque candidat est repr\'esent\'e. Une ligne rouge repr\'esente la moyenne d'apparition. Chaque candidat n'apparait pas exactement le m\^eme nombre de fois, bien que l'\'ecart \`a la moyenne est visiblement faible. Pour le vote majoritaire, ne pas apparaitre le m\^eme nombre de fois cr\'e\'e un biais important : si un candidat A re\c{c}oit $100\%$ des votes, mais n'apparait que dans $10\%$ des lots, il perdera contre un candidat B qui ne re\c{c}oit que $20\%$ des votes, mais qui apparait dans $100\%$ des lots. Pour le jugement majoritaire, ne pas recevoir strictement le m\^eme nombre de jugements n'influe pas sur le classement g\'en\'eral gr\^ace \`a l'utilisation de la m\'edianne. 
+
+L'\'ecart-type, d\'efini comme la moyenne des \'ecarts \`a la moyenne d\'epend du nombre d\'electeurs : plus les \'electeurs sont nombreux, et plus l'\'ecart-type devient faible. L'\'ecart-type ne peut \^etre interpr\'et\'e que par rapport \`a la moyenne : un \'ecart-type de 1 et une moyenne de 10 signifient qu'en g\'en\'eral, le nombre d'apparition d'un candidat est de 10, bien qu'il peut souvent de 9 ou de 11. Le rapport \'ecart-type sur moyenne est en revanche plus facile \'a interpr\'eter car il correspond \`a un pourcentage de d\'eviation. Dans la \cref{fig:rem}, ce rapport est calcul\'e pour plusieurs tranches d\'electeurs. A partir de 30000 \'electeurs, ce rapport devient inf\'erieur \`a $1\%$. Autrement dit, l'\'ecart dans le nombre d'apparition de chaque candidat est n\'egligeable.
+
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.98\columnwidth]{../\rootPath image/rsm_Nc-100_Nl-10.pdf}
   \caption{A partir de 30000 \'electeurs, le rapport \'ecart-type sur moyenne devient inf\'erieur \'a $1\%$.}
-  \label{fig:scaling}
+  \label{fig:rem}
+\end{figure}
+
+La premi\`ere condition est donc valid\'ee. La \cref{fig:corr} valide la seconde condition. Cette figure repr\'esente le nombre de fois qu'un candidat rencontre les autres candidats dans un m\^eme lot. La diagonale est quand un candidat se retrouve lui-m\^eme, ou plus simplement, quand il apparait dans un lot. Les valeurs sont donc les m\^emes que dans la \cref{fig:candidatsVSoccurence}. Le bleu quasi-uniforme montre qu'aucun biais est introduit dans la rencontre d'un candidat par rapport \`a un autre. Il reste \`a valider la derni\`ere condition.
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.98\columnwidth]{../\rootPath image/corr_Nc-100_Ne-100000_Nl-10.pdf}
+  \caption{A partir de 30000 \'electeurs, le rapport \'ecart-type sur moyenne devient inf\'erieur \'a $1\%$.}
+  \label{fig:rem}
 \end{figure}
 
 \subsection{Nombre minimum d'\'electeurs}
+
+
+
+
 \end{document}
 
 

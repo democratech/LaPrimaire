@@ -1,6 +1,7 @@
 import numpy as np
 import mj
 import matplotlib.pyplot as plt
+from matplotlib import cm
 import sys, os
 
 # ---------------------------------------------------------------------------------------------------
@@ -58,13 +59,33 @@ def plotRSMvsCandidats(occurences, electeurs):
     plt.plot(electeurs, RSM, color="#d91d1c")
     plt.show()
     
+def plotCorrelations(corr):
+    # mask =  np.tri(corr.shape[0], k=-1)
+    # A    =  np.ma.array(corr, mask=mask)
+    plt.pcolor(corr)
+    plt.colorbar()
+    plt.ylabel('Candidats')
+    plt.xlabel('Candidats')
+    # plt.yticks(np.arange(0.5,10.5),range(0,10))
+    # plt.xticks(np.arange(0.5,10.5),range(0,10))
+    plt.show()
 
+
+# ------
+# plot 1
 #[occr,corr] = simulation(100000, Nlot)
 #plotOccurences(occr)
 
-occrs = []
-for e in electeurs:
-    [occr,corr] = simulation(e, Nlot)
-    occrs.append(occr)
-plotRSMvsCandidats(occrs, electeurs)
+# ------
+# plot 2
+# occrs = []
+# for e in electeurs:
+#     [occr,corr] = simulation(e, Nlot)
+#     occrs.append(occr)
+# plotRSMvsCandidats(occrs, electeurs)
     
+# ------
+# plot 3
+# 
+[occr,corr] = simulation(100000, Nlot)
+plotCorrelations(corr)
