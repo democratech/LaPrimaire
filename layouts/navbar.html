@@ -22,8 +22,8 @@
 		    <li<% if @item[:manifeste] %> class="active"<% end %>>
 			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
                     </li>
-		    <li<% if @item[:deroulement] %> class="active"<% end %>>
-		    	<a href="/deroulement/">Déroulement</a>
+		    <li<% if @item[:candidats] %> class="active"<% end %>>
+		        <a href="/candidats/">Les candidats</a>
                     </li>
 		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
@@ -36,6 +36,7 @@
 				<li class="divider"></li>
 				<li><a tabindex="0" href="/carte/">Où sommes-nous ?</a></li>
 				<li class="divider"></li>
+				<li><a tabindex="0" href="/deroulement/">Déroulement</a></li>
 				<li><a tabindex="0" href="/calendrier/">Evènements</a></li>
 				<li><a tabindex="0" href="/actus/">Blog</a></li>
 				<li><a tabindex="0" href="/presse/">Presse</a></li>
