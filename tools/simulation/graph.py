@@ -74,6 +74,7 @@ def plotMinElecteurs(threshold, candidats, electeurs):
     plt.show()
 
 
+
  
 def  computeStdToZero(Nc, electeurs):
     Ne        = len(electeurs)

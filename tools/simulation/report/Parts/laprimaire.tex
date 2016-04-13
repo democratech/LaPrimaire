@@ -28,7 +28,7 @@ Lors de la seconde phase, les \'electeurs pourront juger pour tous les candidats
 
 \subsection{Proc\'edure pour construire les lots}
 
-Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont choisis \'a l'avance et les \'electeurs ne pourront pas choisir les candidats qu'ils jugeront lors du premier tour. Pour que cette phase ne soit pas truqu\'ee, trois conditions ont \'et'e s\'electionn\'ees :
+Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont choisis \'a l'avance et les \'electeurs ne pourront pas choisir les candidats qu'ils jugeront lors du premier tour. Pour que cette phase ne soit pas truqu\'ee, trois conditions ont \'et\'e s\'electionn\'ees :
 
 \begin{itemize}
   \item Le nombre d'apparition de chaque candidat dans les lots est le m\^eme ;
@@ -39,7 +39,27 @@ Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont cho
 Ces conditions sont d'autant plus difficiles \`a respecter que le nombre d\'electeurs n'est pas connu \'a l'avance : les \'electeurs peuvent s'inscrire \`a l'\'election, mais finalement ne pas y participer. Ainsi, une construction au pr\'ealable des lots n'est pas possible: si une part significante des \'electeurs qui s'expriment sur un candidat ne sont pas pr\'esents lors de l'\'elections, alors ce candidat ne recevrait pas autant de jugements qu\'un autre.
 
 C'est pourquoi, la construction des lots se fait pendant le vote. Nous avons test\'e la proc\'edure suivante qui donne de bons r\'esultats:
+Pour chaque \'electeur, on :
+\begin{itemize}
+  \item compter le nombre d'occurences $\#occ_i$ pour chaque candidat $i$ dans les lots pr\'ec\'edents ;
+  \item construire un tableau qui attribut \`a candidat $i$ la valeur $1/\#occ_i$ si $\#occ_i \ne 0$ et $1$ sinon ;
+  \item normaliser ce tableau en le divisant par la somme de chacune de ses cases ;
+  \item ce tableau forme la probabilit\'e qu'\`a un candidat d'\^etre choisi dans le prochain lot.
+\end{itemize}
 
+\begin{figure*}[!ht]
+  \centering
+  \includegraphics[width=0.98\textwidth]{../\rootPath image/lot_Nc-100_Ne-100000_Nl-10.pdf}
+  \caption{Avec 100000 \'electeurs et 100 candidats, chaque candidat apparait autant de fois que les autres candidats dans les lots}
+  \label{fig:scaling}
+\end{figure*}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.98\columnwidth]{../\rootPath image/rsm_Nc-100_Nl-10.pdf}
+  \caption{A partir de 30000 \'electeurs, le rapport \'ecart-type sur moyenne devient inf\'erieur \'a $1\%$.}
+  \label{fig:scaling}
+\end{figure}
 
 \subsection{Nombre minimum d'\'electeurs}
 \end{document}
