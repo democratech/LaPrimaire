@@ -13,11 +13,15 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 <style>
 .lp-cat-active {
 	font-weight: bold;
+	color: #d91d1c !important;
 }
 .lp-cat-count {
 	color: #d91d1c;
 }
+.lp-cat-label {}
+.lp-cat-checkbox {}
 .lp-cat-item {
+	font-variant: small-caps;
 	margin: 18px 5px 5px 5px;
 	display: inline-block;
 	font-size: 18px;
@@ -53,8 +57,6 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	right: -500px;
 	margin-left: auto;
 	margin-right: auto;
-	/* for testing */
-	z-index: -1;
 }
 .candidate_pic {
 	overflow: hidden;
@@ -71,6 +73,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	background-color:#56d840;
 	padding:5px;
 	top:0px;
+	z-index: 1;
 }
 .badge_qualified.not_qualified { display:none; }
 .nb_soutiens {
@@ -79,6 +82,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	background-color:#d91d1c;
 	padding:5px;
 	bottom:0px;
+	z-index: 1;
 }
 #powered_by {
 	display: inline-block;
@@ -153,13 +157,15 @@ search.addWidget(
 );
 
 search.addWidget(
-	instantsearch.widgets.menu({
+	instantsearch.widgets.refinementList({
 	container: '#gender',
 	attributeName: 'gender',
 	sortBy: ['name:asc'],
 	cssClasses: {
 		header:'lp-cat-header',
 		item:'lp-cat-item',
+		checkbox:'lp-cat-checkbox',
+		label:'lp-cat-label',
 		active:'lp-cat-active',
 		count:'lp-cat-count'
 	},
@@ -221,14 +227,16 @@ search.addWidget(
 			item: '\
 <div class="col-sm-4 col-md-3">\
 <div style="height:350px;margin-bottom:10px;">\
-	<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
 	<div class="candidate_pic" style="margin: 0 auto;">\
 		<div class="badge_qualified {{qualified}}">Qualifié</div>\
 		<div class="nb_soutiens">{{nb_soutiens}} soutiens après {{nb_days_verified}} jours</div>\
+		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
 		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
+		</a>\
 	</div>\
-	</a>\
+	<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
 	<div class="candidate_name">{{{_highlightResult.name.value}}}</div>\
+	</a>\
 </div>\
 </div>'
 		},
