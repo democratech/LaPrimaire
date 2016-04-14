@@ -22,8 +22,8 @@
 		    <li<% if @item[:manifeste] %> class="active"<% end %>>
 			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
                     </li>
-		    <li<% if @item[:deroulement] %> class="active"<% end %>>
-		    	<a href="/deroulement/">Déroulement</a>
+		    <li<% if @item[:candidats] %> class="active"<% end %>>
+		        <a href="/candidats/">candidats</a>
                     </li>
 		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
@@ -33,9 +33,12 @@
 				<li><a tabindex="0" href="https://web.laprimaire.org" target="_blank">Participer</a></li>
 				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
 				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
+				<li><a tabindex="0" href="/partager/" class="donate-link">Partager</a></li>
+				<li><a tabindex="0" href="/inscription-candidat/" class="donate-link">Être candidat(e)</a></li>
 				<li class="divider"></li>
 				<li><a tabindex="0" href="/carte/">Où sommes-nous ?</a></li>
 				<li class="divider"></li>
+				<li><a tabindex="0" href="/deroulement/">Déroulement</a></li>
 				<li><a tabindex="0" href="/calendrier/">Evènements</a></li>
 				<li><a tabindex="0" href="/actus/">Blog</a></li>
 				<li><a tabindex="0" href="/presse/">Presse</a></li>
