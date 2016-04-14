@@ -1,0 +1,251 @@
+---
+title: Liste des citoyens plébiscités pour participer à LaPrimaire.org, la Primaire Citoyenne Ouverte pour l'élection Présidentielle de 2017
+url: https://laprimaire.org/citoyens/
+social_title: Qui sont les citoyens plébiscités pour participer à LaPrimaire.org ?
+image: https://laprimaire.org/assets/images/social/citoyens-laprimaire.png
+footer: true
+navbar: true
+candidats: true
+author: des citoyens ordinaires
+description: Retrouvez la liste des citoyen(ne)s qui ont été plébiscité(e)s pour participer à LaPrimaire.org, la première primaire citoyenne ouverte, organisée hors des partis politiques dont le but est de faire émerger des candidats crédibles et représentatifs en vue des prochaines élections présidentielles de 2017.
+---
+
+<style>
+.lp-cat-active {
+	font-weight: bold;
+	color: #d91d1c !important;
+}
+.lp-cat-count {
+	color: #d91d1c;
+}
+.lp-cat-item {
+	font-variant: small-caps;
+	margin: 18px 5px 5px 5px;
+	display: inline-block;
+	font-size: 18px;
+	color: #5e5e5e;
+}
+.lp-cat-header {
+	font-weight:bold;
+	color: #5e5e5e;
+	font-size: 18px;
+	font-variant: small-caps;
+}
+.lp-search-input {
+	width: 300px;
+	height: 50px;
+	padding-left: 10px;
+	border: 2px solid #d91d1c;
+}
+.lp-search {
+	width: auto;
+	padding: 5px 5px;
+	margin: 15px auto 15px auto;
+	text-align: center;
+	font-size: 20px;
+}
+.candidate_pic img {
+	position: absolute;
+	top: 0;
+	/* fill vertically */
+	width: auto;
+	height: 100%;
+	/* center horizontally */
+	left: -500px;
+	right: -500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.candidate_pic {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	border: 10px solid #d91d1c;
+	width: 200px;
+	height: 300px;
+}
+.badge_qualified {
+	position:absolute;
+	color:white;
+	font-weight:bold;
+	background-color:#56d840;
+	padding:5px;
+	top:0px;
+	display:none;
+}
+.badge_qualified.not_qualified { display:none; }
+.nb_soutiens {
+	position:absolute;
+	color:white;
+	background-color:#527bdd;
+	padding:5px;
+	bottom:0px;
+	z-index: 1;
+}
+#powered_by {
+	display: inline-block;
+	background-color: white;
+	padding: 0px 5px 0px 5px;
+	float:right;
+	margin-top: -11px;
+}
+.candidate_name em { background-color: yellow; }
+.candidate_name {
+	font-size:16px;
+	color:#5e5e5e;
+	font-weight:bold;
+	text-align:center;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+
+    <header id="page-top">
+	<div id="header_overlay" class="blue">
+		<div class="container">
+		    <div class="row">
+			    <input type="text" id="search-box" />
+		    </div>
+	    </div>
+        </div>
+    </header>
+    <div id="powered_by"><a href="https://algolia.com" target="_blank"><img src="/assets/images/powered-by-algolia.png"></a></div>
+    <div class="row" style="border-bottom: 2px solid #527bdd;padding: 10px;width:100%;margin: 0px auto 10px auto;font-size: 16px;color: #5e5e5e;text-align:center;">
+	    Voici la liste des citoyens <b>plébiscités</b> pour être candidat à LaPrimaire.org. Cette liste est rafraîchie tous les jours.<br/>
+	    LaPrimaire.org invitera officiellement les citoyens ayant recueillis plus de 500 soutiens à être candidats.
+    </div>
+    <section id="contribute_form" style="margin-top:0px;padding-top:0px;">
+	    <div class="container-fluid">
+		    <div class="row" style="width:95%;margin: 5px auto;">
+			    <div class="col-sm-5">
+				    <div id="gender"></div>
+			    </div>
+			    <div class="col-sm-3">
+				    <div id="nb_days_added"></div>
+			    </div>
+			    <div class="col-sm-1">&nbsp;</div>
+			    <div class="col-sm-3">
+				    <div id="nb_soutiens"></div>
+			    </div>
+		    </div>
+		    <div class="row">
+			    <div class="col-lg-12">
+				    <div class="row">
+					    <div id="hits-container"></div>
+				    </div>
+				    <div class="row">
+					    <div id="pagination-container"></div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </section>
+<script type="text/javascript">
+var search = instantsearch({
+	appId: 'D1XVECSSVA',
+	apiKey: '58643f9dff29db9f8da06875479fb290',
+	indexName: 'citizens',
+	urlSync: true
+});
+search.addWidget(
+	instantsearch.widgets.searchBox({
+		container: '#search-box',
+		placeholder: 'Chercher un(e) citoyen(ne)...',
+		cssClasses: {root: 'lp-search',input:'lp-search-input'}
+	})
+);
+
+search.addWidget(
+	instantsearch.widgets.refinementList({
+	container: '#gender',
+	attributeName: 'gender',
+	sortBy: ['name:asc'],
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active',
+		count:'lp-cat-count'
+	},
+	templates: {
+		header: 'Sexe des candidats',
+	}
+
+})
+);
+
+search.addWidget(
+	instantsearch.widgets.rangeSlider({
+	container: '#nb_days_added',
+	attributeName: 'nb_days_added',
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active'
+	},
+	templates: {
+		header: 'Nombre de jours en ligne',
+	}
+})
+);
+
+search.addWidget(
+	instantsearch.widgets.rangeSlider({
+	container: '#nb_soutiens',
+	attributeName: 'nb_soutiens',
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active'
+	},
+	templates: {
+		header: 'Nombre de soutiens',
+	}
+})
+);
+
+
+search.addWidget(
+	instantsearch.widgets.hits({
+		container: '#hits-container',
+		templates: {
+			empty: '\
+			<div style="width:320px;margin:0px auto 20px auto;">\
+			Aucun citoyen avec ce nom n&#39;a été plébiscité... Vous êtes vous assuré qu&#39;il n&#39;était pas <a href="/candidats/">déjà candidat</a> ?\
+			</div>\
+			<div style="width:320px;margin:20px auto;">\
+			Si non, inscrivez-vous dès maintenant sur LaPrimaire.org et plébiscitez-le !\
+			</div>\
+			<div style="width:200px;margin:20px auto;">\
+			    <a style="font-size:18px;width:200px;font-variant:small-caps;font-weight:bold;" href="/citoyens/" class="btn btn-xl red" target="_blank" title="Plébisciter un citoyen">S&#39;inscrire</a>\
+			</div>\
+			<div style="width:320px;margin:20px auto;">\
+			Personne ne vous convient ? <a href="/inscription-candidat/" target="_blank">Soyez candidat</a> !\
+			</div>',
+			item: '\
+<div class="col-sm-4 col-md-3">\
+<div style="height:350px;margin-bottom:10px;">\
+	<div class="candidate_pic" style="margin: 0 auto;">\
+		<div class="badge_qualified {{qualified}}">Qualifié</div>\
+		<div class="nb_soutiens">{{nb_soutiens}} soutiens après {{nb_days_added}} jours</div>\
+		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
+		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
+		</a>\
+	</div>\
+	<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
+	<div class="candidate_name">{{{_highlightResult.name.value}}}</div>\
+	</a>\
+</div>\
+</div>'
+		},
+		hitsPerPage: 100
+	})
+);
+
+search.addWidget(
+	instantsearch.widgets.pagination({
+		container: '#pagination-container'
+	})
+);
+
+search.start();
+</script>
