@@ -23,7 +23,7 @@
 			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
                     </li>
 		    <li<% if @item[:candidats] %> class="active"<% end %>>
-		        <a href="/candidats/">Les candidats</a>
+		        <a href="/candidats/">candidats</a>
                     </li>
 		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
@@ -33,6 +33,8 @@
 				<li><a tabindex="0" href="https://web.laprimaire.org" target="_blank">Participer</a></li>
 				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
 				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
+				<li><a tabindex="0" href="/partager/" class="donate-link">Partager</a></li>
+				<li><a tabindex="0" href="/inscription-candidat/" class="donate-link">Être candidat(e)</a></li>
 				<li class="divider"></li>
 				<li><a tabindex="0" href="/carte/">Où sommes-nous ?</a></li>
 				<li class="divider"></li>
