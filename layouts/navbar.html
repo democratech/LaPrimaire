@@ -22,9 +22,17 @@
 		    <li<% if @item[:manifeste] %> class="active"<% end %>>
 			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
                     </li>
-		    <li<% if @item[:candidats] %> class="active"<% end %>>
-		        <a href="/candidats/">candidats</a>
-                    </li>
+		    <li class="dropdown<% if @item[:candidats] %> active<% end %>">
+			<a tabindex="0" data-toggle="dropdown">
+				Candidats<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a tabindex="0" href="/candidats/" target="_blank">Les candidats déclarés</a></li>
+				<li><a tabindex="0" href="/citoyens/">Les citoyens plébiscités</a></li>
+				<li class="divider"></li>
+				<li><a tabindex="0" href="/inscription-candidat/" class="donate-link">Être candidat(e)</a></li>
+			</ul>
+		    </li>
 		    <li class="dropdown<% if @item[:primaire] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
 				La Primaire<span class="caret"></span>
@@ -34,7 +42,6 @@
 				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
 				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
 				<li><a tabindex="0" href="/partager/" class="donate-link">Partager</a></li>
-				<li><a tabindex="0" href="/inscription-candidat/" class="donate-link">Être candidat(e)</a></li>
 				<li class="divider"></li>
 				<li><a tabindex="0" href="/carte/">Où sommes-nous ?</a></li>
 				<li class="divider"></li>
@@ -43,7 +50,6 @@
 				<li><a tabindex="0" href="/actus/">Blog</a></li>
 				<li><a tabindex="0" href="/presse/">Presse</a></li>
 				<li><a tabindex="0" href="/faq/">FAQ</a></li>
-				<!--<li><a tabindex="0">Calendrier</a></li>-->
 			</ul>
 		    </li>
 		    <li class="dropdown<% if @item[:association] %> active<% end %>">
@@ -51,8 +57,6 @@
 				L'association<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu">
-				<!--<li><a tabindex="0">Adhérer</a></li>-->
-				<!--<li><a tabindex="0" href="/democratech">democratech</a></li>-->
 				<li><a tabindex="0" href="/transparence/">Transparence</a></li>
 				<li><a tabindex="0" href="/equipe/">L'équipe</a></li>
 				<li><a tabindex="0" href="/contact/">Nous contacter</a></li>
