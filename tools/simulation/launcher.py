@@ -30,11 +30,11 @@ if __name__ == '__main__':
     except OSError:
         pass
         
-    Nelecteurs = np.arange(50000,120000,20000)
-    Ncandidats = np.arange(20,200,20)
+    Nelecteurs = np.arange(50000,105000,5000)
+    Ncandidats = np.arange(50,110,10)
     Nlot       = 10
     Nmentions  = 7
-    Ntest      = 20 # chaque Nelecteurs est teste Ntest fois
+    Ntest      = 5 # chaque Nelecteurs est teste Ntest fois
     Nworkers   = Ntest*len(Nelecteurs)*len(Ncandidats)
     data       = "scripts/terranova.txt"
     args       = []
