@@ -13,7 +13,7 @@ def worker((Ncandidats,Nelecteurs, Nlot, Nmentions, root, output, id)):
     sys.stdout.flush()
     time.sleep(0.01) # being sure that simulation are differently initialized
     o = open(output, "w")
-    mj.simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root,o,id)
+   # mj.simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root,o,id)
     o.close()
     sys.stdout.write('\nDONE -- %i candidats, %i electeurs, %i PID -- \n' %  \
                     (Ncandidats, Nelecteurs, os.getpid()))
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print "Cette fois, c'est la bonne !"
     print (time.strftime("%H:%M:%S"))
     
-    root = "data/"
+    root = "Nmin/"
     try:
         os.mkdir(root)
     except OSError:
@@ -38,6 +38,8 @@ if __name__ == '__main__':
     Nworkers   = Ntest*len(Nelecteurs)*len(Ncandidats)
     data       = "scripts/terranova.txt"
     args       = []
+    mj.simulation(20,1000, 10, 7, root,root + "test.txt",0)
+    1/0
     for i in range(len(Ncandidats)):
         for j in range(len( Nelecteurs)):
             for t in range(Ntest):
@@ -56,7 +58,8 @@ if __name__ == '__main__':
                 except OSError:
                    pass
                 
-                   
+    if args == []:
+        print "Rien a faire!"
     pool       = multiprocessing.Pool()
     pool.map(worker, args)
                 
