@@ -96,7 +96,7 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     list_interpolated= "terranova." + str(Ncandidats) + ".txt"
     log = root + "subsets.txt"
     flog = open(log, "w")
-    if not os.path.isfile(root + "log.txt") or args.reset:
+    if not os.path.isfile(root + "raw."+resName):# or args.reset:
         np.random.seed()
         probaCandidates(Ncandidats, list_results, root  + list_interpolated)
         probaCandidats  = loadProba(root  + list_interpolated)

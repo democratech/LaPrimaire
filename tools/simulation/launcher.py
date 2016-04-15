@@ -13,7 +13,7 @@ def worker((Ncandidats,Nelecteurs, Nlot, Nmentions, root, output, id)):
     sys.stdout.flush()
     time.sleep(0.01) # being sure that simulation are differently initialized
     o = open(output, "w")
-   # mj.simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root,o,id)
+    mj.simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root,o,0)
     o.close()
     sys.stdout.write('\nDONE -- %i candidats, %i electeurs, %i PID -- \n' %  \
                     (Ncandidats, Nelecteurs, os.getpid()))
@@ -38,8 +38,6 @@ if __name__ == '__main__':
     Nworkers   = Ntest*len(Nelecteurs)*len(Ncandidats)
     data       = "scripts/terranova.txt"
     args       = []
-    mj.simulation(20,1000, 10, 7, root,root + "test.txt",0)
-    1/0
     for i in range(len(Ncandidats)):
         for j in range(len( Nelecteurs)):
             for t in range(Ntest):
@@ -52,7 +50,7 @@ if __name__ == '__main__':
                     os.mkdir(folder)
                     shutil.copy(data, folder)
                     f = folder + "log.txt"
-                    id = (i+1)*(j+1)*(t+1)
+                    id = (i+1)*(j+1)*(t+1)+(j+1)*(t+1)+t
                     arg = [c,e,Nlot,Nmentions,folder,f,id]
                     args.append(arg)
                 except OSError:
