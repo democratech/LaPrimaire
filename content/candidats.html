@@ -66,19 +66,32 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	width: 200px;
 	height: 300px;
 }
+.badge_soutiens {
+	position:absolute;
+	color:white;
+	font-size:12px;
+	background-color:#d91d1c;
+	display:none;
+	padding:5px;
+	top:0px;
+	z-index: 1;
+}
 .badge_qualified {
 	position:absolute;
 	color:white;
+	font-size:12px;
 	font-weight:bold;
 	background-color:#56d840;
 	padding:5px;
 	top:0px;
+	right:0px;
 	z-index: 1;
 }
 .badge_qualified.not_qualified { display:none; }
 .nb_soutiens {
 	position:absolute;
 	color:white;
+	font-size:12px;
 	background-color:#d91d1c;
 	padding:5px;
 	bottom:0px;
@@ -228,8 +241,9 @@ search.addWidget(
 <div class="col-sm-4 col-md-3">\
 <div style="height:350px;margin-bottom:10px;">\
 	<div class="candidate_pic" style="margin: 0 auto;">\
+	<div class="badge_soutiens">{{nb_soutiens}} soutiens</div>\
 		<div class="badge_qualified {{qualified}}">Qualifié</div>\
-		<div class="nb_soutiens">{{nb_soutiens}} soutiens après {{nb_days_verified}} jours</div>\
+		<div class="nb_soutiens">+{{nb_soutiens_7j}} soutiens / 7 derniers jours</div>\
 		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
 		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
 		</a>\
