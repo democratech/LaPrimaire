@@ -271,7 +271,7 @@ $(document).ready(function(){
 				textBefore: '',
 				textAfter: " % de l'objectif de 100.000 citoyens atteint"
 			});
-			$('#nb_citoyens_inscrits').html(supporteurs+" citoyens inscrits");
+			$('#nb_citoyens_inscrits').html(supporteurs+" citoyens pré-inscrits");
 		});
 	} else {
 		var percentage = supporteurs / 1000;
@@ -282,7 +282,27 @@ $(document).ready(function(){
 			textBefore: '',
 			textAfter: " % de l'objectif de 100.000 citoyens atteint"
 		});
-		$('#nb_citoyens_inscrits').html(supporteurs+" citoyens inscrits");
+		$('#nb_citoyens_inscrits').html(supporteurs+" préinscrits");
+	}
+	var app_stats=readCookie('app_stats');
+	if (app_stats==null) {
+		$.get("https://api.democratech.co/v1/app/stats", function( data ){
+			var nb_candidates=data['nb_candidates'];
+			var nb_citizens=data['nb_citizens'];
+			var nb_plebiscites=data['nb_plebiscites'];
+			createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
+			$('#nb_citoyens_app').html(nb_citizens+" votants");
+			$('#nb_candidates').html(nb_candidates+" candidats");
+			$('#nb_plebiscites').html(nb_plebiscites+" plébiscites");
+		});
+	} else {
+		data=JSON.parse(app_stats);
+		var nb_candidates=data['nb_candidates'];
+		var nb_citizens=data['nb_citizens'];
+		var nb_plebiscites=data['nb_plebiscites'];
+		$('#nb_citoyens_app').html(nb_citizens+" votants");
+		$('#nb_candidates').html(nb_candidates+" candidats");
+		$('#nb_plebiscites').html(nb_plebiscites+" plébiscites");
 	}
 });
 
