@@ -28,12 +28,12 @@ Lors de la seconde phase, les \'electeurs pourront juger pour tous les candidats
 
 \subsection{Proc\'edure pour construire les lots}
 
-Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont choisis \'a l'avance et les \'electeurs ne pourront pas choisir les candidats qu'ils jugeront lors du premier tour. Pour que cette phase ne soit pas truqu\'ee, trois conditions ont \'et\'e s\'electionn\'ees :
+Pour ne pas truquer la phase de qualification, les lots de 10 candidats sont choisis \'a l'avance et les \'electeurs ne pourront pas choisir les candidats qu'ils jugeront lors du premier tour. Pour que cette phase ne soit pas truqu\'ee, trois conditions ont \'et\'e s\'electionn\'ees.
 
 \begin{enumerate}
-  \item Le nombre d'apparition de chaque candidat dans les lots est le m\^eme ;
-  \item Chaque candidat aura la m\^eme probabilit\'e de rencontrer tout autre candidat dans un lot ;
-  \item Le classement est le m\^eme que si tous les \'electeurs jugent attentivement chaque candidat. 
+  \item \emph{Le nombre d'apparition de chaque candidat dans les lots est le m\^eme.} Pour le vote majoritaire, ne pas apparaitre le m\^eme nombre de fois cr\'e\'e un biais important : si un candidat A re\c{c}oit $100\%$ des votes, mais n'apparait que dans $10\%$ des lots, il perdera contre un candidat B qui ne re\c{c}oit que $20\%$ des votes, mais qui apparait dans $100\%$ des lots. Pour le jugement majoritaire, ne pas recevoir strictement le m\^eme nombre de jugements n'influe pas sur le classement g\'en\'eral gr\^ace \`a l'utilisation de la m\'edianne. En revanche, le nombre de jugements doit rester le plus proche possible pour garantir la repr\'esentativit\'e du vote. 
+  \item \emph{Chaque candidat a la m\^eme probabilit\'e de rencontrer tout autre candidat dans un lot.} Un biais cognitif dans les jugements consiste \`a juger un candidat par rapport \`a un autre : lorsqu'un \'electeur juge un candidat, il se r\'ef\`ere aux jugements qu'il a exprim\'e pr\'ec\'edemment. Il est donc important de veiller \`a ce que chaque candidat rencontre n'importe quel autre candidat. 
+  \item Le classement est le m\^eme que si tous les \'electeurs jugent attentivement et ind\'ependemment chaque candidat. 
 \end{enumerate}
 
 Ces conditions sont d'autant plus difficiles \`a respecter que le nombre d\'electeurs n'est pas connu \'a l'avance : les \'electeurs peuvent s'inscrire \`a l'\'election, mais finalement ne pas y participer. Ainsi, une construction au pr\'ealable des lots n'est pas possible: si une part significante des \'electeurs qui s'expriment sur un candidat ne sont pas pr\'esents lors de l'\'elections, alors ce candidat ne recevrait pas autant de jugements qu\'un autre.
@@ -54,7 +54,7 @@ Pour chaque lot, la proc\'edure consiste \`a :
   \label{fig:candidatsVSoccurence}
 \end{figure*}
 
-Sur la \cref{fig:candidatsVSoccurence}, le nombre d'apparition de chaque candidat est repr\'esent\'e. Une ligne rouge repr\'esente la moyenne d'apparition. Chaque candidat n'apparait pas exactement le m\^eme nombre de fois, bien que l'\'ecart \`a la moyenne est visiblement faible. Pour le vote majoritaire, ne pas apparaitre le m\^eme nombre de fois cr\'e\'e un biais important : si un candidat A re\c{c}oit $100\%$ des votes, mais n'apparait que dans $10\%$ des lots, il perdera contre un candidat B qui ne re\c{c}oit que $20\%$ des votes, mais qui apparait dans $100\%$ des lots. Pour le jugement majoritaire, ne pas recevoir strictement le m\^eme nombre de jugements n'influe pas sur le classement g\'en\'eral gr\^ace \`a l'utilisation de la m\'edianne. 
+Sur la \cref{fig:candidatsVSoccurence}, le nombre d'apparition de chaque candidat est repr\'esent\'e. Une ligne rouge repr\'esente la moyenne d'apparition. Chaque candidat n'apparait pas exactement le m\^eme nombre de fois, bien que l'\'ecart \`a la moyenne est visiblement faible. 
 
 L'\'ecart-type, d\'efini comme la moyenne des \'ecarts \`a la moyenne d\'epend du nombre d\'electeurs : plus les \'electeurs sont nombreux, et plus l'\'ecart-type devient faible. L'\'ecart-type ne peut \^etre interpr\'et\'e que par rapport \`a la moyenne : un \'ecart-type de 1 et une moyenne de 10 signifient qu'en g\'en\'eral, le nombre d'apparition d'un candidat est de 10, bien qu'il peut souvent de 9 ou de 11. Le rapport \'ecart-type sur moyenne est en revanche plus facile \'a interpr\'eter car il correspond \`a un pourcentage de d\'eviation. Dans la \cref{fig:rem}, ce rapport est calcul\'e pour plusieurs tranches d\'electeurs. A partir de 30000 \'electeurs, ce rapport devient inf\'erieur \`a $1\%$. Autrement dit, l'\'ecart dans le nombre d'apparition de chaque candidat est n\'egligeable.
 
@@ -78,8 +78,16 @@ La premi\`ere condition est donc valid\'ee. La \cref{fig:corr} valide la seconde
 
 \subsection{Nombre minimum d'\'electeurs}
 
+Le jugement majoritaire a \'et\'e con\c{c}u en supposant que les \'electeurs jugent tous les candidats. 
 
+Pour montrer que ce syst\`eme fonctionne \'egalement lorsque les \'electeurs ne jugent qu'un lot de candidats, nous avons compar\'e le gagnant d'une premi\'ere phase o\`u tous les candidats sont jug\'es par tous les \'electeurs et une seconde phase o\`u les \'electeurs ne jugent que les candidats dans leur lot. Nous avons remarqu\'e qu'un nombre minimum d'\'electeurs selon le nombre de candidats est n\'ecessaire.
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.98\columnwidth]{../\rootPath image/Nmin-electeurs.pdf}
+  \caption{Le nombre minimal d'\'electeurs est donn\'e \`a 5000 pr\`es pour un nombre de candidats entre 60 et 90}
+  \label{fig:rem}
+\end{figure}
 
 \end{document}
 
