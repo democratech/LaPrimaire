@@ -179,6 +179,10 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	    </div>
     </section>
 <script type="text/javascript">
+function shuffle (o){
+	  for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	    return o;
+}
 var search = instantsearch({
 	appId: 'D1XVECSSVA',
 	apiKey: '58643f9dff29db9f8da06875479fb290',
@@ -243,6 +247,11 @@ search.addWidget(
 search.addWidget(
 	instantsearch.widgets.hits({
 		container: '#hits-container',
+		transformData: {
+			allItems: function (content) {
+				return { hits: shuffle(content.hits) };
+			}
+		},
 		templates: {
 			empty: '\
 			<div style="width:320px;margin:0px auto 20px auto;">\
@@ -257,7 +266,7 @@ search.addWidget(
 			<div style="width:320px;margin:20px auto;">\
 			Personne ne vous convient ? <a href="/inscription-candidat/" target="_blank">Soyez candidat</a> !\
 			</div>',
-			item: '\
+			       allItems: '{{#hits}}\
 <div class="col-sm-4 col-md-3">\
 <div class="candidate_box">\
 	<div class="candidate_pic" style="margin: 0 auto;">\
@@ -273,7 +282,7 @@ search.addWidget(
 	<div class="candidate_M_since {{gender}}">candidat depuis {{nb_days_verified}} jours</div>\
 	<div class="candidate_F_since {{gender}}">candidate depuis {{nb_days_verified}} jours</div>\
 </div>\
-</div>'
+</div>{{/hits}}',
 		},
 		hitsPerPage: 100
 	})
