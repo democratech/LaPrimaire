@@ -1,3 +1,4 @@
+
 # simulation pour le jugement majoritaire
 
 import numpy as np
@@ -12,6 +13,8 @@ import argparse
 
 logging = False
 
+def getFolderName(c, e, t, root = "data"):
+	return "%s/C_%i.E_%i_%i/" % (root, c, e, t)
 
 def normalize(v, ax=1):
      n = np.sum(v, axis=ax)
@@ -143,32 +146,29 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     return [results, probaCandidats]
     
     
-# ------------------------------
-# graph
+def logClassement(rk, rk_proba, output):
+	Ncandidats = len(rk)
+	err5 = np.sum(rk[:5] != rk_proba[:5])
+	errT = np.sum(rk != rk_proba)
 
-def graph(Ncandidats,Nelecteurs, Nmentions, results, proba):
-    import matplotlib.pyplot as plt
-    nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
-    couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
-    abs_res = range(0,Ncandidats)
-    abs_prob = np.arange(0,Ncandidats) + 0.46
-    width = 0.45
-    #plt.bar(abs_res, results[:,0], width, color=couleurs[0], label=nameMentions[0])
-    for i in range(Nmentions):
-        plt.bar(abs_res, results[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(results[:,:i],axis=1), edgecolor='white')
-        plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(proba[:,:i],axis=1), edgecolor='white')
+	output.write("Classement a priori\n")
+	output.write(str(rk_proba))
+	output.write("\nClassement a posteriori\n")
+	output.write(str(rk))
+	output.write("\nNombres d'erreurs de classement sur les 5 premiers: %i, sur les %i candidats: %i" % (err5, Ncandidats, errT))
+  
+def computeLog(Ncandidats, Nelecteurs, test, root = "data"):
+	fname = getFolderName(Ncandidats, Nelecteurs, test, root)
+	rk    = np.genfromtxt(fname + "rk.results.%i.%i.txt" % (Ncandidats, Nelecteurs), dtype=float).astype(int)
+	rk_proba = np.genfromtxt(fname + "rk.terranova.%i.txt" % Ncandidats, dtype=float).astype(int)
+   	try:
+                f    = open(fname + "log.txt", "w")
+        except:
+                print "Can't open %s" % fname + "log.txt"
+	logClassement(rk, rk_proba, f)
+	f.close()
+	
 
-    plt.ylabel('Mentions')
-    plt.xlabel('Candidats')
-    plt.title('Jugement majoritaire avec %i candidats et %i electeurs' % (Ncandidats, Nelecteurs))
-    #plt.xticks(ind + width/2., ('C1', 'G2', 'G3', 'G4', 'G5'))
-    plt.yticks(np.arange(0, 1, 0.1))
-    plt.xticks(np.arange(0, Ncandidats))
-    plt.legend()
-
-    plt.show()
-   
-   
 # ------------------------------
 # main 
     
