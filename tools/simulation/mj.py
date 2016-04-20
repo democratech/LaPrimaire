@@ -133,23 +133,18 @@ def simulation(Ncandidats,Nelecteurs, Nlot, Nmentions, root, output,id=0):
     results = normalize(raw)
     results = results[rk]
     probaCandidats = probaCandidats[rk]
-    err5 = np.sum(rk[:5] != rk_proba[:5])
-    errT = np.sum(rk != rk_proba)
-    
-    output.write("Classement a priori\n")
-    output.write(str(rk_proba))
-    output.write("\nClassement a posteriori\n")
-    output.write(str(rk))
-    output.write("\nNombres d'erreurs de classement sur les 5 premiers: %i, sur les %i candidats: %i" 
-                % (err5, Ncandidats, errT))
-
+    logClassement(rk, rk_proba, output)
     return [results, probaCandidats]
     
     
 def logClassement(rk, rk_proba, output):
 	Ncandidats = len(rk)
-	err5 = np.sum(rk[:5] != rk_proba[:5])
-	errT = np.sum(rk != rk_proba)
+	#err5 = np.sum(rk[:5] != rk_proba[:5])
+	#errT = np.sum(rk != rk_proba)
+	rk5        = np.concatenate((rk[:5], rk_proba[:5]))
+	rkT	   = np.concatenate((rk, rk_proba))
+	err5       = len(set(rk5)) - 5
+	errT       = len(set(rkT)) - len(rk)
 
 	output.write("Classement a priori\n")
 	output.write(str(rk_proba))

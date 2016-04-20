@@ -18,7 +18,7 @@ def readData(Ncandidats, Nelecteurs, test, root = "data"):
     folder = getFolderName(Ncandidats, Nelecteurs, test)
     fname = folder + "log.txt"
     if not os.path.isfile(fname + "log.txt"):
-         mj.computeLog(Ncandidats, Nelecteurs, test, root)
+       mj.computeLog(Ncandidats, Nelecteurs, test, root)
 
     f = open(fname, "r")
     p = re.compile(ur'5 premiers: ([0-9]+),')
@@ -135,7 +135,7 @@ def computeAllStd(candidats, electeurs, tests, root = "data"):
     threshold = np.zeros(Nc, dtype=int)
     for i in range(Nc):
         c = candidats[i]      
-        w = np.where(res[i] < 0.5)[0]
+        w = np.where(res[i] < 0.01)[0]
         if w.size != 0:
             threshold[i] = w[0]
         else:
@@ -152,7 +152,7 @@ if __name__ == '__main__':
         #global root, Nmentions
         
         parser = argparse.ArgumentParser()
-        parser.add_argument('--nv',  type=int, help='Number of voters', default=105000)
+        parser.add_argument('--nv',  type=int, help='Number of voters', default=80000)
         parser.add_argument('--rv',  action='store_false', help='Range for voters')
         parser.add_argument('--nc',  type=int, help='Number of candidates', default=100)
         parser.add_argument('--nt',  type=int, help='Number of tests', default=5)
@@ -169,9 +169,9 @@ if __name__ == '__main__':
         root = args.root
         std = args.std
         tests     = np.arange(args.nt)
-	electeurs = np.arange(50000,Nelecteurs,5000) if args.rv else np.array([Nelecteurs])
+	electeurs = np.arange(50000,Nelecteurs,1000) if args.rv else np.array([Nelecteurs])
         candidats = np.arange(60,Ncandidats,10) if args.rc else np.array([Ncandidats])
-            
+
         if args.priori:
             test = 0
             plotCandidates(Ncandidats, Nelecteurs, test)
