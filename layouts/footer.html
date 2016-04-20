@@ -292,8 +292,8 @@ $(document).ready(function(){
 			var nb_plebiscites=data['nb_plebiscites'];
 			createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
 			$('#nb_citoyens_app').html(nb_citizens+" votants");
-			$('#nb_candidates').html(nb_candidates+" candidats");
-			$('#nb_plebiscites').html(nb_plebiscites+" plébiscites");
+			$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
+			$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" plébiscites</a>");
 		});
 	} else {
 		data=JSON.parse(app_stats);
@@ -301,8 +301,8 @@ $(document).ready(function(){
 		var nb_citizens=data['nb_citizens'];
 		var nb_plebiscites=data['nb_plebiscites'];
 		$('#nb_citoyens_app').html(nb_citizens+" votants");
-		$('#nb_candidates').html(nb_candidates+" candidats");
-		$('#nb_plebiscites').html(nb_plebiscites+" plébiscites");
+		$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
+		$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" plébiscites</a>");
 	}
 });
 
