@@ -58,6 +58,13 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	margin-left: auto;
 	margin-right: auto;
 }
+.candidate_box a:hover { text-decoration:none; }
+.candidate_box {
+	height:350px;
+	margin-bottom:10px;
+}
+.candidate_pic:hover .nb_soutiens { display:none; }
+.candidate_pic:hover .nb_soutiens_total { display:inline; }
 .candidate_pic {
 	overflow: hidden;
 	position: relative;
@@ -88,6 +95,15 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	z-index: 1;
 }
 .badge_qualified.not_qualified { display:none; }
+.nb_soutiens_total {
+	position:absolute;
+	color:white;
+	font-size:12px;
+	background-color:#d91d1c;
+	padding:5px;
+	bottom:0px;
+	z-index: 1;
+}
 .nb_soutiens {
 	position:absolute;
 	color:white;
@@ -109,6 +125,14 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	font-size:16px;
 	color:#5e5e5e;
 	font-weight:bold;
+	text-align:center;
+}
+.candidate_M_since.Femme { display:none; }
+.candidate_F_since.Homme { display:none; }
+.candidate_M_since, .candidate_F_since {
+	font-size:12px;
+	color:#5e5e5e;
+	font-weight:normal;
 	text-align:center;
 }
 </style>
@@ -168,7 +192,6 @@ search.addWidget(
 		cssClasses: {root: 'lp-search',input:'lp-search-input'}
 	})
 );
-
 search.addWidget(
 	instantsearch.widgets.refinementList({
 	container: '#gender',
@@ -188,7 +211,6 @@ search.addWidget(
 
 })
 );
-
 search.addWidget(
 	instantsearch.widgets.rangeSlider({
 	container: '#nb_days_verified',
@@ -203,7 +225,6 @@ search.addWidget(
 	}
 })
 );
-
 search.addWidget(
 	instantsearch.widgets.rangeSlider({
 	container: '#nb_soutiens',
@@ -214,11 +235,10 @@ search.addWidget(
 		active:'lp-cat-active'
 	},
 	templates: {
-		header: 'Nombre de soutiens',
+		header: 'Nombre de soutiens total',
 	}
 })
 );
-
 
 search.addWidget(
 	instantsearch.widgets.hits({
@@ -239,18 +259,19 @@ search.addWidget(
 			</div>',
 			item: '\
 <div class="col-sm-4 col-md-3">\
-<div style="height:350px;margin-bottom:10px;">\
+<div class="candidate_box">\
 	<div class="candidate_pic" style="margin: 0 auto;">\
-	<div class="badge_soutiens">{{nb_soutiens}} soutiens</div>\
+		<div class="badge_soutiens">{{nb_soutiens}} soutiens</div>\
+		<div class="nb_soutiens_total">{{nb_soutiens}} soutiens au total</div>\
 		<div class="badge_qualified {{qualified}}">Qualifié</div>\
 		<div class="nb_soutiens">+{{nb_soutiens_7j}} soutiens / 7 derniers jours</div>\
 		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
 		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
 		</a>\
 	</div>\
-	<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
-	<div class="candidate_name">{{{_highlightResult.name.value}}}</div>\
-	</a>\
+	<div class="candidate_name"><a href="https://laprimaire.org/candidat/{{candidate_id}}">{{{_highlightResult.name.value}}}</a></div>\
+	<div class="candidate_M_since {{gender}}">candidat depuis {{nb_days_verified}} jours</div>\
+	<div class="candidate_F_since {{gender}}">candidate depuis {{nb_days_verified}} jours</div>\
 </div>\
 </div>'
 		},
