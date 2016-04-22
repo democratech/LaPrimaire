@@ -14,11 +14,11 @@ Nmentions = 7
 def getFolderName(c, e, t, root = "data"):
 	return "%s/C_%i.E_%i_%i/" % (root, c, e, t)
 
-def readData(Ncandidats, Nelecteurs, test, root = "data"):
+def readData(Ncandidats, Nelecteurs, test, root = "data", relog = False):
     folder = getFolderName(Ncandidats, Nelecteurs, test)
     fname = folder + "log.txt"
-    if not os.path.isfile(fname + "log.txt"):
-       mj.computeLog(Ncandidats, Nelecteurs, test, root)
+    if not os.path.isfile(fname + "log.txt") or relog:
+        mj.computeLog(Ncandidats, Nelecteurs, test, root)
 
     f = open(fname, "r")
     p = re.compile(ur'5 premiers: ([0-9]+),')
@@ -100,6 +100,8 @@ def plotMinElecteurs(threshold, candidats, electeurs):
     fig = plt.figure()
     tes = threshold >= 0
     idx = threshold[tes]
+    print electeurs[idx]
+    print candidats[tes]
     plt.plot(candidats[tes], electeurs[idx], "b+")
     plt.plot(candidats[tes], electeurs[idx], "b-")
     plt.xlabel("Nombre de candidats")
@@ -135,7 +137,7 @@ def computeAllStd(candidats, electeurs, tests, root = "data"):
     threshold = np.zeros(Nc, dtype=int)
     for i in range(Nc):
         c = candidats[i]      
-        w = np.where(res[i] < 0.01)[0]
+        w = np.where(res[i] < 0.1)[0]
         if w.size != 0:
             threshold[i] = w[0]
         else:
@@ -152,31 +154,42 @@ if __name__ == '__main__':
         #global root, Nmentions
         
         parser = argparse.ArgumentParser()
-        parser.add_argument('--nv',  type=int, help='Number of voters', default=80000)
-        parser.add_argument('--rv',  action='store_false', help='Range for voters')
-        parser.add_argument('--nc',  type=int, help='Number of candidates', default=100)
-        parser.add_argument('--nt',  type=int, help='Number of tests', default=5)
-        parser.add_argument('--rc',  action='store_false', help='Range for candidates')
         parser.add_argument('--ng',  type=int, help='Number of grades', default=Nmentions)
         parser.add_argument('--root',  type=str, help='Root for paths', default="root")
         parser.add_argument('--priori', action='store_true', help='Plot a priori distribution')
-        parser.add_argument('--std', type=int, help='Return std for a certain number of candidate', default=0)
+        parser.add_argument('--relog', action='store_true')
+	parser.add_argument('--std', type=int, help='Return std for a certain number of candidate', default=0)
         args = parser.parse_args()
         
-        Ncandidats = args.nc
-        Nelecteurs = args.nv
         Nmentions = args.ng
         root = args.root
         std = args.std
-        tests     = np.arange(args.nt)
-	electeurs = np.arange(50000,Nelecteurs,1000) if args.rv else np.array([Nelecteurs])
-        candidats = np.arange(60,Ncandidats,10) if args.rc else np.array([Ncandidats])
+	relog = args.relog
+	
+	electeurs = set()
+	candidats = set()
+	tests     = set()
+	samples = os.listdir("data")
+	for s in samples:
+	    m = re.findall('C_(\d+).E_(\d+)_(\d+)', s)[0]
+	    electeurs |= set([int(m[1])])
+	    candidats |= set([int(m[0])])
+	    tests     |= set([int(m[2])])
+        electeurs = np.sort(list(electeurs))
+	candidats = np.sort(list(candidats))
+	tests     = np.sort(list(tests))
+	print candidats
+	print electeurs
+       
+        Nelecteurs = max(electeurs)
+        Ncandidats = max(candidats)
 
-        if args.priori:
+	if args.priori:
             test = 0
             plotCandidates(Ncandidats, Nelecteurs, test)
         elif std:
             print computeStdToZero(std, electeurs)
         else:
             threshold = computeAllStd(candidats, electeurs, tests)
-            plotMinElecteurs(threshold, candidats, electeurs)
+            print threshold
+	    plotMinElecteurs(threshold, candidats, electeurs)
