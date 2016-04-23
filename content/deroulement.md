@@ -1,13 +1,15 @@
 ---
-title: Déroulement et Calendrier de LaPrimaire.org
+title: Déroulement et calendrier de LaPrimaire.org
 url: https://laprimaire.org/deroulement/
-page_title: Déroulement
+image: https://laprimaire.org/assets/images/social/deroulement.png
+social_title: Toutes les réponses à vos interrogations sur le déroulement de LaPrimaire.org
+page_title: Déroulement et calendrier de LaPrimaire.org
 footer: true
 navbar: true
 deroulement: true
 edit_url: https://github.com/democratech/LaPrimaire/blob/master/content/deroulement.md
 author: Des citoyens ordinaires
-description: Offrons-nous un VRAI choix pour 2017 !
+description: Comment va se dérouler LaPrimaire.org ? Quelles sont les grandes étapes ? Comment le candidat final sera-t-il sélectionné ? Tout ce que vous souhaitez savoir sur le déroulement de LaPrimaire.org est sur cette page.
 ---
 
 A titre préliminaire, nous précisons qu'en qualité d'organisateurs de LaPrimaire.org, nous nous réservons la possibilité d'adapter le calendrier ci-après décrit afin d'optimiser son efficacité et le déroulement de LaPrimaire.org. Toute modification éventuelle sera, bien entendu, décidée et annoncée suffisamment en amont afin que tout un chacun puisse en prendre connaissance et en tenir compte.

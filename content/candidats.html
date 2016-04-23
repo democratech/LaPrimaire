@@ -64,7 +64,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	margin-bottom:10px;
 }
 .candidate_pic:hover .nb_soutiens { display:none; }
-.candidate_pic:hover .nb_soutiens_total { display:inline; }
+/* .candidate_pic:hover .nb_soutiens_total { display:inline; } */
 .candidate_pic {
 	overflow: hidden;
 	position: relative;
@@ -103,6 +103,8 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	padding:5px;
 	bottom:0px;
 	z-index: 1;
+	/* test */
+	display:none;
 }
 .nb_soutiens {
 	position:absolute;
@@ -112,6 +114,8 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	padding:5px;
 	bottom:0px;
 	z-index: 1;
+	/* test */
+	display:none;
 }
 #powered_by {
 	display: inline-block;
@@ -215,7 +219,7 @@ search.addWidget(
 
 })
 );
-search.addWidget(
+/*search.addWidget(
 	instantsearch.widgets.rangeSlider({
 	container: '#nb_days_verified',
 	attributeName: 'nb_days_verified',
@@ -242,7 +246,7 @@ search.addWidget(
 		header: 'Nombre de soutiens total',
 	}
 })
-);
+);*/
 
 search.addWidget(
 	instantsearch.widgets.hits({
