@@ -53,7 +53,7 @@ La Présentation comprend notamment :
 
 Le contenu de l'Espace Personnel est à la charge exclusive de chaque candidat(e) et soumis au respect de la Charte Candidat.
 
-Une Présentation sera également créée automatiquement pour tous/toutes les candidat(e)s proposé(e)s par les participants à LaPrimaire.org. En revanche, l'Espace Personnel étant de la responsabilité personnelle de chaque candidat, il ne pourra être complété que par ce dernier si le(la) candidat(e) proposé(e) accèpte officiellement de participer à LaPrimaire.org.
+Une Présentation sera également créée automatiquement pour tous/toutes les candidat(e)s plébiscité(e)s par les participants à LaPrimaire.org. En revanche, l'Espace Personnel étant de la responsabilité personnelle de chaque candidat, il ne pourra être complété que par ce dernier si le(la) candidat(e) plébiscité(e) accepte officiellement de participer à LaPrimaire.org.
 
 Sur le fondement de la Présentation et de l'Espace Personnel, les candidat(e)s assureront, seul(e)s et par leurs propres moyens et/ou à l'aide de leurs soutiens, leur campagne tendant à faire connaître leur candidature à LaPrimaire.org et ce afin d'atteindre le Seuil de Qualification. 
 
@@ -66,7 +66,7 @@ Il s'agit des candidat(e)s :
 - ayant présenté leur propre candidature ; et
 - ayant atteint le Seuil de Qualification.
 
-Concernant les candidat(e)s proposé(e)s et n'ayant pas fait acte initial de candidature, ils ont jusqu'au 30 juin 2016 à minuit pour se déclarer officiellement candidat sans quoi ils ne seront pas qualifiés. Les citoyens qui auront reçu 500 plébiscites ou plus seront contactés officiellement par LaPrimaire.org qui les invitera à se déclarer candidat avant le 30 juin 2016. Le défaut de réponse sera assimilé à un refus.
+Concernant les candidat(e)s plébiscité(e)s et n'ayant pas fait acte initial de candidature, ils ont jusqu'au 30 juin 2016 à minuit pour se déclarer officiellement candidat sans quoi ils ne seront pas qualifiés. Les citoyens qui auront reçu 500 plébiscites ou plus seront contactés officiellement par LaPrimaire.org qui les invitera à se déclarer candidat avant le 30 juin 2016. Le défaut de réponse sera assimilé à un refus.
 
 ### Juillet - Septembre 2016 : Période de préparation et d'échange (deuxième phase)
 
