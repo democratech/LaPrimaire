@@ -166,6 +166,10 @@ description: Retrouvez la liste des citoyen(ne)s qui ont été plébiscité(e)s 
 	    </div>
     </section>
 <script type="text/javascript">
+function shuffle (o){
+	  for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	    return o;
+}
 var search = instantsearch({
 	appId: 'D1XVECSSVA',
 	apiKey: '58643f9dff29db9f8da06875479fb290',
@@ -197,7 +201,7 @@ search.addWidget(
 
 })
 );
-
+/*
 search.addWidget(
 	instantsearch.widgets.rangeSlider({
 	container: '#nb_days_added',
@@ -227,11 +231,16 @@ search.addWidget(
 	}
 })
 );
-
+*/
 
 search.addWidget(
 	instantsearch.widgets.hits({
 		container: '#hits-container',
+		transformData: {
+			allItems: function (content) {
+				return { hits: shuffle(content.hits) };
+			}
+		},
 		templates: {
 			empty: '\
 			<div style="width:320px;margin:0px auto 20px auto;">\
@@ -246,31 +255,28 @@ search.addWidget(
 			<div style="width:320px;margin:20px auto;">\
 			Personne ne vous convient ? <a href="/inscription-candidat/" target="_blank">Soyez candidat</a> !\
 			</div>',
-			item: '\
+		       allItems: '{{#hits}}\
 <div class="col-sm-4 col-md-3">\
 <div class="candidate_box">\
 	<div class="candidate_pic" style="margin: 0 auto;">\
-		<div class="badge_soutiens">{{nb_soutiens}} soutiens</div>\
-		<div class="nb_soutiens_total">{{nb_soutiens}} soutiens au total</div>\
 		<div class="badge_qualified {{qualified}}">Qualifié</div>\
-		<div class="nb_soutiens">+{{nb_soutiens_7j}} soutiens / 7 derniers jours</div>\
 		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
 		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
 		</a>\
 	</div>\
 	<div class="candidate_name"><a href="https://laprimaire.org/candidat/{{candidate_id}}">{{{_highlightResult.name.value}}}</a></div>\
 </div>\
-</div>'
+</div>{{/hits}}'
 		},
 		hitsPerPage: 150
 	})
 );
-
+/*
 search.addWidget(
 	instantsearch.widgets.pagination({
 		container: '#pagination-container'
 	})
 );
-
+*/
 search.start();
 </script>
