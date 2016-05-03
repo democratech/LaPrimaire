@@ -11,11 +11,9 @@ import mj
 Nmentions = 7
 
 
-def getFolderName(c, e, t, root = "data"):
-	return "%s/C_%i.E_%i_%i/" % (root, c, e, t)
 
 def readData(Ncandidats, Nelecteurs, test, root = "data", relog = False):
-    folder = getFolderName(Ncandidats, Nelecteurs, test)
+    folder = mj.getFolderName(Ncandidats, Nelecteurs, test)
     fname = folder + "log.txt"
     if not os.path.isfile(fname + "log.txt") or relog:
         mj.computeLog(Ncandidats, Nelecteurs, test, root)
@@ -34,8 +32,12 @@ def readData(Ncandidats, Nelecteurs, test, root = "data", relog = False):
 # ------------------------------
 # graph
 
-def plotBar(Ncandidats,Nelecteurs, Nmentions, results, proba):
+def plotBar(Ncandidats,Nelecteurs, test, Nmentions, root="data"):
     import matplotlib.pyplot as plt
+    fname = mj.getFolderName(Ncandidats, Nelecteurs, test, root)
+    raw_post   = np.genfromtxt(fname + "raw.results.%i.%i.txt" % (Ncandidats, Nelecteurs), dtype=float, delimiter=",").astype(float)
+    n_priori = np.genfromtxt(fname + "terranova.%i.txt" % Ncandidats, dtype=float, delimiter=",").astype(float)
+    n_post     = mj.normalize(raw_post)
     nameMentions = ["Excellent", "Tres bien", "Bien", "Assez bien", "Passable", "Insuffisant", "A rejeter"]
     couleurs = ["DarkRed", "Crimson","Tomato","DarkOrange","Yellow","Khaki","DarkKhaki"]
     abs_res = range(0,Ncandidats)
@@ -43,8 +45,8 @@ def plotBar(Ncandidats,Nelecteurs, Nmentions, results, proba):
     width = 0.45
     #plt.bar(abs_res, results[:,0], width, color=couleurs[0], label=nameMentions[0])
     for i in range(Nmentions):
-	plt.bar(abs_res, results[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(results[:,:i],axis=1), edgecolor='white')
-	plt.bar(abs_prob, probaCandidats[:,i], width,color=couleurs[i], bottom=np.sum(proba[:,:i],axis=1), edgecolor='white')
+	plt.bar(abs_res, n_post[:,i], width,color=couleurs[i],  label=nameMentions[i], bottom=np.sum(n_post[:,:i],axis=1), edgecolor='white')
+	plt.bar(abs_prob, n_priori[:,i], width,color=couleurs[i], bottom=np.sum(n_priori[:,:i],axis=1), edgecolor='white')
 
     plt.ylabel('Mentions')
     plt.xlabel('Candidats')
@@ -137,7 +139,7 @@ def computeAllStd(candidats, electeurs, tests, root = "data"):
     threshold = np.zeros(Nc, dtype=int)
     for i in range(Nc):
         c = candidats[i]      
-        w = np.where(res[i] < 0.1)[0]
+        w = np.where(res[i] < 0.25)[0]
         if w.size != 0:
             threshold[i] = w[0]
         else:
@@ -155,8 +157,11 @@ if __name__ == '__main__':
         
         parser = argparse.ArgumentParser()
         parser.add_argument('--ng',  type=int, help='Number of grades', default=Nmentions)
+        parser.add_argument('--ne',  type=int, help='Number of electors', default=0)
+        parser.add_argument('--nc',  type=int, help='Number of candidates', default=0)
         parser.add_argument('--root',  type=str, help='Root for paths', default="root")
         parser.add_argument('--priori', action='store_true', help='Plot a priori distribution')
+        parser.add_argument('--bar', action='store_true', help='Plot bars')
         parser.add_argument('--relog', action='store_true')
 	parser.add_argument('--std', type=int, help='Return std for a certain number of candidate', default=0)
         args = parser.parse_args()
@@ -181,12 +186,15 @@ if __name__ == '__main__':
 	print candidats
 	print electeurs
        
-        Nelecteurs = max(electeurs)
-        Ncandidats = max(candidats)
+        Nelecteurs = args.ne if args.ne else max(electeurs)
+        Ncandidats = args.nc if args.nc else max(candidats)
 
 	if args.priori:
             test = 0
             plotCandidates(Ncandidats, Nelecteurs, test)
+        if args.bar:
+            test = 0
+            plotBar(Ncandidats, Nelecteurs, test, Nmentions)
         elif std:
             print computeStdToZero(std, electeurs)
         else:
