@@ -12,6 +12,7 @@ def create_robots_txt
 		content = if @site.config[:robots][:default]
 				  <<-EOS
 User-agent: *
+Disallow: /admin/
 EOS
 			  else
 				  [
