@@ -178,7 +178,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	color:#5e5e5e;
 	padding:0px 5px;
 }
-.candidate_name em { background-color: yellow; }
+.candidate_name em, .candidate_infos em { background-color: yellow; }
 .candidate_name {
 	font-size:14px;
 	color:#5e5e5e;
@@ -341,11 +341,11 @@ search.addWidget(
 	attributeName: 'age',
 	options: [
 		{name: 'Tous'},
-		{end: 25, name: '18 - 25 ans'},
-		{start: 25, end: 35, name: '25 - 35 ans'},
-		{start: 35, end: 45, name: '35 - 45 ans'},
-		{start: 45, end: 55, name: '45 - 55 ans'},
-		{start: 55, name: 'plus de 55 ans'}
+		{end: 24, name: '18 - 24 ans'},
+		{start: 25, end: 34, name: '25 - 34 ans'},
+		{start: 35, end: 44, name: '35 - 44 ans'},
+		{start: 45, end: 54, name: '45 - 54 ans'},
+		{start: 55, name: 'plus de 54 ans'}
 	],
 	cssClasses: {
 		header:'lp-cat-header',
@@ -357,37 +357,6 @@ search.addWidget(
 	}
 })
 );
-/*
-search.addWidget(
-	instantsearch.widgets.rangeSlider({
-	container: '#candidate_age',
-	attributeName: 'age',
-	cssClasses: {
-		header:'lp-cat-header',
-		item:'lp-cat-item',
-		active:'lp-cat-active'
-	},
-	templates: {
-		header: 'Age du candidat(e)',
-	}
-})
-);
-*/
-/*search.addWidget(
-	instantsearch.widgets.rangeSlider({
-	container: '#nb_soutiens',
-	attributeName: 'nb_soutiens',
-	cssClasses: {
-		header:'lp-cat-header',
-		item:'lp-cat-item',
-		active:'lp-cat-active'
-	},
-	templates: {
-		header: 'Nombre de soutiens total',
-	}
-})
-);*/
-
 search.addWidget(
 	instantsearch.widgets.hits({
 		container: '#hits-container',
@@ -428,7 +397,7 @@ search.addWidget(
 		<div class="badge_qualified {{qualified}}">Qualifié</div>\
 		<div class="nb_soutiens">+{{nb_soutiens_7j}} soutiens / 7 derniers jours</div>\
 		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
-		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
+		<img src="https://s3.eu-central-1.amazonaws.com/laprimaire/{{photo}}" height="300px">\
 		</a>\
 	</div>\
 	<div class="candidate_bio {{status}} col-xs-6" style="margin: 0 auto;">\
@@ -444,8 +413,8 @@ search.addWidget(
 </div>\
 <div class="candidate_name"><a href="https://laprimaire.org/candidat/{{candidate_id}}">{{{_highlightResult.name.value}}}</a></div>\
 <div class="candidate_infos">\
-	<div class="age_job {{status}}">{{age}} ans, {{job}}</div>\
-	<div class="dept {{status}}">habite le département {{departement}}</div>\
+	<div class="age_job {{status}}">{{age}} ans, {{{_highlightResult.job.value}}}</div>\
+	<div class="dept {{status}}">habite le département {{{_highlightResult.departement.value}}}</div>\
 	<div class="candidate_M_since {{gender}}">candidat depuis {{nb_days_verified}} jours</div>\
 	<div class="candidate_F_since {{gender}}">candidate depuis {{nb_days_verified}} jours</div>\
 </div>\
@@ -454,13 +423,5 @@ search.addWidget(
 		hitsPerPage: 150
 	})
 );
-
-/*
-search.addWidget(
-	instantsearch.widgets.pagination({
-		container: '#pagination-container'
-	})
-);
-*/
 search.start();
 </script>
