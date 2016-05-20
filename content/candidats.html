@@ -22,16 +22,23 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 .lp-cat-label {}
 .lp-cat-checkbox {}
 .lp-cat-item {
-	font-variant: small-caps;
-	margin: 18px 5px 5px 5px;
+	/*font-variant: small-caps;*/
+	margin: 2px 2px;
+	/*display: inline-block;*/
+	font-size: 14px;
+	color: #5e5e5e;
+}
+.gender-cat-item {
+	/*font-variant: small-caps;*/
+	margin: 2px 2px;
 	display: inline-block;
-	font-size: 18px;
+	font-size: 14px;
 	color: #5e5e5e;
 }
 .lp-cat-header {
 	font-weight:bold;
 	color: #5e5e5e;
-	font-size: 18px;
+	font-size: 16px;
 	font-variant: small-caps;
 }
 .lp-search-input {
@@ -47,7 +54,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	text-align: center;
 	font-size: 20px;
 }
-.candidate_pic img {
+.candidate_pic img, .candidate_oldpic img {
 	position: absolute;
 	top: 0px;
 	/* fill vertically */
@@ -66,6 +73,17 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 }
 .candidate_pic:hover .nb_soutiens { display:none; }
 /* .candidate_pic:hover .nb_soutiens_total { display:inline; } */
+.candidate_oldpic.complete { display:none; }
+.candidate_oldpic {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	width: 60%;
+	border: 8px solid #527bdd;
+	min-height: 300px;
+	padding:0px;
+}
+.candidate_pic.incomplete { display:none; }
 .candidate_pic {
 	overflow: hidden;
 	position: relative;
@@ -75,6 +93,10 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	min-height: 300px;
 	padding:0px;
 }
+.candidate_bio em {
+	background-color:yellow;
+}
+.candidate_bio.incomplete { display:none; }
 .candidate_bio {
 	overflow: hidden;
 	position: relative;
@@ -142,7 +164,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 .priorite {
 	text-align:justify;
 	margin-left: -20px;
-	font-size:12px;
+	font-size:11px;
 	color:#5e5e5e;
 	padding:2px;
 }
@@ -152,7 +174,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 }
 .vision {
 	text-align:justify;
-	font-size:12px;
+	font-size:11px;
 	color:#5e5e5e;
 	padding:0px 5px;
 }
@@ -164,11 +186,14 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 	text-align:center;
 }
 .candidate_infos {
+	min-height:55px;
 	font-size:12px;
 	color:#5e5e5e;
 	text-align:center;
 	margin-bottom:10px;
 }
+.age_job.incomplete { display:none; }
+.dept.incomplete { display:none; }
 .candidate_M_since.Femme { display:none; }
 .candidate_F_since.Homme { display:none; }
 .candidate_M_since, .candidate_F_since {
@@ -198,25 +223,22 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
     <section id="contribute_form" style="margin-top:0px;padding-top:0px;">
 	    <div class="container-fluid">
 		    <div class="row" style="width:95%;margin: 5px auto;">
-			    <div class="col-sm-5">
-				    <div id="gender"></div>
-			    </div>
-			    <div class="col-sm-3">
-				    <div id="nb_soutiens"></div>
-				    <div id="qualified"></div>
-			    </div>
-			    <div class="col-sm-1">&nbsp;</div>
-			    <div class="col-sm-3">
-				    <div id="nb_days_verified"></div>
-			    </div>
 		    </div>
 		    <div class="row">
-			    <div class="col-lg-12">
+			    <div class="col-lg-2">
+				    <div class="row">
+					    <div class="col-xs-12">
+						    <div id="gender"></div>
+						    <div id="candidate_age"></div>
+						    <div id="departement"></div>
+						    <div id="secteur"></div>
+						    <div id="nb_days_verified"></div>
+					    </div>
+				    </div>
+			    </div>
+			    <div class="col-lg-10">
 				    <div class="row">
 					    <div id="hits-container"></div>
-				    </div>
-				    <div class="row">
-					    <div id="pagination-container"></div>
 				    </div>
 			    </div>
 		    </div>
@@ -230,7 +252,7 @@ function shuffle (o){
 var search = instantsearch({
 	appId: 'D1XVECSSVA',
 	apiKey: '58643f9dff29db9f8da06875479fb290',
-	indexName: 'candidates',
+	indexName: 'candidates_test',
 	urlSync: true
 });
 search.addWidget(
@@ -259,12 +281,12 @@ search.addWidget(
 
 })
 );
-/*
 search.addWidget(
-	instantsearch.widgets.refinementList({
-	container: '#qualified',
-	attributeName: 'qualified',
-	sortBy: ['name:desc'],
+	instantsearch.widgets.menu({
+	container: '#secteur',
+	attributeName: 'secteur',
+	sortBy: ['count:desc'],
+	limit: 100,
 	cssClasses: {
 		header:'lp-cat-header',
 		item:'lp-cat-item',
@@ -274,11 +296,31 @@ search.addWidget(
 		count:'lp-cat-count'
 	},
 	templates: {
-		header: 'Qualifié',
+		header: 'Secteur d\'activité professionel',
 	}
 
 })
-);*/
+);
+search.addWidget(
+	instantsearch.widgets.menu({
+	container: '#departement',
+	attributeName: 'departement',
+	sortBy: ['departement:asc'],
+	limit: 100,
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		checkbox:'lp-cat-checkbox',
+		label:'lp-cat-label',
+		active:'lp-cat-active',
+		count:'lp-cat-count'
+	},
+	templates: {
+		header: 'Département du candidat(e)',
+	}
+
+})
+);
 search.addWidget(
 	instantsearch.widgets.rangeSlider({
 	container: '#nb_days_verified',
@@ -293,6 +335,44 @@ search.addWidget(
 	}
 })
 );
+search.addWidget(
+	instantsearch.widgets.numericRefinementList({
+	container: '#candidate_age',
+	attributeName: 'age',
+	options: [
+		{name: 'Tous'},
+		{end: 25, name: '18 - 25 ans'},
+		{start: 25, end: 35, name: '25 - 35 ans'},
+		{start: 35, end: 45, name: '35 - 45 ans'},
+		{start: 45, end: 55, name: '45 - 55 ans'},
+		{start: 55, name: 'plus de 55 ans'}
+	],
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active'
+	},
+	templates: {
+		header: 'Age du candidat(e)',
+	}
+})
+);
+/*
+search.addWidget(
+	instantsearch.widgets.rangeSlider({
+	container: '#candidate_age',
+	attributeName: 'age',
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active'
+	},
+	templates: {
+		header: 'Age du candidat(e)',
+	}
+})
+);
+*/
 /*search.addWidget(
 	instantsearch.widgets.rangeSlider({
 	container: '#nb_soutiens',
@@ -333,7 +413,7 @@ search.addWidget(
 			       allItems: '{{#hits}}\
 <div class="col-sm-6 col-md-4 col-lg-3">\
 <div class="candidate_box">\
-	<div class="candidate_pic col-xs-6" style="margin: 0 auto;">\
+<div class="candidate_oldpic {{status}}" style="margin: 0 auto;">\
 		<div class="badge_soutiens">{{nb_soutiens}} soutiens</div>\
 		<div class="nb_soutiens_total">{{nb_soutiens}} soutiens au total</div>\
 		<div class="badge_qualified {{qualified}}">Qualifié</div>\
@@ -342,19 +422,30 @@ search.addWidget(
 		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
 		</a>\
 	</div>\
-	<div class="candidate_bio col-xs-6" style="margin: 0 auto;">\
+	<div class="candidate_pic {{status}} col-xs-6" style="margin: 0 auto;">\
+		<div class="badge_soutiens">{{nb_soutiens}} soutiens</div>\
+		<div class="nb_soutiens_total">{{nb_soutiens}} soutiens au total</div>\
+		<div class="badge_qualified {{qualified}}">Qualifié</div>\
+		<div class="nb_soutiens">+{{nb_soutiens_7j}} soutiens / 7 derniers jours</div>\
+		<a href="https://laprimaire.org/candidat/{{candidate_id}}">\
+		<img src="https://bot.democratech.co/static/candidats/{{photo}}" height="300px">\
+		</a>\
+	</div>\
+	<div class="candidate_bio {{status}} col-xs-6" style="margin: 0 auto;">\
 		<div class="vision_title">Ma vision</div>\
-		<div class="vision"><q>Faire de la France le plus beau pays du monde et montrer aux autres que ils sont que des loosers qui peuvent aller se faire bien bien foutre</q></div>\
+		<div class="vision"><q>{{{_highlightResult.vision.value}}}</q></div>\
 		<div class="priorite_title">Mes priorités</div>\
 		<ol>\
-			<li class="priorite">Reduire le chomage en faisant des gros trucs degueus</li>\
-			<li class="priorite">Reduire le chomage en faisant des gros trucs degueus</li>\
-			<li class="priorite">Reduire le chomage en faisant des gros trucs degueus</li>\
+		<li class="priorite">{{{_highlightResult.prio1.value}}}</li>\
+		<li class="priorite">{{{_highlightResult.prio2.value}}}</li>\
+		<li class="priorite">{{{_highlightResult.prio3.value}}}</li>\
 		</ol>\
 	</div>\
 </div>\
 <div class="candidate_name"><a href="https://laprimaire.org/candidat/{{candidate_id}}">{{{_highlightResult.name.value}}}</a></div>\
-<div class="candidate_infos">30 ans - Ile de France\
+<div class="candidate_infos">\
+	<div class="age_job {{status}}">{{age}} ans, {{job}}</div>\
+	<div class="dept {{status}}">habite le département {{departement}}</div>\
 	<div class="candidate_M_since {{gender}}">candidat depuis {{nb_days_verified}} jours</div>\
 	<div class="candidate_F_since {{gender}}">candidate depuis {{nb_days_verified}} jours</div>\
 </div>\
