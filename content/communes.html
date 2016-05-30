@@ -1,0 +1,208 @@
+---
+title: Combien d'habitants de votre commune participent à LaPrimaire.org ?
+url: https://laprimaire.org/communes/
+social_title: Combien d'habitants de votre commune participent à LaPrimaire.org ?
+image: https://laprimaire.org/assets/images/social/candidats-laprimaire.png
+footer: true
+navbar: true
+candidats: true
+author: des citoyens ordinaires
+description: Retrouvez la liste des communes de France et, pour chaque commune, le nombre de participants à LaPrimaire.org.
+---
+
+<style>
+<!--
+.lp-cat-active {
+	font-weight: bold;
+	color: #d91d1c !important;
+}
+.lp-cat-count {
+	color: #d91d1c;
+}
+.lp-cat-label {}
+.lp-cat-checkbox {}
+.lp-cat-item {
+	/*font-variant: small-caps;*/
+	margin: 0px 2px;
+	/*display: inline-block;*/
+	font-size: 14px;
+	font-weight: normal;
+	color: #5e5e5e;
+}
+.gender-cat-item {
+	/*font-variant: small-caps;*/
+	margin: 2px 2px;
+	display: inline-block;
+	font-size: 14px;
+	color: #5e5e5e;
+}
+.lp-cat-header {
+	font-weight:bold;
+	color: #5e5e5e;
+	font-size: 16px;
+	font-variant: small-caps;
+}
+.lp-search-input {
+	width: 300px;
+	height: 50px;
+	padding-left: 10px;
+	border: 2px solid #d91d1c;
+}
+.lp-search {
+	width: auto;
+	padding: 5px 5px;
+	margin: 15px auto 15px auto;
+	text-align: center;
+	font-size: 20px;
+}
+.candidate_box {
+	height:155px;
+	margin-bottom:5px;
+	overflow:hidden;
+	border: 1px solid;
+	padding: 5px;
+}
+#powered_by {
+	display: inline-block;
+	background-color: white;
+	padding: 0px 5px 0px 5px;
+	float:right;
+	margin-top: -11px;
+}
+.name em, .maire em { background-color:yellow; }
+.nb_participants span { font-weight: bold; }
+.nb_participants { color:#527bdd; }
+.name {
+	color: #d91c1c;
+	font-size: 18px;
+}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+
+    <header id="page-top">
+	<div id="header_overlay" class="blue">
+		<div class="container">
+		    <div class="row">
+			    <input type="text" id="search-box" />
+		    </div>
+	    </div>
+        </div>
+    </header>
+    <div id="powered_by"><a href="https://algolia.com" target="_blank"><img src="/assets/images/powered-by-algolia.png"></a></div>
+    <div class="row" style="border-bottom: 2px solid #527bdd;padding: 10px;width:100%;margin: 0px auto 10px auto;font-size: 16px;color: #5e5e5e;text-align:center;">
+	<div id="stats"></div>
+    </div>
+    <section id="contribute_form" style="margin-top:0px;padding-top:0px;">
+	    <div class="container-fluid">
+		    <div class="row" style="width:95%;margin: 5px auto;">
+		    </div>
+		    <div class="row">
+			    <div class="col-lg-2 col-md-2">
+				    <div class="row">
+					    <div class="col-xs-12">
+						    <div id="population"></div>
+						    <div id="departement"></div>
+					    </div>
+				    </div>
+			    </div>
+			    <div class="col-lg-10 col-md-10">
+				    <div class="row">
+					    <div id="hits-container"></div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </section>
+<script type="text/javascript">
+var search = instantsearch({
+	appId: 'D1XVECSSVA',
+	apiKey: '58643f9dff29db9f8da06875479fb290',
+	indexName: 'villes',
+	urlSync: true
+});
+search.addWidget(
+	instantsearch.widgets.searchBox({
+		container: '#search-box',
+		placeholder: 'Chercher une commune...',
+		cssClasses: {root: 'lp-search',input:'lp-search-input'}
+	})
+);
+search.addWidget(
+	instantsearch.widgets.menu({
+	container: '#departement',
+	attributeName: 'name_departement',
+	sortBy: ['departement:asc'],
+	limit: 110,
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		checkbox:'lp-cat-checkbox',
+		label:'lp-cat-label',
+		active:'lp-cat-active',
+		count:'lp-cat-count'
+	},
+	templates: {
+		header: 'Département',
+	}
+
+})
+);
+search.addWidget(
+	instantsearch.widgets.numericRefinementList({
+	container: '#population',
+	attributeName: 'population',
+	options: [
+		{start: 20000, name: 'plus de 20.000'},
+		{start: 5000, end: 19999, name: 'entre 5.000 et 20.000'},
+		{start: 1000, end: 4999, name: 'entre 1.000 et 5.000'},
+		{start: 500, end: 999, name: 'entre 500 et 1.000'},
+		{start: 250, end: 499, name: 'entre 250 et 500'},
+		{start: 100, end: 249, name: 'entre 100 et 250'},
+		{start: 0, end: 99, name: 'moins de 100'},
+		{name: 'Aucun filtre'}
+	],
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active'
+	},
+	templates: {
+		header: 'Nombre d\'habitants',
+	}
+})
+);
+search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#stats',
+    templates: {
+	body: '{{nbHits}} communes'
+    }
+  })
+);
+search.addWidget(
+	instantsearch.widgets.hits({
+		container: '#hits-container',
+		templates: {
+			empty: '\
+			<div style="width:320px;margin:0px auto 20px auto;">\
+			Aucune ville trouvée avec ce nom...\
+			</div>',
+			       allItems: '{{#hits}}\
+<div class="col-sm-6 col-md-6 col-lg-4">\
+<div class="candidate_box">\
+		<div class="name">{{{_highlightResult.name.value}}}</div>\
+		<div class="departement">{{name_departement}}</div>\
+		<div class="zipcode">Code postal : {{zipcode}}</div>\
+		<div class="population">Population : {{population}} habitants</div>\
+		<div class="maire">Maire : {{{_highlightResult.mayor_fname.value}}} {{{_highlightResult.mayor_lname.value}}}</div>\
+		<div class="nb_participants"><span>{{nb_supporters}}</span> participant(s) (soit <span>{{taux}}%</span>) de la population</div>\
+</div>\
+</div>{{/hits}}'
+		},
+		hitsPerPage: 50
+	})
+);
+search.start();
+</script>
