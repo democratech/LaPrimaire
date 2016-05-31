@@ -253,6 +253,9 @@ function updateChart(jan,add,log) {
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
 $(document).ready(function(){
+	$("#jeparticipe").click(function() {
+		ga('send','event','button','click','Je participe');
+	});
 	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
 	var now = new Date();
 	var firstDate = (new Date(2015,12,31)).getTime();
