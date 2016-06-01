@@ -72,6 +72,7 @@ description: Retrouvez la liste des communes de France et, pour chaque commune, 
 .name em, .maire em { background-color:yellow; }
 .nb_participants span { font-weight: bold; }
 .nb_participants { color:#527bdd; }
+.name a { color: #d91d1c; }
 .name {
 	color: #d91c1c;
 	font-size: 18px;
@@ -192,7 +193,7 @@ search.addWidget(
 			       allItems: '{{#hits}}\
 <div class="col-sm-6 col-md-6 col-lg-4">\
 <div class="candidate_box">\
-		<div class="name">{{{_highlightResult.name.value}}}</div>\
+		<div class="name"><a href="https://google.fr/#q={{name}}" target="_blank">{{{_highlightResult.name.value}}}</a></div>\
 		<div class="departement">{{name_departement}}</div>\
 		<div class="zipcode">Code postal : {{zipcode}}</div>\
 		<div class="population">Population : {{population}} habitants</div>\

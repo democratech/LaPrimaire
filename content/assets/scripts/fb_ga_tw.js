@@ -24,7 +24,6 @@ window.fbAsyncInit=function() {
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-60977053-1', 'auto');
 ga('send', 'pageview');
-ga('send', 'event','signature','read',{'nonInteraction' : 1});
 
 /* Twitter */
 window.twttr = (function(d, s, id) {

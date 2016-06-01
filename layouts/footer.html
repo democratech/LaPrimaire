@@ -261,32 +261,6 @@ $(document).ready(function(){
 	var firstDate = (new Date(2015,12,31)).getTime();
 	var secondDate= (new Date(now.getFullYear(),now.getMonth()+1,now.getDate())).getTime();
 	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
-	supporteurs=readCookie('nb_supporteurs');
-	if (supporteurs==null) {
-		$.get("https://api.democratech.co/v1/supporteurs/total", function( data ){
-			supporteurs=data['nb_supporteurs'];
-			var percentage = supporteurs / 1000;
-			var percentage_str = Math.round(percentage);
-			createCookie('nb_supporteurs',supporteurs);
-			$('#fundraising_bar').goalProgress({
-				goalAmount: 100,
-				currentAmount: percentage,
-				textBefore: '',
-				textAfter: " % de l'objectif de 100.000 citoyens atteint"
-			});
-			$('#nb_citoyens_inscrits').html(supporteurs+" préinscrits");
-		});
-	} else {
-		var percentage = supporteurs / 1000;
-		var percentage_str = Math.round(percentage);
-		$('#fundraising_bar').goalProgress({
-			goalAmount: 100,
-			currentAmount: percentage,
-			textBefore: '',
-			textAfter: " % de l'objectif de 100.000 citoyens atteint"
-		});
-		$('#nb_citoyens_inscrits').html(supporteurs+" préinscrits");
-	}
 	var app_stats=readCookie('app_stats');
 	if (app_stats==null) {
 		$.get("https://api.democratech.co/v1/app/stats", function( data ){
@@ -297,6 +271,18 @@ $(document).ready(function(){
 			$('#nb_citoyens_app').html(nb_citizens+" votants");
 			$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
 			$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" plébiscites</a>");
+			var supporteurs=nb_citizens;
+			var percentage = supporteurs / 1000;
+			var percentage_str = Math.round(percentage);
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 100,
+				currentAmount: percentage,
+				textBefore: '',
+				textAfter: " % de l'objectif de 100.000 citoyens atteint"
+			});
+			$('#nb_citoyens_inscrits').html(supporteurs+" préinscrits");
+
+
 		});
 	} else {
 		data=JSON.parse(app_stats);
@@ -306,6 +292,16 @@ $(document).ready(function(){
 		$('#nb_citoyens_app').html(nb_citizens+" votants");
 		$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
 		$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" plébiscites</a>");
+		var supporteurs=nb_citizens;
+		var percentage = supporteurs / 1000;
+		var percentage_str = Math.round(percentage);
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 100,
+			currentAmount: percentage,
+			textBefore: '',
+			textAfter: " % de l'objectif de 100.000 citoyens atteint"
+		});
+		$('#nb_citoyens_inscrits').html(supporteurs+" préinscrits");
 	}
 });
 
