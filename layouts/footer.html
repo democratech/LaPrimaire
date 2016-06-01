@@ -258,10 +258,10 @@ $(document).ready(function(){
 			createCookie('maires',JSON.stringify({nb_maires: nb_maires, nb_signatures: nb_signatures}));
 			var supporteurs=nb_signatures;
 			$('#fundraising_bar').goalProgress({
-				goalAmount: 2000,
+				goalAmount: 5000,
 				currentAmount: supporteurs,
 				textBefore: '',
-				textAfter: " / 2000 signataires"
+				textAfter: " / 5000 signataires"
 			});
 		});
 	} else {
@@ -270,10 +270,10 @@ $(document).ready(function(){
 		var nb_signatures=data['nb_signatures'];
 		var supporteurs=nb_signatures;
 		$('#fundraising_bar').goalProgress({
-			goalAmount: 2000,
+			goalAmount: 5000,
 			currentAmount: supporteurs,
 			textBefore: '',
-			textAfter: " / 2000 signataires"
+			textAfter: " / 5000 signataires"
 		});
 	}
 });
