@@ -1,4 +1,4 @@
-<% if @item[:footer] and not @config[:debug] %>
+<% if @item[:footer] and not @config[:debug] and not @item[:hide_footer] %>
 <footer class="hidden-xs hidden-sm" style="padding: 0px;">
         <div class="container">
             <div class="row" style="margin-bottom:0px;">
@@ -248,8 +248,35 @@ function updateChart(jan,add,log) {
 	var ctx = document.getElementById("myChart");
 	var myNewChart = new Chart(ctx,data);
 }
-
-
+<% elsif @item.identifier.chop == '/appel-aux-maires' %>
+$(document).ready(function(){
+	var app_stats=readCookie('maires');
+	if (app_stats==null) {
+		$.get("https://api.democratech.co/v1/app/maires", function( data ){
+			var nb_maires=data['nb_maires'];
+			var nb_signatures=data['nb_signatures'];
+			createCookie('maires',JSON.stringify({nb_maires: nb_maires, nb_signatures: nb_signatures}));
+			var supporteurs=nb_signatures;
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 1000,
+				currentAmount: supporteurs,
+				textBefore: '',
+				textAfter: " / 1000 signataires"
+			});
+		});
+	} else {
+		data=JSON.parse(app_stats);
+		var nb_maires=data['nb_maires'];
+		var nb_signatures=data['nb_signatures'];
+		var supporteurs=nb_signatures;
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 1000,
+			currentAmount: supporteurs,
+			textBefore: '',
+			textAfter: " / 1000 signataires"
+		});
+	}
+});
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
 $(document).ready(function(){

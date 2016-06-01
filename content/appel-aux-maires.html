@@ -3,7 +3,8 @@ title: Libérez Les Parrainages ! L'appel des citoyens aux maires de France
 url: https://laprimaire.org/appel-aux-maires/
 social_title: Libérez Les Parrainages ! L'appel des citoyens aux maires de France
 image: https://laprimaire.org/assets/images/liberez-les-parrainages.jpg
-footer: false
+footer: true
+hide_footer: true
 navbar: true
 author: LaPrimaire.org
 description: Signez l'appel des citoyens français aux maires de France pour les inviter à parrainer des candidat-es citoyen-nes en vue de l'élection présidentielle de 2017.
@@ -28,18 +29,69 @@ description: Signez l'appel des citoyens français aux maires de France pour les
 #subtitle {
 	color:#d91d1c;
 }
+#sign p {
+	font-size: 36px;
+	color:#d91d1c;
+	font-weight:bold;
+	font-variant: small-caps;
+}
+#sign {
+ 	margin: 0px 10px;
+	background-color:white;
+	border:4px solid #d91d1c;
+	padding: 0px 15px;
+}
+#objectif p  {
+	font-size: 36px;
+	color:white;
+	font-weight:bold;
+	font-variant: small-caps;
+}
+#objectif {
+	padding-top:10px;
+	background-color:#d91d1c;
+	margin:0px 10px;
+	margin-bottom: 5px;
+}
+.signatures {
+	border: 4px solid #d91d1c;
+}
+.signatures .goalProgress {
+	/*background: #527bdd;*/
+	background: white;
+	border:1px solid #BBB;
+}
+.signatures div.progressBar {
+	/*background: #d91d1c;*/
+	background: #56d840;
+	overflow:visible;
+	height:32px;
+	color: #5e5e5e;
+	text-align:left;
+	font-size: 22px;
+	letter-spacing: -1px;
+	padding-left: 20px;
+	padding-top: 2px;
+	display: block;
+	width: 20px;
+}
+span.goalAmount {
+	display: none;
+	text-indent: -9999px;
+}
 </style>
     <header style="padding:0px;margin-top:30px;">
 	<div id="header_overlay" class="white">
 	    <div class="container">
 				    <div class="row">
 					    <div id="subtitle">#LibérezLesParrainages</div>
-					    <div id="title">Signez l'appel des citoyens aux maires de France</div>
+					    <div id="title">L'appel des citoyens aux maires de France</div>
 				    </div>
 		    <div class="row">
 			    <div class="col-md-8" style="margin-bottom:20px;">
 				    <div class="row" id="lettre_inline" style="">
 					    <div class="col-md-12">
+
 						    <div class="lettre" id="appel">
 <!--<img src="/assets/images/liberez-les-parrainages-title-red.jpg" style="width:100%"><br/>-->
 <p>Madame, Monsieur le Maire,</p><br/>
@@ -58,16 +110,27 @@ description: Signez l'appel des citoyens français aux maires de France pour les
 				    </div>
 			    </div>
 			    <div class="col-md-4">
-				<div  style="margin: 0px 10px; background-color:white;border:4px solid #d91d1c;padding:15px;">
+				<div id="objectif">
+					<p>Objectif</p>
+					<div id="fundraising_bar" class="signatures"></div>
+				</div>
+
+				<div id="sign">
+				<p>Signez l'appel</p>
 <div id="wufoo-mnylvl60bdzbtn">
 Fill out my <a href="https://democratech.wufoo.com/forms/mnylvl60bdzbtn">online form</a>.
 </div>
-<script type="text/javascript">var mnylvl60bdzbtn;(function(d, t) {
+<script type="text/javascript">
+function getURLParameter(name) {
+	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||""
+}
+var mnylvl60bdzbtn;(function(d, t) {
 var s = d.createElement(t), options = {
 'userName':'democratech',
 'formHash':'mnylvl60bdzbtn',
 'autoResize':true,
 'height':'462',
+'defaultValues':'field9='+getURLParameter('fname')+'&field10='+getURLParameter('lname')+'&field1='+getURLParameter('email'),
 'async':true,
 'host':'wufoo.com',
 'header':'hide',
@@ -79,10 +142,9 @@ try { mnylvl60bdzbtn = new WufooForm();mnylvl60bdzbtn.initialize(options);mnylvl
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
 
-				    </div>
+				</div>
 			    </div>
 		    </div>
 	    </div>
 	    </div>
     </header>
-
