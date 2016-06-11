@@ -277,6 +277,33 @@ $(document).ready(function(){
 		});
 	}
 });
+<% elsif @item.identifier.chop == '/toutes-candidates' %>
+$(document).ready(function(){
+	var app_stats=readCookie('candidates');
+	if (app_stats==null) {
+		$.get("https://api.democratech.co/v1/app/candidates", function( data ){
+			var nb_signatures=data['nb_signatures'];
+			createCookie('candidates',JSON.stringify({nb_signatures: nb_signatures}));
+			var supporteurs=nb_signatures;
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 1000,
+				currentAmount: supporteurs,
+				textBefore: '',
+				textAfter: " / 1000 signataires"
+			});
+		});
+	} else {
+		data=JSON.parse(app_stats);
+		var nb_signatures=data['nb_signatures'];
+		var supporteurs=nb_signatures;
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 1000,
+			currentAmount: supporteurs,
+			textBefore: '',
+			textAfter: " / 1000 signataires"
+		});
+	}
+});
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
 $(document).ready(function(){
