@@ -13,6 +13,7 @@ def create_robots_txt
 				  <<-EOS
 User-agent: *
 Disallow: /admin/
+Disallow: /citoyen/
 EOS
 			  else
 				  [
