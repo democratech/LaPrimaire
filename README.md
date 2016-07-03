@@ -1,9 +1,9 @@
 [![OpenCollective](https://opencollective.com/laprimaire/badge/backers.svg)](https://opencollective.com/laprimaire#support)
 
-![democratech logo](https://democratech.co/assets/images/democratech-logo-whitebg-260x64.png)
+![democratech logo](https://s3.eu-central-1.amazonaws.com/laprimaire/laprimaire-small-logo.png)
 # Website
 
-This is the code of [democratech's website](http://democratech.co).
+This is the code of [LaPrimaire.org website](https://laprimaire.org).
 It is a static website created with the [Nanoc](http://nanoc.ws/), a ruby static site generator that has been chosen for its accessibility and ease of use and [nanoc-skeleton](https://github.com/alessandro1997/nanoc-skeleton) as a starter template to provide Bootstrap goodness.
 
 ## Usage
