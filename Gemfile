@@ -18,3 +18,5 @@ gem 'builder'
 gem 'rainpress'
 gem 'nanoc-cachebuster'
 
+#  documentation, extension compiling, testing, and deployment
+gem 'echoe', '~> 4.6', '>= 4.6.6'
