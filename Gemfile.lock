@@ -53,6 +53,7 @@ GEM
     json (1.8.3)
     json_pure (2.0.1)
     kramdown (1.8.0)
+    libv8 (3.16.14.15)
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -80,11 +81,15 @@ GEM
     rb-readline (0.5.3)
     rdoc (4.2.2)
       json (~> 1.4)
+    ref (2.0.0)
     rubyforge (2.0.4)
       json_pure (>= 1.1.7)
     sass (3.4.16)
     shellany (0.0.1)
     slop (3.6.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     uglifier (2.7.1)
       execjs (>= 0.3.0)
@@ -106,6 +111,7 @@ DEPENDENCIES
   nanoc-cachebuster
   rainpress
   rb-readline (~> 0.5.2)
+  therubyracer
   uglifier (>= 1.0.3)
 
 BUNDLED WITH
