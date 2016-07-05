@@ -1,0 +1,4 @@
+web/*
+crash.log
+.sass-cache/*
+tmp/*
