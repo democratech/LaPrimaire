@@ -145,6 +145,6 @@ Le Candidat Citoyen de LaPrimaire.org sera accompagné et disposera des outils a
 - de créer son parti politique (association Loi 1901 et association Loi 1901 de financement) ;
 - d'organiser sa campagne de financement.
 
-Nous précisons qu'en notre qualité d'orgnisateurs de LaPrimaire.org et des devoirs de neutralité et de réserve y associés, nous ne réaliserons aucune des prestations relatives à la campagne électorale du Candidat Citoyen issu de LaPrimaire.org. Nous n'interviendrons qu'en qualté de simple relai entre le Candidat Citoyen et les prestataires qu'il désignera afin de nous assurer que l'esprit de LaPrimaire.org soit respecté jusqu'au bout, et ce dans l'esprit et le sens correspondants à sa finalité initiale.
+Nous précisons qu'en notre qualité d'organisateurs de la Primaire.org et des devoirs de neutralité et de réserve associés, nous ne réaliserons aucune des prestations relatives à la campagne électorale du candidat issu de la Primaire Ouverte. Nous n'interviendrons qu'en qualité de simple relai entre le candidat et les prestataires qu'il désignera afin de nous assurer que l'esprit de la Primaire Ouverte soit respecté jusqu'au bout, et ce dans l'esprit et le sens correspondants à sa finalité initiale.
 
 ### LaPrimaire.org : Pour un VRAI choix en 2017 !
