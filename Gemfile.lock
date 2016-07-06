@@ -113,6 +113,3 @@ DEPENDENCIES
   rb-readline (~> 0.5.2)
   therubyracer
   uglifier (>= 1.0.3)
-
-BUNDLED WITH
-   1.12.5

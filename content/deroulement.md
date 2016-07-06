@@ -24,9 +24,9 @@ Les données relatives au déroulement de LaPrimaire.org (à l'exception des don
 
 Ce document définit les principes et valeurs devant être respectés par toute personne souhaitant participer à LaPrimaire.org en qualité de candidat (la "Charte Candidat"). 
 
-La [Charte Candidat](/charte/) doit être signée par tout(e) candidat(e) via la procédure électronique mise en place, et ce au plus tard le 30 juin 2016. A défaut, la participation du(de la) candidat(e) ne pourra pas être définitivement validée, sans recours possible, y compris en cas d'atteinte du Seuil de Qualification (défini ci-dessous).
+La [Charte Candidat](/charte/) doit être signée par tout(e) candidat(e) via la procédure électronique mise en place, et ce au plus tard le 14 juillet 2016. A défaut, la participation du(de la) candidat(e) ne pourra pas être définitivement validée, sans recours possible, y compris en cas d'atteinte du Seuil de Qualification (défini ci-dessous).
 
-### 04 Avril 2016 - 30 Juin 2016 : Identification des candidat(e)s (première phase)
+### 04 Avril 2016 - 14 Juillet 2016 : Identification des candidat(e)s (première phase)
 
 A compter de l'ouverture de LaPrimaire.org, tout(e) citoyen(ne) remplissant les [conditions légales requises](/faq/) pourra, après s'être inscrit au sein de l'Application :
 
@@ -34,7 +34,7 @@ A compter de l'ouverture de LaPrimaire.org, tout(e) citoyen(ne) remplissant les 
 - suggérer les citoyen(ne)s qu’il souhaiterait voir s'impliquer dans la vie politique française et/ou se présenter en tant que candidat(e)s sur LaPrimaire.org et les inviter ainsi à se déclarer candidat(e)s ;
 - se déclarer lui-même candidat(e) afin de porter ses idées et le programme qu’il défend.
 
-Chaque citoyen(ne) participant à LaPrimaire.org peut soutenir jusqu'à cinq (5) candidat(e)s déclaré(e)s et plébisciter jusqu'à cinq (5) citoyen(ne)s, étant précisé que les choix réalisés sont révocables à tout moment et ce jusqu'au 30 juin 2016 inclus. Ceci permet donc à tout(e) participant(e) de se rétracter et de retirer un ou plusieurs soutien(s) donné(s) à l'effet de l'(les) affecter à un ou plusieurs autres candidat(e)(s) (dans la limite d'un (1) soutien par candidat).
+Chaque citoyen(ne) participant à LaPrimaire.org peut soutenir jusqu'à cinq (5) candidat(e)s déclaré(e)s et plébisciter jusqu'à cinq (5) citoyen(ne)s, étant précisé que les choix réalisés sont révocables à tout moment et ce jusqu'au 14 juillet 2016 inclus. Ceci permet donc à tout(e) participant(e) de se rétracter et de retirer un ou plusieurs soutien(s) donné(s) à l'effet de l'(les) affecter à un ou plusieurs autres candidat(e)(s) (dans la limite d'un (1) soutien par candidat).
 
 Au cours de la période d'identification des candidat(e)s, tout citoyen (qu'il soit candidat volontaire ou qu'il ait été plébiscité) doit, pour se qualifier et avoir le droit de participer à la deuxième phase de LaPrimaire.org, recueillir un minimum de cinq cents (500) soutiens (le "Seuil de Qualification").
 
@@ -57,7 +57,7 @@ Une Présentation sera également créée automatiquement pour tous/toutes les c
 
 Sur le fondement de la Présentation et de l'Espace Personnel, les candidat(e)s assureront, seul(e)s et par leurs propres moyens et/ou à l'aide de leurs soutiens, leur campagne tendant à faire connaître leur candidature à LaPrimaire.org et ce afin d'atteindre le Seuil de Qualification. 
 
-Le Seuil de Qualification sera constaté le 30 juin 2016 à minuit (heure française).
+Le Seuil de Qualification sera constaté le 14 juillet 2016 à minuit (heure française).
 
 ### Juillet 2016 : Arrêté de la liste provisoire des candidat(e)s qualifié(e)s
 
@@ -66,7 +66,7 @@ Il s'agit des candidat(e)s :
 - ayant présenté leur propre candidature ; et
 - ayant atteint le Seuil de Qualification.
 
-Concernant les candidat(e)s plébiscité(e)s et n'ayant pas fait acte initial de candidature, ils ont jusqu'au 30 juin 2016 à minuit pour se déclarer officiellement candidat sans quoi ils ne seront pas qualifiés. Les citoyens qui auront reçu 500 plébiscites ou plus seront contactés officiellement par LaPrimaire.org qui les invitera à se déclarer candidat avant le 30 juin 2016. Le défaut de réponse sera assimilé à un refus.
+Concernant les candidat(e)s plébiscité(e)s et n'ayant pas fait acte initial de candidature, ils ont jusqu'au 30 juillet 2016 à minuit pour se déclarer officiellement candidat sans quoi ils ne seront pas qualifiés. Les citoyens qui auront reçu 500 plébiscites ou plus seront contactés officiellement par LaPrimaire.org qui les invitera à se déclarer candidat avant le 30 juillet 2016. Le défaut de réponse sera assimilé à un refus.
 
 ### Juillet - Septembre 2016 : Période de préparation et d'échange (deuxième phase)
 
