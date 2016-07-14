@@ -217,9 +217,12 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
         </div>
     </header>
     <div id="powered_by"><a href="https://algolia.com" target="_blank"><img src="/assets/images/powered-by-algolia.png"></a></div>
-    <div class="row" style="border-bottom: 2px solid #527bdd;padding: 10px;width:100%;margin: 0px auto 10px auto;font-size: 16px;color: #5e5e5e;text-align:center;">
-	    Voici la liste exhaustive des candidat(e)s <b>déclaré(e)s</b> à LaPrimaire.org. Cette liste et le nombre de soutiens sont rafraîchis 1 fois par jour.
+    <div class="row" style="border-bottom: 2px solid #527bdd;padding: 10px;width:100%;margin: 0px auto 0px auto;font-size: 16px;color: #5e5e5e;text-align:center;">
+	    Voici la liste des candidat(e)s <b>déclaré(e)s</b> à LaPrimaire.org ayant reçu au moins 1 soutien dans les 30 derniers jours. Cette liste et le nombre de soutiens sont rafraîchis 1 fois par jour.
     </div>
+			<div class="alert alert-warning">
+				<p style="font-size:16px;font-weight:bold;"><i class="fa fa-info-circle" style="font-size:1.5em;" aria-hidden="true"></i>La phase de qualification à LaPrimaire.org prend fin <i>ce soir à minuit</i> : Il ne vous reste plus que quelques heures pour soutenir et qualifier les citoyens qui changeront la donne en 2017 !</p>
+		        </div>
     <section id="contribute_form" style="margin-top:0px;padding-top:0px;">
 	    <div class="container-fluid">
 		    <div class="row" style="width:95%;margin: 5px auto;">
@@ -229,6 +232,7 @@ description: Retrouvez la liste des candidats à LaPrimaire.org, la première pr
 				    <div class="row">
 					    <div class="col-xs-12">
 						    <div id="gender"></div>
+						    <div id="candidate_supporters"></div>
 						    <div id="candidate_age"></div>
 						    <div id="departement"></div>
 						    <div id="secteur"></div>
@@ -253,7 +257,7 @@ var search = instantsearch({
 	appId: 'D1XVECSSVA',
 	apiKey: '58643f9dff29db9f8da06875479fb290',
 	indexName: 'candidates',
-	urlSync: true
+	urlSync: false
 });
 search.addWidget(
 	instantsearch.widgets.searchBox({
@@ -349,6 +353,27 @@ search.addWidget(
 	},
 	templates: {
 		header: 'Nombre de jours en ligne',
+	}
+})
+);
+search.addWidget(
+	instantsearch.widgets.numericRefinementList({
+	container: '#candidate_supporters',
+	attributeName: 'nb_soutiens',
+	options: [
+		{name: 'Tous'},
+		{start: 500, name: '> 500'},
+		{start: 250, end: 499, name: '> 250'},
+		{start: 100, end: 249, name: '> 100'},
+		{end: 99, name: '< 100'}
+	],
+	cssClasses: {
+		header:'lp-cat-header',
+		item:'lp-cat-item',
+		active:'lp-cat-active'
+	},
+	templates: {
+		header: 'Nombre de soutiens',
 	}
 })
 );

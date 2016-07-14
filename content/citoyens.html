@@ -136,7 +136,7 @@ description: Retrouvez la liste des citoyen(ne)s qui ont été plébiscité(e)s 
     </header>
     <div id="powered_by"><a href="https://algolia.com" target="_blank"><img src="/assets/images/powered-by-algolia.png"></a></div>
     <div class="row" style="border-bottom: 2px solid #527bdd;padding: 10px;width:100%;margin: 0px auto 10px auto;font-size: 16px;color: #5e5e5e;text-align:center;">
-	    Voici la liste des citoyens <b>plébiscités</b> pour être candidat à LaPrimaire.org. Cette liste et le nombre de soutiens sont rafraîchis une fois par jour.<br/>
+	    Voici la liste des citoyens <b>plébiscités</b> pour être candidat à LaPrimaire.org ayant reçu plus de 2 soutiens. Cette liste et le nombre de soutiens sont rafraîchis une fois par jour.<br/>
 	    LaPrimaire.org invitera officiellement les citoyens ayant recueillis plus de 500 soutiens à être candidats.
     </div>
     <section id="contribute_form" style="margin-top:0px;padding-top:0px;">
@@ -174,7 +174,7 @@ var search = instantsearch({
 	appId: 'D1XVECSSVA',
 	apiKey: '58643f9dff29db9f8da06875479fb290',
 	indexName: 'citizens',
-	urlSync: true
+	urlSync: false
 });
 search.addWidget(
 	instantsearch.widgets.searchBox({
