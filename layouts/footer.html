@@ -304,11 +304,19 @@ $(document).ready(function(){
 		});
 	}
 });
+<% elsif @item.identifier.chop=='/qualifies-photo' %>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
+<script text="text/javascript">
+$(document).ready(function(){
+	$("div.lazy").lazyload({effect:"fadeIn"});
+});
 <% elsif @item.identifier.chop=='/qualifies' %>
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
 <script text="text/javascript">
 $(document).ready(function(){
+	$("div.lazy").lazyload({effect:"fadeIn"});
 	function loadFacebook() {
 		if (typeof (FB) != 'undefined') { FB.init({ status: true, cookie: true, xfbml: true, version: 'v2.4' }); }
 	}
@@ -316,88 +324,87 @@ $(document).ready(function(){
 		if (typeof (twttr) != 'undefined'){ twttr.widgets.load(); }
 	}
 	$("#charlotte").click(function() {
-			$("#charlotte").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/663402096368" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/663402096368">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Charlotte Marchandise (@MarCharlott) est qualifiée pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,MarCharlott" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#charlotte").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/663402096368" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/663402096368">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Charlotte Marchandise (@MarCharlott), qualifiée pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,MarCharlott" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#maxime").click(function() {
-			$("#maxime").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/937454228344" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/937454228344">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Maxime Verner (@maximeverner) est qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,maximeverner" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#maxime").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/937454228344" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/937454228344">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Maxime Verner (@maximeverner), qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,maximeverner" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#jeanmichel").click(function() {
-			$("#jeanmichel").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/969866766843" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/969866766843">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Jean-Michel Billaut (@billaut) est qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,billaut" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#jeanmichel").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/969866766843" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/969866766843">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Jean-Michel Billaut (@billaut), qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,billaut" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#roxane").click(function() {
-			$("#roxane").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/205888341238" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/205888341238">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Roxane Revon (@RoxaneRevon) est qualifiée pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,RoxaneRevon" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#roxane").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/205888341238" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/205888341238">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Roxane Revon (@RoxaneRevon), qualifiée pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,RoxaneRevon" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#alexandre").click(function() {
-			$("#alexandre").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/946111224339" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/946111224339">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Alexandre Lecouillard, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#alexandre").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/946111224339" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/946111224339">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Alexandre Lecouillard, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#ariane").click(function() {
-			$("#ariane").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/229637488290" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/229637488290">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Ariane Vitalis (@ArianeVitalis), qualifiée pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,ArianeVitalis" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#ariane").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/229637488290" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/229637488290">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Ariane Vitalis (@ArianeVitalis), qualifiée pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,ArianeVitalis" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#philippe").click(function() {
-			$("#philippe").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/8916432048" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/8916432048">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Philippe Mazuel (@MAZUEL_2017), qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,MAZUEL_2017" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#philippe").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/8916432048" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/8916432048">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Philippe Mazuel (@MAZUEL_2017), qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,MAZUEL_2017" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#regis").click(function() {
-			$("#regis").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/723818006899" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/723818006899">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Régis André, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#regis").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/723818006899" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/723818006899">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Régis André, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#daniel").click(function() {
-			$("#daniel").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/42737473268" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/42737473268">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Daniel Bussard (@BussardDaniel), qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,BussardDaniel" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#daniel").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/42737473268" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/42737473268">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Daniel Bussard (@BussardDaniel), qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,BussardDaniel" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#michael").click(function() {
-			$("#michael").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/161703998889" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/161703998889">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Michael Pettini, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#michael").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/161703998889" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/161703998889">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Michael Pettini, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#nicolas").click(function() {
-			$("#nicolas").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/405106694739" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/405106694739">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Nicolas Bernabeu, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#nicolas").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/405106694739" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/405106694739">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Nicolas Bernabeu, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#ramin").click(function() {
-			$("#ramin").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/776052574134" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/776052574134">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Ramïn Farhangi, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#ramin").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/776052574134" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/776052574134">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Ramïn Farhangi, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#michel").click(function() {
-			$("#michel").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/179165103473" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/179165103473">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Michel Bourgeois (@14JUILLET2017), qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,14JUILLET2017" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#michel").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/179165103473" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/179165103473">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Michel Bourgeois (@14JUILLET2017), qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech,14JUILLET2017" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#jeanmarc").click(function() {
-			$("#jeanmarc").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/58983004419" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/58983004419">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Jean-Marc Fortané, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#jeanmarc").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/58983004419" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/58983004419">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Jean-Marc Fortané, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#thomas").click(function() {
-			$("#thomas").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/147395593663" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/147395593663">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Thomas Nonnez, qualifié pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#thomas").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/147395593663" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/147395593663">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Thomas Nonnez, qualifié pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 	$("#pauline").click(function() {
-			$("#pauline").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/590282449596" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/590282449596">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Pauline Lejeune, qualifiée pour la primaire citoyenne !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
+			$("#pauline").parent().html('<a class="fb-xfbml-parse-ignore fb-share-button" data-href="https://laprimaire.org/candidat/590282449596" data-layout="button_count" data-size="large" data-mobile-iframe="true" target="_blank" href="https://laprimaire.org/candidat/590282449596">Facebook</a>&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Bravo Pauline Lejeune, qualifiée pour LaPrimaire.org !" data-url="https://laprimaire.org/qualifies/" data-hashtags="NousPresident" data-related="democratech" data-lang="fr" data-show-count="true">Tweet</a>');
 			 loadTwitter();
 			 loadFacebook();
 	});
 });
 
-$("div.lazy").lazyload({effect:"fadeIn"});
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
 $(document).ready(function(){
