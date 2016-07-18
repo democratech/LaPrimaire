@@ -304,13 +304,6 @@ $(document).ready(function(){
 		});
 	}
 });
-<% elsif @item.identifier.chop=='/qualifies-photo' %>
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
-<script text="text/javascript">
-$(document).ready(function(){
-	$("div.lazy").lazyload({effect:"fadeIn"});
-});
 <% elsif @item.identifier.chop=='/qualifies' %>
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
@@ -403,6 +396,38 @@ $(document).ready(function(){
 			 loadTwitter();
 			 loadFacebook();
 	});
+	var app_stats=readCookie('app_stats');
+	if (app_stats==null) {
+		$.get("https://api.democratech.co/v1/app/stats", function( data ){
+			var nb_candidates=data['nb_candidates'];
+			var nb_citizens=data['nb_citizens'];
+			var nb_plebiscites=data['nb_plebiscites'];
+			createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
+			var supporteurs=nb_citizens;
+			var percentage = supporteurs / 1000;
+			var percentage_str = Math.round(percentage);
+			$('#fundraising_bar').goalProgress({
+				goalAmount: 100,
+				currentAmount: percentage,
+				textBefore: '',
+				textAfter: " % de l'objectif de 100.000 citoyens"
+			});
+		});
+	} else {
+		data=JSON.parse(app_stats);
+		var nb_candidates=data['nb_candidates'];
+		var nb_citizens=data['nb_citizens'];
+		var nb_plebiscites=data['nb_plebiscites'];
+		var supporteurs=nb_citizens;
+		var percentage = supporteurs / 1000;
+		var percentage_str = Math.round(percentage);
+		$('#fundraising_bar').goalProgress({
+			goalAmount: 100,
+			currentAmount: percentage,
+			textBefore: '',
+			textAfter: " % de l'objectif de 100.000 citoyens"
+		});
+	}
 });
 
 <% elsif @item.identifier == '/' %>

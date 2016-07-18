@@ -24,8 +24,8 @@ description: Voici la liste des 16 candidats qualifiés à LaPrimaire.org, la pr
 }
 .texte {
 	min-height: 200px;
-	padding-left:10px;
-	padding-right:10px;
+	padding-left:5px;
+	padding-right:5px;
 }
 .image {
 	margin-top: 20px;
@@ -51,8 +51,10 @@ description: Voici la liste des 16 candidats qualifiés à LaPrimaire.org, la pr
 }
 .candidat_bio .bio {
 	text-align:justify;
+	min-height:100px;
 }
 .candidat_bio {
+	padding-top: 10px;
 	padding-bottom: 5px;
 }
 p.about {
@@ -63,8 +65,34 @@ p.about {
 	height: 33px !important;
 }
 .feliciter {
-	position: absolute;
-	bottom: -23px;
+	position: relative;
+	text-align: center;
+}
+#inscription {
+	background-color: #527bdd;
+	padding: 10px;
+	padding-bottom: 7px;
+	width:100%;
+	max-height:300px;
+}
+.supporteurs .goalProgress {
+	background: white;
+	width: 100%;
+	margin: 0 auto;
+	height:35px;
+}
+.supporteurs div.progressBar {
+	background: #56d840;
+	overflow:visible;
+	color: #5e5e5e;
+	height:35px;
+	text-align:center;
+	font-size: 17px;
+	letter-spacing: -1px;
+	font-weight: 400;
+	padding: 7px;
+	display: block;
+	width: 20px;
 }
 -->
 </style>
@@ -72,7 +100,7 @@ p.about {
 	<div id="header_overlay" class="blue">
 		<div class="container">
 		    <div class="row">
-			    <div class="title">
+			    <div class="title">&nbsp;
 				    <h2>Les 16 candidats qualifiés à LaPrimaire.org</h2>
 			    </div>
 		    </div>
@@ -81,6 +109,38 @@ p.about {
     </header>
     <section id="qualifies_list">
 	    <div class="container">
+		    <div class="row">
+			    <div class="col-lg-8 col-xs-12">
+				    <h2>Les candidats <span style="color:#d91d1c;">qualifiés</span></h2>
+				    <p style="text-align:justify;">Le 14 juillet dernier, s'est terminée la phase de qualification de LaPrimaire.org, la 1ère primaire citoyenne, organisée hors des partis politiques. Pour se qualifier, les citoyens candidats devaient parvenir à rassembler 500 soutiens citoyens. Vous souhaitez participer à l'émergence d'une candidature citoyenne forte pour 2017 ? rejoignez-nous !</p>
+			    </div>
+			    <div class="col-lg-4 col-xs-12">
+				    <div id="inscription">
+					    <div style="background-color:#527bdd;padding: 0px 0px 9px 0px;">
+						    <div id="fundraising_bar" class="supporteurs"></div>
+					    </div>
+					    <div id="wufoo-qaj8t6m07xo97p">
+						    Fill out my <a href="https://democratech.wufoo.com/forms/qaj8t6m07xo97p">online form</a>.
+					    </div>
+					    <script type="text/javascript">var qaj8t6m07xo97p;(function(d, t) {
+			var s = d.createElement(t), options = {
+			'userName':'democratech',
+			'formHash':'qaj8t6m07xo97p',
+			'autoResize':true,
+			'height':'457',
+			'async':true,
+			'host':'wufoo.com',
+			'header':'hide',
+			'ssl':true};
+			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+			s.onload = s.onreadystatechange = function() {
+			var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+			try { qaj8t6m07xo97p = new WufooForm();qaj8t6m07xo97p.initialize(options);qaj8t6m07xo97p.display(); } catch (e) {}};
+			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+			})(document, 'script');</script>
+				    </div>
+			    </div>
+		    </div>
 		    <div class="row">
 			    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 image">
 				    <div class="row">
@@ -161,7 +221,7 @@ p.about {
 						    <div class="candidat_bio">
 							    <h3><a href="/candidat/205888341238">Roxane Revon</a></h3>
 							    <p class="about">30 ans, Professeur, metteur-en-scène - habite Paris (75)</p>
-							    <p class="bio">Je suis Roxane Revon, metteur-en-scène en France et à l'étranger, lectrice de l'Université de la ville de New-York et entrepreneure. J'ai une formation de Lettres (Khâgne) et de Philosophie politique (La Sorbonne), puis d'entrepreneuriat et d'économie (Stanford University, GSB).</p>
+							    <p class="bio">Je suis Roxane Revon, metteur-en-scène en France et à l'étranger, lectrice de l'Université de la ville de New-York et entrepreneure. J'ai une formation de Lettres (Khâgne) et de Philosophie politique (La Sorbonne), puis d'entrepreneuriat et d'économie (Stanford University).</p>
 						    </div>
 						    <div class="feliciter">
 							    <button id="roxane" type="button" class="btn btn-primary btn-sm">Féliciter Roxane</button>
@@ -230,7 +290,7 @@ p.about {
 						    <div class="candidat_bio">
 							    <h3><a href="/candidat/8916432048">Philippe Mazuel</a></h3>
 							    <p class="about">60 ans, Editeur organisateur de colloques - habite Paris (75)</p>
-							    <p class="bio">Sciences-Po puis Saint-Cyr. 7 ans Armée (capitaine), 14 ans en entreprise, 3 au Parlement, 6 maire-adjoint de Abbeville, 13 ministères, 2 Commission Bruxelles et ONU.</p>
+							    <p class="bio">Diplômé de Sciences-Po et Saint-Cyr. Large expérience dans plusieurs ministères (Défense, Fonction publique, Affaires européennes, Économie et Finances), à la Commission européenne, à l'ONU et dans le secteur privé. Ancien maire-adjoint d'Abbeville chargé du développement économique.</p>
 						    </div>
 						    <div class="feliciter">
 							    <button id="philippe" type="button" class="btn btn-primary btn-sm">Féliciter Philippe</button>
@@ -319,7 +379,7 @@ p.about {
 					    <div class="col-sm-7 col-xs-12 texte">
 						    <div class="candidat_bio">
 							    <h3><a href="/candidat/405106694739">Nicolas Bernabeu</a></h3>
-							    <p class="about">31 ans, Médecin - Economiste - Juriste - habite la Corse-du-Sud (2A)</p>
+							    <p class="about">31 ans, Médecin - Economiste - Juriste - habite la Corse (2A)</p>
 							    <p class="bio">Médecin toulousain vivant en Corse. Je ne me lève pas le matin avec le désir d'être président, mais avec la ferme intention de contribuer à un monde plus juste.</p>
 						    </div>
 						    <div class="feliciter">
@@ -385,8 +445,8 @@ p.about {
 					    <div class="col-sm-7 col-xs-12 texte">
 						    <div class="candidat_bio">
 							    <h3><a href="/candidat/58983004419">Jean-Marc Fortané</a></h3>
-							    <p class="about">54 ans, Véto-Entrepreneur-Ouvrier - habite les Bouches-du-Rhône (13)</p>
-							    <p class="bio">Candidat à l’équipe présidentielle pour les élections de 2017. Docteur vétérinaire. Petit entrepreneur ouvrier. Auteur Editeur. Responsable d'associations citoyennes. Voyageur routard ultra-trailer.</p>
+							    <p class="about">54 ans, Vétérinaire - habite les Bouches-du-Rhône (13)</p>
+							    <p class="bio">Docteur vétérinaire. Auteur Editeur. Responsable d'associations citoyennes. Voyageur routard ultra-trailer. Je souhaite défendre le projet d'un monde à la pointe du progrès technologique et social dans lequel chacun a au moins une double chance de s'insérer.</p>
 						    </div>
 						    <div class="feliciter">
 							    <button id="jeanmarc" type="button" class="btn btn-primary btn-sm">Féliciter Jean-Marc</button>
