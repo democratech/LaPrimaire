@@ -81,13 +81,15 @@ div.lettre p { font-size:18px; }
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#timeline_overlay { background: rgba(82,122,191,0.95); }
 .timeline {
     position: relative;
     padding: 0;
     list-style: none;
 }
 section.timeline {
-	background: #527bdd;
+	background-image: url('https://s3.eu-central-1.amazonaws.com/laprimaire/crowd-700x250.jpg');
+	background-repeat: repeat;
 }
 .timeline ul {
 	padding: 0px 0;
@@ -423,6 +425,7 @@ time {
     </header>
 
     <section class="timeline">
+    <div id="timeline_overlay" class="blue" style="border-bottom: 2px solid #527bdd;">
 	    <ul>
 		    <li>
 		    	<div>
@@ -476,7 +479,8 @@ time {
 			</div>
 		    </li>
 	    </ul>
-	<div style="height:40px;">&nbsp;</div>
+	    <div style="height:40px;">&nbsp;</div>
+    </div>
     </section>
 
     <script type="text/javascript">
