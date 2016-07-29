@@ -10,15 +10,15 @@
     <meta property="og:type" content="article"/>
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:description" content="<%= @item[:description].nil? ? "LaPrimaire.org est une Primaire Démocratique Ouverte organisée hors des partis politiques pour les élections de 2017. La Primaire vise à rassembler les citoyens déçus et lassés des politiques et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire des candidats vraiment représentatifs.": "#{@item[:description]}" %>">
-    <meta property="og:image" content="<%= @item[:image].nil? ? "https://laprimaire.org/assets/images/democratiser-les-elections-logo.jpg": "#{@item[:image]}" %>">
-    <meta property="og:image:secure_url" content="<%= @item[:image].nil? ? "https://laprimaire.org/assets/images/democratiser-les-elections-logo.jpg": "#{@item[:image]}" %>">
-    <meta name="twitter:image:src" content="<%= @item[:image].nil? ? "https://laprimaire.org/assets/images/democratiser-les-elections-logo.jpg": "#{@item[:image]}" %>">
+    <meta property="og:image" content="<%= @item[:image].nil? ? "https://s3.eu-central-1.amazonaws.com/laprimaire/laprimaire-banner-square.jpg": "#{@item[:image]}" %>">
+    <meta property="og:image:secure_url" content="<%= @item[:image].nil? ? "https://s3.eu-central-1.amazonaws.com/laprimaire/laprimaire-banner-square.jpg": "#{@item[:image]}" %>">
+    <meta name="twitter:image:src" content="<%= @item[:image].nil? ? "https://s3.eu-central-1.amazonaws.com/laprimaire/laprimaire-banner-square.jpg": "#{@item[:image]}" %>">
     <meta name="twitter:widgets:csp" content="on">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@democratech">
     <meta name="twitter:creator" content="@democratech">
     <meta name="twitter:title" content="<%= @item[:social_title].nil? ? "LaPrimaire.org - En 2017, tous candidats !": "#{@item[:social_title]}" %>">
-    <meta name="twitter:image" content="<%= @item[:image].nil? ? "https://laprimaire.org/assets/images/democratiser-les-elections-logo.jpg": "#{@item[:image]}" %>">
+    <meta name="twitter:image" content="<%= @item[:image].nil? ? "https://s3.eu-central-1.amazonaws.com/laprimaire/laprimaire-banner-square.jpg": "#{@item[:image]}" %>">
     <meta name="twitter:description" content="<%= @item[:description].nil? ? "LaPrimaire.org organise une primaire hors partis politiques pour permettre aux français de choisir leurs candidats aux élections de 2017 de manière transparente et démocratique. LaPrimaire.org vise à rassembler les citoyens déçus et lassés des politiques et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire des candidats vraiment représentatifs.": "#{@item[:description]}" %>">
     <title><%= @item[:title].nil? ? "LaPrimaire.org - En 2017, tous candidats à l'élection présidentielle !":"#{@item[:title]}"  %></title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
