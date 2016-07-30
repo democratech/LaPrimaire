@@ -81,6 +81,11 @@ div.lettre p { font-size:18px; }
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+*::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 #timeline_overlay { background: rgba(82,122,191,0.95); }
 .timeline {
     position: relative;
@@ -88,8 +93,8 @@ div.lettre p { font-size:18px; }
     list-style: none;
 }
 section.timeline {
-	background-image: url('https://s3.eu-central-1.amazonaws.com/laprimaire/crowd-700x250.jpg');
-	background-repeat: repeat;
+	/*background-image: url('https://s3.eu-central-1.amazonaws.com/laprimaire/crowd-700x250.jpg');
+	background-repeat: repeat;*/
 }
 .timeline ul {
 	padding: 0px 0;
