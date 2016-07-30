@@ -11,10 +11,10 @@ description: LaPrimaire.org est une Primaire citoyenne ouverte organisée hors d
 <style>
 <!--
 div.lettre h3 {
-	font-size:22px;
+	font-size:20px;
 	margin-top:0px;
 }
-div.lettre p { font-size:18px; }
+div.lettre p { font-size:16px; }
 .press-logo { margin-bottom:5px; }
 .supporteurs .goalProgress {
 	background: white;
@@ -87,6 +87,9 @@ div.lettre p { font-size:18px; }
 	box-sizing: border-box;
 }
 #timeline_overlay { background: rgba(82,122,191,0.95); }
+.timeline::before {
+
+}
 .timeline {
     position: relative;
     padding: 0;
@@ -104,7 +107,7 @@ section.timeline {
 	position: relative;
 	width: 6px;
 	margin: 0 auto;
-	padding-top: 50px;
+	padding-top: 30px;
 	background: #fff;
 }
 .timeline ul li::after {
@@ -424,6 +427,16 @@ time {
 			    </div>
 		    </div>
 	    </div>
+            <div class="row">
+		    <div class="col-md-3 col-sm-6">&nbsp;</div>
+		    <div class="col-md-3 col-sm-6">
+			    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flaprimaire.org" target="_blank"><img src="/assets/images/social/share-facebook.png"></a>
+		    </div>
+		    <div class="col-md-3 col-sm-6">
+			    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flaprimaire.org&text=D%C3%A9couvrez%20les%2016%20candidats%20qualifi%C3%A9s%20%C3%A0%20LaPrimaire.org%2C%20la%20primaire%20citoyenne%20%3A&via=democratech" target="_blank"><img src="/assets/images/social/share-twitter.png"></a>
+		    </div>
+		    <div class="col-md-3 col-sm-6">&nbsp;</div>
+	    </div>
         </div>
 	<div style="height:40px;">&nbsp;</div>
     </div>
@@ -435,15 +448,15 @@ time {
 		    <li>
 		    	<div>
 				<time>Avril à juillet 2016 - <span style="font-weight:normal;">Qualifications</span></time>
-				<p style="margin:0px;font-size:14px;text-align:justify;">Durant cette phase de 3 mois, tout(e) citoyen(ne) français(e) éligible a pu se déclarer candidat. Pour se qualifier, il/elle a dû prouver sa capacité à rassembler 500 soutiens citoyens autour de son projet.</p>
-				<p style="margin:5px;font-size:14px;text-align:justify;">Alternativement, tout citoyen a pu plébisciter un(e) autre citoyen(ne) qu'il souhaitait voir être candidat. Les citoyen(ne)s avec plus de 500 plébiscites ont été officiellement invité(e)s officiellement à être candidat(e)s.</p>
-				<p style="margin:0px;text-align:center;font-weight:bold;">Résultats</p>
+				<p style="margin:0px;font-size:13px;text-align:justify;">Durant 3 mois, tout(e) citoyen(ne) éligible a pu se déclarer candidat(e) et rassembler les 500 soutiens citoyens nécessaires pour se qualifier.</p>
+				<p style="margin:4px 0px;font-size:13px;text-align:justify;">De même, tout(e) citoyen(ne) pouvait être plébiscité(e) et ceux plébiscités par plus de 500 personnes ont été officiellement invité(e)s à être candidat(e)s.</p>
+				<p style="margin:0px;text-align:center;font-weight:bold;font-size:16px;">Résultats</p>
 				<p style="margin:0px;text-align:center;">
-					<span id="nb_plebiscites" style="margin-top:5px;font-size:28px;color:#527bdd;"></span>&nbsp;
+					<span id="nb_plebiscites" style="margin-top:4px;font-size:20px;color:#527bdd;"></span>&nbsp;
 					<span style="font-style:italic;font-size:14px;">plébiscités</span>
 				</p>
 				<p style="margin:0px;text-align:center;">
-					<span id="nb_candidates" style="margin-top:5px;font-size:28px;color:#527bdd;"></span>&nbsp;
+					<span id="nb_candidates" style="margin-top:4px;font-size:20px;color:#527bdd;"></span>&nbsp;
 					<span style="font-style:italic;font-size:14px;">déclarés</span>
 				</p>
 			</div>
@@ -451,10 +464,10 @@ time {
 		    <li>
 		    	<div>
 				<time>14 juillet 2016 - <span style="font-weight:normal;">Annonce des citoyens qualifiés</span></time>
-				<p style="margin:0px;font-size:14px;text-align:justify;">Le 14 juillet a minuit s'est achevée la phase de qualifications, 16 candidats ont réussi à rassembler plus de 500 soutiens et 4 citoyens ont été plébiscités. Ces derniers ont jusqu'au 31 juillet pour se prononcer sur leur candidature éventuelle.</p>
-				<p style="margin:0px;margin-top:5px;text-align:center;font-weight:bold;">Résultats</p>
+				<p style="margin:0px;font-size:13px;text-align:justify;">Le 14 juillet à minuit s'est achevée la phase de qualifications, 16 candidats ont réussi à rassembler plus de 500 soutiens et 4 citoyens ont été plébiscités. Ces derniers ont jusqu'au 31 juillet pour se prononcer sur leur candidature éventuelle.</p>
+				<p style="margin:0px;margin-top:4px;text-align:center;font-weight:bold;font-size:16px;">Résultats</p>
 				<p style="margin:0px;text-align:center;">
-					<span id="nb_qualified" style="margin-top:5px;font-size:28px;color:#527bdd;"><a href="/qualifies/">16 candidats</a></span>
+					<span id="nb_qualified" style="margin-top:4px;font-size:20px;color:#527bdd;"><a href="/qualifies/">16 candidats</a></span>
 					<span style="font-style:italic;font-size:14px;">qualifiés</span>
 				</p>
 			</div>
@@ -462,25 +475,25 @@ time {
 		    <li>
 		    	<div class="future">
 				<time>Août à octobre 2016 - <span style="font-weight:normal;">Equipes et projets</span></time>
-				<p style="margin:0px;font-size:14px;text-align:justify;">12 semaines durant, les citoyens qualifiés vont se présenter et exposer leurs projets plus en détails, thématique par thématique. Pendant cette période, les rapprochements entre candidats sont encouragés pour former une (ou plusieurs) équipes citoyennes solides. De même, les citoyens sont invités à réagir et apporter leurs contributions pour étoffer, compléter les projets qui sont présentés.</p>
+				<p style="margin:0px;font-size:13px;text-align:justify;">12 semaines durant, les citoyens qualifiés vont se présenter et exposer leurs projets plus en détails, thématique par thématique. Pendant cette période, les rapprochements entre candidats sont encouragés pour former une (ou plusieurs) équipes citoyennes solides. De même, les citoyens sont invités à réagir et apporter leurs contributions pour étoffer, compléter les projets qui sont présentés.</p>
 			</div>
 		    </li>
 		    <li>
 		    	<div class="future">
 				<time>Octobre 2016 - <span style="font-weight:normal;">Sélection des finalistes</span></time>
-				<p style="margin:0px;font-size:14px;text-align:justify;">Au terme de la phase précédente, un 1er vote est organisé pour faire émerger les 5 candidats / équipes les plus représentatives. Si LaPrimaire.org ne compte que 5 candidats / équipes à l'issue de la phase précédente, ce tour de vote n'aura pas lieu d'être.</p>
+				<p style="margin:0px;font-size:13px;text-align:justify;">Au terme de la phase précédente, un 1er vote est organisé pour faire émerger les 5 candidats / équipes les plus représentatives. Si LaPrimaire.org ne compte que 5 candidats / équipes à l'issue de la phase précédente, ce tour de vote n'aura pas lieu d'être.</p>
 			</div>
 		    </li>
 		    <li>
 		    	<div class="future">
 				<time>Novembre 2016 - <span style="font-weight:normal;">Débats citoyens avec les candidats en France</span></time>
-				<p style="margin:0px;font-size:14px;text-align:justify;">Une fois les 5 finalistes identifiés, des débats citoyens seront organisés dans toute la France (dans les contraintes financières, de temps et d'espace imparties) pour permettre aux candidats citoyens finalistes d'aller à la rencontre du plus de français possible pour exposer leurs projets.</p>
+				<p style="margin:0px;font-size:13px;text-align:justify;">Une fois les 5 finalistes identifiés, des débats citoyens seront organisés dans toute la France (dans les contraintes financières, de temps et d'espace imparties) pour permettre aux candidats citoyens finalistes d'aller à la rencontre du plus de français possible pour exposer leurs projets.</p>
 			</div>
 		    </li>
 		    <li>
 		    	<div class="future">
 				<time>Décembre 2016 - <span style="font-weight:normal;">Vote final</span></time>
-				<p style="margin:0px;font-size:14px;text-align:justify;">A l'issue des débats citoyens, le vote final aura lieu pour élire le candidat / l'équipe citoyenne qui se présentera à l'élection présidentielle de 2017.</p>
+				<p style="margin:0px;font-size:13px;text-align:justify;">A l'issue des débats citoyens, le vote final aura lieu pour élire le candidat / l'équipe citoyenne qui se présentera à l'élection présidentielle de 2017.</p>
 			</div>
 		    </li>
 	    </ul>
