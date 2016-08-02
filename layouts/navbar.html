@@ -19,9 +19,15 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+		    <% if not @item[:home] %>
+		    <li class="active">
+				<a tabindex="0" data-target="#JoinUsNow" class="joinus_action" data-toggle="modal" style="cursor:pointer;background-color:#d91d1c;">Participer</a>
+                    </li>
+		    <% else %>
 		    <li<% if @item[:manifeste] %> class="active"<% end %>>
 			<%= link_to("Manifeste",'/manifeste/',:title=>'Notre manifeste') %>
                     </li>
+		    <% end %>
 		    <li class="dropdown<% if @item[:candidats] %> active<% end %>">
 			<a tabindex="0" data-toggle="dropdown">
 				Candidats<span class="caret"></span>
@@ -40,7 +46,7 @@
 				La Primaire<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu">
-				<li><a tabindex="0" data-target="#JoinUsNow" class="joinus_action" data-toggle="modal" style="cursor:pointer;">Participer</a></li>
+				<li><a tabindex="0" href="/manifeste/">Manifeste</a></li>
 				<li><a tabindex="0" href="/aider/">S'impliquer</a></li>
 				<li><a tabindex="0" href="/financer/" class="donate-link">Contribuer</a></li>
 				<li><a tabindex="0" href="/partager/">Partager</a></li>

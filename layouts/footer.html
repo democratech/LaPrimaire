@@ -129,7 +129,7 @@ $(document).ready(function(){
 			createCookie('amount_raised',amount);
 			createCookie('nb_donateurs',donateurs);
 
-			$('#fundraising_bar').goalProgress({
+			$('#financement_bar').goalProgress({
 				goalAmount: 100000,
 				currentAmount: amount,
 				textBefore: '',
@@ -140,7 +140,7 @@ $(document).ready(function(){
 
 		});
 	} else {
-		$('#fundraising_bar').goalProgress({
+		$('#financement_bar').goalProgress({
 			goalAmount: 100000,
 			currentAmount: amount,
 			textBefore: '',
@@ -282,7 +282,7 @@ $(document).ready(function(){
 			var nb_signatures=data['nb_signatures'];
 			createCookie('maires',JSON.stringify({nb_maires: nb_maires, nb_signatures: nb_signatures}));
 			var supporteurs=nb_signatures;
-			$('#fundraising_bar').goalProgress({
+			$('#appelauxmaires_bar').goalProgress({
 				goalAmount: 10000,
 				currentAmount: supporteurs,
 				textBefore: '',
@@ -294,7 +294,7 @@ $(document).ready(function(){
 		var nb_maires=data['nb_maires'];
 		var nb_signatures=data['nb_signatures'];
 		var supporteurs=nb_signatures;
-		$('#fundraising_bar').goalProgress({
+		$('#appelauxmaires_bar').goalProgress({
 			goalAmount: 10000,
 			currentAmount: supporteurs,
 			textBefore: '',
@@ -310,7 +310,7 @@ $(document).ready(function(){
 			var nb_signatures=data['nb_signatures'];
 			createCookie('candidates',JSON.stringify({nb_signatures: nb_signatures}));
 			var supporteurs=nb_signatures;
-			$('#fundraising_bar').goalProgress({
+			$('#toutescandidates_bar').goalProgress({
 				goalAmount: 1000,
 				currentAmount: supporteurs,
 				textBefore: '',
@@ -321,7 +321,7 @@ $(document).ready(function(){
 		data=JSON.parse(app_stats);
 		var nb_signatures=data['nb_signatures'];
 		var supporteurs=nb_signatures;
-		$('#fundraising_bar').goalProgress({
+		$('#toutescandidates_bar').goalProgress({
 			goalAmount: 1000,
 			currentAmount: supporteurs,
 			textBefore: '',
@@ -330,11 +330,9 @@ $(document).ready(function(){
 	}
 });
 <% elsif @item.identifier.chop=='/qualifies' %>
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
 <script text="text/javascript">
 $(document).ready(function(){
-	$("div.lazy").lazyload({effect:"fadeIn"});
+	/* $("div.lazy").lazyload({effect:"fadeIn"});*/
 	function loadFacebook() {
 		if (typeof (FB) != 'undefined') { FB.init({ status: true, cookie: true, xfbml: true, version: 'v2.4' }); }
 	}
@@ -421,63 +419,64 @@ $(document).ready(function(){
 			 loadTwitter();
 			 loadFacebook();
 	});
-	var app_stats=readCookie('app_stats');
-	if (app_stats==null) {
-		$.get("https://api.democratech.co/v1/app/stats", function( data ){
-			var nb_candidates=data['nb_candidates'];
-			var nb_citizens=data['nb_citizens'];
-			var nb_plebiscites=data['nb_plebiscites'];
-			createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
-			var supporteurs=nb_citizens;
-			var percentage = supporteurs / 1000;
-			var percentage_str = Math.round(percentage);
-			$('#fundraising_bar').goalProgress({
-				goalAmount: 100,
-				currentAmount: percentage,
-				textBefore: '',
-				textAfter: " % de l'objectif de 100.000 citoyens"
-			});
-		});
-	} else {
-		data=JSON.parse(app_stats);
-		var nb_candidates=data['nb_candidates'];
-		var nb_citizens=data['nb_citizens'];
-		var nb_plebiscites=data['nb_plebiscites'];
-		var supporteurs=nb_citizens;
-		var percentage = supporteurs / 1000;
-		var percentage_str = Math.round(percentage);
-		$('#fundraising_bar').goalProgress({
-			goalAmount: 100,
-			currentAmount: percentage,
-			textBefore: '',
-			textAfter: " % de l'objectif de 100.000 citoyens"
-		});
-	}
 });
 
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
-<script text="text/javascript">
-$(document).ready(function(){
-	$("img.lazy").lazyload({effect:"fadeIn"});
-	$("div.lazy").lazyload({effect:"fadeIn"});
+<% end %>
+$(document).ready(function() {
 	$("a.joinus_action").click(function() {
-		ga('send','event','button','click','Je participe');
+			ga('send','event','button','click','Je participe');
 	});
-	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-	var now = new Date();
-	var firstDate = (new Date(2015,12,31)).getTime();
-	var secondDate= (new Date(now.getFullYear(),now.getMonth()+1,now.getDate())).getTime();
-	var diffDays = Math.round(Math.abs((firstDate - secondDate)/(oneDay)));
-	var app_stats=readCookie('app_stats');
-	if (app_stats==null) {
-		$.get("https://api.democratech.co/v1/app/stats", function( data ){
+	if ($('#JoinsUsNow')!=null) {
+		$('#JoinUsNow').on('shown.bs.modal', function () {
+			var qaj8t6m07xo97p;(function(d, t) {
+			var s = d.createElement(t), options = {
+			'userName':'democratech',
+			'formHash':'qaj8t6m07xo97p',
+			'autoResize':true,
+			'height':'397',
+			'async':true,
+			'defaultValues':'field12='+getURLParameter('ref')+'&field9='+getURLParameter('first')+'&field10='+getURLParameter('last')+'&field1='+getURLParameter('email'),
+			'host':'wufoo.com',
+			'header':'hide',
+			'ssl':true};
+			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+			s.onload = s.onreadystatechange = function() {
+			var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+			try { qaj8t6m07xo97p = new WufooForm();qaj8t6m07xo97p.initialize(options);qaj8t6m07xo97p.display(); } catch (e) {}};
+			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+			})(document, 'script');
+		});
+	}
+	if ($('#fundraising_bar')!=null) {
+		var app_stats=readCookie('app_stats');
+		if (app_stats==null) {
+			$.get("https://api.democratech.co/v1/app/stats", function( data ){
+				var nb_candidates=data['nb_candidates'];
+				var nb_citizens=data['nb_citizens'];
+				var nb_plebiscites=data['nb_plebiscites'];
+				createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
+				$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... et vous ?");
+				$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
+				$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" citoyens</a>");
+				var supporteurs=nb_citizens;
+				var percentage = supporteurs / 1000;
+				var percentage_str = Math.round(percentage);
+				$('#fundraising_bar').goalProgress({
+					goalAmount: 100,
+					currentAmount: percentage,
+					textBefore: '',
+					textAfter: " % de l'objectif de 100.000 citoyens atteint"
+				});
+
+
+			});
+		} else {
+			data=JSON.parse(app_stats);
 			var nb_candidates=data['nb_candidates'];
 			var nb_citizens=data['nb_citizens'];
 			var nb_plebiscites=data['nb_plebiscites'];
-			createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
 			$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... et vous ?");
 			$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
 			$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" citoyens</a>");
@@ -490,48 +489,14 @@ $(document).ready(function(){
 				textBefore: '',
 				textAfter: " % de l'objectif de 100.000 citoyens atteint"
 			});
-
-
-		});
-	} else {
-		data=JSON.parse(app_stats);
-		var nb_candidates=data['nb_candidates'];
-		var nb_citizens=data['nb_citizens'];
-		var nb_plebiscites=data['nb_plebiscites'];
-		$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... et vous ?");
-		$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
-		$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" citoyens</a>");
-		var supporteurs=nb_citizens;
-		var percentage = supporteurs / 1000;
-		var percentage_str = Math.round(percentage);
-		$('#fundraising_bar').goalProgress({
-			goalAmount: 100,
-			currentAmount: percentage,
-			textBefore: '',
-			textAfter: " % de l'objectif de 100.000 citoyens atteint"
+		}
+	}
+	if ($('img.lazy')!=null || $('div.lazy')!=null) {
+		$.getScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js', function() {
+				$("img.lazy").lazyload({effect:"fadeIn"});
+				$("div.lazy").lazyload({effect:"fadeIn"});
 		});
 	}
-	$('#JoinUsNow').on('shown.bs.modal', function () {
-		var qaj8t6m07xo97p;(function(d, t) {
-		var s = d.createElement(t), options = {
-		'userName':'democratech',
-		'formHash':'qaj8t6m07xo97p',
-		'autoResize':true,
-		'height':'397',
-		'async':true,
-		'defaultValues':'field12='+getURLParameter('ref')+'&field9='+getURLParameter('first')+'&field10='+getURLParameter('last')+'&field1='+getURLParameter('email'),
-		'host':'wufoo.com',
-		'header':'hide',
-		'ssl':true};
-		s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-		s.onload = s.onreadystatechange = function() {
-		var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-		try { qaj8t6m07xo97p = new WufooForm();qaj8t6m07xo97p.initialize(options);qaj8t6m07xo97p.display(); } catch (e) {}};
-		var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-		})(document, 'script');
-        });
 });
-
-<% end %>
 </script>
 
