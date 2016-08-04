@@ -23,9 +23,12 @@
     <title><%= @item[:title].nil? ? "LaPrimaire.org - En 2017, tous candidats à l'élection présidentielle !":"#{@item[:title]}"  %></title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
     <% if @config[:debug] %>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/style/laprimaire.css">
-    <link rel="stylesheet" type="text/css" href="/assets/style/bootstrap-submenu.css">
-    <% else %><link rel="stylesheet" type="text/css" href="/assets/style/application.css"><% end %>
+    <% else %>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/style/application.css">
+    <% end %>
     <link rel="canonical" href="<%= @item[:url].nil? ? "https://laprimaire.org": "#{@item[:url]}" %>">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
