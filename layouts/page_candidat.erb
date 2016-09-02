@@ -1,18 +1,13 @@
----
-title: La Primaire Citoyenne pour l'élection présidentielle de 2017 - LaPrimaire.org
-social_title: LaPrimaire.org - Pour un VRAI choix en 2017 ! 
-image: https://s3.eu-central-1.amazonaws.com/laprimaire/laprimaire-banner-rectangle.jpg
-footer: true
-navbar: true
-author: des citoyens ordinaires
-description: LaPrimaire.org est une Primaire citoyenne ouverte organisée hors des partis politiques pour les élections de 2017. La Primaire vise à rassembler les citoyens déçus et lassés des politiques et qui souhaitent redonner du sens aux élections en soutenant et participant à une grande primaire citoyenne, apartisane, ouverte, en 2017 afin d'élire des candidats vraiment représentatifs.
----
 <style>
 <!--
 body { padding-bottom: 0px; }
 div.lettre h3 {
 	font-size:20px;
 	margin-top:0px;
+}
+.row {
+	margin-right:0px;
+	margin-left:0px;
 }
 div.lettre p { font-size:16px; }
 .press-logo { margin-bottom:5px; }
@@ -35,6 +30,7 @@ div.lettre p { font-size:16px; }
 	display: block;
 	width: 20px;
 }
+.equipe .thumbnail { min-height: 200px; }
 .thumbnail { min-height: 350px; }
 .photo {
 	width: 100%;
@@ -42,6 +38,11 @@ div.lettre p { font-size:16px; }
 	background-position: center center;
 	background-repeat: no-repeat;
 	overflow: hidden;
+}
+.hero-feature .about { font-size:12px; }
+.hero-feature .bio { text-align:justify; }
+.equipe .hero-feature h3 {
+	margin: 0px;
 }
 .hero-feature h3 {
 	font-size: 22px;
@@ -51,6 +52,7 @@ div.lettre p { font-size:16px; }
 .hero-feature h3 span { color: #d91d1c; font-weight: bold; }
 .hero-feature p { font-size: 13px; }
 .hero-feature img { height: 250px; }
+.equipe .hero-feature img { height: 150px; }
 .photo img {
 	min-height: 100%;
 	min-width: 100%;
@@ -90,9 +92,7 @@ div.lettre p { font-size:16px; }
 	margin-top:5px;
 	font-size:20px;
 }
-header .intro-text {
-	padding-top: 20px;
-}
+header .intro-text { padding-top: 20px; }
 .intro-heading span {
 	color: #d91d1c;
 	font-weight:bold;
@@ -101,9 +101,7 @@ header .intro-text {
 	font-size: 42px !important;
 	color: #527bdd;
 }
-.intro-lead-in {
-	font-size: 28px !important;
-}
+.intro-lead-in { font-size: 26px !important; }
 .fa {
 	font-size: 1.5em;
 	padding:0.1em;
@@ -129,9 +127,7 @@ ul.social_buttons > li{
     background-repeat: repeat;
     padding:0px;
 }
-.equipe {
-	margin-bottom:10px;
-}
+.equipe { margin-bottom:10px; }
 .programme, .equipe {
     position: relative;
     padding: 0;
@@ -193,31 +189,32 @@ p.notyet {
 	    <div class="thumbnail" style="margin-top: 15px;">
 		    <div class="row">
 			    <div class="col-md-3 col-sm-12 hero-feature">
-				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/937454228344.jpg">
-					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/937454228344.jpg" alt="Maxime Verner">
+				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/<%= item[:photo] %>">
+					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/<%= item[:photo] %>" alt="<%= item[:name] %>">
 					    <div id="video-button" data-toggle="modal" data-target="#Iwatch"></div>
 				    </div>
-				    <div class="caption">26 ans, éditeur, j'habite à Paris. Militant associatif, j'ai recueilli 358 parrainages de maires en 2012 pour porter la voix des jeunes à la présidentielle.</div>
+				    <p class="about">26 ans, éditeur - habite Paris (75)</p>
+				    <p class="bio">Militant associatif, j'ai recueilli 358 parrainages de maires en 2012 pour porter la voix des jeunes à la présidentielle.</p>
 			    </div>
 			    <div class="col-md-9 col-sm-12 hero-feature">
 				    <div class="row">
 					    <div style="min-height:220px;">
 						    <div class="intro-text">
-							    <div class="intro-heading">Maxime <span>Verner</span></div>
-							    <div class="intro-lead-in">&ldquo;<i>Une démocratie réelle tournée vers l'éducation au bonheur, la justice sociale et le progrès humain</i>&rdquo;</div>
+							    <div class="intro-heading"><%= item[:firstname] %> <span><%= item[:lastname] %></span></div>
+							    <div class="intro-lead-in">&ldquo;<i><%= item[:vision] %></i>&rdquo;</div>
 						    </div>
 					    </div>
 				    </div>
 				    <div class="row">
 					    <div style="min-height:160px;margin-bottom:15px;">
 						    <div class="col-md-4 col-sm-12 hero-feature">
-							    <span style="font-weight:bold;color:#527bdd;font-size:20px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x rouge"><i class="fa fa-circle-o fa-stack-2x rouge"></i><strong class="fa-stack-1x rouge">1</strong></span><br/><span style="font-size:16px;">&ldquo;<i>Former les jeunes à une vocation</i>&rdquo;</span>
+							    <span style="font-weight:bold;color:#527bdd;font-size:20px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x rouge"><i class="fa fa-circle-o fa-stack-2x rouge"></i><strong class="fa-stack-1x rouge">1</strong></span><br/><span style="font-size:16px;">&ldquo;<i><%= item[:prio1] %></i>&rdquo;</span>
 						    </div>
 						    <div class="col-md-4 col-sm-12 hero-feature">
-							    <span style="font-weight:bold;color:#527bdd;font-size:20px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x rouge"><i class="fa fa-circle-o fa-stack-2x rouge"></i><strong class="fa-stack-1x rouge">2</strong></span><br/><span style="font-size:16px;">&ldquo;<i>Établir une justice sociale libératrice</i>&rdquo;</span>
+							    <span style="font-weight:bold;color:#527bdd;font-size:20px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x rouge"><i class="fa fa-circle-o fa-stack-2x rouge"></i><strong class="fa-stack-1x rouge">2</strong></span><br/><span style="font-size:16px;">&ldquo;<i><%= item[:prio2] %></i>&rdquo;</span>
 						    </div>
 						    <div class="col-md-4 col-sm-12 hero-feature">
-							    <span style="font-weight:bold;color:#527bdd;font-size:20px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x rouge"><i class="fa fa-circle-o fa-stack-2x rouge"></i><strong class="fa-stack-1x rouge">3</strong></span><br/><span style="font-size:16px;">&ldquo;<i>Impliquer les citoyens à tous les échelons</i>&rdquo;</span>
+							    <span style="font-weight:bold;color:#527bdd;font-size:20px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x rouge"><i class="fa fa-circle-o fa-stack-2x rouge"></i><strong class="fa-stack-1x rouge">3</strong></span><br/><span style="font-size:16px;">&ldquo;<i><%= item[:prio3] %></i>&rdquo;</span>
 						    </div>
 					    </div>
 				    </div>
@@ -252,37 +249,30 @@ p.notyet {
 				<h2 class="section-heading">Mon équipe</h2>
 			</div>
 		</div>
-                <div class="row">
+		<div class="row">
 		    <div class="col-md-3 col-sm-4 col-xs-12 hero-feature">
 			    <div class="thumbnail">
-				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/equipe.jpg">
-					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/equipe.jpg" alt="Annoncées le 3 octobre 2016">
-				    </div>
-				    <div class="caption">
-					    <h3 style="text-align:center;"><span>A propos</span></h3>
-					    <p>LaPrimaire.org favorise les rencontres et les échanges entre les candidats et invite ceux-ci à collaborer et à travailler en équipe.</p>
-				    </div>
+				    <h3 style="text-align:center;margin:15px 0px;"><span>A propos</span></h3>
+				    <p style="text-align:justify;padding:5px;">LaPrimaire.org favorise les rencontres et les échanges entre les candidats et invite ceux-ci - sans obligation - à collaborer et à travailler en équipe. Le cas échéant, les équipes seront dévoilées le 3 octobre.</p>
 			    </div>
 		    </div>
-		    <div class="col-md-3 col-sm-4 col-xs-12 hero-feature">
+		    <div class="col-md-2 col-sm-3 col-xs-12 hero-feature">
 			    <div class="thumbnail">
-				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnue.jpg">
-					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnue.jpg" alt="Pas encore connue">
+				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnue-150px.jpg">
+					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnue-150px.jpg" alt="Pas encore connue">
 				    </div>
 				    <div class="caption">
 					    <h3>Candidate <span>1</span></h3>
-					    <p>&ldquo;<i>Les équipes seront dévoilées le 3 octobre.</i>&rdquo;</p>
 				    </div>
 			    </div>
 		    </div>
-		    <div class="col-md-3 col-sm-4 col-xs-12 hero-feature">
+		    <div class="col-md-2 col-sm-3 col-xs-12 hero-feature">
 			    <div class="thumbnail">
-				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnu.jpg">
-					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnu.jpg" alt="Pas encore connu">
+				    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnu-150px.jpg">
+					    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/themes/inconnu-150px.jpg" alt="Pas encore connu">
 				    </div>
 				    <div class="caption">
 					    <h3>Candidat <span>2</span></h3>
-					    <p>&ldquo;<i>Les équipes seront dévoilées le 3 octobre.</i>&rdquo;</p>
 				    </div>
 			    </div>
 		    </div>

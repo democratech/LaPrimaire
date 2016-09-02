@@ -3,6 +3,7 @@
 require 'bootstrap-sass'
 require 'font-awesome-sass'
 require 'uglifier'
+require 'pg'
 
 # Set this to the root of your project when deployed:
 http_path    = "/"

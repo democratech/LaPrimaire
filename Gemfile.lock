@@ -68,6 +68,7 @@ GEM
     notiffany (0.0.7)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pg (0.18.4)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -109,7 +110,11 @@ DEPENDENCIES
   kramdown
   nanoc (~> 3.7.5)
   nanoc-cachebuster
+  pg
   rainpress
   rb-readline (~> 0.5.2)
   therubyracer
   uglifier (>= 1.0.3)
+
+BUNDLED WITH
+   1.12.5

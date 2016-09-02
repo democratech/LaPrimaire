@@ -3,7 +3,7 @@ window.fbAsyncInit=function() {
 	FB.init({
 			appId : '115809635110050',
 			xfbml : true,
-			version : 'v2.3'
+			version : 'v2.7'
 		});
 	FB.Event.subscribe('edge.create',function(targetUrl) {
 			ga('send', 'social', 'facebook', 'like',{'eventCategory':'facebook_action','eventAction':'like','eventLabel':targetUrl});

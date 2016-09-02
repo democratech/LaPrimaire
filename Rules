@@ -15,12 +15,19 @@
 
 preprocess do
 	create_robots_txt
+	create_candidats
 end
 
 unless defined? LOADED_DEFAULT_CONFIG
   LOADED_DEFAULT_CONFIG = true
   require 'compass'
   Compass.add_project_configuration 'config.rb'
+end
+
+compile '/qualifie/*/' do
+	filter :erb
+	layout 'candidat'
+	filter :cache_buster, :strategy => :html
 end
 
 compile '/robots' do
