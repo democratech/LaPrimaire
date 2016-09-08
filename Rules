@@ -15,7 +15,6 @@
 
 preprocess do
 	create_robots_txt
-	create_candidats
 end
 
 unless defined? LOADED_DEFAULT_CONFIG
