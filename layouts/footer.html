@@ -414,6 +414,22 @@ $(document).ready(function(){
 });
 <% elsif @item.identifier == '/' %>
 /* Supporteurs bar */
+$(document).ready(function(){
+		var parent = $("#candidats");
+		var divs = parent.children();
+		var i=1;
+		while (divs.length) {
+			parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+			parent.append('<div class="clearfix visible-xs-block"></div>');
+			if ((i % 2)==0) {
+				parent.append('<div class="clearfix visible-sm-block"></div>');
+			}
+			if ((i % 4)==0) {
+				parent.append('<div class="clearfix visible-md-block"></div>');
+			}
+			i+=1;
+		}
+});
 <% end %>
 </script>
 
