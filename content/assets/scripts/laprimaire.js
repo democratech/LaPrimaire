@@ -4,6 +4,7 @@ $(document).ready(function() {
 	});
 	if ($('#JoinsUsNow')!=null) {
 		$('#JoinUsNow').on('shown.bs.modal', function () {
+			ga('send', 'pageview', '/inscription-popup/');
 			var qaj8t6m07xo97p;(function(d, t) {
 			var s = d.createElement(t), options = {
 			'userName':'democratech',
