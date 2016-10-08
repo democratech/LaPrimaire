@@ -91,6 +91,24 @@ div.lettre p { font-size:16px; }
 	margin-top:5px;
 	font-size:24px;
 }
+.carroussel {
+	width:100%;
+	margin: 0px auto;
+}
+@media(min-width:768px) {
+	.carroussel { width:85%; margin: 0px auto; }
+}
+.carroussel_item {
+	border:1px solid #9e9e9e;
+	width:302px;
+	margin:5px auto;
+}
+.slick-prev { left:-45px !important; }
+.slick-next { right:-45px !important; }
+.slick-prev:before, .slick-next:before { 
+	font-size:40px !important;	
+	color:#9e9e9e !important;
+}
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 *::before, *::after {
@@ -210,8 +228,28 @@ time {
     padding: 0;
     list-style: none;
 }
+.separation {
+	border-top: 2px solid #8c8b8b;
+	text-align: center;
+	margin-bottom:30px;
+}
+.separation.a-venir::after { content: 'Les prochains évènements à venir'; }
+.separation.les-candidats::after { content: 'Les candidats encore en lice'; }
+.separation::after {
+	display: inline-block;
+	position: relative;
+	top: -20px;
+	background-color:white;
+	border: 2px solid #8c8b8b;
+	padding: 0 10px;
+	color: #5e5e5e;
+	font-size: 20px;
+}
+
 -->
 </style>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     <!-- Header -->
     <header>
     <div id="fundraising_bar" class="supporteurs"></div>
@@ -225,20 +263,80 @@ time {
 				<div id="nb_citoyens_app"></div>
 		</div>
 	    </div>
-            <div class="row" id="candidats">
-		    <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
-			    <div class="thumbnail">
-				    <a href="/qualifie/maxime-verner">
-					    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/937454228344.jpg">
-						    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/937454228344.jpg" alt="Maxime Verner">
-					    </div>
-				    </a>
-				    <div class="caption">
-					    <a href="/qualifie/maxime-verner"><h3>Maxime <span>Verner</span></h3></a>
-					    <p>&ldquo;<i>Une démocratie réelle tournée vers l'éducation au bonheur, la justice sociale et le progrès humain</i>&rdquo;<br>&nbsp;</p>
+	    <div class="row">
+		    <hr class="separation a-venir">
+	    </div>
+	    <div class="row">
+		    <div class="carroussel">
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="http://premierforumcivictech.ministere-eco-finances.fr/pro/fiche/quest.jsp;jsessionid=hsG7DojnrT5I-8pchCyspEaX.gl3">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161008-forumcivictech.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/1782320011992045/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161014-cafe-lp-villeneuvesurlot.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/570693126471092/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161014-fb-live-roxane.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/1834747703423460/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161015-cafe-lp-rennes.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161016-fb-live-jean-marc.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/676921709125119/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161017-fb-live-philippe.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/1102564303163806/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161019-fb-live-michel.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/984275871694962/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161020-fb-live-nicolas.jpg">
+					    </a>
+				    </div>
+			    </div>
+			    <div>
+				    <div class="carroussel_item">
+					    <a target="_blank" href="https://www.facebook.com/events/1138657796214656/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20161022-cafe-lp-paris.jpg">
+					    </a>
 				    </div>
 			    </div>
 		    </div>
+	    </div><br/>
+	    <div class="row">
+		    <hr class="separation les-candidats">
+	    </div>
+            <div class="row" id="candidats">
 		    <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
 			    <div class="thumbnail">
 				    <a href="/qualifie/charlotte-marchandise-franquet">
@@ -275,19 +373,6 @@ time {
 				    <div class="caption">
 					    <a href="/qualifie/roxane-revon"><h3>Roxane <span>Revon</span></h3></a>
 					    <p>&ldquo;<i>Les français doivent initier le grand mouvement politique du XXIe siècle : être à l'avant-garde d'une démocratie européenne</i>&rdquo;</p>
-				    </div>
-			    </div>
-		    </div>
-		    <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
-			    <div class="thumbnail">
-				    <a href="/qualifie/alexandre-lecouillard">
-					    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/946111224339.jpg">
-						    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/946111224339.jpg" alt="Alexandre Lecouillard">
-					    </div>
-				    </a>
-				    <div class="caption">
-					    <a href="/qualifie/alexandre-lecouillard"><h3>Alexandre <span>Lecouillard</span></h3></a>
-					    <p>&ldquo;<i>Une nouvelle politique doit voir le jour, un nouveau système plus éthique, plus collectif et plus honnête</i>&rdquo;<br>&nbsp;</p>
 				    </div>
 			    </div>
 		    </div>
@@ -366,19 +451,6 @@ time {
 				    <div class="caption">
 					    <a href="/qualifie/nicolas-bernabeu"><h3>Nicolas <span>Bernabeu</span></h3></a>
 					    <p>&ldquo;<i>Ni droite, ni gauche, ni extrême, ni centre. L'union plutôt que la division !</i>&rdquo;<br/>&nbsp;<br/>&nbsp;</p>
-				    </div>
-			    </div>
-		    </div>
-		    <div class="col-md-3 col-sm-6 col-xs-12 hero-feature">
-			    <div class="thumbnail">
-				    <a href="/qualifie/ramin-farhangi">
-					    <div class="photo lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/776052574134.jpeg">
-						    <img class="lazy" data-original="https://s3.eu-central-1.amazonaws.com/laprimaire/776052574134.jpeg" alt="Ramïn Farhangi">
-					    </div>
-				    </a>
-				    <div class="caption">
-					    <a href="/qualifie/ramin-farhangi"><h3>Ramïn <span>Farhangi</span></h3></a>
-					    <p>&ldquo;<i>Une société qui abandonnera progressivement la compétition et la domination, pour laisser place à la coopération et l'altruisme</i>&rdquo;</p>
 				    </div>
 			    </div>
 		    </div>
@@ -515,6 +587,7 @@ time {
 
     <section class="timeline">
     <div id="timeline_overlay" class="blue" style="border-bottom: 2px solid #527bdd;">
+	    <div style="padding:12px 5px 1px 5px;background-color:white;width:240px;margin:0 auto;text-align:center;"><h2 class="section-heading" style="color:#5e5e5e;">Déroulement</h2></div>
 	    <ul>
 		    <li>
 		    	<div>

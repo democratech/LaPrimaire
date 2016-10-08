@@ -343,7 +343,7 @@ header {
     -o-background-size: cover;
 }
 header .intro-text {
-    padding-top: 50px;
+    padding-top: 25px;
     padding-bottom: 25px;
 }
 #navbar-home {
@@ -370,8 +370,8 @@ header .intro-text .intro-heading {
 }
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 30px;
-        padding-bottom: 20px;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
     header .intro-text .intro-lead-in {
         margin-bottom: 20px;
