@@ -32,7 +32,7 @@ $(document).ready(function() {
 				var nb_citizens=data['nb_citizens'];
 				var nb_plebiscites=data['nb_plebiscites'];
 				createCookie('app_stats',JSON.stringify({nb_candidates: nb_candidates, nb_citizens: nb_citizens, nb_plebiscites: nb_plebiscites}));
-				$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... et vous ?");
+				$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... Et vous ?");
 				$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
 				$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" citoyens</a>");
 				var supporteurs=nb_citizens;
@@ -52,7 +52,7 @@ $(document).ready(function() {
 			var nb_candidates=data['nb_candidates'];
 			var nb_citizens=data['nb_citizens'];
 			var nb_plebiscites=data['nb_plebiscites'];
-			$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... et vous ?");
+			$('#nb_citoyens_app').html("<span class='nb_citizens_fig'>"+nb_citizens+"</span> citoyens participent... Et vous ?");
 			$('#nb_candidates').html("<a href='/candidats/'>"+nb_candidates+" candidats</a>");
 			$('#nb_plebiscites').html("<a href='/citoyens/'>"+nb_plebiscites+" citoyens</a>");
 			var supporteurs=nb_citizens;
