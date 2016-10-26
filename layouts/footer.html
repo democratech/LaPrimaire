@@ -19,13 +19,16 @@
 	        <div class="modal-content">
 	          <div class="modal-header">
 	            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		    <h4 class="modal-title" id="shareByEmail">Je souhaite participer à LaPrimaire.org</h4>
+		    <h4 class="modal-title" id="shareByEmail">Je souhaite voter au 1er tour de LaPrimaire.org</h4>
 	          </div>
 		  <div class="modal-body">
-			  <p style="font-size:14px;">Merci beaucoup, nous avons besoin de tous les citoyens pour faire émerger une candidature citoyenne forte qui soit capable de changer la donne en 2017 !</p>
-			  <div id="wufoo-qaj8t6m07xo97p">
-				  Remplissez ce <a href="https://democratech.wufoo.com/forms/qaj8t6m07xo97p">formulaire en ligne</a>.
+			  <p style="font-size:14px;">Laissez-nous vos coordonnées pour recevoir votre lien de vote personnel:</p>
+			  <div id="wufoo-q4emv9q14p6f33">
+				  Remplissez ce <a href="https://democratech.wufoo.com/forms/q4emv9q14p6f33">formulaire en ligne</a>.
 			  </div>
+			  <!--<div id="wufoo-qaj8t6m07xo97p">
+				  Remplissez ce <a href="https://democratech.wufoo.com/forms/qaj8t6m07xo97p">formulaire en ligne</a>.
+			  </div>-->
 	          </div>
 	          <div class="modal-footer">
 			  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -34,7 +37,21 @@
 	      </div>
       </div>
 
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="VoteNow" tabindex="-1" role="dialog" aria-labelledby="shareByEmail">
+	      <div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		    <h4 class="modal-title" id="shareByEmail">Je souhaite participer à LaPrimaire.org</h4>
+	          </div>
+		  <div class="modal-body">
+			  <div class="g-recaptcha" data-sitekey="6LerRQoUAAAAAC9ONne90Z4aoqrlMnzYSTO4AvV7"></div>
+	          </div>
+	        </div>
+	      </div>
+      </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://use.fontawesome.com/1e37fa74cb.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <% if @config[:debug] %>
@@ -300,7 +317,7 @@ $(document).ready(function(){
 	}
 });
 
-<% elsif @item.identifier.chop=='/inscription-ok' %>
+<% elsif @item.identifier.chop=='/inscription-ok' or @item.identifier.chop=='/inscription-vote-1er-tour' %>
 </script>
 <script src="https://apis.google.com/js/platform.js"></script>
 <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
