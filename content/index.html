@@ -286,7 +286,7 @@ div#counter h2 {
 		    <div class="container">
 			    <div id="clock_wrapper">
 				    <div id="clock">
-					    Le 1er tour ouvre dans <span id="countdownbox"></span>
+					    Le 1er tour ouvre dans <span id="countdownbox"></span><br/>
 				    </div>
 			    </div>
 			    <br/>
@@ -877,6 +877,6 @@ display: function(cnt,msg){ document.getElementById(cnt.id).innerHTML=msg; }
 
 window.onload=function(){
 	var cdown = new CDown();
-	cdown.add(new Date(Date.UTC(2016,9,25,18,0,0)), "countdownbox");
+	cdown.add(new Date(Date.UTC(2016,9,25,22,0,0)), "countdownbox");
 };
     </script>
