@@ -450,6 +450,8 @@ $(document).ready(function(){
 			}
 			i+=1;
 		}
+		parent.prepend('<div class="col-md-1 col-sm-1 col-xs-1 hero-feature">&nbsp;</div>');
+		parent.append('<div class="col-md-1 col-sm-1 col-xs-1 hero-feature">&nbsp;</div>');
 
 		$('.carroussel').slick({
 			slidesToShow: 3,
