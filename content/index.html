@@ -281,7 +281,7 @@ div#counter h2 {
 		<div style="font-size:20px;font-style:italic;width:60%;text-align:justify;margin: 0 auto;" class="visible-lg-block">&laquo;&nbsp;Aujourd'hui en France, <b>0,5%</b> de la population (les partis politiques) désigne les candidats aux élections et élabore les programmes. Pour répondre à ce problème démocratique, LaPrimaire.org organise la 1ère primaire en ligne 100% démocratique et ouverte qui permet aux citoyens de choisir leurs candidat(e)s et de co-construire les projets politiques. Un seul objectif : faire émerger collectivement la meilleure candidature citoyenne pour 2017&nbsp;&raquo;</div>
 		<div id="nb_citoyens_app"></div>
 		<div style="margin:20px auto 0px auto;width:100%;">
-			<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl blue joinus_action" title="Je vote">Je vote</a>
+			<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl blue joinus_action" title="Je veux voter">Je veux voter</a>
 			<!--<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl red joinus_action" title="Je participe">Je participe</a>-->
 		</div>
 	    </div>
@@ -780,7 +780,7 @@ expire: function(idxs){
 	},
 format: function(r){
 		var out="";
-		//out += r.w +" "+((r.w==1)?"semaine":"semaines")+", ";
+		out += r.w +" "+((r.w==1)?"semaine":"semaines")+", ";
 		if(r.d != 0){out += r.d +" "+((r.d==1)?"jour":"jours")+", ";}
 		if(r.h != 0){out += r.h +" "+((r.h==1)?"heure":"heures")+", ";}
 		out += r.m +" "+((r.m==1)?"minute":"minutes")+", ";
@@ -825,6 +825,6 @@ display: function(cnt,msg){ document.getElementById(cnt.id).innerHTML=msg; }
 
 window.onload=function(){
 	var cdown = new CDown();
-	cdown.add(new Date(Date.UTC(2016,10,6,19)), "countdownbox");
+	cdown.add(new Date(Date.UTC(2016,11,13,21)), "countdownbox");
 };
     </script>
