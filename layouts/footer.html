@@ -436,23 +436,23 @@ $(document).ready(function(){
     <script>
 /* Supporteurs bar */
 $(document).ready(function(){
-		var parent = $("#candidats");
-		var divs = parent.children();
+		var cparent = $("#liste_candidats");
+		var divs = cparent.children();
 		var i=1;
 		while (divs.length) {
-			parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+			cparent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+			/* Uncomment if more than 5 candidates 
 			parent.append('<div class="clearfix visible-xs-block"></div>');
 			if ((i % 2)==0) {
 				parent.append('<div class="clearfix visible-sm-block"></div>');
 			}
 			if ((i % 4)==0) {
 				parent.append('<div class="clearfix visible-md-block"></div>');
-			}
+			}*/
 			i+=1;
 		}
-		parent.prepend('<div class="col-md-1 col-sm-1 col-xs-1 hero-feature">&nbsp;</div>');
-		parent.append('<div class="col-md-1 col-sm-1 col-xs-1 hero-feature">&nbsp;</div>');
-
+		cparent.prepend("<div class='col-md-1 col-sm-1 col-xs-1 hero-feature'>&nbsp;</div>");
+		cparent.append("<div class='col-md-1 col-sm-1 col-xs-1 hero-feature'>&nbsp;</div>");
 		$('.carroussel').slick({
 			slidesToShow: 3,
 			slidesToScroll: 1,
