@@ -340,6 +340,52 @@ $(document).ready(function(){
 	    </div>
     </noscript>
     <script>
+<% elsif @item.identifier.chop=='/adherer' %>
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script>
+$(document).ready(function(){
+		$('.btn.donate').on('click', function () {
+			$('#vads_amount').val(parseInt($(this).attr('total'))*100);
+		});
+		$('input[type="submit"]').click(function(e){
+			e.preventDefault();
+			var utc_timestamp=moment.utc().format('YYYYMMDDHHmmss');
+			$('#vads_trans_date').val(utc_timestamp);
+			$.post("https://laprimaire.ngrok.io/v1/payment/transaction",{
+				'email':$('#donateur_email').val(),
+				'vads_action_mode':$('#vads_action_mode').val(),
+				'vads_amount':$('#vads_amount').val(),
+				'vads_ctx_mode':$('#vads_ctx_mode').val(),
+				'vads_currency':$('#vads_currency').val(),
+				'vads_page_action':$('#vads_page_action').val(),
+				'vads_payment_config':$('#vads_payment_config').val(),
+				'vads_site_id':$('#vads_site_id').val(),
+				'vads_trans_date':$('#vads_trans_date').val(),
+				'vads_trans_id':$('#vads_trans_id').val(),
+				'vads_version':$('#vads_version').val(),
+				'vads_return_mode':$('#vads_return_mode').val(),
+				'vads_language':$('#vads_language').val(),
+				'vads_return_mode':$('#vads_return_mode').val(),
+				'vads_theme_config':$('#vads_theme_config').val(),
+				'vads_redirect_error_message':$('#vads_redirect_error_message').val(),
+				'vads_redirect_error_timeout':$('#vads_redirect_error_timeout').val(),
+				'vads_redirect_success_message':$('#vads_redirect_success_message').val(),
+				'vads_redirect_success_timeout':$('#vads_redirect_success_timeout').val()
+			})
+			.done(function(data) {
+				var data=JSON.parse(data);
+				$('#signature').val(data['signature']);
+				$('#vads_trans_id').val(data['transaction_id']);
+				$('#vads_order_id').val(data['order_id']);
+				$('#vads_cust_email').val(data['email']);
+				$('form').submit();
+			})
+			.fail(function(data) {
+				alert("Une erreur est survenue. Merci de nous reporter le problème.");
+			});
+		});
+});
 <% elsif @item.identifier.chop=='/qualifies' %>
 $(document).ready(function(){
 	/* $("div.lazy").lazyload({effect:"fadeIn"});*/
