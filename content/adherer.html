@@ -224,13 +224,6 @@ span.goalAmount {
 			<div class="modal-body">
 				<form action="https://secure.payzen.eu/vads-payment/" id="payment_page" method="POST" class="form-horizontal" role="form" data-toggle="validator">
 					<div class="form-group has-feedback">
-						<label for="donateur_email" class="col-sm-2 control-label">Email</label>
-						<div class="col-sm-10">
-							<input type="email" class="form-control" name="vads_cust_email" id="donateur_email" placeholder="Votre email" required>
-							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-						</div>
-					</div>
-					<div class="form-group has-feedback">
 						<label for="firstname" class="col-sm-2 control-label">Prénom</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="vads_cust_first_name" id="vads_cust_first_name" placeholder="Votre prénom" required>
@@ -241,6 +234,13 @@ span.goalAmount {
 						<label for="lastname" class="col-sm-2 control-label">Nom</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="vads_cust_last_name" id="vads_cust_last_name" placeholder="Votre nom" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="donateur_email" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" name="vads_cust_email" id="donateur_email" placeholder="Votre email" required>
 							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 						</div>
 					</div>
@@ -271,6 +271,8 @@ span.goalAmount {
 					<input type="hidden" id="vads_trans_date" name="vads_trans_date" value="<to_be_replaced>" />
 					<input type="hidden" id="vads_trans_id" name="vads_trans_id" value="<to_be_replaced>" />
 					<input type="hidden" id="vads_version" name="vads_version" value="V2" />
+					<input type="hidden" id="vads_validation_mode" name="vads_validation_mode" value="0" />
+					<input type="hidden" id="vads_capture_delay" name="vads_capture_delay" value="0" />
 					<input type="hidden" id="vads_language" name="vads_language" value="fr" />
 					<input type="hidden" id="vads_theme_config" name="vads_theme_config" value="CANCEL_FOOTER_MSG_RETURN=Annuler;SUCCESS_FOOTER_MSG_RETURN=Retour" />
 					<input type="hidden" id="vads_order_id" name="vads_order_id" value="<to_be_replaced>" />
