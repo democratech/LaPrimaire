@@ -343,16 +343,43 @@ $(document).ready(function(){
 <% elsif @item.identifier.chop=='/adherer' %>
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/places.js/1/places.min.js"></script>
 <script>
 $(document).ready(function(){
+		var email=getURLParameter('e');
+		var firstname=getURLParameter('f');
+		var lastname=getURLParameter('l');
+		$('#donateur_email').val(email);
+		$('#vads_cust_first_name').val(firstname);
+		$('#vads_cust_last_name').val(lastname);
+		var placesAutocomplete = places({
+			    container: document.querySelector('#address'),
+			    type:'address',
+			    language:'fr'
+	        });
+		placesAutocomplete.on('change', function resultSelected(e) {
+			$('#vads_cust_address').val(e.suggestion.name);
+			$('#vads_cust_city').val(e.suggestion.city);
+			$('#vads_cust_zip').val(e.suggestion.postcode);
+			$('#vads_cust_state').val(e.suggestion.administrative);
+			$('#country').val(e.suggestion.country);
+		});
+		$('#free_amount').on('input', function () {
+			console.log('change');
+			var don=parseInt($(this).val())
+			$('#free_amount').val(don.toString());
+			$('#free_amount_btn').attr('total',don.toString());
+			$('#free_amount_btn').html((don/3).toFixed(2).toString()+'€');
+		});
 		$('.btn.donate').on('click', function () {
 			$('#vads_amount').val(parseInt($(this).attr('total'))*100);
 		});
-		$('input[type="submit"]').click(function(e){
+		$('button[type="submit"]').click(function(e){
 			e.preventDefault();
 			var utc_timestamp=moment.utc().format('YYYYMMDDHHmmss');
 			$('#vads_trans_date').val(utc_timestamp);
-			$.post("https://laprimaire.ngrok.io/v1/payment/transaction",{
+			$.post("https://api.democratech.co/v1/payment/transaction",{
 				'email':$('#donateur_email').val(),
 				'vads_action_mode':$('#vads_action_mode').val(),
 				'vads_amount':$('#vads_amount').val(),
@@ -371,7 +398,14 @@ $(document).ready(function(){
 				'vads_redirect_error_message':$('#vads_redirect_error_message').val(),
 				'vads_redirect_error_timeout':$('#vads_redirect_error_timeout').val(),
 				'vads_redirect_success_message':$('#vads_redirect_success_message').val(),
-				'vads_redirect_success_timeout':$('#vads_redirect_success_timeout').val()
+				'vads_redirect_success_timeout':$('#vads_redirect_success_timeout').val(),
+				'vads_cust_first_name':$('#vads_cust_first_name').val(),
+				'vads_cust_last_name':$('#vads_cust_last_name').val(),
+				'vads_cust_address':$('#vads_cust_address').val(),
+				'vads_cust_zip':$('#vads_cust_zip').val(),
+				'vads_cust_city':$('#vads_cust_city').val(),
+				'vads_cust_state':$('#vads_cust_state').val(),
+				'country':$('#country').val()
 			})
 			.done(function(data) {
 				var data=JSON.parse(data);

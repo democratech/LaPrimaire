@@ -166,9 +166,9 @@ span.goalAmount {
 				    <div class="col-sm-4">
 					    <div class="thumbnail">
 						    <div class="caption">
-							    <h4 class="card-title">200€</h4>
-							    <div class="card-body"><p>Adhésion 30€<br/>+ 170€ de don</p></div>
-							    <a class="btn btn-xl blue donate" title="J'adhère et fais un don de 170€" data-target="#my_email" data-toggle="modal" total="200">66,66€</a>
+							    <h4 class="card-title">250€</h4>
+							    <div class="card-body"><p>Adhésion 30€<br/>+ 220€ de don</p></div>
+							    <a class="btn btn-xl blue donate" title="J'adhère et fais un don de 220€" data-target="#my_email" data-toggle="modal" total="250">83,33€</a>
 							    <div><span style="font-size:12px;">après réduction d'impôts</span></div>
 						    </div>
 					    </div>
@@ -176,42 +176,9 @@ span.goalAmount {
 				    <div class="col-sm-4">
 					    <div class="thumbnail">
 						    <div class="caption">
-							    <h4 class="card-title">400€</h4>
-							    <div class="card-body"><p>Adhésion 30€<br/>+ 370€ de don</p></div>
-							    <a class="btn btn-xl blue donate" title="J'adhère et fais un don de 370€" data-target="#my_email" data-toggle="modal" total="400">133,33€</a>
-							    <div><span style="font-size:12px;">après réduction d'impôts</span></div>
-						    </div>
-					    </div>
-				    </div>
-				    <div class="col-sm-4">
-					    <div class="thumbnail">
-						    <div class="caption">
-							    <h4 class="card-title">750€</h4>
-							    <div class="card-body"><p>Adhésion 30€<br/>+ 720€ de don</p></div>
-							    <a style="" class="btn btn-xl blue donate" title="J'adhère et fais un don de 120€" data-target="#my_email" data-toggle="modal" total="750">250€</a>
-							    <div><span style="font-size:12px;">après réduction d'impôts</span></div>
-						    </div>
-					    </div>
-				    </div>
-				    <div class="clearfix visible-sm-block"></div>
-				</div>
-				<div class="row">
-				    <div class="col-sm-4">
-					    <div class="thumbnail">
-						    <div class="caption">
-							    <h4 class="card-title">1000€</h4>
-							    <div class="card-body"><p>Adhésion 30€<br/>+ 970€ de don</p></div>
-							    <a class="btn btn-xl blue donate" title="J'adhère et fais un don de 970€" data-target="#my_email" data-toggle="modal" total="1000">333,33€</a>
-							    <div><span style="font-size:12px;">après réduction d'impôts</span></div>
-						    </div>
-					    </div>
-				    </div>
-				    <div class="col-sm-4">
-					    <div class="thumbnail">
-						    <div class="caption">
-							    <h4 class="card-title">1500€</h4>
-							    <div class="card-body"><p>Adhésion 30€<br/>+ 1470€ de don</p></div>
-							    <a class="btn btn-xl blue donate" title="J'adhère et fais un don de 1470€" data-target="#my_email" data-toggle="modal" total="1500">500€</a>
+							    <h4 class="card-title">500€</h4>
+							    <div class="card-body"><p>Adhésion 30€<br/>+ 470€ de don</p></div>
+							    <a class="btn btn-xl blue donate" title="J'adhère et fais un don de 470€" data-target="#my_email" data-toggle="modal" total="500">166,66€</a>
 							    <div><span style="font-size:12px;">après réduction d'impôts</span></div>
 						    </div>
 					    </div>
@@ -221,7 +188,7 @@ span.goalAmount {
 						    <div class="caption">
 							    <input style="width:130px;height:33px;font-size:22px;font-weight:bold;color:#d91d1c;margin:7px;text-align:center;" type="text" id="free_amount" name="free_amount" value="131€">
 							    <div class="card-body"><p>Adhésion 30€<br/>+ don libre</p></div>
-							    <a style="" class="btn btn-xl blue donate" title="J'adhère et fais un don libre" data-target="#my_email" data-toggle="modal" total="131">43,66€</a>
+							    <a style="" class="btn btn-xl red donate" title="J'adhère et fais un don libre" data-target="#my_email" id="free_amount_btn" data-toggle="modal" total="131">43,66€</a>
 							    <div><span style="font-size:12px;">après réduction d'impôts</span></div>
 						    </div>
 					    </div>
@@ -254,33 +221,69 @@ span.goalAmount {
     <div class="modal fade" id="my_email" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	      <div class="modal-dialog" role="document">
 	        <div class="modal-content">
-		  <div class="modal-body">
-			<form action="https://secure.payzen.eu/vads-payment/" id="payment_page" method="POST">
-				<input type="email" id="donateur_email" name="donateur_email" placeholder="Votre email" />
-				<input type="hidden" id="vads_action_mode" name="vads_action_mode" value="INTERACTIVE" />
-				<input type="hidden" id="vads_amount" name="vads_amount" value="1524" />
-				<input type="hidden" id="vads_ctx_mode" name="vads_ctx_mode" value="TEST" />
-				<input type="hidden" id="vads_currency" name="vads_currency" value="978" />
-				<input type="hidden" id="vads_page_action" name="vads_page_action" value="PAYMENT" />
-				<input type="hidden" id="vads_payment_config" name="vads_payment_config" value="SINGLE" />
-				<input type="hidden" id="vads_redirect_error_message" name="vads_redirect_error_message" value="La transaction a échouée :( Dans quelques secondes vous serez redirigé vers la page d'adhésion pour pouvoir reessayer." />
-				<input type="hidden" id="vads_redirect_error_timeout" name="vads_redirect_error_timeout" value="5" />
-				<input type="hidden" id="vads_redirect_success_message" name="vads_redirect_success_message" value="Merci pour votre soutien ! Dans quelques secondes, vous serez redirigé automatiquement vers LaPrimaire.org pour confirmer l'adresse que ferons figurer sur votre reçu fiscal." />
-				<input type="hidden" id="vads_redirect_success_timeout" name="vads_redirect_success_timeout" value="5" />
-				<input type="hidden" id="vads_return_mode" name="vads_return_mode" value="POST" />
-				<input type="hidden" id="vads_site_id" name="vads_site_id" value="82502532" />
-				<input type="hidden" id="vads_trans_date" name="vads_trans_date" value="<to_be_replaced>" />
-				<input type="hidden" id="vads_trans_id" name="vads_trans_id" value="<to_be_replaced>" />
-				<input type="hidden" id="vads_version" name="vads_version" value="V2" />
-				<input type="hidden" id="vads_language" name="vads_language" value="fr" />
-				<input type="hidden" id="vads_theme_config" name="vads_theme_config" value="CANCEL_FOOTER_MSG_RETURN=Annuler;SUCCESS_FOOTER_MSG_RETURN=Retour" />
-				<input type="hidden" id="vads_order_id" name="vads_order_id" value="<to_be_replaced>" />
-				<input type="hidden" id="vads_cust_email" name="vads_cust_email" value="<to_be_replaced>" />
-				<input type="hidden" id="signature" name="signature" value="<to_be_replaced>"/>
-				<input type="submit" name="adherer" value="Adhérer"/>
-			</form>
-	          </div>
-	        </div>
+			<div class="modal-body">
+				<form action="https://secure.payzen.eu/vads-payment/" id="payment_page" method="POST" class="form-horizontal" role="form" data-toggle="validator">
+					<div class="form-group has-feedback">
+						<label for="donateur_email" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" name="vads_cust_email" id="donateur_email" placeholder="Votre email" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="firstname" class="col-sm-2 control-label">Prénom</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="vads_cust_first_name" id="vads_cust_first_name" placeholder="Votre prénom" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="lastname" class="col-sm-2 control-label">Nom</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="vads_cust_last_name" id="vads_cust_last_name" placeholder="Votre nom" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="address" class="col-sm-2 control-label">Adresse</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="address" placeholder="Votre adresse" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" name="adherer" class="btn btn-primary blue">Procéder au paiement</button>
+						</div>
+					</div>
+					<input type="hidden" id="vads_action_mode" name="vads_action_mode" value="INTERACTIVE" />
+					<input type="hidden" id="vads_amount" name="vads_amount" value="1524" />
+					<input type="hidden" id="vads_ctx_mode" name="vads_ctx_mode" value="PRODUCTION" />
+					<input type="hidden" id="vads_currency" name="vads_currency" value="978" />
+					<input type="hidden" id="vads_page_action" name="vads_page_action" value="PAYMENT" />
+					<input type="hidden" id="vads_payment_config" name="vads_payment_config" value="SINGLE" />
+					<input type="hidden" id="vads_redirect_error_message" name="vads_redirect_error_message" value="La transaction a échouée :( Dans quelques secondes vous serez redirigé vers la page d'adhésion pour pouvoir reessayer." />
+					<input type="hidden" id="vads_redirect_error_timeout" name="vads_redirect_error_timeout" value="0" />
+					<input type="hidden" id="vads_redirect_success_message" name="vads_redirect_success_message" value="Merci pour votre soutien ! Dans quelques secondes, vous serez redirigé automatiquement vers LaPrimaire.org pour confirmer l'adresse que ferons figurer sur votre reçu fiscal." />
+					<input type="hidden" id="vads_redirect_success_timeout" name="vads_redirect_success_timeout" value="0" />
+					<input type="hidden" id="vads_return_mode" name="vads_return_mode" value="GET" />
+					<input type="hidden" id="vads_site_id" name="vads_site_id" value="82502532" />
+					<input type="hidden" id="vads_trans_date" name="vads_trans_date" value="<to_be_replaced>" />
+					<input type="hidden" id="vads_trans_id" name="vads_trans_id" value="<to_be_replaced>" />
+					<input type="hidden" id="vads_version" name="vads_version" value="V2" />
+					<input type="hidden" id="vads_language" name="vads_language" value="fr" />
+					<input type="hidden" id="vads_theme_config" name="vads_theme_config" value="CANCEL_FOOTER_MSG_RETURN=Annuler;SUCCESS_FOOTER_MSG_RETURN=Retour" />
+					<input type="hidden" id="vads_order_id" name="vads_order_id" value="<to_be_replaced>" />
+					<input type="hidden" id="vads_cust_email" name="vads_cust_email" value="<to_be_replaced>" />
+					<input type="hidden" id="signature" name="signature" value="<to_be_replaced>"/>
+					<input type="hidden" id="vads_cust_address" name="vads_cust_address" value="<to_be_replaced>"/>
+					<input type="hidden" id="vads_cust_city" name="vads_cust_city" value="<to_be_replaced>"/>
+					<input type="hidden" id="vads_cust_zip" name="vads_cust_zip" value="<to_be_replaced>"/>
+					<input type="hidden" id="vads_cust_state" name="vads_cust_state" value="<to_be_replaced>"/>
+					<input type="hidden" id="country" name="country" value="<to_be_replaced>"/>
+				</form>
+			  </div>
+		    </div>
 	      </div>
       </div>
     <!--<footer class="hidden-xs" style="padding: 0px;">
