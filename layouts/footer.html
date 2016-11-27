@@ -366,11 +366,18 @@ $(document).ready(function(){
 			$('#country').val(e.suggestion.country);
 		});
 		$('#free_amount').on('input', function () {
-			console.log('change');
-			var don=parseInt($(this).val())
-			$('#free_amount').val(don.toString());
-			$('#free_amount_btn').attr('total',don.toString());
-			$('#free_amount_btn').html((don/3).toFixed(2).toString()+'€');
+			var don=parseInt($(this).val());
+			if (!!!don) {
+				$('#free_amount').val("0");
+				$('#free_amount_btn').attr('total',"0");
+				$('#free_amount_btn').html('0€');
+				$('#free_amount_btn').addClass('disabled');
+			} else {
+				$('#free_amount').val(don.toString());
+				$('#free_amount_btn').attr('total',don.toString());
+				$('#free_amount_btn').html((don/3).toFixed(2).toString()+'€');
+				$('#free_amount_btn').removeClass('disabled');
+			}
 		});
 		$('.btn.donate').on('click', function () {
 			$('#vads_amount').val(parseInt($(this).attr('total'))*100);
@@ -421,6 +428,34 @@ $(document).ready(function(){
 				alert("Une erreur est survenue. Merci de nous reporter le problème.");
 			});
 		});
+		var amount=readCookie('donations');
+		var donateurs=readCookie('nb_adherents');
+		if (amount==null || donateurs==null) {
+			$.get("https://api.democratech.co/v1/payment/total", function( data ){
+				amount=data['total'];
+				donateurs=data['nb_adherents'];
+				createCookie('donations',amount);
+				createCookie('nb_adherents',donateurs);
+				$('#financement_bar').goalProgress({
+					goalAmount: 10000,
+					currentAmount: donateurs,
+					textBefore: '',
+					textAfter: ''
+				});
+				$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
+				$('#nb_days_left').html(diffDays);
+
+			});
+		} else {
+			$('#financement_bar').goalProgress({
+				goalAmount: 10000,
+				currentAmount: donateurs,
+				textBefore: '',
+				textAfter: ''
+			});
+			$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
+			$('#nb_days_left').html(diffDays);
+		}
 });
 <% elsif @item.identifier.chop=='/qualifies' %>
 $(document).ready(function(){
