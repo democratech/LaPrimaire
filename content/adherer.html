@@ -290,8 +290,9 @@ span.goalAmount {
 					<div class="form-group has-feedback">
 						<label for="address" class="col-sm-2 control-label">Adresse</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="address" placeholder="Votre adresse" required>
+							<input type="text" class="form-control" id="address" placeholder="Votre adresse" data-address="address" required>
 							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+							<span class="help-block with-errors"></span>
 						</div>
 					</div>
 					<div class="form-group">
@@ -311,21 +312,22 @@ span.goalAmount {
 					<input type="hidden" id="vads_redirect_success_timeout" name="vads_redirect_success_timeout" value="0" />
 					<input type="hidden" id="vads_return_mode" name="vads_return_mode" value="GET" />
 					<input type="hidden" id="vads_site_id" name="vads_site_id" value="82502532" />
-					<input type="hidden" id="vads_trans_date" name="vads_trans_date" value="<to_be_replaced>" />
-					<input type="hidden" id="vads_trans_id" name="vads_trans_id" value="<to_be_replaced>" />
+					<input type="hidden" id="vads_trans_date" name="vads_trans_date" value="" />
+					<input type="hidden" id="vads_trans_id" name="vads_trans_id" value="" />
 					<input type="hidden" id="vads_version" name="vads_version" value="V2" />
 					<input type="hidden" id="vads_validation_mode" name="vads_validation_mode" value="0" />
 					<input type="hidden" id="vads_capture_delay" name="vads_capture_delay" value="0" />
 					<input type="hidden" id="vads_language" name="vads_language" value="fr" />
 					<input type="hidden" id="vads_theme_config" name="vads_theme_config" value="CANCEL_FOOTER_MSG_RETURN=Annuler;SUCCESS_FOOTER_MSG_RETURN=Retour" />
-					<input type="hidden" id="vads_order_id" name="vads_order_id" value="<to_be_replaced>" />
-					<input type="hidden" id="vads_cust_email" name="vads_cust_email" value="<to_be_replaced>" />
-					<input type="hidden" id="signature" name="signature" value="<to_be_replaced>"/>
-					<input type="hidden" id="vads_cust_address" name="vads_cust_address" value="<to_be_replaced>"/>
-					<input type="hidden" id="vads_cust_city" name="vads_cust_city" value="<to_be_replaced>"/>
-					<input type="hidden" id="vads_cust_zip" name="vads_cust_zip" value="<to_be_replaced>"/>
-					<input type="hidden" id="vads_cust_state" name="vads_cust_state" value="<to_be_replaced>"/>
-					<input type="hidden" id="country" name="country" value="<to_be_replaced>"/>
+					<input type="hidden" id="vads_order_id" name="vads_order_id" value="" />
+					<input type="hidden" id="vads_cust_email" name="vads_cust_email" value="" />
+					<input type="hidden" id="signature" name="signature" value=""/>
+					<input type="hidden" id="vads_cust_address" name="vads_cust_address" value=""/>
+					<input type="hidden" id="vads_cust_city" name="vads_cust_city" value=""/>
+					<input type="hidden" id="vads_cust_zip" name="vads_cust_zip" value=""/>
+					<input type="hidden" id="vads_cust_state" name="vads_cust_state" value=""/>
+					<input type="hidden" id="country" name="country" value=""/>
+					<input type="hidden" id="address_ok" name="address_ok" value="0"/>
 				</form>
 			  </div>
 		    </div>

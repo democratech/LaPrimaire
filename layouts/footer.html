@@ -358,12 +358,29 @@ $(document).ready(function(){
 			    type:'address',
 			    language:'fr'
 	        });
+		placesAutocomplete.on('clear', function resultClear(e) {
+			$('#address_ok').val('0');
+		});
 		placesAutocomplete.on('change', function resultSelected(e) {
 			$('#vads_cust_address').val(e.suggestion.name);
 			$('#vads_cust_city').val(e.suggestion.city);
 			$('#vads_cust_zip').val(e.suggestion.postcode);
 			$('#vads_cust_state').val(e.suggestion.administrative);
 			$('#country').val(e.suggestion.country);
+			$('#address_ok').val('1');
+			$('#payment_page').validator('validate');
+		});
+		$('#payment_page').validator({
+			custom: {
+				'address': function(e) { 
+					if (Boolean($('#address_ok').val()=='0')) {
+						return "Cette adresse n'est pas valide";
+					}
+				},
+			errors: {
+				'address': "Cette adresse ne semble pas valide"
+				}
+			}
 		});
 		$('#free_amount').on('input', function () {
 			var don=parseInt($(this).val());
@@ -454,7 +471,6 @@ $(document).ready(function(){
 				textAfter: ''
 			});
 			$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
-			$('#nb_days_left').html(diffDays);
 		}
 });
 <% elsif @item.identifier.chop=='/qualifies' %>
