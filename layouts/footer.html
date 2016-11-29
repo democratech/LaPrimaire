@@ -344,44 +344,14 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
-<script src="https://cdn.jsdelivr.net/places.js/1/places.min.js"></script>
 <script>
 $(document).ready(function(){
 		var email=getURLParameter('e');
 		var firstname=getURLParameter('f');
 		var lastname=getURLParameter('l');
-		$('#donateur_email').val(email);
+		$('#vads_cust_email').val(email);
 		$('#vads_cust_first_name').val(firstname);
 		$('#vads_cust_last_name').val(lastname);
-		var placesAutocomplete = places({
-			    container: document.querySelector('#address'),
-			    type:'address',
-			    language:'fr'
-	        });
-		placesAutocomplete.on('clear', function resultClear(e) {
-			$('#address_ok').val('0');
-		});
-		placesAutocomplete.on('change', function resultSelected(e) {
-			$('#vads_cust_address').val(e.suggestion.name);
-			$('#vads_cust_city').val(e.suggestion.city);
-			$('#vads_cust_zip').val(e.suggestion.postcode);
-			$('#vads_cust_state').val(e.suggestion.administrative);
-			$('#country').val(e.suggestion.country);
-			$('#address_ok').val('1');
-			$('#payment_page').validator('validate');
-		});
-		$('#payment_page').validator({
-			custom: {
-				'address': function(e) { 
-					if (Boolean($('#address_ok').val()=='0')) {
-						return "Cette adresse n'est pas valide";
-					}
-				},
-			errors: {
-				'address': "Cette adresse ne semble pas valide"
-				}
-			}
-		});
 		$('#free_amount').on('input', function () {
 			var don=parseInt($(this).val());
 			if (!!!don) {
@@ -404,7 +374,7 @@ $(document).ready(function(){
 			var utc_timestamp=moment.utc().format('YYYYMMDDHHmmss');
 			$('#vads_trans_date').val(utc_timestamp);
 			$.post("https://api.democratech.co/v1/payment/transaction",{
-				'email':$('#donateur_email').val(),
+				'vads_cust_email':$('#vads_cust_email').val(),
 				'vads_action_mode':$('#vads_action_mode').val(),
 				'vads_amount':$('#vads_amount').val(),
 				'vads_ctx_mode':$('#vads_ctx_mode').val(),
@@ -431,7 +401,7 @@ $(document).ready(function(){
 				'vads_cust_state':$('#vads_cust_state').val(),
 				'vads_capture_delay':$('#vads_capture_delay').val(),
 				'vads_validation_mode':$('#vads_validation_mode').val(),
-				'country':$('#country').val()
+				'vads_cust_country':$('#vads_cust_country').val()
 			})
 			.done(function(data) {
 				var data=JSON.parse(data);

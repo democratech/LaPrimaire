@@ -73,6 +73,9 @@ span.goalAmount {
 	border: 0px solid #527bdd;
 	background-color: rgba(82,123,221,0.2);
 }
+.control-label {
+	font-size: 13px;
+}
 </style>
 
     <header id="page-top">
@@ -286,20 +289,299 @@ span.goalAmount {
 						</div>
 					</div>
 					<div class="form-group has-feedback">
-						<label for="donateur_email" class="col-sm-2 control-label">Email</label>
+						<label for="vads_cust_email" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" name="vads_cust_email" id="donateur_email" placeholder="Votre email" required>
+							<input type="email" class="form-control" name="vads_cust_email" id="vads_cust_email" placeholder="Votre email" required>
 							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 						</div>
 					</div>
 					<div class="form-group has-feedback">
+						<label for="vads_cust_address" class="col-sm-2 control-label">Adresse postale</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="vads_cust_address" name="vads_cust_address" placeholder="Nom et numéro de votre rue" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="vads_cust_zip" class="col-sm-2 control-label">Code postal</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="vads_cust_zip" name="vads_cust_zip" placeholder="Code postal" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="vads_cust_city" class="col-sm-2 control-label">Ville</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="vads_cust_city" name="vads_cust_city" placeholder="Ville" required>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="vads_cust_state" class="col-sm-2 control-label">Région</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="vads_cust_state" name="vads_cust_state" placeholder="(optionnel)">
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="vads_cust_country" class="col-sm-2 control-label">Pays</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="vads_cust_country" name="vads_cust_country">
+								<option value="FR">FRANCE</option>
+								<option value="MQ">MARTINIQUE</option>
+								<option value="GP">GUADELOUPE</option>
+								<option value="RE">LA REUNION</option>
+								<option value="PF">POLYNESIE FRANCAISE</option>
+								<option value="NC">NOUVELLE-CALEDONIE</option>
+								<option value="PM">SAINT-PIERRE-ET-MIQUELON</option>
+<option value="AF">AFGHANISTAN</option>
+<option value="ZA">AFRIQUE DU SUD</option>
+<option value="AL">ALBANIE</option>
+<option value="DZ">ALGERIE</option>
+<option value="DE">ALLEMAGNE</option>
+<option value="AD">ANDORRE</option>
+<option value="AO">ANGOLA</option>
+<option value="AI">ANGUILLA</option>
+<option value="AG">ANTIGUA-ET-BARBUDA</option>
+<option value="AN">ANTILLES NEERLANDAISES</option>
+<option value="SA">ARABIE SAOUDITE</option>
+<option value="AR">ARGENTINE</option>
+<option value="AM">ARMENIE</option>
+<option value="AW">ARUBA</option>
+<option value="AU">AUSTRALIE</option>
+<option value="AT">AUTRICHE</option>
+<option value="AZ">AZERBAIDJAN</option>
+<option value="BS">BAHAMAS</option>
+<option value="BH">BAHREIN</option>
+<option value="BD">BANGLADESH</option>
+<option value="BB">BARBADE</option>
+<option value="BE">BELGIQUE</option>
+<option value="BZ">BELIZE</option>
+<option value="BJ">BENIN</option>
+<option value="BM">BERMUDES</option>
+<option value="BT">BHOUTAN</option>
+<option value="BY">BIELORUSSIE</option>
+<option value="MM">BIRMANIE</option>
+<option value="BO">BOLIVIE</option>
+<option value="BA">BOSNIE-HERZEGOVINE</option>
+<option value="BW">BOTSWANA</option>
+<option value="BV">BOUVET (ILE)</option>
+<option value="BR">BRESIL</option>
+<option value="BN">BRUNEI</option>
+<option value="BG">BULGARIE</option>
+<option value="BF">BURKINA</option>
+<option value="BI">BURUNDI</option>
+<option value="KY">CAIMANES (ILES)</option>
+<option value="KH">CAMBODGE</option>
+<option value="CM">CAMEROUN</option>
+<option value="CA">CANADA</option>
+<option value="CV">CAP-VERT</option>
+<option value="CF">CENTRAFRICAINE (REPUBLIQUE)</option>
+<option value="CL">CHILI</option>
+<option value="CN">CHINE</option>
+<option value="CX">CHRISTMAS (ILE)</option>
+<option value="CY">CHYPRE</option>
+<option value="CC">COCOS ou KEELING (ILES)</option>
+<option value="CO">COLOMBIE</option>
+<option value="KM">COMORES</option>
+<option value="CG">CONGO</option>
+<option value="CD">CONGO (REPUBLIQUE DEMOCRATIQUE)</option>
+<option value="CK">COOK (ILES)</option>
+<option value="KR">COREE (REPUBLIQUE DE)</option>
+<option value="KP">COREE (REPUBLIQUE POPULAIRE DEMOCRATIQUE DE)</option>
+<option value="CR">COSTA RICA</option>
+<option value="CI">COTE D'IVOIRE</option>
+<option value="HR">CROATIE</option>
+<option value="CU">CUBA</option>
+<option value="DK">DANEMARK</option>
+<option value="DJ">DJIBOUTI</option>
+<option value="DO">DOMINICAINE (REPUBLIQUE)</option>
+<option value="DM">DOMINIQUE</option>
+<option value="EG">EGYPTE</option>
+<option value="SV">EL SALVADOR</option>
+<option value="AE">EMIRATS ARABES UNIS</option>
+<option value="EC">EQUATEUR</option>
+<option value="ER">ERYTHREE</option>
+<option value="ES">ESPAGNE</option>
+<option value="EE">ESTONIE</option>
+<option value="US">ETATS-UNIS</option>
+<option value="ET">ETHIOPIE</option>
+<option value="MK">EX-REPUBLIQUE YOUGOSLAVE DE MACEDOINE</option>
+<option value="FO">FEROE (ILES)</option>
+<option value="FJ">FIDJI</option>
+<option value="FI">FINLANDE</option>
+<option value="FR">FRANCE</option>
+<option value="GA">GABON</option>
+<option value="GM">GAMBIE</option>
+<option value="GE">GEORGIE</option>
+<option value="GS">GEORGIE DU SUD ET LES ILES SANDWICH DU SUD</option>
+<option value="GH">GHANA</option>
+<option value="GI">GIBRALTAR</option>
+<option value="GR">GRECE</option>
+<option value="GD">GRENADE</option>
+<option value="GL">GROENLAND</option>
+<option value="GP">GUADELOUPE</option>
+<option value="GU">GUAM</option>
+<option value="GT">GUATEMALA</option>
+<option value="GN">GUINEE</option>
+<option value="GW">GUINEE-BISSAU</option>
+<option value="GQ">GUINEE EQUATORIALE</option>
+<option value="GY">GUYANA</option>
+<option value="GF">GUYANE</option>
+<option value="HT">HAITI</option>
+<option value="HM">HEARD ET MACDONALD (ILES)</option>
+<option value="HN">HONDURAS</option>
+<option value="HK">HONG-KONG</option>
+<option value="HU">HONGRIE</option>
+<option value="IN">INDE</option>
+<option value="ID">INDONESIE</option>
+<option value="IR">IRAN</option>
+<option value="IQ">IRAQ</option>
+<option value="IE">IRLANDE, OU EIRE</option>
+<option value="IS">ISLANDE</option>
+<option value="IL">ISRAEL</option>
+<option value="IT">ITALIE</option>
+<option value="JM">JAMAIQUE</option>
+<option value="JP">JAPON</option>
+<option value="JO">JORDANIE</option>
+<option value="KZ">KAZAKHSTAN</option>
+<option value="KE">KENYA</option>
+<option value="KG">KIRGHIZISTAN</option>
+<option value="KI">KIRIBATI</option>
+<option value="KW">KOWEIT</option>
+<option value="LA">LAOS</option>
+<option value="RE">LA REUNION</option>
+<option value="LS">LESOTHO</option>
+<option value="LV">LETTONIE</option>
+<option value="LB">LIBAN</option>
+<option value="LR">LIBERIA</option>
+<option value="LY">LIBYE</option>
+<option value="LI">LIECHTENSTEIN</option>
+<option value="LT">LITUANIE</option>
+<option value="LU">LUXEMBOURG</option>
+<option value="MO">MACAO</option>
+<option value="MG">MADAGASCAR</option>
+<option value="MY">MALAISIE</option>
+<option value="MW">MALAWI</option>
+<option value="MV">MALDIVES</option>
+<option value="ML">MALI</option>
+<option value="FK">MALOUINES, OU FALKLAND (ILES)</option>
+<option value="MT">MALTE</option>
+<option value="MP">MARIANNES DU NORD (ILES)</option>
+<option value="MA">MAROC</option>
+<option value="MH">MARSHALL (ILES)</option>
+<option value="MQ">MARTINIQUE</option>
+<option value="MU">MAURICE</option>
+<option value="MR">MAURITANIE</option>
+<option value="YT">MAYOTTE</option>
+<option value="MX">MEXIQUE</option>
+<option value="FM">MICRONESIE (ETATS FEDERES DE)</option>
+<option value="MD">MOLDAVIE</option>
+<option value="MC">MONACO</option>
+<option value="MN">MONGOLIE</option>
+<option value="ME">MONTENEGRO</option>
+<option value="MS">MONTSERRAT</option>
+<option value="MZ">MOZAMBIQUE</option>
+<option value="NA">NAMIBIE</option>
+<option value="NR">NAURU</option>
+<option value="NP">NEPAL</option>
+<option value="NI">NICARAGUA</option>
+<option value="NE">NIGER</option>
+<option value="NG">NIGERIA</option>
+<option value="NU">NIUE</option>
+<option value="NF">NORFOLK (ILE)</option>
+<option value="NO">NORVEGE</option>
+<option value="NC">NOUVELLE-CALEDONIE</option>
+<option value="NZ">NOUVELLE-ZELANDE</option>
+<option value="IO">OCEAN INDIEN (TERRITOIRE BRITANNIQUE DE L')</option>
+<option value="OM">OMAN</option>
+<option value="UG">OUGANDA</option>
+<option value="UZ">OUZBEKISTAN</option>
+<option value="PK">PAKISTAN</option>
+<option value="PW">PALAOS (ILES)</option>
+<option value="PS">PALESTINE (Etat de)</option>
+<option value="PA">PANAMA</option>
+<option value="PG">PAPOUASIE-NOUVELLE-GUINEE</option>
+<option value="PY">PARAGUAY</option>
+<option value="NL">PAYS-BAS</option>
+<option value="PE">PEROU</option>
+<option value="PH">PHILIPPINES</option>
+<option value="PL">POLOGNE</option>
+<option value="PF">POLYNESIE FRANCAISE</option>
+<option value="PR">PORTO RICO</option>
+<option value="PT">PORTUGAL</option>
+<option value="QA">QATAR</option>
+<option value="RO">ROUMANIE</option>
+<option value="GB">ROYAUME-UNI</option>
+<option value="RU">RUSSIE</option>
+<option value="RW">RWANDA</option>
+<option value="EH">SAHARA OCCIDENTAL</option>
+<option value="KN">SAINT-CHRISTOPHE-ET-NIEVES</option>
+<option value="SH">SAINTE HELENE, ASCENSION ET TRISTAN DA CUNHA</option>
+<option value="LC">SAINTE-LUCIE</option>
+<option value="SM">SAINT-MARIN</option>
+<option value="PM">SAINT-PIERRE-ET-MIQUELON</option>
+<option value="VC">SAINT-VINCENT-ET-LES GRENADINES</option>
+<option value="SB">SALOMON (ILES)</option>
+<option value="AS">SAMOA AMERICAINES</option>
+<option value="WS">SAMOA OCCIDENTALES</option>
+<option value="ST">SAO TOME-ET-PRINCIPE</option>
+<option value="SN">SENEGAL</option>
+<option value="RS">SERBIE</option>
+<option value="SC">SEYCHELLES</option>
+<option value="SL">SIERRA LEONE</option>
+<option value="SG">SINGAPOUR</option>
+<option value="SK">SLOVAQUIE</option>
+<option value="SI">SLOVENIE</option>
+<option value="SO">SOMALIE</option>
+<option value="SD">SOUDAN</option>
+<option value="LK">SRI LANKA</option>
+<option value="SE">SUEDE</option>
+<option value="CH">SUISSE</option>
+<option value="SR">SURINAME</option>
+<option value="SJ">SVALBARD et ILE JAN MAYEN</option>
+<option value="SZ">SWAZILAND</option>
+<option value="SY">SYRIE</option>
+<option value="TJ">TADJIKISTAN</option>
+<option value="TW">TAIWAN</option>
+<option value="TZ">TANZANIE</option>
+<option value="TD">TCHAD</option>
+<option value="CZ">TCHEQUE (REPUBLIQUE)</option>
+<option value="TF">TERRES AUSTRALES FRANCAISES</option>
+<option value="TH">THAILANDE</option>
+<option value="TG">TOGO</option>
+<option value="TK">TOKELAU</option>
+<option value="TO">TONGA</option>
+<option value="TT">TRINITE-ET-TOBAGO</option>
+<option value="TN">TUNISIE</option>
+<option value="TM">TURKMENISTAN</option>
+<option value="TC">TURKS ET CAIQUES (ILES)</option>
+<option value="TR">TURQUIE</option>
+<option value="TV">TUVALU</option>
+<option value="UA">UKRAINE</option>
+<option value="UY">URUGUAY</option>
+<option value="VU">VANUATU</option>
+<option value="VA">VATICAN, ou SAINT-SIEGE</option>
+<option value="VE">VENEZUELA</option>
+<option value="VG">VIERGES BRITANNIQUES (ILES)</option>
+<option value="VI">VIERGES DES ETATS-UNIS (ILES)</option>
+<option value="VN">VIET NAM</option>
+<option value="WF">WALLIS-ET-FUTUNA</option>
+<option value="YE">YEMEN</option>
+<option value="ZM">ZAMBIE</option>
+<option value="ZW">ZIMBABWE</option>
+							</select>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+						</div>
+					</div>
+					<!--<div class="form-group has-feedback">
 						<label for="address" class="col-sm-2 control-label">Adresse</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="address" placeholder="Votre adresse" data-address="address" required>
 							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 							<span class="help-block with-errors"></span>
 						</div>
-					</div>
+					</div>-->
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" name="adherer" class="btn btn-primary blue">Procéder au paiement</button>
@@ -325,14 +607,14 @@ span.goalAmount {
 					<input type="hidden" id="vads_language" name="vads_language" value="fr" />
 					<input type="hidden" id="vads_theme_config" name="vads_theme_config" value="CANCEL_FOOTER_MSG_RETURN=Annuler;SUCCESS_FOOTER_MSG_RETURN=Retour" />
 					<input type="hidden" id="vads_order_id" name="vads_order_id" value="" />
-					<input type="hidden" id="vads_cust_email" name="vads_cust_email" value="" />
 					<input type="hidden" id="signature" name="signature" value=""/>
-					<input type="hidden" id="vads_cust_address" name="vads_cust_address" value=""/>
+					<!--<input type="hidden" id="vads_cust_address" name="vads_cust_address" value=""/>
+					<input type="hidden" id="vads_cust_email" name="vads_cust_email" value="" />
 					<input type="hidden" id="vads_cust_city" name="vads_cust_city" value=""/>
 					<input type="hidden" id="vads_cust_zip" name="vads_cust_zip" value=""/>
 					<input type="hidden" id="vads_cust_state" name="vads_cust_state" value=""/>
 					<input type="hidden" id="country" name="country" value=""/>
-					<input type="hidden" id="address_ok" name="address_ok" value="0"/>
+					<input type="hidden" id="address_ok" name="address_ok" value="0"/>-->
 				</form>
 			  </div>
 		    </div>
