@@ -349,9 +349,9 @@ $(document).ready(function(){
 		var email=getURLParameter('e');
 		var firstname=getURLParameter('f');
 		var lastname=getURLParameter('l');
-		$('#vads_cust_email').val(email);
-		$('#vads_cust_first_name').val(firstname);
-		$('#vads_cust_last_name').val(lastname);
+		if (email!="") { $('#vads_cust_email').val(email); }
+		if (firstname!="") { $('#vads_cust_first_name').val(firstname); }
+		if (lastname!="") { $('#vads_cust_last_name').val(lastname); }
 		$('#free_amount').on('input', function () {
 			var don=parseInt($(this).val());
 			if (!!!don) {
@@ -412,7 +412,7 @@ $(document).ready(function(){
 				$('form').submit();
 			})
 			.fail(function(data) {
-				alert("Une erreur est survenue. Merci de nous reporter le problème.");
+				alert("Une erreur est survenue. Merci d'avance de nous reporter le problème à contact@laprimaire.org");
 			});
 		});
 		var amount=readCookie('donations');
