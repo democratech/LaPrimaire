@@ -64,7 +64,7 @@ $(document).ready(function() {
 				var percentage_str = Math.round(percentage);
 				$('#fundraising_bar').goalProgress({
 					goalAmount: 100,
-					currentAmount: percentage,
+					currentAmount: 100,
 					textBefore: '',
 					textAfter: " % de l'objectif de 100.000 citoyens atteint"
 				});
@@ -84,7 +84,7 @@ $(document).ready(function() {
 			var percentage_str = Math.round(percentage);
 			$('#fundraising_bar').goalProgress({
 				goalAmount: 100,
-				currentAmount: percentage,
+				currentAmount: 100,
 				textBefore: '',
 				textAfter: " % de l'objectif de 100.000 citoyens atteint"
 			});
