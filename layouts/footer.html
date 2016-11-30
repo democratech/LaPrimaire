@@ -367,7 +367,13 @@ $(document).ready(function(){
 			}
 		});
 		$('.btn.donate').on('click', function () {
-			$('#vads_amount').val(parseInt($(this).attr('total'))*100);
+			var total=parseInt($(this).attr('total'));
+			$('#vads_amount').val(total*100);
+			if (total<50) {
+				$('#vads_threeds_mpi').val(2);
+			} else {
+				$('#vads_threeds_mpi').val(0);
+			}
 		});
 		$('button[type="submit"]').click(function(e){
 			e.preventDefault();
@@ -401,7 +407,12 @@ $(document).ready(function(){
 				'vads_cust_state':$('#vads_cust_state').val(),
 				'vads_capture_delay':$('#vads_capture_delay').val(),
 				'vads_validation_mode':$('#vads_validation_mode').val(),
-				'vads_cust_country':$('#vads_cust_country').val()
+				'vads_cust_country':$('#vads_cust_country').val(),
+				'vads_threeds_mpi':$('#vads_threeds_mpi').val(),
+				'vads_url_success':$('#vads_url_success').val(),
+				'vads_url_error':$('#vads_url_error').val(),
+				'vads_url_refused':$('#vads_url_refused').val(),
+				'vads_url_cancel':$('#vads_url_cancel').val()
 			})
 			.done(function(data) {
 				var data=JSON.parse(data);
