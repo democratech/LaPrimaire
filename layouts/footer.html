@@ -391,6 +391,7 @@ $(document).ready(function(){
 			e.preventDefault();
 			var utc_timestamp=moment.utc().format('YYYYMMDDHHmmss');
 			$('#vads_trans_date').val(utc_timestamp);
+			//$.post("https://laprimaire.ngrok.io/v1/payment/transaction",{
 			$.post("https://api.democratech.co/v1/payment/transaction",{
 				'vads_cust_email':$('#vads_cust_email').val(),
 				'vads_action_mode':$('#vads_action_mode').val(),
