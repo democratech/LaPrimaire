@@ -349,9 +349,15 @@ $(document).ready(function(){
 		var email=getURLParameter('e');
 		var firstname=getURLParameter('f');
 		var lastname=getURLParameter('l');
+		var address=getURLParameter('a');
+		var zipcode=getURLParameter('z');
+		var ville=getURLParameter('v');
 		if (email!="") { $('#vads_cust_email').val(email); }
 		if (firstname!="") { $('#vads_cust_first_name').val(firstname); }
 		if (lastname!="") { $('#vads_cust_last_name').val(lastname); }
+		if (address!="") { $('#vads_cust_address').val(address); }
+		if (zipcode!="") { $('#vads_cust_zip').val(zipcode); }
+		if (ville!="") { $('#vads_cust_city').val(ville); }
 		$('#free_amount').on('input', function () {
 			var don=parseInt($(this).val());
 			if (!!!don) {
@@ -435,20 +441,20 @@ $(document).ready(function(){
 				createCookie('donations',amount);
 				createCookie('nb_adherents',donateurs);
 				$('#financement_bar').goalProgress({
-					goalAmount: 10000,
-					currentAmount: donateurs,
+					goalAmount: 300000,
+					currentAmount: amount,
 					textBefore: '',
-					textAfter: ''
+					textAfter: '€'
 				});
 				$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
 
 			});
 		} else {
 			$('#financement_bar').goalProgress({
-				goalAmount: 10000,
-				currentAmount: donateurs,
+				goalAmount: 300000,
+				currentAmount: amount,
 				textBefore: '',
-				textAfter: ''
+				textAfter: '€'
 			});
 			$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
 		}
