@@ -375,10 +375,16 @@ $(document).ready(function(){
 		$('.btn.donate').on('click', function () {
 			var total=parseInt($(this).attr('total'));
 			$('#vads_amount').val(total*100);
-			if (total<50) {
-				$('#vads_threeds_mpi').val(2);
+			if (total<50) { $('#vads_threeds_mpi').val(2);
+			} else { $('#vads_threeds_mpi').val(0); }
+			if (total>=30) {
+				$('#adherer_oui').prop("checked",true);
+				$('#adherer_non').prop("checked",false);
+				$('#question_adhesion').show();
 			} else {
-				$('#vads_threeds_mpi').val(0);
+				$('#question_adhesion').hide();
+				$('#adherer_oui').prop("checked",false);
+				$('#adherer_non').prop("checked",true);
 			}
 		});
 		$('button[type="submit"]').click(function(e){
@@ -418,7 +424,8 @@ $(document).ready(function(){
 				'vads_url_success':$('#vads_url_success').val(),
 				'vads_url_error':$('#vads_url_error').val(),
 				'vads_url_refused':$('#vads_url_refused').val(),
-				'vads_url_cancel':$('#vads_url_cancel').val()
+				'vads_url_cancel':$('#vads_url_cancel').val(),
+				'adhesion':$('input[name=adherer]:checked').val()
 			})
 			.done(function(data) {
 				var data=JSON.parse(data);
