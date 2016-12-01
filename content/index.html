@@ -19,17 +19,31 @@ div.lettre h3 {
 }
 div.lettre p { font-size:16px; }
 .press-logo { margin-bottom:5px; }
+#donations_bar {
+	border-top: 4px solid white;
+}
 .supporteurs .goalProgress {
 	background: white;
-	width: 98%;
+	width: 100%;
+	background-color: #ccc;
 	margin: 0 auto;
 	height:35px;
 }
+.supporteurs div.indicatorBar {
+	border-left: 2px solid white;
+	height: 35px;
+	float:right;
+	margin-top: -37px;
+	color:white;
+	letter-spacing: -1px;
+	font-weight: 400;
+	padding: 7px;
+	background-image: linear-gradient(to right, #56d840, #76f860);
+}
 .supporteurs div.progressBar {
-	background: #56d840;
 	overflow:visible;
 	color: #5e5e5e;
-	height:35px;
+	height:37px;
 	text-align:center;
 	font-size: 17px;
 	letter-spacing: -1px;
@@ -38,7 +52,9 @@ div.lettre p { font-size:16px; }
 	display: block;
 	width: 20px;
 }
-/*.thumbnail { min-height: 346px; }*/
+.supporteurs.donations div.progressBar {
+	background-image: linear-gradient(to right, #f98d8c,#d91d1c) !important;
+}
 .photo {
 	width: 100%;
 	height: 100%;
@@ -69,18 +85,12 @@ div.lettre p { font-size:16px; }
 .caption { text-align:justify; }
 #fundraising_bar {
 	margin-top:70px;
-	padding:2px 0px;
+	padding:0px;
 	/*background-color: #d91d1c;*/
-	background-color: #527bdd;
-}
-.supporteurs .goalProgress {
-	width: 100%;
-	background-color: #ddd;
+	/*background-color: #527bdd;*/
 }
 .supporteurs div.progressBar {
-	/*background-image: linear-gradient(to right, white,#56d840) !important;*/
 	background-image: linear-gradient(to right,#83abfd,#527bdd) !important;
-	/*background-image: linear-gradient(to right, white,#d91d1c) !important;*/
 	text-align:right;
 	font-weight: normal;
 	font-size:18px;
@@ -270,6 +280,7 @@ div#counter h2 {
     <!-- Header -->
     <header>
     <div id="fundraising_bar" class="supporteurs"></div>
+    <div id="donations_bar" class="supporteurs donations"></div>
     <div id="header_overlay" class="white" style="border-bottom: 2px solid #d91d1c;">
 	<div class="container">
 	    <div class="intro-text" style="padding-bottom:0px;">
@@ -281,7 +292,7 @@ div#counter h2 {
 		<div style="font-size:20px;font-style:italic;width:60%;text-align:justify;margin: 0 auto;" class="visible-lg-block">&laquo;&nbsp;Aujourd'hui en France, <b>0,5%</b> de la population (les partis politiques) désigne les candidats aux élections et élabore les programmes. Pour répondre à ce problème démocratique, LaPrimaire.org organise la 1ère primaire en ligne 100% démocratique et ouverte qui permet aux citoyens de choisir leurs candidat(e)s et de co-construire les projets politiques. Un seul objectif : faire émerger collectivement la meilleure candidature citoyenne pour 2017&nbsp;&raquo;</div>
 		<div id="nb_citoyens_app"></div>
 		<div style="margin:20px auto 0px auto;width:100%;">
-			<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl blue joinus_action" title="Je veux voter">Je veux voter</a>
+			<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl blue joinus_action" title="Je veux voter">Je veux voter</a> <a href="/adherer/" style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" class="btn btn-xl red donate-link" title="Faire un don">Faire un don</a>
 			<!--<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl red joinus_action" title="Je participe">Je participe</a>-->
 		</div>
 	    </div>

@@ -63,8 +63,9 @@ $(document).ready(function() {
 				var percentage = supporteurs / 1000;
 				var percentage_str = Math.round(percentage);
 				$('#fundraising_bar').goalProgress({
-					goalAmount: 100,
-					currentAmount: 100,
+					goalAmount: percentage,
+					currentAmount: percentage,
+					indicatorAmount: 100,
 					textBefore: '',
 					textAfter: " % de l'objectif de 100.000 citoyens atteint"
 				});
@@ -83,10 +84,36 @@ $(document).ready(function() {
 			var percentage = supporteurs / 1000;
 			var percentage_str = Math.round(percentage);
 			$('#fundraising_bar').goalProgress({
-				goalAmount: 100,
-				currentAmount: 100,
+				goalAmount: percentage,
+				currentAmount: percentage,
+				indicatorAmount: 100,
 				textBefore: '',
 				textAfter: " % de l'objectif de 100.000 citoyens atteint"
+			});
+		}
+	}
+	if ($('#donations_bar')!=null) {
+		var amount=readCookie('donations');
+		var donateurs=readCookie('nb_adherents');
+		if (amount==null || donateurs==null) {
+			$.get("https://api.democratech.co/v1/payment/total", function( data ){
+				amount=data['total'];
+				donateurs=data['nb_adherents'];
+				createCookie('donations',amount);
+				createCookie('nb_adherents',donateurs);
+				$('#donations_bar').goalProgress({
+					goalAmount: 300000,
+					currentAmount: amount,
+					textBefore: '',
+					textAfter: '€ de dons récoltés. Objectif : 300.000€'
+				});
+			});
+		} else {
+			$('#donations_bar').goalProgress({
+				goalAmount: 300000,
+				currentAmount: amount,
+				textBefore: '',
+				textAfter: '€ de dons récoltés. Objectif : 300.000€'
 			});
 		}
 	}
