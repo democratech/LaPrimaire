@@ -386,6 +386,7 @@ $(document).ready(function(){
 				$('#adherer_oui').prop("checked",false);
 				$('#adherer_non').prop("checked",true);
 			}
+			ga('send','event','button','click','Je donne');
 		});
 		$('button[type="submit"]').click(function(e){
 			e.preventDefault();
@@ -453,7 +454,7 @@ $(document).ready(function(){
 					textBefore: '',
 					textAfter: '€'
 				});
-				$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
+				$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" donateurs");
 
 			});
 		} else {
@@ -463,7 +464,7 @@ $(document).ready(function(){
 				textBefore: '',
 				textAfter: '€'
 			});
-			$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" adhérents");
+			$('#fundraising_figures').html(amount+" € dons<br/>"+donateurs+" donateurs");
 		}
 });
 <% elsif @item.identifier.chop=='/qualifies' %>
