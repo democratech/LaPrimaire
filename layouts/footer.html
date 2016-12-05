@@ -368,7 +368,7 @@ $(document).ready(function(){
 			} else {
 				$('#free_amount').val(don.toString());
 				$('#free_amount_btn').attr('total',don.toString());
-				$('#free_amount_btn').html((don/3).toFixed(2).toString()+'€');
+				$('#free_amount_btn').html((don*0.34).toFixed(2).toString()+'€');
 				$('#free_amount_btn').removeClass('disabled');
 			}
 		});
