@@ -427,7 +427,8 @@ $(document).ready(function(){
 				'vads_url_error':$('#vads_url_error').val(),
 				'vads_url_refused':$('#vads_url_refused').val(),
 				'vads_url_cancel':$('#vads_url_cancel').val(),
-				'adhesion':$('input[name=adherer]:checked').val()
+				'adhesion':$('input[name=adherer]:checked').val(),
+				'candidate_id':$('#candidate_id').val()
 			})
 			.done(function(data) {
 				var data=JSON.parse(data);
