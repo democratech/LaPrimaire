@@ -341,6 +341,134 @@ $(document).ready(function(){
 	    </div>
     </noscript>
     <script>
+<% elsif @item.identifier.chop=='/don-charlotte-marchandise' %>
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+<script>
+$(document).ready(function(){
+		var email=getURLParameter('e');
+		var firstname=getURLParameter('f');
+		var lastname=getURLParameter('l');
+		var address=getURLParameter('a');
+		var zipcode=getURLParameter('z');
+		var ville=getURLParameter('v');
+		if (email!="") { $('#vads_cust_email').val(email); }
+		if (firstname!="") { $('#vads_cust_first_name').val(firstname); }
+		if (lastname!="") { $('#vads_cust_last_name').val(lastname); }
+		if (address!="") { $('#vads_cust_address').val(address); }
+		if (zipcode!="") { $('#vads_cust_zip').val(zipcode); }
+		if (ville!="") { $('#vads_cust_city').val(ville); }
+		$('#free_amount').on('input', function () {
+			var don=parseInt($(this).val());
+			if (!!!don) {
+				$('#free_amount').val("0");
+				$('#free_amount_btn').attr('total',"0");
+				$('#free_amount_btn').html('0€');
+				$('#free_amount_btn').addClass('disabled');
+			} else {
+				$('#free_amount').val(don.toString());
+				$('#free_amount_btn').attr('total',don.toString());
+				$('#free_amount_btn').html((don*0.34).toFixed(2).toString()+'€');
+				$('#free_amount_btn').removeClass('disabled');
+			}
+		});
+		$('.btn.donate').on('click', function () {
+			var total=parseInt($(this).attr('total'));
+			$('#vads_amount').val(total*100);
+			if (total<=500) { $('#vads_threeds_mpi').val(2);
+			} else { $('#vads_threeds_mpi').val(0); }
+			if (total>=30) {
+				$('#adherer_oui').prop("checked",true);
+				$('#adherer_non').prop("checked",false);
+				$('#question_adhesion').show();
+			} else {
+				$('#question_adhesion').hide();
+				$('#adherer_oui').prop("checked",false);
+				$('#adherer_non').prop("checked",true);
+			}
+			ga('send','event','button','click','Je donne');
+		});
+		$('button[type="submit"]').click(function(e){
+			e.preventDefault();
+			var utc_timestamp=moment.utc().format('YYYYMMDDHHmmss');
+			$('#vads_trans_date').val(utc_timestamp);
+			$.post("https://api.democratech.co/v1/payment/transaction",{
+				'vads_cust_email':$('#vads_cust_email').val(),
+				'vads_action_mode':$('#vads_action_mode').val(),
+				'vads_amount':$('#vads_amount').val(),
+				'vads_ctx_mode':$('#vads_ctx_mode').val(),
+				'vads_currency':$('#vads_currency').val(),
+				'vads_page_action':$('#vads_page_action').val(),
+				'vads_payment_config':$('#vads_payment_config').val(),
+				'vads_site_id':$('#vads_site_id').val(),
+				'vads_trans_date':$('#vads_trans_date').val(),
+				'vads_trans_id':$('#vads_trans_id').val(),
+				'vads_version':$('#vads_version').val(),
+				'vads_return_mode':$('#vads_return_mode').val(),
+				'vads_language':$('#vads_language').val(),
+				'vads_return_mode':$('#vads_return_mode').val(),
+				'vads_theme_config':$('#vads_theme_config').val(),
+				'vads_redirect_error_message':$('#vads_redirect_error_message').val(),
+				'vads_redirect_error_timeout':$('#vads_redirect_error_timeout').val(),
+				'vads_redirect_success_message':$('#vads_redirect_success_message').val(),
+				'vads_redirect_success_timeout':$('#vads_redirect_success_timeout').val(),
+				'vads_cust_first_name':$('#vads_cust_first_name').val(),
+				'vads_cust_last_name':$('#vads_cust_last_name').val(),
+				'vads_cust_address':$('#vads_cust_address').val(),
+				'vads_cust_zip':$('#vads_cust_zip').val(),
+				'vads_cust_city':$('#vads_cust_city').val(),
+				'vads_cust_state':$('#vads_cust_state').val(),
+				'vads_capture_delay':$('#vads_capture_delay').val(),
+				'vads_validation_mode':$('#vads_validation_mode').val(),
+				'vads_cust_country':$('#vads_cust_country').val(),
+				'vads_threeds_mpi':$('#vads_threeds_mpi').val(),
+				'vads_url_success':$('#vads_url_success').val(),
+				'vads_url_error':$('#vads_url_error').val(),
+				'vads_url_refused':$('#vads_url_refused').val(),
+				'vads_url_cancel':$('#vads_url_cancel').val(),
+				'adhesion':$('input[name=adherer]:checked').val(),
+				'candidate_id':$('#candidate_id').val()
+			})
+			.done(function(data) {
+				var data=JSON.parse(data);
+				$('#signature').val(data['signature']);
+				$('#vads_trans_id').val(data['transaction_id']);
+				$('#vads_order_id').val(data['order_id']);
+				$('#vads_cust_email').val(data['email']);
+				$('form').submit();
+			})
+			.fail(function(data) {
+				alert("Une erreur est survenue. Merci d'avance de nous reporter le problème à contact@laprimaire.org");
+			});
+		});
+		var amount=readCookie('donations_cm');
+		var donateurs=readCookie('nb_adherents_cm');
+		if (amount==null || donateurs==null) {
+			$.get("https://api.democratech.co/v1/payment/candidate/663402096368", function( data ){
+				amount=data['total'];
+				donateurs=data['nb_adherents'];
+				createCookie('donations_cm',amount);
+				createCookie('nb_adherents_cm',donateurs);
+				$('#financement_bar_cm').goalProgress({
+					goalAmount: 300000,
+					currentAmount: amount,
+					textBefore: '',
+					textAfter: '€'
+				});
+				$('#fundraising_figures_cm').html(amount+" € dons<br/>"+donateurs+" donateurs");
+
+			});
+		} else {
+			$('#financement_bar_cm').goalProgress({
+				goalAmount: 300000,
+				currentAmount: amount,
+				textBefore: '',
+				textAfter: '€'
+			});
+			$('#fundraising_figures_cm').html(amount+" € dons<br/>"+donateurs+" donateurs");
+		}
+});
 <% elsif @item.identifier.chop=='/adherer' %>
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
