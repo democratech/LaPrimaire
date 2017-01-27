@@ -246,10 +246,11 @@ time {
 .separation {
 	border-top: 2px solid #8c8b8b;
 	text-align: center;
-	margin-bottom:30px;
+	margin-bottom:40px;
 }
 .separation.a-venir::after { content: 'Les dernières actualités de LaPrimaire.org'; }
 .separation.les-candidats::after { content: 'Les 5 candidat(e)s finalistes'; }
+.separation.winner::after { content: 'La candidate élue'; }
 .separation::after {
 	display: inline-block;
 	position: relative;
@@ -272,7 +273,80 @@ div#counter h2 {
 	color:#5e5e5e;
 	font-size: 20px;
 }
-
+ul.social_buttons > li{
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.intro-heading-candidate span {
+	color: #d91d1c;
+	font-weight:bold;
+}
+.intro-heading-candidate {
+	font-size: 24px !important;
+	color: #527bdd;
+}
+.intro-lead-in-candidate {
+	font-size: 16px !important;
+	line-height: 20px !important;
+}
+.photo-candidate {
+	max-width: 230px;
+	margin:0 auto;
+	height: 100%;
+	max-height: 310px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.hero-feature-candidate h3 {
+	font-size: 22px;
+	margin-top: 10px;
+}
+.hero-feature-candidate h3 span { color: #d91d1c; font-weight: bold; }
+.hero-feature-candidate p { font-size: 13px; }
+.hero-feature-candidate img { height: 300px; }
+.photo-candidate img {
+	min-height: 100%;
+	min-width: 100%;
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	/* IE 5-7 */
+	filter: alpha(opacity=0);
+	/* modern browsers */
+	opacity: 0;
+}
+.hero-feature-candidate .blue:hover { background-color:#d91d1c; border-color:red;}
+/*
+.caption h3 { text-align:center; }
+.caption { text-align:justify; }
+*/
+.nohover:hover {
+	background:none !important;
+}
+.fa-stack-2x {
+	font-size: 42px;
+	padding:5px;
+}
+.fa-stack-1x {
+	font-size: 24px;
+	top: -2px;
+}
+.fa-stack.bleu { 
+	color:#527bdd;
+	line-height:10px;
+	height:12px;
+}
+.fa-stack.rouge { color:#d91d1c; }
+.row {
+	margin-right:0px;
+	margin-left:0px;
+}
+@media (min-width:980px) {
+	.intro-text-candidate {
+		padding-top:15px !important;
+		padding-bottom:0px !important;
+	}
+}
 -->
 </style>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
@@ -291,23 +365,88 @@ div#counter h2 {
 		<div style="font-size:18px;font-style:italic;width:70%;text-align:justify;margin: 0 auto;" class="visible-md-block">&laquo;&nbsp;Aujourd'hui en France, <b>0,5%</b> de la population (les partis politiques) désigne les candidats aux élections et élabore les programmes. Pour répondre à ce problème démocratique, LaPrimaire.org organise la 1ère primaire en ligne 100% démocratique et ouverte qui permet aux citoyens de choisir leurs candidat(e)s et de co-construire les projets politiques. Un seul objectif : faire émerger collectivement la meilleure candidature citoyenne pour 2017&nbsp;&raquo;</div>
 		<div style="font-size:20px;font-style:italic;width:60%;text-align:justify;margin: 0 auto;" class="visible-lg-block">&laquo;&nbsp;Aujourd'hui en France, <b>0,5%</b> de la population (les partis politiques) désigne les candidats aux élections et élabore les programmes. Pour répondre à ce problème démocratique, LaPrimaire.org organise la 1ère primaire en ligne 100% démocratique et ouverte qui permet aux citoyens de choisir leurs candidat(e)s et de co-construire les projets politiques. Un seul objectif : faire émerger collectivement la meilleure candidature citoyenne pour 2017&nbsp;&raquo;</div>
 		<div id="nb_citoyens_app"></div>
-		<div style="margin:20px auto 0px auto;width:100%;">
-			<!--<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl blue joinus_action" title="Voter">Voter</a> <a href="/adherer/" style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" class="btn btn-xl red donate-link" title="Faire un don">Faire un don</a>-->
-			<a style="font-size:28px;font-variant:small-caps;width:250px;cursor:pointer;" data-toggle="modal" data-target="#JoinUsNow" class="btn btn-xl red joinus_action" title="Je participe">Je participe</a>
-		</div>
 	    </div>
 
 	    <div class="row">
 		    <div class="container">
 			    <div id="clock_wrapper">
 				    <div id="clock">
-					    Le 2nd tour est terminé, les résultats sont <a href="https://articles.laprimaire.org/r%C3%A9sultats-du-2nd-tour-de-laprimaire-org-2d61b2ad1394#.vhd1p6orj" target="_blank">en ligne.</a><br/>
+					    Le 2nd tour s'est terminé le 31 décembre 2016, les résultats sont <a href="https://articles.laprimaire.org/r%C3%A9sultats-du-2nd-tour-de-laprimaire-org-2d61b2ad1394#.vhd1p6orj" target="_blank">en ligne.</a><br/>
 				    </div>
 			    </div>
 			    <br/>
 		    </div>
 	    </div>
-
+	    <div class="row">
+		    <hr class="separation winner">
+	    </div>
+        <div class="row" style="margin-bottom:15px;">
+            <div class="col-sm-12 col-xs-12 hero-feature-candidate">
+            <div class="thumbnail" style="margin-bottom:5px;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 hero-feature">
+                        <a href="/qualifie/charlotte-marchandise-franquet" target="_blank">
+                            <div class="photo-candidate background" style="background-image: url('https://s3.eu-central-1.amazonaws.com/laprimaire/663402096368.jpg');">
+                                <img class="background" src="https://s3.eu-central-1.amazonaws.com/laprimaire/663402096368.jpg" alt="Charlotte Marchandise Franquet">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-9 col-sm-12 hero-feature">
+                         <div class="row" style="margin-right:0px;">
+                            <div>
+                                <div class="intro-text-candidate" style="padding-top:5px !important;">
+                                    <div style="margin-bottom:0px;" class="intro-heading-candidate"><a href="/qualifie/charlotte-marchandise-franquet" target="_blank">Charlotte <span>Marchandise</span></a></div>
+                                    <p class="about">42 ans, Formatrice (35 - Ille-et-Vilaine) - <a href="https://articles.laprimaire.org/%C3%A0-propos-de-moi-e5309f8f6e32#.furlhb82h" target="_blank">Lire ma biographie</a></p>
+                                    <div class="intro-lead-in-candidate" style="margin-bottom:10px;">“<i>L'humanisme, la justice sociale et la protection du vivant au cœur d'une démocratie réelle. 
+Dès aujourd'hui, choisissons demain, ensemble.</i>”</div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-4 col-sm-12 hero-feature-candidate">
+                                <span style="font-weight:bold;color:#527bdd;font-size:18px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x bleu"><strong class="fa-stack-1x rouge">1</strong></span><br><span style="font-size:14px;">“<i>2 ans pour une nouvelle constitution par et avec le peuple</i>”</span>
+                            </div>
+                            <div class="col-md-4 col-sm-12 hero-feature-candidate">
+                                <span style="font-weight:bold;color:#527bdd;font-size:18px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x bleu"><strong class="fa-stack-1x rouge">2</strong></span><br><span style="font-size:14px;">“<i>Lutter contre les inégalités : un revenu de base universel</i>”</span>
+                            </div>
+                            <div class="col-md-4 col-sm-12 hero-feature-candidate">
+                                <span style="font-weight:bold;color:#527bdd;font-size:18px;">Priorité</span>&nbsp;<span class="fa-stack fa-2x bleu"><strong class="fa-stack-1x rouge">3</strong></span><br><span style="font-size:14px;">“<i>Transition énergétique écologique économique</i>”</span>
+                            </div>
+                         </div>
+                         <div class="row">
+                            <ul class="social_buttons">
+                                <li><a href="https://articles.laprimaire.org/choisir-demain-un-projet-de-soci%C3%A9t%C3%A9-%C3%A0-construire-ensemble-c23bff3d98e7#.67zxxp9xi" target="_blank" class="btn candidat btn-default btn-xs blue"><i class="fa fa-trello" aria-hidden="true"></i>Présentation</a></li>
+                                <li><a href="https://trello.com/b/achIyXmJ/charlotte-marchandise-franquet" target="_blank" class="btn candidat btn-default btn-xs blue"><i class="fa fa-list-ol" aria-hidden="true"></i>Programme</a></li>
+                                <li><a href="https://laprimaire.org/qualifie/charlotte-marchandise-franquet#articles" target="_blank" class="btn candidat btn-default btn-xs blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Articles</a></li>
+                                <li>
+                                    <a href="https://www.youtube.com/playlist?list=PL8bxkCnxvENSAsymz9me6VSmlh9DYKlFm" target="_blank" class="btn candidat btn-default btn-xs blue">
+                                    <i class="fa fa-microphone" aria-hidden="true"></i>Interviews</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/watch?v=ob81lvCKsBo" target="_blank" class="btn candidat btn-default btn-xs blue">
+                                    <i class="fa fa-video-camera" aria-hidden="true"></i>Direct</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/watch?v=5yCq2HKy44k" target="_blank" class="btn candidat btn-default btn-xs blue">
+                                    <i class="fa fa-film" aria-hidden="true"></i>Vidéo</a>
+                                </li>
+                                <li>
+                                    <a href="http://charlotte-marchandise.fr/" target="_blank" class="btn candidat btn-default btn-xs blue">
+                                    <i class="fa fa-globe" aria-hidden="true"></i>Site web</a>
+                                </li>
+                            </ul>
+                         </div>
+                         <div class="row">
+                            <div style="margin:5px auto;width:100%;">
+                                <a target="_blank" data-target="#DonateNow" data-toggle="modal" style="font-size:24px;font-variant:small-caps;width:250px;cursor:pointer;margin-bottom:5px;" class="btn red" title="Je fais un don">Faire un don</a>
+                                <a target="_blank" href="https://framaforms.org/affirmer-son-soutien-1483886271" style="font-size:24px;font-variant:small-caps;width:250px;cursor:pointer;margin-bottom:5px;" class="btn blue" title="Je participe">Participer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 	    <div class="row">
 		    <hr class="separation a-venir">
 	    </div>
@@ -329,8 +468,8 @@ div#counter h2 {
 			    </div>
 			    <div>
 				    <div class="carroussel_item">
-					    <a target="_blank" href="http://positivr.fr/laprimaire-citoyennne-election-presidentielle-finalistes/">
-						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/positivr.jpg">
+					    <a target="_blank" href="http://charlotte-marchandise.fr/">
+						    <img data-lazy="https://s3.eu-central-1.amazonaws.com/laprimaire/banners/20170101-charlotte.jpg">
 					    </a>
 				    </div>
 			    </div>
