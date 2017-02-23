@@ -7,48 +7,73 @@ association: true
 author: des citoyens ordinaires
 description: Utilisez le formulaire suivant pour permettre à LaPrimaire.org de revenir vers vous
 ---
+<style>
+.parrainages-bar {
+	padding:0px;
+}
+.parrainages-bar .goalProgress {
+	background: white;
+	width: 100%;
+	background-color: #eee;
+	margin: 0 auto;
+	height:80px;
+}
+.parrainages-bar div.indicatorBar {
+	border-left: 2px solid white;
+	height: 80px;
+	float:right;
+	margin-top: -37px;
+	color:white;
+	letter-spacing: -1px;
+	font-weight: 400;
+	padding: 7px;
+	background-image: linear-gradient(to right, #56d840, #76f860);
+}
+.parrainages-bar div.progressBar {
+	overflow:visible;
+	color: white;
+	height:80px;
+	text-align:center;
+	font-size: 17px;
+	letter-spacing: -1px;
+	font-weight: 400;
+	padding: 7px;
+	padding-top: 26px;
+	display: block;
+	width: 20px;
+	background-image: linear-gradient(to right, #f98d8c,#d91d1c) !important;
+}
+.row {
+	margin-bottom:10px;
+}
+</style>
 
     <header id="page-top">
 	<div id="header_overlay" class="blue">
         <div class="container">
             <div class="row">
-		    <div class="title">&nbsp;<br/>
-			    <!--<h2>Parrainer un(e) candidat(e) citoyen(ne)</h2>-->
+		    <div class="title">
+			    <h2>Parrainages reçus par le Conseil Constitutionnel</h2>
 		    </div>
 	    </div>
         </div>
         </div>
     </header>
 
-    <section id="contribute_form">
-	    <div class="container">
-		    <div class="row">
-			    <div class="col-lg-3"></div>
-			<div class="col-lg-6">
-
-				<div id="wufoo-q17s61mz0yep0kq">
-					Fill out my <a href="https://democratech.wufoo.com/forms/q17s61mz0yep0kq">online form</a>.
-				</div>
-				<script type="text/javascript">var q17s61mz0yep0kq;(function(d, t) {
-var s = d.createElement(t), options = {
-'userName':'democratech',
-'formHash':'q17s61mz0yep0kq',
-'autoResize':true,
-'height':'636',
-'async':true,
-'host':'wufoo.com',
-'header':'show',
-'ssl':true};
-s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-s.onload = s.onreadystatechange = function() {
-var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-try { q17s61mz0yep0kq = new WufooForm();q17s61mz0yep0kq.initialize(options);q17s61mz0yep0kq.display(); } catch (e) {}};
-var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, 'script');</script>
-
-
-			</div>
-			    <div class="col-lg-3"></div>
-		    </div>
-	    </div>
+    <div class="container">
+	    <p style="text-align:right;">Dernière mise à jour : 22/02/2017</p>
+    </div>
+    <section id="classement">
     </section>
+    <script>
+function fetch_parrainages() {
+	$('#classement').load('http://localhost:9293/candidat/parrainages', function(response,status,xhr) {
+		if (status=="error") {
+			error=JSON.parse(response);
+			toastr["error"]('<i>'+error['title']+'</i><br/>'+error['msg']);
+		} else {
+			load_parrainages();
+		}
+	});
+}
+    </script>

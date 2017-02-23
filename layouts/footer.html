@@ -709,6 +709,8 @@ $(document).ready(function(){
 			 loadFacebook();
 	});
 });
+<% elsif @item.identifier.chop == '/parrainages' %>
+	fetch_parrainages();
 <% elsif @item.identifier == '/' %>
     </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
