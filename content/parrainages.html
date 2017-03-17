@@ -1,5 +1,7 @@
 ---
 title: Parrainages officiels reçus par les candidats à l'élection présidentielle de 2017
+social_title: Tous les parrainages officiels reçus par les candidats à l'élection présidentielle de 2017
+image: https://s3.eu-central-1.amazonaws.com/laprimaire/images/parrainages.jpg
 url: https://laprimaire.org/parrainages/
 footer: true
 navbar: true
@@ -19,10 +21,13 @@ description: Visualisez tous les parrainages officiels reçus par les candidats 
 	height:80px;
 }
 .parrainages-bar div.indicatorBar {
-	border-left: 2px solid white;
+	z-index:0;
 	height: 80px;
-	float:right;
-	margin-top: -37px;
+	border-right: 2px solid white;
+	float:left;
+	position:relative;
+	text-align:right;
+	margin-top: -80px;
 	color:white;
 	letter-spacing: -1px;
 	font-weight: 400;
@@ -30,9 +35,12 @@ description: Visualisez tous les parrainages officiels reçus par les candidats 
 	background-image: linear-gradient(to right, #56d840, #76f860);
 }
 .parrainages-bar div.progressBar {
+	border-right: 2px solid white;
 	overflow:visible;
+	z-index:1000;
 	color: white;
 	height:80px;
+	position:relative;
 	text-align:center;
 	font-size: 17px;
 	letter-spacing: -1px;
@@ -41,7 +49,8 @@ description: Visualisez tous les parrainages officiels reçus par les candidats 
 	padding-top: 26px;
 	display: block;
 	width: 20px;
-	background-image: linear-gradient(to right, #f98d8c,#d91d1c) !important;
+	/*background-image: linear-gradient(to right, #f98d8c,#d91d1c) !important;*/
+	background-image: linear-gradient(to right, #83abfd,#527bdd) !important;
 }
 .row {
 	margin-bottom:10px;
@@ -49,7 +58,7 @@ description: Visualisez tous les parrainages officiels reçus par les candidats 
 </style>
 
     <header id="page-top">
-	<div id="header_overlay" class="blue">
+	<div id="header_overlay" class="red">
         <div class="container">
             <div class="row">
 		    <div class="title">
@@ -61,13 +70,24 @@ description: Visualisez tous les parrainages officiels reçus par les candidats 
     </header>
 
     <div class="container">
-	    <p style="text-align:right;">Dernière mise à jour : 22/02/2017</p>
+	    <p style="text-align:right;font-size:12px;">Dernière mise à jour : 14/03/2017</p>
+	    <div class="row">
+		    <div class="col-md-3 col-sm-6">&nbsp;</div>
+		    <div class="col-md-3 col-sm-6">
+			    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flaprimaire.org%2Fparrainages%2F" target="_blank"><img src="/assets/images/social/share-facebook.png"></a>
+		    </div>
+		    <div class="col-md-3 col-sm-6">
+			    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flaprimaire.org%2Fparrainages%2F&text=Suivez%20en%20temps%20r%C3%A9el%20les%20%23parrainages%20re%C3%A7us%20par%20les%20candidat(e)s%20%C3%A0%20la%20%23Pr%C3%A9sidentielle2017&via=democratech" target="_blank"><img src="/assets/images/social/share-twitter.png"></a>
+		    </div>
+		    <div class="col-md-3 col-sm-6">&nbsp;</div>
+	    </div>
     </div>
+
     <section id="classement">
     </section>
     <script>
 function fetch_parrainages() {
-	$('#classement').load('http://localhost:9293/candidat/parrainages', function(response,status,xhr) {
+	$('#classement').load('/candidat/parrainages', function(response,status,xhr) {
 		if (status=="error") {
 			error=JSON.parse(response);
 			toastr["error"]('<i>'+error['title']+'</i><br/>'+error['msg']);
