@@ -32,35 +32,35 @@
         </div>
       </div>
     </div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="JoinUsNow" tabindex="-1" role="dialog" aria-labelledby="shareByEmail">
-	      <div class="modal-dialog" role="document">
-	        <div class="modal-content">
-	          <div class="modal-header">
-	            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		    <h4 class="modal-title" id="shareByEmail">Je souhaite participer aux prochaines élections</h4>
-	          </div>
-		  <div class="modal-body">
-			  <!--<p style="font-size:14px;">Désolé nous avons un petit souci technique, nous travaillons a sa resolution rapide ! (22/12 à 18h04) </p>-->
-			  <p style="font-size:14px;">Laissez-nous vos coordonnées et nous vous préviendrons lors de l'ouverture des primaires pour les législatives :</p>
-			  <div id="wufoo-q4emv9q14p6f33">
-				  Remplissez ce <a href="https://democratech.wufoo.com/forms/q4emv9q14p6f33">formulaire en ligne</a>.
-			  </div>
-			  <!--<p style="font-size:14px;">Merci beaucoup, nous avons besoin de tous les citoyens pour faire émerger une candidature citoyenne forte qui soit capable de changer la donne en 2017 !</p>
-			  <div id="wufoo-qaj8t6m07xo97p">
-				  Remplissez ce <a href="https://democratech.wufoo.com/forms/qaj8t6m07xo97p">formulaire en ligne</a>.
-			  </div>-->
-			  <div>
-			  <p style="font-size:10px;text-align:justify;color:#777;font-style:italic;"> Les informations recueillies sont nécessaires à la gestion de nos relations. Elles font l’objet d’un traitement informatique et sont réservées à l’usage de LaPrimaire.org - Association Loi 1901 (RNA n° W751235289). En remplissant ce formulaire, vous nous autorisez à utiliser vos données pour des opérations d'information, de communication et de dons. Vos informations ne pourront être communiquées qu’à des co-contractants de LaPrimaire.org, qui, en leur qualité de sous-traitants, n'agiront que sur les instructions de cette dernière et seront soumis à une stricte obligation de confidentialité. Vos données ne seront jamais commercialisées. En application des dispositions des articles 38 et suivants de la loi du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès, de rectification, de suppression et d’opposition aux informations vous concernant. Vous pouvez exercer ces droits en nous adressant un e-mail à l’adresse confidentialite@laprimaire.org.</p>
-	          </div>
-	          <div class="modal-footer">
-			  <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-	          </div>
-	        </div>
-	      </div>
-      </div>
 
+     <!-- Modal -->
+    <div class="modal fade" id="JoinUsNow" tabindex="-1" role="dialog" aria-labelledby="JoinUsNow">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Participer à LaPrimaire.org pour les législatives 2017</h4>
+          </div>
+		  <div class="modal-body">
+            <p style="font-size:14px;">Accédez à votre espace personnel pour soutenir vos candidats et/ou etre vous-même candidat !</p>
+            <form class="navbar-form" role="email" id="login_form">
+                <div class="form-group">
+                    <input type="text" id="input_email" class="form-control" placeholder="Votre adresse email">
+                    <input type="hidden" id="input_candidate" class="form-control" value="">
+                    <input type="hidden" id="input_referer" class="form-control" value="">
+                </div>
+                <button type="submit" class="btn btn-primary"><i style="width:30px;padding:0px;display:none;" id="input_loading" class="fa fa-refresh fa-spin fa-fw"></i>Accéder</button>
+                <span id="input_pb">mauvais email</span>
+            </form>
+	       </div>
+           <div class="modal-footer">
+               <p style="font-size:10px;text-align:justify;color:#777;font-style:italic;">* Les informations recueillies sont nécessaires à la gestion de nos relations. Elles font l’objet d’un traitement informatique et sont réservées à l’usage de LaPrimaire.org - Association Loi 1901 (RNA n° W751235289). En remplissant ce formulaire, vous nous autorisez à utiliser vos données pour des opérations d'information, de communication et de dons. Vos informations ne pourront être communiquées qu’à des co-contractants de LaPrimaire.org, qui, en leur qualité de sous-traitants, n'agiront que sur les instructions de cette dernière et seront soumis à une stricte obligation de confidentialité. Vos données ne seront jamais commercialisées. En application des dispositions des articles 38 et suivants de la loi du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès, de rectification, de suppression et d’opposition aux informations vous concernant. Vous pouvez exercer ces droits en nous adressant un e-mail à l’adresse confidentialite@laprimaire.org.</p>
+           </div>
+	   </div>
+    </div>
+  </div>
+    <!-- Modal -->
+   
     <!-- Modal -->
     <div class="modal fade" id="VoteNow" tabindex="-1" role="dialog" aria-labelledby="shareByEmail">
 	      <div class="modal-dialog" role="document">
@@ -586,7 +586,7 @@ $(document).ready(function(){
 				$('#vads_trans_id').val(data['transaction_id']);
 				$('#vads_order_id').val(data['order_id']);
 				$('#vads_cust_email').val(data['email']);
-				$('form').submit();
+				$('#payment_page').submit();
 			})
 			.fail(function(data) {
 				alert("Une erreur est survenue. Merci d'avance de nous reporter le problème à contact@laprimaire.org");

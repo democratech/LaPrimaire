@@ -2,50 +2,28 @@ $(document).ready(function() {
 	$("a.joinus_action").click(function() {
 			ga('send','event','button','click','Je participe');
 	});
-	if ($('#VoteNow')!=null) {
-		$('#VoteNow').on('shown.bs.modal', function () {
-			$.getScript('https://www.google.com/recaptcha/api.js', function(){
-
-			});
-		});
-	}
 	if ($('#JoinsUsNow')!=null) {
 		$('#JoinUsNow').on('shown.bs.modal', function () {
 			ga('send', 'pageview', '/inscription-popup/');
-			var q4emv9q14p6f33;(function(d, t) {
-			var s = d.createElement(t), options = {
-			'userName':'democratech',
-			'formHash':'q4emv9q14p6f33',
-			'autoResize':true,
-			'height':'456',
-			'async':true,
-			'defaultValues':'field12='+getURLParameter('ref')+'&field9='+getURLParameter('first')+'&field10='+getURLParameter('last')+'&field1='+getURLParameter('email'),
-			'host':'wufoo.com',
-			'header':'hide',
-			'ssl':true};
-			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-			s.onload = s.onreadystatechange = function() {
-			var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-			try { q4emv9q14p6f33 = new WufooForm();q4emv9q14p6f33.initialize(options);q4emv9q14p6f33.display(); } catch (e) {}};
-			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-			})(document, 'script');
-			/*var qaj8t6m07xo97p;(function(d, t) {
-			var s = d.createElement(t), options = {
-			'userName':'democratech',
-			'formHash':'qaj8t6m07xo97p',
-			'autoResize':true,
-			'height':'397',
-			'async':true,
-			'defaultValues':'field12='+getURLParameter('ref')+'&field9='+getURLParameter('first')+'&field10='+getURLParameter('last')+'&field1='+getURLParameter('email'),
-			'host':'wufoo.com',
-			'header':'hide',
-			'ssl':true};
-			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-			s.onload = s.onreadystatechange = function() {
-			var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-			try { qaj8t6m07xo97p = new WufooForm();qaj8t6m07xo97p.initialize(options);qaj8t6m07xo97p.display(); } catch (e) {}};
-			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-			})(document, 'script');*/
+			$('#input_email').on('focus', function(e) {
+				$('#input_pb').hide();
+			})
+			$('#login_form').on('submit', function(e) {
+				e.preventDefault();
+				$('#input_loading').show();
+				$('#input_email').prop('disabled',true);
+				var email=$('#input_email').val();
+				$.post("https://api.democratech.co/v2/auth/login",{'email':email})
+					.done(function(data){
+						window.location.href= data['redirect_url'];
+					})
+					.fail(function(data) {
+						console.log(data);
+						$('#input_pb').show();
+						$('#input_loading').hide();
+						$('#input_email').prop('disabled',false)
+					});
+			})
 		});
 	}
 	if ($('#fundraising_bar')!=null) {
