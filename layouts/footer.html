@@ -39,10 +39,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Participer à LaPrimaire.org pour les législatives 2017</h4>
+            <h4 class="modal-title">Participer aux prochaines primaires de LaPrimaire.org</h4>
           </div>
 		  <div class="modal-body">
-            <p style="font-size:14px;">Accédez à votre espace personnel pour soutenir vos candidats et/ou etre vous-même candidat !</p>
+            <p style="font-size:14px;">Inscrivez-vous pour être tenu au courant des prochaines actions de LaPrimaire.org:</p>
             <form class="navbar-form" role="email" id="login_form">
                 <div class="form-group">
                     <input type="text" id="input_email" class="form-control" placeholder="Votre adresse email">
@@ -711,7 +711,7 @@ $(document).ready(function(){
 });
 <% elsif @item.identifier.chop == '/parrainages' %>
 	fetch_parrainages();
-<% elsif @item.identifier == '/' %>
+<% elsif @item.identifier=='/' or @item.identifier.chop=='/election-presidentielle-2017' %>
     </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script>
