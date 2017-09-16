@@ -80,18 +80,18 @@ $(document).ready(function() {
 				createCookie('donations',amount);
 				createCookie('nb_adherents',donateurs);
 				$('#donations_bar').goalProgress({
-					goalAmount: 300000,
+					goalAmount: 100000,
 					currentAmount: amount,
 					textBefore: '',
-					textAfter: '€ de dons récoltés. Objectif : 300.000€'
+					textAfter: '€ de dons récoltés. Objectif : 100.000€'
 				});
 			});
 		} else {
 			$('#donations_bar').goalProgress({
-				goalAmount: 300000,
+				goalAmount: 100000,
 				currentAmount: amount,
 				textBefore: '',
-				textAfter: '€ de dons récoltés. Objectif : 300.000€'
+				textAfter: '€ de dons récoltés. Objectif : 100.000€'
 			});
 		}
 	}
