@@ -15,6 +15,8 @@ def create_robots_txt
 User-agent: *
 Disallow: /admin/
 Disallow: /citoyen/
+Noindex: /qualifie/roxane-revon
+Noindex: /candidat/205888341238
 EOS
 			  else
 				  [
