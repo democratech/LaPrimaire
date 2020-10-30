@@ -7,7 +7,7 @@ gem 'kramdown'
 
 # SASS & cool stuff
 gem 'compass', '~> 1.0.3'
-gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-sass', '~> 4.3.0'
 
 # Guard
