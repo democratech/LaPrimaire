@@ -52,7 +52,8 @@ GEM
       nanoc (~> 3.6)
     json (1.8.3)
     json_pure (2.0.1)
-    kramdown (1.8.0)
+    kramdown (2.3.0)
+      rexml
     libv8 (3.16.14.15)
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
@@ -83,6 +84,7 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     ref (2.0.0)
+    rexml (3.2.4)
     rubyforge (2.0.4)
       json_pure (>= 1.1.7)
     sass (3.4.16)
