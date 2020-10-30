@@ -34,7 +34,7 @@ GEM
       rdoc (>= 2.5.11)
       rubyforge (>= 2.0.4)
     execjs (2.5.2)
-    ffi (1.9.10)
+    ffi (1.13.1)
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     formatador (0.2.5)
