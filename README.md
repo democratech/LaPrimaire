@@ -16,7 +16,7 @@ $ cd LaPrimaire
 $ bundle install
 $ bundle exec guard
 ```
-If you don't have the `bundle` command, make sure you have the latest version of ruby (`brew update && brew install ruby`) and then install the bundle command with `gem install bundler`.
+If you don't have the `bundle` command, make sure you have the latest version of ruby please it is necessary for it so please follow the instruction (`brew update && brew install ruby`) and then install the bundle command with `gem install bundler`.
 
 This will compile your new shining nanoc site and start watching for changes. If you don't want to use guard, you can alternatively run the following command to compile the project:
 ```console
